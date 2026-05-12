@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<!--
+  ════════════════════════════════════════════════════════════════════
+  ProFusion Home Solutions · Get my report (address-drop)
+  ════════════════════════════════════════════════════════════════════
+  Address-input page wired from index-apple-2.html primary + final CTAs.
+  Brand-aligned: same.ap2- prefix, same tokens from shared.css, same
+  Geist + Geist Mono + Instrument Serif italic. No JavaScript backend
+  yet (the form action is a no-op on submit; this is a frontend stub).
+
+  When a real backend exists:
+    - Wire the form's action attribute to the score-generation endpoint
+    - Or progressively-enhance with fetch() to POST and route to /report/<id>
+  ════════════════════════════════════════════════════════════════════
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Get my report · ProFusion Home Solutions</title>
+<meta name="description" content="Drop your address and get your Home Efficiency Score, every rebate stacked, ranked next-best upgrade. 60 seconds. Yours forever, whether you upgrade or not.">
+<link rel="icon" type="image/png" href="images/Favicon.png">
+<link rel="apple-touch-icon" href="images/Favicon.png">
+<link rel="canonical" href="https://profusion.solutions/get-my-score.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ProFusion Home Solutions">
+<meta property="og:title" content="Get my report · ProFusion Home Solutions">
+<meta property="og:description" content="Drop your address and get your Home Efficiency Score, every rebate stacked, ranked next-best upgrade. 60 seconds. Yours forever, whether you upgrade or not.">
+<meta property="og:url" content="https://profusion.solutions/get-my-score.html">
+<meta property="og:image" content="https://profusion.solutions/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Get my report · ProFusion Home Solutions">
+<meta name="twitter:description" content="Drop your address and get your Home Efficiency Score, every rebate stacked, ranked next-best upgrade. 60 seconds. Yours forever, whether you upgrade or not.">
+<meta name="twitter:image" content="https://profusion.solutions/images/social-card.png">
+<meta name="twitter:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="theme-color" content="#0A1020">
+<meta name="theme-color" content="#0A1020">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+
+<!--
+  Google Places Autocomplete · loads the Maps JS API with the Places library.
+  Live key wired below. In Google Cloud Console, make sure the key has:
+    - Maps JavaScript API enabled
+    - Places API enabled
+    - HTTP referrer restriction set to profusion.solutions/* (+ staging hosts)
+    - A daily quota cap on Places Autocomplete sessions as a billing safety net
+  The init function (window.initPfPlaces) is defined further down in this file.
+-->
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCm9aWYKKANuI108qs3F55OOXprthpnDy8&libraries=places&loading=async&callback=initPfPlaces"></script>
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   ProFusion · Get my report · address-drop page
+   Brand layer matches index-apple-2.html (.ap2- tokens reused).
+   ═══════════════════════════════════════════════════════════════ */
+.gms-page section { padding: 0; }
+.gms-page {
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "ss02", "cv11";
+  min-height: 100dvh;
+  display: flex; flex-direction: column;
+}
+
+/* ─── Tokens (local mirrors so this file is self-contained) ─── */
+:root {
+  --gms-spring: cubic-bezier(0.34, 1.40, 0.64, 1);
+  --gms-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --gms-quick: 220ms;
+}
+
+/* ═══════════════════════════ NAV (matches index-apple-2) ═══════════════════════════ */
+.gms-nav {
+  position: fixed; top: 16px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: calc(100% - 32px); max-width: 1280px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(28px) saturate(1.8);
+  -webkit-backdrop-filter: blur(28px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    inset 0 0 0 1px rgba(10, 16, 32, 0.04),
+    0 1px 2px rgba(10, 16, 32, 0.04),
+    0 8px 24px -12px rgba(10, 16, 32, 0.10);
+  border-radius: 100px;
+  padding: 10px 12px 10px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.gms-nav.brand { display: flex; align-items: center; text-decoration: none; height: 32px; }
+.gms-nav.brand img { height: 100%; width: auto; }
+.gms-nav-back {
+  font-family: var(--display); font-weight: 500; font-size: 14px;
+  color: var(--gray-700); text-decoration: none;
+  padding: 10px 16px; border-radius: 999px;
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: background var(--gms-quick), color var(--gms-quick);
+}
+.gms-nav-back:hover { background: rgba(26, 79, 144, 0.06); color: var(--blue-700); }
+.gms-nav-back:focus-visible { outline: 2px solid var(--blue-300); outline-offset: 2px; }
+
+/* ═══════════════════════════ MAIN ═══════════════════════════ */
+.gms-main {
+  padding: 120px 32px 80px;
+  flex: 1;
+  /* Was: display: flex; align-items: center — that vertically-centered everything
+     and broke the tall scroll narrative. Block layout lets the scenes stack
+     naturally and the sticky form pin against the viewport. */
+}
+.gms-grid {
+  max-width: 1180px; width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Left: copy */
+.gms-copy { max-width: 560px; }
+.gms-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--mono); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--blue-700);
+  margin-bottom: 28px;
+}
+.gms-eyebrow::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--blue-700);
+}
+.gms-h1 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(40px, 5.5vw, 64px);
+  line-height: 1.05; letter-spacing: -0.035em;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.gms-h1 em {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  color: var(--blue-700);
+}
+.gms-lede {
+  font-size: clamp(17px, 1.4vw, 20px); line-height: 1.55;
+  color: var(--gray-600);
+  max-width: 540px;
+  margin-bottom: 36px;
+}
+.gms-lede em { font-family: var(--serif); font-style: italic; color: var(--ink); font-weight: 400; }
+.gms-checklist {
+  display: flex; flex-direction: column; gap: 10px;
+  font-family: var(--display); font-size: 15px;
+  color: var(--gray-700);
+}
+.gms-checklist li {
+  display: grid; grid-template-columns: 18px 1fr;
+  gap: 10px; align-items: baseline;
+  list-style: none;
+}
+.gms-checklist li::before {
+  content: '';
+  width: 18px; height: 18px;
+  background: var(--blue-50);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%231A4F90' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 2px;
+}
+
+/* Right: form card */
+.gms-form-card {
+  position: relative;
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 28px;
+  padding: 40px 40px 36px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.85) inset,
+    0 2px 6px rgba(10, 16, 32, 0.04),
+    0 24px 60px -16px rgba(10, 16, 32, 0.18),
+    0 12px 24px -12px rgba(10, 16, 32, 0.10);
+  box-sizing: border-box;
+}
+/* Subtle wash at the top for premium depth */
+.gms-form-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(26, 79, 144, 0.025), transparent);
+  border-radius: 28px 28px 0 0;
+  pointer-events: none;
+}
+.gms-form-card > * { position: relative; z-index: 1; }
+.gms-form-card * { box-sizing: border-box; }
+
+/* Google Places Autocomplete dropdown styling — match the form aesthetic. */
+.pac-container {
+  font-family: var(--display) !important;
+  border: 1px solid var(--gray-100) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 18px 40px -12px rgba(10, 16, 32, 0.18), 0 6px 14px -6px rgba(10, 16, 32, 0.10) !important;
+  margin-top: 6px !important;
+  background: white !important;
+  padding: 6px 0 !important;
+  overflow: hidden !important;
+}
+.pac-container::after { display: none !important; }
+.pac-item {
+  padding: 10px 16px !important;
+  font-size: 14px !important;
+  color: var(--gray-700) !important;
+  border-top: none !important;
+  cursor: pointer !important;
+  transition: background 0.15s !important;
+}
+.pac-item:hover, .pac-item-selected, .pac-item.pac-item-selected { background: var(--blue-50) !important; }
+.pac-item-query { font-family: var(--display) !important; font-weight: 600 !important; color: var(--ink) !important; font-size: 14px !important; }
+.pac-matched { font-weight: 700 !important; color: var(--blue-700) !important; }
+.pac-icon { display: none !important; }
+.gms-form-title {
+  font-family: var(--display); font-weight: 600; font-size: 18px;
+  letter-spacing: -0.01em; color: var(--ink);
+  margin-bottom: 6px;
+}
+.gms-form-sub {
+  font-family: var(--display); font-size: 13px;
+  color: var(--gray-600);
+  margin-bottom: 24px;
+}
+.gms-form { display: flex; flex-direction: column; gap: 16px; }
+.gms-field {
+  display: flex; flex-direction: column; gap: 6px;
+  min-width: 0; /* grid items shrink properly */
+}
+.gms-field-label {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gray-500); font-weight: 600;
+}
+.gms-field-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 78px 110px;
+  gap: 10px;
+}
+.gms-field-row > * { min-width: 0; }
+.gms-input {
+  font-family: var(--display); font-size: 16px;
+  font-weight: 500; color: var(--ink);
+  padding: 16px 18px;
+  background: white;
+  border: 1.5px solid var(--gray-100);
+  border-radius: 14px;
+  transition: border-color 0.22s cubic-bezier(0.2, 0.9, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.2, 0.9, 0.3, 1),
+              transform 0.22s cubic-bezier(0.2, 0.9, 0.3, 1);
+  -webkit-appearance: none; appearance: none;
+  min-height: 54px;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-shadow:
+    0 1px 2px rgba(10, 16, 32, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  letter-spacing: -0.005em;
+}
+.gms-input::placeholder {
+  color: var(--gray-400);
+  font-weight: 400;
+}
+.gms-input:hover {
+  border-color: var(--gray-200);
+  box-shadow:
+    0 4px 10px -3px rgba(10, 16, 32, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+.gms-input:focus,
+.gms-input:focus-visible {
+  border-color: var(--blue-700);
+  box-shadow:
+    0 0 0 4px rgba(26, 79, 144, 0.12),
+    0 4px 14px -4px rgba(26, 79, 144, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  outline: none;
+}
+.gms-cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, var(--blue-700) 0%, #0F2E5C 100%);
+  color: white;
+  padding: 19px 32px;
+  border-radius: 100px;
+  font-family: var(--display); font-weight: 600; font-size: 16px;
+  letter-spacing: -0.005em;
+  text-decoration: none; border: none; cursor: pointer;
+  min-height: 56px;
+  margin-top: 14px;
+  width: 100%;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 8px 24px -6px rgba(26, 79, 144, 0.45),
+    0 2px 4px rgba(10, 16, 32, 0.08);
+  transition: transform var(--gms-quick) var(--gms-spring),
+              box-shadow var(--gms-quick),
+              filter var(--gms-quick);
+  position: relative; overflow: hidden;
+}
+.gms-cta::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.10) 0%, transparent 50%);
+  pointer-events: none;
+}
+.gms-cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.20),
+    0 16px 36px -8px rgba(26, 79, 144, 0.55),
+    0 4px 8px rgba(10, 16, 32, 0.10);
+}
+.gms-cta:active {
+  transform: translateY(0) scale(0.98);
+  transition: transform 120ms ease-out;
+}
+.gms-cta:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.20),
+    0 0 0 4px rgba(26, 79, 144, 0.25),
+    0 8px 24px -6px rgba(26, 79, 144, 0.45);
+}
+.gms-cta svg { transition: transform var(--gms-quick) var(--gms-spring); }
+.gms-cta:hover svg { transform: translateX(4px); }
+.gms-form-footnote {
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.04em; color: var(--gray-500);
+  margin-top: 18px; padding-top: 18px;
+  border-top: 1px dashed var(--gray-100);
+  line-height: 1.55;
+}
+.gms-form-footnote a {
+  color: var(--blue-700); text-decoration: none;
+  transition: color var(--gms-quick);
+}
+.gms-form-footnote a:hover { color: var(--blue-900); text-decoration: underline; }
+
+/* ═══════════════════════════ FOOTER ═══════════════════════════ */
+.gms-footer {
+  border-top: 1px solid var(--gray-100);
+  padding: 28px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.04em; color: var(--gray-500);
+  max-width: 1280px; margin: 0 auto; width: 100%;
+}
+.gms-footer-press strong { color: var(--gray-700); font-weight: 600; }
+
+/* ═══════════════════════════ RESPONSIVE ═══════════════════════════ */
+
+/* ─── Hero band sitting above the 2-col grid ─── */
+.gms-hero-band { max-width: 1180px; margin: 0 auto 56px; text-align: left; }
+.gms-hero-band .gms-eyebrow { margin-bottom: 22px; }
+.gms-hero-band .gms-h1 { max-width: 920px; margin-bottom: 18px; }
+.gms-hero-band .gms-lede { max-width: 700px; margin-bottom: 0; }
+
+/* ─── Left column: hero image + promise stack ─── */
+.gms-left { display: flex; flex-direction: column; gap: 32px; }
+.gms-hero-visual {
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  position: relative;
+  box-shadow: 0 24px 56px -20px rgba(10, 16, 32, 0.16);
+}
+.gms-hero-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gms-promise-list { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--gray-100); }
+.gms-promise {
+  display: grid; grid-template-columns: 38px 1fr; gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--gray-100);
+  align-items: start;
+}
+.gms-promise:last-child { border-bottom: none; }
+.gms-promise-num {
+  font-family: var(--mono); font-size: 12px; font-weight: 700;
+  color: var(--blue-700); letter-spacing: 0.08em;
+  padding-top: 2px;
+}
+.gms-promise-text { font-family: var(--display); font-size: 15px; line-height: 1.5; color: var(--gray-700); }
+.gms-promise-text strong { color: var(--ink); font-weight: 600; }
+
+/* ─── Form fieldset grouping ─── */
+.gms-fieldset { border: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 16px; }
+.gms-fieldset:last-of-type { margin-bottom: 0; }
+.gms-fieldset-title {
+  font-family: var(--mono); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--green-700);
+  margin-bottom: 4px;
+  padding: 0;
+  display: flex; align-items: center; gap: 8px;
+}
+.gms-fieldset-title::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green-500); }
+
+/* Select input matches input styling */
+.gms-select {
+  font-family: var(--display); font-size: 16px; font-weight: 500; color: var(--ink);
+  padding: 16px 48px 16px 18px;
+  background-color: white;
+  border: 1.5px solid var(--gray-100);
+  border-radius: 14px;
+  transition: border-color 0.22s cubic-bezier(0.2, 0.9, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.2, 0.9, 0.3, 1);
+  -webkit-appearance: none; appearance: none;
+  min-height: 54px;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%231A4F90' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 11px;
+  cursor: pointer;
+  box-shadow:
+    0 1px 2px rgba(10, 16, 32, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  letter-spacing: -0.005em;
+}
+.gms-select:hover {
+  border-color: var(--gray-200);
+  box-shadow:
+    0 4px 10px -3px rgba(10, 16, 32, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+.gms-select:focus {
+  border-color: var(--blue-700);
+  box-shadow:
+    0 0 0 4px rgba(26, 79, 144, 0.12),
+    0 4px 14px -4px rgba(26, 79, 144, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  outline: none;
+}
+
+/* Money input — $ prefix */
+.gms-input-money { position: relative; }
+.gms-input-money::before {
+  content: '$';
+  position: absolute; left: 18px; top: 50%; transform: translateY(-50%);
+  font-family: var(--display); font-size: 16px; color: var(--blue-700); font-weight: 600;
+  pointer-events: none; z-index: 1;
+}
+.gms-input-money input { padding-left: 34px; }
+
+/* Below the form: what happens next */
+.gms-next { max-width: 1180px; margin: 80px auto 0; padding-top: 56px; border-top: 1px solid var(--gray-100); }
+.gms-next-head { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-700); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.gms-next-head::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green-500); }
+.gms-next-title { font-family: var(--display); font-weight: 600; font-size: clamp(24px, 2.6vw, 32px); color: var(--ink); letter-spacing: -0.02em; margin-bottom: 36px; line-height: 1.2; }
+.gms-next-title em { font-style: normal; color: var(--blue-700); }
+.gms-next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--gray-200); padding-top: 36px; }
+.gms-next-step { padding: 0 32px; border-right: 1px solid var(--gray-200); }
+.gms-next-step:first-child { padding-left: 0; }
+.gms-next-step:last-child { padding-right: 0; border-right: none; }
+.gms-next-step-num { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 999px; background: var(--blue-50); color: var(--blue-700); font-family: var(--mono); font-size: 12px; font-weight: 700; margin-bottom: 16px; }
+.gms-next-step-title { font-family: var(--display); font-weight: 600; font-size: 17px; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.01em; }
+.gms-next-step-body { font-family: var(--serif-body); font-size: 14.5px; line-height: 1.55; color: var(--gray-700); margin: 0; }
+
+/* Success state shown after Web3Forms redirects on submit */
+.gms-success { background: var(--green-50); border: 1px solid #B7E5C1; border-radius: 16px; padding: 22px 26px; margin-bottom: 28px; display: flex; align-items: flex-start; gap: 16px; }
+.gms-success-icon { flex-shrink: 0; width: 36px; height: 36px; border-radius: 999px; background: var(--green-500); display: inline-flex; align-items: center; justify-content: center; }
+.gms-success-icon svg { width: 18px; height: 18px; color: white; }
+.gms-success-title { font-family: var(--display); font-weight: 600; font-size: 17px; color: var(--ink); margin-bottom: 4px; }
+.gms-success-body { font-family: var(--serif-body); font-size: 14.5px; line-height: 1.55; color: var(--gray-700); margin: 0; }
+
+/* ═══════════════════════════ TWO-COLUMN CANVAS · v3 ═══════════════════════════
+   Left column: a static, beautiful step-timeline showing the 4-step process
+   with Step 1 marked active ("you are here"). Right column: the form, with
+   logo at top and a Step 1 of 4 badge. */
+.gms-canvas {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 480px;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ─── Hero band above the timeline (left of canvas) ─── */
+.gms-intro { margin-bottom: 36px; }
+.gms-intro .gms-eyebrow { margin-bottom: 18px; }
+.gms-intro .gms-h1 { font-size: clamp(40px, 5vw, 60px); margin-bottom: 14px; max-width: 18ch; }
+.gms-intro .gms-lede { font-size: clamp(17px, 1.4vw, 19px); margin-bottom: 0; max-width: 52ch; }
+
+/* ─── Step accordion cards (left column visual) ───
+   White stacked cards with native <details>/<summary> click-to-expand.
+   Step 1 is the active card — open by default with a "You are here" badge.
+   Follows canonical patterns: flat at rest, hairline border, hover lift,
+   numbered marker chip + chevron, expanded body in serif body. */
+.gms-steps-intro { margin-bottom: 32px; }
+.gms-steps-intro .gms-steps-eyebrow {
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--green-700);
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-bottom: 18px;
+}
+.gms-steps-intro .gms-steps-eyebrow::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green-500);
+  box-shadow: 0 0 0 4px rgba(58, 180, 74, 0.18);
+}
+.gms-steps-intro .gms-steps-h2 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(26px, 2.8vw, 32px);
+  letter-spacing: -0.02em; line-height: 1.18;
+  color: var(--ink);
+  margin: 0 0 14px;
+  max-width: 18ch;
+}
+.gms-steps-intro .gms-steps-h2 em { font-style: normal; color: var(--blue-700); }
+.gms-steps-intro .gms-steps-lede {
+  font-family: var(--serif-body); font-size: 16px; line-height: 1.6;
+  color: var(--gray-700);
+  margin: 0;
+  max-width: 36ch;
+}
+
+.gms-steps {
+  display: flex; flex-direction: column;
+  gap: 12px;
+}
+
+.gms-step-card {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: border-color 0.22s cubic-bezier(0.2, 0.9, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.2, 0.9, 0.3, 1),
+              transform 0.22s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+.gms-step-card:hover { border-color: var(--gray-200); transform: translateY(-1px); box-shadow: 0 6px 16px -8px rgba(10, 16, 32, 0.10); }
+.gms-step-card[open] {
+  border-color: var(--gray-200);
+  box-shadow: 0 8px 20px -10px rgba(10, 16, 32, 0.12);
+}
+.gms-step-card.is-active {
+  border-color: #B7E5C1;
+  background: linear-gradient(180deg, #F5FBF6 0%, white 100%);
+  box-shadow: 0 8px 22px -10px rgba(58, 180, 74, 0.20);
+}
+.gms-step-card.is-active[open] { border-color: var(--green-500); }
+
+.gms-step-summary {
+  display: grid;
+  grid-template-columns: 40px 1fr 24px;
+  gap: 16px;
+  align-items: center;
+  padding: 18px 22px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.gms-step-summary::-webkit-details-marker { display: none; }
+.gms-step-summary::marker { content: none; }
+
+.gms-step-marker {
+  width: 40px; height: 40px;
+  border-radius: 999px;
+  background: var(--gray-50);
+  color: var(--gray-600);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 13px; font-weight: 700;
+  flex-shrink: 0;
+  transition: background 0.22s, color 0.22s, box-shadow 0.22s;
+}
+.gms-step-card.is-active .gms-step-marker {
+  background: var(--green-500);
+  color: white;
+  box-shadow: 0 0 0 4px rgba(58, 180, 74, 0.18);
+}
+
+.gms-step-title-row {
+  display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap; min-width: 0;
+}
+.gms-step-title {
+  font-family: var(--display); font-weight: 600; font-size: 16px;
+  color: var(--ink); letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+.gms-step-card.is-active .gms-step-title { color: var(--ink); }
+
+.gms-step-here {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--green-500); color: white;
+  font-family: var(--mono); font-size: 9.5px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  box-shadow: 0 3px 8px -2px rgba(58, 180, 74, 0.40);
+}
+.gms-step-here svg { width: 8px; height: 8px; flex-shrink: 0; }
+
+.gms-step-chevron {
+  width: 18px; height: 18px;
+  color: var(--gray-500);
+  transition: transform 0.22s cubic-bezier(0.2, 0.9, 0.3, 1), color 0.22s;
+  flex-shrink: 0;
+}
+.gms-step-card:hover .gms-step-chevron { color: var(--ink); }
+.gms-step-card[open] .gms-step-chevron { transform: rotate(180deg); color: var(--blue-700); }
+.gms-step-card.is-active[open] .gms-step-chevron { color: var(--green-700); }
+
+.gms-step-detail {
+  padding: 0 22px 22px 78px;
+  font-family: var(--serif-body); font-size: 14.5px; line-height: 1.6;
+  color: var(--gray-700);
+  animation: gms-step-open 0.32s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+.gms-step-detail strong { color: var(--ink); font-weight: 600; }
+.gms-step-detail-meta {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 14px;
+  padding: 5px 12px 5px 10px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: 100px;
+  font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gray-600);
+}
+.gms-step-detail-meta::before {
+  content: '';
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--blue-700);
+}
+.gms-step-card.is-active .gms-step-detail-meta::before { background: var(--green-500); }
+@keyframes gms-step-open {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gms-steps-foot {
+  margin-top: 24px; padding: 16px 20px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: 14px;
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gray-600);
+}
+.gms-steps-foot svg { color: var(--blue-700); flex-shrink: 0; }
+
+/* ─── Right column · sticky form ─── */
+.gms-form-aside { position: sticky; top: 96px; }
+
+/* ─── Form polish: logo header + step badge + cleaner section headers ─── */
+.gms-form-header {
+  display: flex; align-items: center; gap: 14px;
+  padding-bottom: 22px; margin-bottom: 26px;
+  border-bottom: 1px solid var(--gray-100);
+}
+.gms-form-logo { display: flex; align-items: center; height: 32px; flex-shrink: 0; }
+.gms-form-logo img { height: 100%; width: auto; display: block; }
+.gms-form-step-badge {
+  margin-left: auto;
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--green-50);
+  border: 1px solid #B7E5C1;
+  padding: 6px 12px 6px 10px;
+  border-radius: 100px;
+  font-family: var(--mono); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--green-700);
+}
+.gms-form-step-badge::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green-500);
+}
+
+/* Override the older fieldset-title to be a cleaner section header */
+.gms-fieldset-title {
+  font-family: var(--display); font-weight: 600; font-size: 14px;
+  letter-spacing: -0.005em; text-transform: none;
+  color: var(--ink);
+  margin: 0 0 4px;
+  padding: 0;
+  display: flex; align-items: center; gap: 10px;
+}
+.gms-fieldset-title::before {
+  content: counter(gms-step-num);
+  counter-increment: gms-step-num;
+  width: 22px; height: 22px;
+  background: var(--blue-50);
+  color: var(--blue-700);
+  border-radius: 999px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0;
+  flex-shrink: 0;
+}
+.gms-form { counter-reset: gms-step-num; }
+.gms-fieldset + .gms-fieldset { padding-top: 28px; border-top: 1px solid var(--gray-100); margin-top: 8px; }
+.gms-fieldset { gap: 18px; }
+.gms-field { gap: 8px; }
+
+/* Friendlier inline field labels — Geist 500, normal case, slightly larger */
+.gms-field-label {
+  font-family: var(--display); font-size: 13.5px;
+  letter-spacing: -0.005em; text-transform: none;
+  color: var(--ink); font-weight: 600;
+  margin-bottom: 0;
+}
+.gms-field-label + small,
+.gms-field-label-meta {
+  display: block;
+  font-family: var(--serif-body); font-size: 12.5px; line-height: 1.4;
+  color: var(--gray-600); font-weight: 400;
+  margin-top: -2px;
+}
+
+/* Form title polish to match the new heavier inputs */
+.gms-form-title { font-size: 22px; font-weight: 600; letter-spacing: -0.015em; }
+.gms-form-sub { font-size: 14px; margin-bottom: 30px; }
+
+/* Fieldset numbered title — softer feel, larger chip */
+.gms-fieldset-title { font-size: 15px; padding-bottom: 4px; }
+.gms-fieldset-title::before { width: 24px; height: 24px; font-size: 11px; }
+
+/* ═══════════════════════════ RESPONSIVE ═══════════════════════════ */
+
+@media (max-width: 960px) {
+  .gms-canvas { grid-template-columns: 1fr; gap: 40px; }
+  .gms-form-aside { position: static; order: -1; }
+  .gms-step-summary { padding: 16px 18px; gap: 12px; }
+  .gms-step-detail { padding: 0 18px 18px 70px; }
+  .gms-steps-intro { margin-bottom: 24px; }
+}
+
+@media (max-width: 900px) {.gms-grid { grid-template-columns: 1fr; gap: 56px; }
+.gms-main { padding: 120px 24px 60px; }
+.gms-form-card { padding: 28px 24px; }
+.gms-hero-band { margin-bottom: 40px; }
+.gms-next { margin-top: 56px; padding-top: 40px; }
+.gms-next-grid { grid-template-columns: 1fr; padding-top: 0; border-top: none; gap: 22px; }
+.gms-next-step { padding: 22px 0; border-right: none; border-bottom: 1px solid var(--gray-100); }
+.gms-next-step:last-child { border-bottom: none; padding-bottom: 0; }
+}
+@media (max-width: 640px) {.gms-field-row { grid-template-columns: 1fr; gap: 10px; }
+.gms-hero-visual { aspect-ratio: 16 / 11; }
+}
+
+/* ═══════════════════════════ REDUCED MOTION ═══════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body class="gms-page">
+
+<!-- Skip-link for keyboard users -->
+<a href="#main" class="gms-skip" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.cssText='position:fixed;top:8px;left:8px;width:auto;height:auto;padding:12px 18px;background:#0A1020;color:#fff;border-radius:8px;z-index:200;font-family:Geist,sans-serif;font-size:14px;'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;'">Skip to main content</a>
+
+<!-- ═════════════ NAV ═════════════ -->
+<nav class="gms-nav" aria-label="Primary">
+  <a href="index.html" class="brand">
+    <img src="logo.png" alt="ProFusion Home Solutions">
+  </a>
+  <a href="index.html" class="gms-nav-back">
+    <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+      <path d="M10 5.5H2M5 1.5l-3 4 3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    Back to home
+  </a>
+</nav>
+
+<!-- ═════════════ MAIN · v3 step timeline + polished form ═════════════ -->
+<main class="gms-main" id="main">
+  <div class="gms-canvas">
+
+    <!-- ─── LEFT · intro + step timeline ─── -->
+    <div>
+      <div class="gms-intro">
+        <div class="gms-eyebrow">Get my report</div>
+        <h1 class="gms-h1">Drop your <em>address</em>.</h1>
+        <p class="gms-lede">Sixty seconds. We do the rest.</p>
+      </div>
+
+      <section aria-label="What happens after you submit">
+        <div class="gms-steps-intro">
+          <div class="gms-steps-eyebrow">How it works</div>
+          <h2 class="gms-steps-h2">Four steps. <em>Roughly forty-eight hours</em>.</h2>
+          <p class="gms-steps-lede">You start here. We take it from there. Tap any step for the details.</p>
+        </div>
+
+        <div class="gms-steps">
+
+          <details class="gms-step-card is-active" open>
+            <summary class="gms-step-summary" aria-label="Step 1, you are here: Tell us about the home">
+              <span class="gms-step-marker">1</span>
+              <span class="gms-step-title-row">
+                <span class="gms-step-title">Tell us about the home.</span>
+                <span class="gms-step-here">
+                  <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3.5"/><circle cx="6" cy="6" r="1.5" fill="currentColor"/></svg>
+                  You are here
+                </span>
+              </span>
+              <svg class="gms-step-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+            </summary>
+            <div class="gms-step-detail">
+              Address, utility, a couple of details about what's heating the house today. <strong>About sixty seconds.</strong> The form on the right is the whole thing.
+              <span class="gms-step-detail-meta">~60 seconds</span>
+            </div>
+          </details>
+
+          <details class="gms-step-card">
+            <summary class="gms-step-summary" aria-label="Step 2: We read your house">
+              <span class="gms-step-marker">2</span>
+              <span class="gms-step-title-row">
+                <span class="gms-step-title">We read your house.</span>
+              </span>
+              <svg class="gms-step-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+            </summary>
+            <div class="gms-step-detail">
+              <strong>Satellite imagery, climate zone, utility tariffs, mechanical baseline.</strong> A real engineering pass against your specific address, not a generic estimate run on a national average.
+              <span class="gms-step-detail-meta">Within 24 hours</span>
+            </div>
+          </details>
+
+          <details class="gms-step-card">
+            <summary class="gms-step-summary" aria-label="Step 3: We stack every rebate">
+              <span class="gms-step-marker">3</span>
+              <span class="gms-step-title-row">
+                <span class="gms-step-title">We stack every rebate.</span>
+              </span>
+              <svg class="gms-step-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+            </summary>
+            <div class="gms-step-detail">
+              Federal, state, and utility incentives your address qualifies for. <strong>Synced to this week's caps and tiers</strong>, not quoted from memory. The numbers you see are the numbers that clear.
+              <span class="gms-step-detail-meta">Same day as Step 2</span>
+            </div>
+          </details>
+
+          <details class="gms-step-card">
+            <summary class="gms-step-summary" aria-label="Step 4: Your report arrives">
+              <span class="gms-step-marker">4</span>
+              <span class="gms-step-title-row">
+                <span class="gms-step-title">Your report arrives.</span>
+              </span>
+              <svg class="gms-step-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+            </summary>
+            <div class="gms-step-detail">
+              A four-page PDF in your inbox. <strong>Letter grade, rebate stack, ranked next-best upgrade.</strong> Yours forever, whether you act on it or not.
+              <span class="gms-step-detail-meta">Within 48 hours total</span>
+            </div>
+          </details>
+
+        </div>
+
+        <div class="gms-steps-foot">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span>Free, forever &middot; No follow-up calls unless you ask</span>
+        </div>
+      </section>
+    </div>
+
+    <!-- ─── RIGHT · sticky form ─── -->
+    <aside class="gms-form-aside">
+      <div class="gms-form-card">
+
+        <header class="gms-form-header">
+          <a href="index.html" class="gms-form-logo" aria-label="ProFusion Home Solutions">
+            <img src="logo.png" alt="ProFusion Home Solutions">
+          </a>
+          <span class="gms-form-step-badge">Step 1 of 4</span>
+        </header>
+
+        <div class="gms-form-title">Tell us about the home.</div>
+        <div class="gms-form-sub">No login. No credit card. No follow-up calls unless you ask.</div>
+
+        <!--
+          FORM HANDLER · submits to Web3Forms (free tier, no backend).
+          TO ACTIVATE:
+          1. Go to https://web3forms.com → enter your inbox (e.g. info@profusion.solutions)
+          2. Copy the access key it emails you
+          3. Replace REPLACE_WITH_WEB3FORMS_KEY below with that key
+          Same key can be reused on the Contact-form on contact.html.
+        -->
+        <form class="gms-form" action="https://api.web3forms.com/submit" method="POST" autocomplete="on">
+
+          <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="New Home Efficiency Score request">
+          <input type="hidden" name="from_name" value="ProFusion · Get my report">
+          <input type="hidden" name="redirect" value="https://profusion.solutions/get-my-score.html?submitted=true">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+          <fieldset class="gms-fieldset">
+            <legend class="gms-fieldset-title">Where the home is</legend>
+
+            <div class="gms-field">
+              <label class="gms-field-label" for="gms-street">Street address</label>
+              <input class="gms-input" id="gms-street" name="street" type="text" inputmode="text" autocomplete="street-address" placeholder="97 Puritan Ave" required aria-required="true"></div>
+
+            <div class="gms-field">
+              <label class="gms-field-label" for="gms-city">City, state, ZIP</label>
+              <div class="gms-field-row">
+                <input class="gms-input" id="gms-city" name="city" type="text" autocomplete="address-level2" placeholder="Worcester" required aria-required="true">
+                <input class="gms-input" id="gms-state" name="state" type="text" autocomplete="address-level1" placeholder="MA" maxlength="2" pattern="[A-Za-z]{2}" required aria-required="true">
+                <input class="gms-input" id="gms-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="01604" maxlength="10" pattern="\d{5}(-\d{4})?" required aria-required="true"></div></div>
+          </fieldset>
+
+          <fieldset class="gms-fieldset">
+            <legend class="gms-fieldset-title">Your home today</legend>
+
+            <div class="gms-field">
+              <label class="gms-field-label" for="gms-elec">Monthly electric bill (roughly)</label>
+              <div class="gms-input-money">
+                <input class="gms-input" id="gms-elec" name="electric_bill_monthly" type="text" inputmode="numeric" placeholder="180"></div></div>
+
+            <div class="gms-field">
+              <label class="gms-field-label" for="gms-heat-bill">Monthly heating bill (peak winter)</label>
+              <div class="gms-input-money">
+                <input class="gms-input" id="gms-heat-bill" name="heating_bill_monthly" type="text" inputmode="numeric" placeholder="320"></div></div>
+
+            <div class="gms-field">
+              <label class="gms-field-label" for="gms-heat-source">What heats the home?</label>
+              <select class="gms-select" id="gms-heat-source" name="heating_source">
+                <option value="">Pick one</option>
+                <option value="natural-gas">Natural gas</option>
+                <option value="heating-oil">Heating oil</option>
+                <option value="propane">Propane</option>
+                <option value="electric-resistance">Electric (baseboard or furnace)</option>
+                <option value="heat-pump">Heat pump</option>
+                <option value="wood-pellet">Wood or pellet stove</option>
+                <option value="other">Something else</option>
+                <option value="not-sure">Not sure</option>
+              </select></div>
+          </fieldset>
+
+          <fieldset class="gms-fieldset">
+            <legend class="gms-fieldset-title">Where to send the report</legend>
+
+            <div class="gms-field">
+              <label class="gms-field-label" for="gms-name">Your name</label>
+              <input class="gms-input" id="gms-name" name="name" type="text" autocomplete="name" placeholder="First and last" required aria-required="true"></div>
+
+            <div class="gms-field">
+              <label class="gms-field-label" for="gms-email">Email</label>
+              <input class="gms-input" id="gms-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-required="true"></div>
+
+            <div class="gms-field">
+              <label class="gms-field-label" for="gms-phone">Phone (optional)</label>
+              <input class="gms-input" id="gms-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(508) 555-0142"></div>
+          </fieldset>
+
+          <button type="submit" class="gms-cta">
+            Show me my Score
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true">
+              <path d="M1 6h11M8 1l4 5-4 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="gms-form-footnote">
+            By submitting, you agree the address may be matched against public records to generate your report. We don't sell or share your data. <a href="sample-report.html">See a sample report</a>.</div>
+        </form>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<!-- ═════════════ FOOTER ═════════════ -->
+<footer class="gms-footer">
+  <div>© 2026 ProFusion Home Solutions LLC · Data current April 2026</div>
+  <div class="gms-footer-press">As featured in · <strong>Boston Globe</strong> · <strong>Portland Press Herald</strong></div>
+</footer>
+
+<script>
+// ─── Google Places Autocomplete · address autofill ───────────────
+// Loaded via the Maps JS API script tag in <head> with callback=initPfPlaces.
+// When a user picks a suggestion, the street, city, state, and zip fields
+// all get filled at once.
+window.initPfPlaces = function () {
+  if (!window.google || !window.google.maps || !window.google.maps.places) return;
+
+  var streetEl = document.getElementById('gms-street');
+  var cityEl = document.getElementById('gms-city');
+  var stateEl = document.getElementById('gms-state');
+  var zipEl = document.getElementById('gms-zip');
+  if (!streetEl) return;
+
+  var ac = new google.maps.places.Autocomplete(streetEl, {
+    types: ['address'],
+    componentRestrictions: { country: 'us' },
+    fields: ['address_components', 'formatted_address']
+  });
+
+  ac.addListener('place_changed', function () {
+    var place = ac.getPlace();
+    if (!place || !place.address_components) return;
+
+    var streetNumber = '';
+    var route = '';
+    var city = '';
+    var stateShort = '';
+    var zip = '';
+
+    place.address_components.forEach(function (c) {
+      var t = c.types || [];
+      if (t.indexOf('street_number') >= 0) streetNumber = c.long_name;
+      if (t.indexOf('route') >= 0) route = c.long_name;
+      // Locality is the standard city. Fall back to sublocality / neighborhood.
+      if (t.indexOf('locality') >= 0) city = c.long_name;
+      else if (!city && t.indexOf('sublocality') >= 0) city = c.long_name;
+      else if (!city && t.indexOf('postal_town') >= 0) city = c.long_name;
+      if (t.indexOf('administrative_area_level_1') >= 0) stateShort = c.short_name;
+      if (t.indexOf('postal_code') >= 0) zip = c.long_name;
+    });
+
+    var streetLine = (streetNumber + ' ' + route).trim();
+    if (streetLine) streetEl.value = streetLine;
+    if (cityEl && city) cityEl.value = city;
+    if (stateEl && stateShort) stateEl.value = stateShort;
+    if (zipEl && zip) zipEl.value = zip;
+  });
+
+  // Prevent Enter from submitting the form while the autocomplete dropdown is open.
+  streetEl.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter') return;
+    var dropdown = document.querySelector('.pac-container');
+    if (dropdown && dropdown.offsetParent !== null) e.preventDefault();
+  });
+};
+</script>
+
+<script>
+// Show a success banner when Web3Forms redirects back here with ?submitted=true.
+(function () {
+  if (new URLSearchParams(window.location.search).get('submitted') !== 'true') return;
+  var card = document.querySelector('.gms-form-card');
+  if (!card) return;
+  var banner = document.createElement('div');
+  banner.className = 'gms-success';
+  banner.setAttribute('role', 'status');
+  banner.innerHTML =
+    '<div class="gms-success-icon" aria-hidden="true">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
+    '</div>' +
+    '<div>' +
+      '<div class="gms-success-title">Got it. We are on it.</div>' +
+      '<p class="gms-success-body">Your report is being assembled. You should see it in your inbox within forty-eight hours, usually faster. If you do not see it, check spam, then email <a href="mailto:info@profusion.solutions">info@profusion.solutions</a>.</p>' +
+    '</div>';
+  card.insertBefore(banner, card.firstChild);
+  banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+})();
+</script>
+
+
+</body>
+</html>

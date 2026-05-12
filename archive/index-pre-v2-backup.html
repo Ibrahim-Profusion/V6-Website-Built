@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProFusion — Built for the house. Felt in the home.</title>
+<meta name="description" content="The Home Efficiency Score — built for the house, felt in the home. A 400–800 rating with every state and federal rebate stacked by program. Now serving 11 states. Updated April 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<!-- (Phase 5 hero animation removed — reverted to satellite hero) -->
+<style>
+/* Hero */
+.hero { min-height: 100vh; padding: 130px 0 80px; display: flex; align-items: center; position: relative; overflow: hidden; }
+.hero-mesh { position: absolute; top: -10%; right: -20%; width: 900px; height: 900px; background: radial-gradient(circle at 30% 40%, rgba(58, 180, 74, 0.25), transparent 40%), radial-gradient(circle at 70% 60%, rgba(26, 79, 144, 0.3), transparent 50%); filter: blur(60px); opacity: 0.8; pointer-events: none; animation: meshDrift 20s ease-in-out infinite; }
+
+/* V6 hero tagline */
+.hero-tagline {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: clamp(15px, 1.5vw, 18px);
+  letter-spacing: -0.005em;
+  background: linear-gradient(135deg, var(--blue-700), var(--green-500));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  margin-bottom: 22px;
+  display: inline-block;
+}
+.hero-tagline-pre { color: var(--gray-600); font-family: var(--display); font-style: normal; font-weight: 500; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; margin-right: 12px; padding: 4px 10px; background: var(--gray-50); border-radius: 100px; vertical-align: middle; -webkit-text-fill-color: var(--gray-600); }
+.hero-meta {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em;
+  color: var(--gray-600); font-weight: 500;
+  margin-top: 8px;
+}
+.hero-meta-dot {
+  width: 6px; height: 6px; background: var(--green-500); border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(58, 180, 74, 0.2); animation: pulse 2s infinite;
+}
+
+/* V6 hero satellite */
+.hero-satellite {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--gray-100);
+  transform: perspective(1400px) rotateY(-3deg) rotateX(1deg);
+  transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+.hero-satellite:hover { transform: perspective(1400px) rotateY(-1deg) rotateX(0deg) translateY(-4px); }
+.hero-satellite-img {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.92) brightness(0.96);
+}
+.hero-satellite-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10, 16, 32, 0.05) 0%, rgba(10, 16, 32, 0.04) 50%, rgba(10, 16, 32, 0.65) 100%);
+  pointer-events: none;
+}
+.hero-satellite-tag {
+  position: absolute; top: 16px; left: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 8px 14px;
+  border-radius: 100px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;
+  color: var(--gray-800);
+  box-shadow: var(--shadow-sm);
+  display: inline-flex; align-items: center; gap: 8px;
+  z-index: 3;
+}
+.hero-satellite-tag-dot {
+  width: 6px; height: 6px; background: var(--green-500); border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(58, 180, 74, 0.2); animation: pulse 2s infinite;
+}
+
+.score-pin {
+  position: absolute;
+  background: white;
+  border: 1.5px solid var(--blue-700);
+  border-radius: 14px;
+  padding: 6px 12px 6px 8px;
+  box-shadow: 0 6px 14px -3px rgba(10, 16, 32, 0.35);
+  display: flex; align-items: center; gap: 8px;
+  z-index: 2;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: default;
+}
+.score-pin:hover { transform: scale(1.08); box-shadow: 0 10px 22px -4px rgba(10, 16, 32, 0.45); z-index: 4; }
+.score-pin::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; left: 14px;
+  width: 10px; height: 10px;
+  background: white;
+  border-right: 1.5px solid var(--blue-700);
+  border-bottom: 1.5px solid var(--blue-700);
+  transform: rotate(45deg);
+}
+.score-pin-num {
+  font-family: var(--display); font-weight: 600; font-size: 16px;
+  letter-spacing: -0.02em; color: var(--ink); line-height: 1;
+}
+.score-pin-grade {
+  font-family: var(--serif); font-style: italic; font-size: 13px;
+  color: var(--green-600, var(--green-500));
+  padding: 2px 6px; border-radius: 6px;
+  background: var(--green-50);
+  line-height: 1;
+}
+.score-pin.grade-a .score-pin-grade { color: var(--green-700); background: var(--green-50); }
+.score-pin.grade-b .score-pin-grade { color: var(--blue-700); background: var(--blue-50); }
+.score-pin.grade-c .score-pin-grade { color: #B45309; background: #FEF3C7; }
+.score-pin.grade-d .score-pin-grade { color: #B91C1C; background: #FEE8E8; }
+
+.score-pin.pulsing { animation: scorePinPulse 3s infinite; }
+@keyframes scorePinPulse {
+  0%, 100% { box-shadow: 0 6px 14px -3px rgba(10, 16, 32, 0.35), 0 0 0 0 rgba(58, 180, 74, 0.4); }
+  50% { box-shadow: 0 6px 14px -3px rgba(10, 16, 32, 0.35), 0 0 0 10px rgba(58, 180, 74, 0); }
+}
+
+.hero-satellite-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 24px 22px 22px;
+  color: white;
+  z-index: 3;
+}
+.hero-satellite-caption-eyebrow {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--green-400); font-weight: 600;
+  margin-bottom: 8px;
+}
+.hero-satellite-caption-text {
+  font-family: var(--display); font-weight: 500; font-size: 14px; line-height: 1.45;
+  color: rgba(255, 255, 255, 0.95);
+}
+.hero-satellite-caption-text em {
+  font-family: var(--serif); font-style: italic; color: var(--green-400); font-weight: 400;
+  padding: 0 2px;
+}
+@keyframes meshDrift { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(-30px, 20px) rotate(5deg); } }
+.hero-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; position: relative; z-index: 2; }
+.hero-pill { display: inline-flex; align-items: center; gap: 10px; background: white; border: 1px solid var(--gray-100); padding: 8px 16px 8px 8px; border-radius: 100px; font-size: 13px; font-weight: 500; color: var(--gray-800); margin-bottom: 32px; box-shadow: var(--shadow-sm); animation: slideUp 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) both; }
+.hero-pill-badge { background: var(--green-500); color: white; padding: 3px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; }
+.hero-pill-dot { width: 6px; height: 6px; background: var(--green-500); border-radius: 50%; box-shadow: 0 0 0 3px rgba(58, 180, 74, 0.2); animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { box-shadow: 0 0 0 3px rgba(58, 180, 74, 0.2); } 50% { box-shadow: 0 0 0 6px rgba(58, 180, 74, 0.05); } }
+h1.hero-title { font-family: var(--display); font-weight: 500; font-size: clamp(48px, 6.5vw, 88px); line-height: 1.02; letter-spacing: -0.045em; color: var(--ink); margin-bottom: 32px; animation: slideUp 0.9s cubic-bezier(0.2, 0.9, 0.3, 1) 0.1s both; }
+h1.hero-title em { font-family: var(--serif); font-style: italic; font-weight: 400; background: linear-gradient(135deg, var(--blue-700) 0%, var(--green-500) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-sub { font-size: 19px; line-height: 1.55; color: var(--gray-600); margin-bottom: 40px; max-width: 540px; animation: slideUp 1s cubic-bezier(0.2, 0.9, 0.3, 1) 0.2s both; }
+.hero-ctas { display: flex; gap: 12px; align-items: center; margin-bottom: 56px; flex-wrap: wrap; animation: slideUp 1.1s cubic-bezier(0.2, 0.9, 0.3, 1) 0.3s both; }
+.hero-counters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; animation: slideUp 1.2s cubic-bezier(0.2, 0.9, 0.3, 1) 0.4s both; }
+.counter-num { font-family: var(--display); font-weight: 500; font-size: clamp(32px, 3.5vw, 44px); line-height: 1; letter-spacing: -0.04em; color: var(--ink); margin-bottom: 6px; display: flex; align-items: baseline; gap: 2px; }
+.counter-num .prefix { color: var(--gray-400); font-size: 0.7em; margin-right: 2px; }
+.counter-num .suffix { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 0.55em; color: var(--green-500); margin-left: 4px; }
+.counter-label { font-family: var(--mono); font-size: 11px; color: var(--gray-400); letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500; }
+@keyframes slideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideIn { from { opacity: 0; transform: translateY(40px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+.hero-visual { position: relative; animation: slideIn 1.2s cubic-bezier(0.2, 0.9, 0.3, 1) 0.2s both; }
+.hes-card { background: white; border-radius: 24px; padding: 28px; box-shadow: var(--shadow-xl); border: 1px solid var(--gray-100); position: relative; transform: perspective(1400px) rotateY(-4deg) rotateX(2deg); transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1); }
+.hes-card:hover { transform: perspective(1400px) rotateY(-1deg) rotateX(0deg) translateY(-4px); }
+.hes-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px dashed var(--gray-100); }
+.hes-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-400); font-weight: 500; }
+.hes-label strong { display: block; font-family: var(--display); color: var(--ink); font-size: 13px; text-transform: none; letter-spacing: -0.01em; margin-top: 3px; font-weight: 600; }
+.hes-status-dot { width: 7px; height: 7px; background: var(--green-500); border-radius: 50%; box-shadow: 0 0 0 3px rgba(58, 180, 74, 0.2); display: inline-block; margin-right: 6px; animation: pulse 2s infinite; vertical-align: middle; }
+.hes-live { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-700); font-weight: 500; }
+.hes-score-wrap { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; margin-bottom: 24px; }
+.hes-score-ring { position: relative; width: 140px; height: 140px; }
+.hes-score-num { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--display); font-weight: 500; font-size: 42px; line-height: 1; letter-spacing: -0.04em; color: var(--ink); }
+.hes-score-num .grade { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 16px; color: var(--green-500); margin-top: 2px; letter-spacing: 0; }
+.hes-desc-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-400); font-weight: 500; margin-bottom: 6px; }
+.hes-desc-val { font-size: 14px; line-height: 1.45; color: var(--gray-800); font-weight: 400; }
+.hes-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding-top: 20px; border-top: 1px dashed var(--gray-100); }
+.hes-stat-card { background: var(--gray-50); padding: 14px 16px; border-radius: 12px; }
+.hes-stat-card.highlight { background: linear-gradient(135deg, var(--green-50), rgba(58, 180, 74, 0.08)); border: 1px solid rgba(58, 180, 74, 0.15); }
+.hes-stat-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-400); font-weight: 500; margin-bottom: 4px; }
+.hes-stat-val { font-family: var(--display); font-weight: 600; font-size: 20px; letter-spacing: -0.025em; color: var(--ink); line-height: 1; }
+.hes-stat-card.highlight .hes-stat-val { color: var(--green-700); }
+.hes-float-tag { position: absolute; top: -16px; right: -24px; background: var(--ink); color: white; padding: 8px 14px; border-radius: 100px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; box-shadow: var(--shadow-md); transform: rotate(4deg); z-index: 2; }
+.trust-strip { background: white; border-top: 1px solid var(--gray-100); border-bottom: 1px solid var(--gray-100); padding: 40px 0; }
+.trust-strip-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+.trust-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); font-weight: 500; }
+.trust-items { display: flex; gap: 48px; align-items: center; flex-wrap: wrap; }
+.trust-item { font-family: var(--display); font-weight: 500; font-size: 15px; color: var(--gray-600); display: flex; align-items: center; gap: 8px; }
+.trust-item::before { content: ''; width: 14px; height: 14px; background: var(--green-50); border-radius: 50%; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%233AB44A' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-size: 10px; background-position: center; background-repeat: no-repeat; }
+
+/* HES percentile — new in v5 */
+.hes-percentile { display: flex; align-items: center; gap: 8px; padding: 10px 14px; margin-top: 14px; background: linear-gradient(135deg, rgba(26, 79, 144, 0.06), rgba(58, 180, 74, 0.06)); border: 1px solid rgba(26, 79, 144, 0.1); border-radius: 12px; font-size: 13px; color: var(--gray-800); line-height: 1.4; }
+.hes-percentile-bar { flex-shrink: 0; width: 40px; height: 6px; background: var(--gray-100); border-radius: 100px; overflow: hidden; position: relative; }
+.hes-percentile-bar::after { content: ''; position: absolute; top: 0; left: 0; height: 100%; width: 34%; background: linear-gradient(90deg, var(--blue-700), var(--green-500)); border-radius: 100px; }
+.hes-percentile strong { font-family: var(--display); font-weight: 600; color: var(--ink); }
+
+/* Problem-first grid — new primary entry point in v5 */
+.problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+.problem-btn {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 20px;
+  padding: 32px 28px;
+  text-decoration: none;
+  color: var(--ink);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+  cursor: pointer;
+  text-align: left;
+}
+.problem-btn::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26, 79, 144, 0.02), rgba(58, 180, 74, 0.02)); opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+.problem-btn:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--blue-300); }
+.problem-btn:hover::before { opacity: 1; }
+.problem-icon { width: 44px; height: 44px; background: var(--blue-50); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; color: var(--blue-700); transition: transform 0.3s; }
+.problem-btn:hover .problem-icon { transform: scale(1.08) rotate(-4deg); }
+.problem-btn:nth-child(2) .problem-icon, .problem-btn:nth-child(4) .problem-icon, .problem-btn:nth-child(6) .problem-icon { background: var(--green-50); color: var(--green-700); }
+.problem-quote { font-family: var(--display); font-weight: 500; font-size: 19px; line-height: 1.25; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 8px; }
+.problem-quote em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--blue-700); }
+.problem-hint { font-size: 13px; line-height: 1.5; color: var(--gray-600); margin-top: auto; padding-top: 12px; border-top: 1px dashed var(--gray-100); display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.problem-hint-arrow { color: var(--blue-700); flex-shrink: 0; transition: transform 0.2s; }
+.problem-btn:hover .problem-hint-arrow { transform: translateX(4px); }
+
+/* Secondary solutions strip — demoted from primary in v5 */
+.solutions-secondary { padding: 40px 0 0; border-top: 1px dashed var(--gray-100); margin-top: 80px; }
+.solutions-secondary-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); font-weight: 500; margin-bottom: 20px; text-align: center; }
+.solutions-chip-grid { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.solution-chip { background: white; border: 1px solid var(--gray-100); border-radius: 100px; padding: 10px 18px 10px 14px; text-decoration: none; color: var(--gray-800); font-family: var(--display); font-weight: 500; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s, box-shadow 0.2s, color 0.2s; }
+.solution-chip:hover { border-color: var(--blue-300); color: var(--ink); box-shadow: var(--shadow-sm); }
+.solution-chip-icon { width: 24px; height: 24px; background: var(--blue-50); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--blue-700); }
+.solution-chip:nth-child(2) .solution-chip-icon, .solution-chip:nth-child(4) .solution-chip-icon { background: var(--green-50); color: var(--green-700); }
+
+/* Footer states strip — minimal row above footer (new position in v5) */
+.footer-states-strip { background: white; border-top: 1px solid var(--gray-100); padding: 28px 0; }
+.footer-states-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.footer-states-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); font-weight: 500; }
+.footer-states-list { display: flex; gap: 8px; flex-wrap: wrap; }
+.footer-state-pill { background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 100px; padding: 6px 14px 6px 10px; text-decoration: none; color: var(--gray-800); font-family: var(--display); font-size: 13px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; transition: border-color 0.2s, background 0.2s; }
+.footer-state-pill:hover { border-color: var(--blue-300); background: white; }
+.footer-state-pill .abbr { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--state-mini-accent, var(--blue-700)); }
+
+/* Legacy solutions-grid still defined for backward compatibility but unused on homepage */
+.solutions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.solution-card {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 24px;
+  padding: 36px;
+  text-decoration: none;
+  color: var(--ink);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+}
+.solution-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--blue-700), var(--green-500)); opacity: 0; transition: opacity 0.3s; }
+.solution-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.solution-card:hover::before { opacity: 1; }
+.solution-icon { width: 52px; height: 52px; background: var(--blue-50); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; transition: transform 0.3s; color: var(--blue-700); }
+.solution-card:hover .solution-icon { transform: scale(1.08) rotate(-4deg); }
+.solution-card:nth-child(2) .solution-icon, .solution-card:nth-child(4) .solution-icon, .solution-card:nth-child(6) .solution-icon { background: var(--green-50); color: var(--green-700); }
+.solution-title { font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 12px; }
+.solution-title em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--blue-700); }
+.solution-desc { font-size: 14px; line-height: 1.55; color: var(--gray-600); margin-bottom: 20px; flex: 1; }
+.solution-meta { display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 11px; color: var(--gray-400); padding-top: 14px; border-top: 1px dashed var(--gray-100); }
+.solution-meta-count { color: var(--green-700); font-weight: 600; }
+.solution-arrow { color: var(--blue-700); }
+.solution-card:hover .solution-arrow { transform: translateX(4px); transition: transform 0.2s; }
+
+/* States strip */
+.states-strip {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.state-mini-card {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 16px;
+  padding: 20px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+.state-mini-card:hover { border-color: var(--blue-300); box-shadow: var(--shadow-sm); }
+.state-mini-abbr { font-family: var(--serif); font-style: italic; font-size: 36px; line-height: 1; color: var(--state-mini-accent, var(--blue-700)); margin-bottom: 6px; }
+.state-mini-name { font-family: var(--display); font-weight: 500; font-size: 13px; letter-spacing: -0.01em; color: var(--ink); }
+
+/* How */
+.how-section { background: var(--gray-50); }
+.how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+.how-step { background: white; border: 1px solid var(--gray-100); border-radius: 20px; padding: 36px; transition: transform 0.3s, box-shadow 0.3s; }
+.how-step:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.how-num { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 72px; line-height: 0.8; background: linear-gradient(135deg, var(--blue-700), var(--green-500)); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.04em; margin-bottom: 20px; }
+.how-title { font-family: var(--display); font-weight: 500; font-size: 24px; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 14px; }
+.how-title em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--blue-700); }
+.how-desc { font-size: 15px; line-height: 1.6; color: var(--gray-600); margin-bottom: 20px; }
+.how-meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-700); font-weight: 600; padding-top: 16px; border-top: 1px dashed var(--gray-100); }
+
+/* Stats band */
+.stats-band { background: var(--ink); color: white; padding: 120px 0; position: relative; overflow: hidden; }
+.stats-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 50%, rgba(58, 180, 74, 0.15), transparent 40%), radial-gradient(ellipse at 80% 50%, rgba(26, 79, 144, 0.25), transparent 50%); pointer-events: none; }
+.stats-band > * { position: relative; z-index: 2; }
+.stats-band .section-eyebrow { background: rgba(58, 180, 74, 0.15); color: var(--green-400); }
+.stats-band .section-title { color: white; }
+.stats-band .section-title em { color: var(--green-500); }
+.stats-band .section-lede { color: rgba(255, 255, 255, 0.6); }
+.stats-band-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 48px; margin-top: 72px; padding-top: 48px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+.stats-band-grid.stats-band-grid-five { grid-template-columns: repeat(5, 1fr); gap: 32px; }
+.stats-band-item { border-left: 1px solid rgba(255, 255, 255, 0.08); padding-left: 24px; }
+.stats-band-item:first-child { border-left: none; padding-left: 0; }
+.stats-band-num { font-family: var(--display); font-weight: 500; font-size: clamp(42px, 4.5vw, 64px); line-height: 1; letter-spacing: -0.04em; color: white; margin-bottom: 10px; display: flex; align-items: baseline; gap: 2px; }
+.stats-band-num .prefix { color: rgba(255, 255, 255, 0.3); font-size: 0.65em; margin-right: 3px; }
+.stats-band-num .suffix { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 0.5em; color: var(--green-500); margin-left: 4px; }
+.stats-band-label { font-family: var(--mono); font-size: 11px; color: rgba(255, 255, 255, 0.5); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; line-height: 1.4; }
+
+/* Testimonial */
+.testimonial-section { padding: 140px 0; }
+.testimonial-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
+.testimonial-image-wrap { aspect-ratio: 4/5; border-radius: 24px; overflow: hidden; }
+.testimonial-quote { font-family: var(--display); font-weight: 400; font-size: clamp(24px, 2.8vw, 36px); line-height: 1.25; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 40px; }
+.testimonial-quote em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--green-500); }
+.testimonial-quote::before { content: '"'; font-family: var(--serif); font-style: italic; font-size: 80px; line-height: 0.6; color: var(--green-500); margin-bottom: 12px; display: block; }
+.testimonial-attr { display: flex; align-items: center; gap: 20px; padding-top: 24px; border-top: 1px solid var(--gray-100); }
+.testimonial-avatar { width: 56px; height: 56px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+.testimonial-attr-text strong { font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: -0.01em; color: var(--ink); display: block; }
+.testimonial-attr-text span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-400); }
+
+/* Final CTA */
+.final-cta { padding: 160px 0; text-align: center; position: relative; overflow: hidden; background: var(--gray-50); }
+.final-cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(58, 180, 74, 0.08) 0%, transparent 60%); pointer-events: none; }
+.final-cta-content { position: relative; z-index: 2; }
+
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 64px; }
+  .hero-visual { max-width: 500px; margin: 0 auto; }
+  .problems-grid { grid-template-columns: 1fr 1fr; }
+  .solutions-grid { grid-template-columns: 1fr 1fr; }
+  .states-strip { grid-template-columns: repeat(3, 1fr); }
+  .how-grid { grid-template-columns: 1fr; }
+  .stats-band-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .stats-band-grid.stats-band-grid-five { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .stats-band-item { border-left: none; padding-left: 0; }
+  .testimonial-grid { grid-template-columns: 1fr; gap: 48px; }
+  .trust-strip-inner { flex-direction: column; text-align: center; }
+  .footer-states-inner { flex-direction: column; text-align: center; }
+}
+@media (max-width: 720px) {
+  .hero { padding: 120px 0 60px; }
+  .hero-counters { grid-template-columns: 1fr; gap: 12px; }
+  .problems-grid { grid-template-columns: 1fr; }
+  .solutions-grid { grid-template-columns: 1fr; }
+  .states-strip { grid-template-columns: repeat(2, 1fr); }
+  .stats-band-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════
+   V6 ADDITIONS — 4 new homepage sections
+   ═══════════════════════════════════════════════ */
+
+/* Why a Score? */
+.why-score { padding: 120px 0; }
+.why-score-header { text-align: center; max-width: 720px; margin: 0 auto 64px; }
+.why-score-header .section-lede { margin-left: auto; margin-right: auto; text-align: center; }
+.why-score-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 28px; }
+.why-score-card {
+  background: white; border: 1px solid var(--gray-100); border-radius: 20px;
+  padding: 36px 32px; position: relative;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.why-score-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.why-score-icon {
+  width: 52px; height: 52px; background: var(--blue-50); border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--blue-700); margin-bottom: 20px;
+}
+.why-score-card:nth-child(2) .why-score-icon { background: var(--green-50); color: var(--green-700); }
+.why-score-quote {
+  font-family: var(--display); font-weight: 500; font-size: 20px;
+  letter-spacing: -0.015em; color: var(--ink);
+  margin-bottom: 10px; line-height: 1.35;
+}
+.why-score-quote em { font-family: var(--serif); font-style: italic; color: var(--blue-700); font-weight: 400; }
+.why-score-card:nth-child(2) .why-score-quote em { color: var(--green-700); }
+.why-score-narrator {
+  font-family: var(--serif); font-style: italic; font-size: 14px;
+  color: var(--gray-600); margin-bottom: 20px; line-height: 1.55;
+}
+.why-score-scope {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--gray-400); font-weight: 600;
+  padding-top: 16px; border-top: 1px dashed var(--gray-100);
+  display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
+}
+.why-score-scope-val { color: var(--gray-800); font-weight: 500; text-align: right; }
+.why-score-close {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px 22px;
+  font-family: var(--display); font-weight: 500; font-size: 16px;
+  line-height: 1.5; letter-spacing: -0.005em; color: var(--gray-800);
+  text-align: center; max-width: 820px; margin: 0 auto;
+}
+.why-score-close em { font-family: var(--serif); font-style: italic; color: var(--green-700); font-weight: 400; font-size: 17px; }
+.why-score-close-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--blue-700); text-decoration: none; font-weight: 600;
+  border-bottom: 1px solid var(--blue-300); padding-bottom: 2px;
+  transition: border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.why-score-close-link:hover { border-color: var(--blue-700); color: var(--ink); }
+.why-score-close-link svg { transition: transform 0.2s; }
+.why-score-close-link:hover svg { transform: translateX(3px); }
+
+/* Sample Report Preview */
+.sample-preview { padding: 120px 0; background: var(--gray-50); }
+.sample-preview-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center; }
+.sample-preview-copy .section-eyebrow { background: var(--green-50); color: var(--green-700); }
+.sample-preview-visual {
+  position: relative;
+  aspect-ratio: 3/4;
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 20px;
+  box-shadow: var(--shadow-xl);
+  transform: perspective(1400px) rotateY(-3deg) rotateX(1deg);
+  transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1);
+  padding: 28px 24px;
+  overflow: hidden;
+}
+.sample-preview-visual:hover { transform: perspective(1400px) rotateY(-1deg) rotateX(0deg) translateY(-4px); }
+.sample-preview-float {
+  position: absolute; top: -14px; left: 28px;
+  background: var(--ink); color: white; padding: 6px 14px;
+  border-radius: 100px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  font-weight: 600; z-index: 2;
+}
+.sp-page-head { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid var(--gray-100); gap: 10px; }
+.sp-page-head img { height: 20px; width: auto; }
+.sp-page-head-meta { text-align: right; font-family: var(--mono); font-size: 8px; letter-spacing: 0.06em; color: var(--gray-400); line-height: 1.7; }
+.sp-page-head-meta strong { display: block; color: var(--ink); font-family: var(--display); font-size: 10px; letter-spacing: -0.01em; font-weight: 600; text-transform: none; }
+.sp-blur { filter: blur(4px); user-select: none; }
+.sp-title { font-family: var(--display); font-weight: 600; font-size: 13px; color: var(--blue-700); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 14px; }
+.sp-grade-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+.sp-grade-wrap { text-align: center; display: flex; flex-direction: column; justify-content: center; }
+.sp-grade-title { font-size: 9px; font-family: var(--display); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--blue-700); margin-bottom: 4px; }
+.sp-grade-gauge { position: relative; width: 80px; height: 50px; margin: 0 auto; }
+.sp-grade-gauge svg { width: 100%; height: 100%; }
+.sp-grade-letter { position: absolute; top: 56%; left: 50%; transform: translate(-50%, -40%); font-family: var(--display); font-weight: 700; font-size: 22px; color: white; line-height: 1; }
+.sp-cost-card { background: var(--gray-50); border-radius: 8px; padding: 12px 10px; }
+.sp-cost-title { font-size: 8px; color: var(--blue-700); font-family: var(--display); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+.sp-cost-big { font-family: var(--display); font-weight: 500; font-size: 18px; color: var(--blue-700); letter-spacing: -0.02em; line-height: 1; }
+.sp-cost-unit { font-size: 8px; color: var(--gray-600); margin-top: 2px; }
+.sp-long-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 14px; }
+.sp-long-tile { border-radius: 6px; padding: 8px 4px; text-align: center; }
+.sp-long-tile.today { background: var(--gray-50); }
+.sp-long-tile.mid { background: #FFF4E8; }
+.sp-long-tile.full { background: #FEE8E8; }
+.sp-long-tile-label { font-size: 7px; color: var(--gray-600); font-family: var(--mono); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2px; }
+.sp-long-tile-val { font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: -0.02em; line-height: 1; }
+.sp-long-tile.mid .sp-long-tile-val { color: #B45309; }
+.sp-long-tile.full .sp-long-tile-val { color: #B91C1C; }
+.sp-growth-rows { display: grid; gap: 3px; }
+.sp-growth-row { display: grid; grid-template-columns: 24px 1fr 28px; gap: 5px; align-items: center; }
+.sp-growth-year { font-family: var(--mono); font-size: 7px; color: var(--gray-600); letter-spacing: 0.04em; }
+.sp-growth-bar { height: 10px; background: var(--gray-100); border-radius: 3px; overflow: hidden; }
+.sp-growth-bar-fill { height: 100%; background: linear-gradient(90deg, #FB923C, #EF4444); border-radius: 3px; }
+.sp-growth-val { font-family: var(--display); font-weight: 600; font-size: 8px; color: var(--ink); text-align: right; }
+.sample-preview-caption {
+  font-family: var(--serif); font-style: italic; font-size: 14px;
+  color: var(--gray-600); margin-top: 24px;
+  padding: 14px 18px; background: white; border: 1px dashed var(--gray-200); border-radius: 10px;
+}
+.sample-preview-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 28px;
+  font-family: var(--display); font-weight: 500; font-size: 15px;
+  color: var(--blue-700); text-decoration: none;
+  padding: 14px 24px; border: 1px solid var(--blue-300); border-radius: 100px;
+  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+.sample-preview-link:hover { transform: translateX(4px); border-color: var(--blue-700); background: var(--blue-50); }
+
+/* You Don't Interview Installers */
+.installers-tease { padding: 120px 0; background: var(--ink); color: white; position: relative; overflow: hidden; }
+.installers-tease::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(58, 180, 74, 0.15), transparent 45%),
+    radial-gradient(ellipse at 80% 50%, rgba(26, 79, 144, 0.25), transparent 50%);
+  pointer-events: none;
+}
+.installers-tease > * { position: relative; z-index: 2; }
+.installers-tease .section-eyebrow { background: rgba(58, 180, 74, 0.15); color: var(--green-400); }
+.installers-tease .section-title { color: white; }
+.installers-tease .section-title em { color: var(--green-400); }
+.installers-tease .section-lede { color: rgba(255, 255, 255, 0.65); }
+.installers-funnel {
+  display: grid; grid-template-columns: 1fr auto 1fr; gap: 32px;
+  align-items: center; justify-items: center;
+  max-width: 720px; margin: 36px auto 0;
+  text-align: center;
+}
+.installers-funnel-arrow {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: 22px; color: rgba(255,255,255,0.45);
+  line-height: 1; letter-spacing: -0.02em;
+  display: flex; align-items: center; gap: 10px;
+}
+.installers-funnel-arrow svg { color: rgba(58, 180, 74, 0.6); }
+.installers-stat-num {
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(56px, 7vw, 96px); line-height: 0.95; letter-spacing: -0.05em;
+  color: white; margin-bottom: 8px;
+}
+.installers-stat-num em { font-family: var(--serif); font-style: italic; color: var(--green-400); font-weight: 400; }
+.installers-stat-label {
+  font-family: var(--mono); font-size: 11px; color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; line-height: 1.5;
+}
+.installers-tease-footer { text-align: center; margin-top: 36px; }
+.installers-tease-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--display); font-weight: 500; font-size: 15px;
+  color: var(--green-400); text-decoration: none;
+  padding: 14px 26px; border: 1px solid rgba(58, 180, 74, 0.35); border-radius: 100px;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.installers-tease-link:hover { border-color: var(--green-400); background: rgba(58, 180, 74, 0.1); transform: translateX(4px); }
+
+/* Two Guarantees */
+.guarantees-section { padding: 120px 0; }
+.guarantees-section .guarantees-header { text-align: center; max-width: 720px; margin: 0 auto 48px; }
+.guarantees-section .guarantees-header .section-lede { margin-left: auto; margin-right: auto; text-align: center; }
+.guarantees-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.guarantee-block {
+  background: white; border: 1px solid var(--gray-100); border-radius: 20px;
+  padding: 40px; position: relative;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.guarantee-block:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.guarantee-block::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--blue-700), var(--green-500));
+  border-radius: 20px 20px 0 0;
+}
+.guarantee-block-icon {
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, var(--blue-50), var(--green-50));
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--blue-700); margin-bottom: 24px;
+}
+.guarantee-block-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--green-700); font-weight: 600; margin-bottom: 10px;
+}
+.guarantee-block-title {
+  font-family: var(--display); font-weight: 500; font-size: 26px;
+  letter-spacing: -0.025em; color: var(--ink); margin-bottom: 16px; line-height: 1.2;
+}
+.guarantee-block-title em { font-family: var(--serif); font-style: italic; color: var(--blue-700); font-weight: 400; }
+.guarantee-block-body { font-size: 15px; line-height: 1.65; color: var(--gray-700); }
+.guarantee-block-body em { font-family: var(--serif); font-style: italic; color: var(--ink); }
+
+@media (max-width: 900px) {
+  .why-score-grid { grid-template-columns: 1fr; }
+  .sample-preview-grid { grid-template-columns: 1fr; gap: 48px; }
+  .installers-funnel { grid-template-columns: 1fr; gap: 16px; }
+  .installers-funnel-arrow { transform: rotate(90deg); }
+  .guarantees-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════
+   V6: SERVICE AREA — interactive US tile map
+   ═══════════════════════════════════════════════ */
+.service-area { padding: 120px 0; background: var(--gray-50); }
+.service-area-header { text-align: center; max-width: 720px; margin: 0 auto 48px; }
+.service-area-header .section-lede { margin-left: auto; margin-right: auto; text-align: center; }
+.usmap-frame {
+  background: white; border: 1px solid var(--gray-100); border-radius: 24px;
+  padding: 48px 40px; box-shadow: var(--shadow-sm);
+  max-width: 920px; margin: 0 auto;
+}
+.usmap-status { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 24px; margin-bottom: 32px; border-bottom: 1px dashed var(--gray-100); flex-wrap: wrap; gap: 16px; }
+.usmap-status-label { font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: -0.01em; color: var(--ink); }
+.usmap-status-meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-400); font-weight: 600; }
+.usmap-status-meta .live { color: var(--green-700); }
+.usmap-status-meta .soon { color: var(--gray-600); }
+.usmap {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 4px;
+  max-width: 760px;
+  margin: 0 auto;
+  aspect-ratio: 13/9;
+}
+.us-state {
+  background: var(--gray-100);
+  color: var(--gray-400);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: default;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.2s, color 0.2s;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+}
+.us-state.active {
+  background: var(--blue-700);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(26, 79, 144, 0.2);
+}
+.us-state.active:hover {
+  background: var(--blue-500);
+  transform: scale(1.15);
+  box-shadow: 0 6px 14px -2px rgba(26, 79, 144, 0.4);
+  z-index: 5;
+}
+.us-state:not(.active):hover {
+  background: var(--gray-200);
+  color: var(--gray-600);
+  transform: scale(1.08);
+  z-index: 4;
+}
+.us-state[data-pending="true"]::before {
+  content: '';
+  position: absolute;
+  top: 4px; right: 4px;
+  width: 5px; height: 5px;
+  background: var(--green-400);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--blue-700);
+}
+
+/* Tooltip on hover */
+.us-state::after {
+  content: attr(data-name);
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--ink);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s, transform 0.15s;
+  z-index: 10;
+  text-transform: none;
+  box-shadow: var(--shadow-md);
+}
+.us-state:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Legend */
+.usmap-legend {
+  display: flex; justify-content: center; gap: 32px;
+  margin-top: 36px; padding-top: 28px; border-top: 1px dashed var(--gray-100);
+  flex-wrap: wrap;
+}
+.usmap-legend-item {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--display); font-weight: 500; font-size: 13px;
+  color: var(--gray-700);
+}
+.usmap-legend-dot {
+  width: 16px; height: 16px; border-radius: 4px;
+  flex-shrink: 0;
+}
+.usmap-legend-dot.active { background: var(--blue-700); box-shadow: 0 2px 4px rgba(26, 79, 144, 0.2); }
+.usmap-legend-dot.soon { background: var(--gray-100); border: 1px solid var(--gray-200); }
+.usmap-legend-dot.expanding {
+  background: var(--blue-700);
+  position: relative;
+}
+.usmap-legend-dot.expanding::after {
+  content: '';
+  position: absolute;
+  top: 2px; right: 2px;
+  width: 5px; height: 5px;
+  background: var(--green-400);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--blue-700);
+}
+.usmap-legend-meta { color: var(--gray-400); font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; }
+
+@media (max-width: 720px) {
+  .usmap { gap: 2px; }
+  .us-state { font-size: 8px; }
+  .usmap-frame { padding: 28px 16px; }
+}
+
+/* ═══════════════════════════════════════════════
+   V6 PHASE 5 — GSAP Hero Pilot: Score Dial + House Animation
+   ═══════════════════════════════════════════════ */
+.hero-anim {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 16px;
+  align-items: center;
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 24px;
+  padding: 32px 28px 24px;
+  box-shadow: var(--shadow-xl);
+  transform: perspective(1400px) rotateY(-3deg) rotateX(1deg);
+  transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+.hero-anim:hover { transform: perspective(1400px) rotateY(-1deg) rotateX(0deg) translateY(-4px); }
+
+.hero-dial { position: relative; }
+.dial-svg { width: 100%; height: auto; max-width: 220px; margin: 0 auto; display: block; }
+#dialNeedle { transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1); }
+
+.hero-house-anim { position: relative; min-height: 280px; }
+.hero-house-canvas {
+  width: 100%;
+  height: 320px;        /* explicit fallback height in case aspect-ratio isn't applied */
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #DCEAFC 0%, #F4F7FB 60%, #B7D8B7 60%, #8FA98F 100%);
+  aspect-ratio: 4 / 3;
+}
+
+.hero-stage-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-600);
+  font-weight: 600;
+  text-align: center;
+  margin-top: 12px;
+  padding: 6px 12px;
+  background: var(--gray-50);
+  border-radius: 100px;
+}
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  font-weight: 600;
+  animation: scrollHintPulse 2.4s ease-in-out infinite;
+}
+@keyframes scrollHintPulse {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, 0); }
+  50% { opacity: 1; transform: translate(-50%, 4px); }
+}
+.hero-scroll-hint svg { animation: scrollHintBounce 2s ease-in-out infinite; }
+@keyframes scrollHintBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+/* When animation reaches "Excellent" state, hide the scroll hint */
+.hero.anim-complete .hero-scroll-hint { opacity: 0; transition: opacity 0.4s; }
+
+@media (max-width: 1024px) {
+  .hero-anim { grid-template-columns: 1fr; gap: 0; }
+  .hero-anim .hero-dial { margin-bottom: 12px; }
+}
+@media (max-width: 720px) {
+  .hero-anim { transform: none; padding: 20px 16px; }
+}
+
+/* ═══ Interactive Problems-section house ═══ */
+.problems-with-house { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start; margin-top: 48px; }
+.problems-stack { display: flex; flex-direction: column; gap: 12px; }
+.problems-stack .problem-btn {
+  min-height: auto;
+  padding: 24px 26px;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+}
+.problems-stack .problem-btn .problem-icon { margin-bottom: 0; flex-shrink: 0; }
+.problems-stack .problem-btn .problem-quote { font-size: 17px; margin-bottom: 4px; }
+.problems-stack .problem-btn .problem-hint { padding-top: 0; border-top: none; flex-direction: column; align-items: flex-start; gap: 2px; font-size: 12px; }
+.problems-stack .problem-btn-body { flex: 1; min-width: 0; }
+.problems-stack .problem-btn:hover { border-color: var(--blue-700); background: var(--blue-50); }
+
+.diag-house-wrap {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.diag-house-tip {
+  text-align: center;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gray-400); font-weight: 600;
+  margin-top: 16px;
+  transition: color 0.3s;
+}
+.diag-svg[data-diag]:not([data-diag=""]) ~ .diag-house-tip { color: var(--blue-700); }
+
+/* (story-section mobile rules removed in Phase 5) */
+
+/* ═════════════════════════════════════════════════════════════
+   PHASE B · TILE 1 — "The Score" animated dial story panel
+   ═════════════════════════════════════════════════════════════ */
+.t1-score {
+  padding: 120px 0;
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.t1-score-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.t1-score-copy { max-width: 520px; }
+.t1-eyebrow {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--green-700); font-weight: 600;
+  margin-bottom: 22px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.t1-eyebrow::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green-500);
+  display: inline-block;
+}
+.t1-headline {
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(40px, 5.2vw, 64px); line-height: 1.04;
+  letter-spacing: -0.04em; color: var(--ink);
+  margin-bottom: 24px;
+}
+.t1-headline em {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  background: linear-gradient(135deg, var(--blue-700), var(--green-500));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.t1-lede {
+  font-size: 18px; line-height: 1.65;
+  color: var(--gray-700);
+  margin-bottom: 36px;
+}
+.t1-lede em {
+  font-family: var(--serif); font-style: italic; color: var(--ink); font-weight: 400;
+}
+.t1-inputs { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.t1-input-row {
+  display: flex; align-items: flex-start; gap: 14px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.55s cubic-bezier(0.2, 0.9, 0.3, 1),
+              transform 0.55s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+.t1-score.is-active .t1-input-row {
+  opacity: 1; transform: translateY(0);
+}
+.t1-score.is-active .t1-input-row:nth-child(1) { transition-delay: 0.10s; }
+.t1-score.is-active .t1-input-row:nth-child(2) { transition-delay: 0.20s; }
+.t1-score.is-active .t1-input-row:nth-child(3) { transition-delay: 0.30s; }
+.t1-score.is-active .t1-input-row:nth-child(4) { transition-delay: 0.40s; }
+.t1-score.is-active .t1-input-row:nth-child(5) { transition-delay: 0.50s; }
+.t1-input-dot {
+  flex-shrink: 0; width: 8px; height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue-700), var(--green-500));
+  margin-top: 9px;
+  box-shadow: 0 0 0 4px rgba(46, 154, 61, 0.08);
+}
+.t1-foot {
+  margin-top: 22px;
+  font-family: var(--serif); font-style: italic; font-size: 14px;
+  color: var(--gray-600); line-height: 1.55;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  transition-delay: 0.65s;
+}
+.t1-foot em {
+  font-family: var(--serif); font-style: italic; color: var(--ink); font-weight: 400;
+}
+.t1-score.is-active .t1-foot { opacity: 1; }
+.t1-input-body { flex: 1; min-width: 0; padding-top: 1px; }
+.t1-input-title {
+  font-family: var(--display); font-weight: 600; font-size: 15px;
+  color: var(--ink); margin-bottom: 2px; letter-spacing: -0.01em;
+}
+.t1-input-desc {
+  font-size: 13.5px; line-height: 1.55; color: var(--gray-600);
+}
+.t1-input-desc em {
+  font-family: var(--serif); font-style: italic; color: var(--gray-700); font-weight: 400;
+}
+
+/* RIGHT: dial visual */
+.t1-score-visual {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
+}
+.t1-dial-svg {
+  width: 100%; height: 100%; display: block;
+  filter: drop-shadow(0 24px 48px rgba(10, 16, 32, 0.06));
+}
+.t1-dial-arc-fg {
+  fill: none;
+  stroke-width: 32;
+  stroke-linecap: round;
+  stroke-dasharray: 848;
+  stroke-dashoffset: 848;
+  transition: stroke-dashoffset 1.8s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+.t1-score.is-active .t1-dial-arc-fg {
+  stroke-dashoffset: 89; /* 848 × (1 − 0.895) for ~758/800 */
+}
+.t1-dial-arc-bg {
+  fill: none;
+  stroke: var(--gray-100);
+  stroke-width: 32;
+  stroke-linecap: round;
+}
+.t1-dial-tick {
+  fill: var(--gray-400);
+  font-family: var(--mono); font-size: 13px; font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.t1-dial-score-num {
+  font-family: var(--display); font-weight: 500;
+  font-size: 96px; letter-spacing: -0.04em;
+  fill: var(--ink);
+  text-anchor: middle;
+}
+.t1-dial-score-grade {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: 44px; letter-spacing: -0.02em;
+  fill: var(--green-700);
+  text-anchor: middle;
+}
+.t1-dial-score-label {
+  font-family: var(--mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  fill: var(--gray-400);
+  text-anchor: middle;
+}
+
+@media (max-width: 900px) {
+  .t1-score { padding: 80px 0; }
+  .t1-score-grid { grid-template-columns: 1fr; gap: 56px; }
+  .t1-score-copy { max-width: 100%; }
+  .t1-score-visual { max-width: 380px; }
+  .t1-headline { font-size: clamp(34px, 8vw, 48px); }
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .t1-input-row { transition: none; opacity: 1; transform: none; }
+  .t1-dial-arc-fg { transition: none; stroke-dashoffset: 89; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="nav">
+  <a href="index.html" class="brand"><img src="logo.png" alt="ProFusion Home Solutions"></a>
+  <ul class="nav-links">
+    <li><a href="index.html#service-area">Service Area</a></li>
+    <li class="has-dropdown">
+      <a href="#">Programs <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="categories/solar.html">Solar</a>
+        <a href="categories/heating-cooling.html">Heating &amp; Cooling</a>
+        <a href="categories/insulation.html">Insulation</a>
+        <a href="categories/windows-doors.html">Windows &amp; Doors</a>
+        <a href="categories/energy-storage.html">Energy Storage</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Learn <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="how-our-score-guides-you.html">How Our Score Will Guide You</a>
+        <a href="sample-report.html">See a Sample Report</a>
+        <a href="our-installers.html">Who We Match You With</a>
+        <a href="2026-changes.html">What Changed in 2026</a>
+      </div>
+    </li>
+    <li><a href="index.html#score">The Score</a></li>
+    <li><a href="index.html#how">How it works</a></li>
+    <li><a href="index.html#cta" class="nav-cta">Get my Score</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-mesh"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <h1 class="hero-title">
+          Find out your <em>Home's Efficiency Score</em> today!
+        </h1>
+        <div class="hero-tagline" style="margin-bottom: 36px;">
+          Built for the <em style="font-weight: 500;">house</em>. Felt in the <em style="font-weight: 500;">home</em>.
+        </div>
+        <div class="hero-ctas">
+          <a href="#cta" class="btn btn-primary">
+            Get my Home Efficiency Score
+            <svg width="16" height="14" viewBox="0 0 16 14" fill="none">
+              <path d="M1 7h13M9 1l5 6-5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#how" class="btn btn-secondary">See how it works</a>
+        </div>
+        <div class="hero-meta">
+          <span class="hero-meta-dot"></span>
+          <span>Last verified: April 17, 2026 &middot; Now serving 11 states</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-satellite">
+          <div class="hero-satellite-img" style="background-image: url('images/neighborhood-satellite.jpg');"></div>
+          <div class="hero-satellite-overlay"></div>
+          <div class="hero-satellite-tag">
+            <span class="hero-satellite-tag-dot"></span>
+            Live &middot; neighborhood scores
+          </div>
+
+          <!-- Score pins, positioned over visible rooftops in the satellite image -->
+          <div class="score-pin grade-a pulsing" style="top: 8%; left: 32%;">
+            <div class="score-pin-num">758</div>
+            <div class="score-pin-grade">A</div>
+          </div>
+          <div class="score-pin grade-c" style="top: 12%; left: 70%;">
+            <div class="score-pin-num">612</div>
+            <div class="score-pin-grade">C</div>
+          </div>
+          <div class="score-pin grade-b" style="top: 24%; left: 18%;">
+            <div class="score-pin-num">684</div>
+            <div class="score-pin-grade">B</div>
+          </div>
+          <div class="score-pin grade-d" style="top: 32%; left: 50%;">
+            <div class="score-pin-num">489</div>
+            <div class="score-pin-grade">D</div>
+          </div>
+          <div class="score-pin grade-b" style="top: 42%; left: 78%;">
+            <div class="score-pin-num">712</div>
+            <div class="score-pin-grade">B+</div>
+          </div>
+          <div class="score-pin grade-c" style="top: 52%; left: 30%;">
+            <div class="score-pin-num">558</div>
+            <div class="score-pin-grade">C-</div>
+          </div>
+          <div class="score-pin grade-a" style="top: 70%; left: 60%;">
+            <div class="score-pin-num">741</div>
+            <div class="score-pin-grade">A-</div>
+          </div>
+
+          <div class="hero-satellite-caption">
+            <div class="hero-satellite-caption-eyebrow">Every house &middot; Every score</div>
+            <div class="hero-satellite-caption-text">
+              Each home in this neighborhood has its own efficiency score &mdash; from <em>489</em> to <em>758</em>. Yours is in there too.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-strip-inner">
+      <div class="trust-label">As featured in</div>
+      <div class="trust-items">
+        <div class="trust-item">Boston Globe</div>
+        <div class="trust-item">NECN</div>
+        <div class="trust-item">MassLive</div>
+        <div class="trust-item">Portland Press Herald</div>
+        <div class="trust-item">A+ BBB Accredited</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── PHASE B · TILE 1 — "The Score" animated dial story panel ─── -->
+<section class="t1-score" id="t1-score" data-tile="1">
+  <div class="container">
+    <div class="t1-score-grid">
+      <div class="t1-score-copy">
+        <div class="t1-eyebrow">The Home Efficiency Score</div>
+        <h2 class="t1-headline">One number. <em>Everything that actually matters.</em></h2>
+        <p class="t1-lede">Your Score pulls together <em>your house, your utility, and the moment you're in</em> &mdash; and turns all of it into a single number that ranks every upgrade you could make. <em>Higher Score, lower bills, fewer surprises.</em></p>
+        <ol class="t1-inputs">
+          <li class="t1-input-row">
+            <span class="t1-input-dot"></span>
+            <div class="t1-input-body">
+              <div class="t1-input-title">Your home, read deeply.</div>
+              <div class="t1-input-desc">How it's built, how tight it runs, what it's burning today.</div>
+            </div>
+          </li>
+          <li class="t1-input-row">
+            <span class="t1-input-dot"></span>
+            <div class="t1-input-body">
+              <div class="t1-input-title">Your utility, read honestly.</div>
+              <div class="t1-input-desc">Your rate today, the trajectory it's on, the fine print most homeowners never see.</div>
+            </div>
+          </li>
+          <li class="t1-input-row">
+            <span class="t1-input-dot"></span>
+            <div class="t1-input-body">
+              <div class="t1-input-title">Your roof and your sun.</div>
+              <div class="t1-input-desc">What's on top, what hits it, what the sun can earn for you.</div>
+            </div>
+          </li>
+          <li class="t1-input-row">
+            <span class="t1-input-dot"></span>
+            <div class="t1-input-body">
+              <div class="t1-input-title">The live rebate stack.</div>
+              <div class="t1-input-desc">Every program funding right now &mdash; not last year's brochure.</div>
+            </div>
+          </li>
+          <li class="t1-input-row">
+            <span class="t1-input-dot"></span>
+            <div class="t1-input-body">
+              <div class="t1-input-title">The moment you're in.</div>
+              <div class="t1-input-desc">Rate-hike windows, credit cliffs, the things expiring while you wait.</div>
+            </div>
+          </li>
+        </ol>
+        <p class="t1-foot">And several more inputs we don't put on a brochure. <em>The math is the moat.</em></p>
+      </div>
+
+      <div class="t1-score-visual">
+        <svg class="t1-dial-svg" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Home Efficiency Score gauge showing a sample 758 / A score">
+          <defs>
+            <linearGradient id="t1DialGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"  stop-color="#1A4F90"/>
+              <stop offset="55%" stop-color="#2E9A3D"/>
+              <stop offset="100%" stop-color="#3AB44A"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Background arc (full 270°) -->
+          <path class="t1-dial-arc-bg"
+                d="M 113.0,367.0 A 180 180 0 1 1 367.0 367.0"/>
+
+          <!-- Foreground arc (animates from 0 → ~89.5%) -->
+          <path class="t1-dial-arc-fg"
+                d="M 113.0,367.0 A 180 180 0 1 1 367.0 367.0"
+                stroke="url(#t1DialGrad)"/>
+
+          <!-- Abstract scale markers (no specific range exposed) -->
+          <text class="t1-dial-tick" x="113" y="395" text-anchor="middle">LOWER</text>
+          <text class="t1-dial-tick" x="367" y="395" text-anchor="middle">HIGHER</text>
+
+          <!-- Center label group -->
+          <text class="t1-dial-score-label" x="240" y="178">SAMPLE SCORE</text>
+          <text class="t1-dial-score-num"   x="240" y="270" data-counter="758">758</text>
+          <text class="t1-dial-score-grade" x="240" y="320">A</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- V6: STATS BAND — moved out of hero, expanded to 5 metrics, geography-agnostic -->
+<section class="stats-band">
+  <div class="container">
+    <div class="section-eyebrow green">By the numbers</div>
+    <h2 class="section-title">The score, in <em>real</em> numbers.</h2>
+    <p class="section-lede">What we've shipped, captured, and built across the network so far &mdash; updated quarterly.</p>
+    <div class="stats-band-grid stats-band-grid-five">
+      <div class="stats-band-item">
+        <div class="stats-band-num"><span class="counter-value" data-target="10000">0</span><span class="suffix">+</span></div>
+        <div class="stats-band-label">Homes<br>scored</div>
+      </div>
+      <div class="stats-band-item">
+        <div class="stats-band-num"><span class="counter-value" data-target="4000">0</span><span class="suffix">+</span></div>
+        <div class="stats-band-label">Homes<br>upgraded</div>
+      </div>
+      <div class="stats-band-item">
+        <div class="stats-band-num"><span class="prefix">$</span><span class="counter-value" data-target="30" data-unit="M">0</span><span class="suffix">+</span></div>
+        <div class="stats-band-label">Incentives<br>captured</div>
+      </div>
+      <div class="stats-band-item">
+        <div class="stats-band-num"><span class="counter-value" data-target="11">0</span><span class="suffix">states</span></div>
+        <div class="stats-band-label">Actively<br>serviced</div>
+      </div>
+      <div class="stats-band-item">
+        <div class="stats-band-num"><span class="counter-value" data-target="40">0</span><span class="suffix">+</span></div>
+        <div class="stats-band-label">Vetted installer<br>partners</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- V6: WHY A SCORE? — three-contractors framing -->
+<section class="why-score">
+  <div class="container">
+    <div class="why-score-header">
+      <div class="section-eyebrow">Why a score</div>
+      <h2 class="section-title">Three contractors. Three <em>slices</em> of your home.</h2>
+      <p class="section-lede">When a homeowner calls a contractor, they get that contractor's view of the house. It's honest — and it's partial. The Home Efficiency Score is the one look at the whole home, before anyone is selling you anything.</p>
+    </div>
+
+    <div class="why-score-grid">
+      <div class="why-score-card">
+        <div class="why-score-portrait" style="margin-bottom: 18px;">
+            <img src="images/homepage-contractor-hva100x100.jpeg" alt="HVAC technician saying you need a new furnace" width="120" height="80" style="width: 120px; height: 80px; object-fit: contain; display: block;">
+          </div>
+          <div class="why-score-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2C8 6 8 10 12 14C16 10 16 6 12 2Z" fill="currentColor" fill-opacity="0.15"/>
+            <path d="M6 14C6 18 9 22 12 22C15 22 18 18 18 14" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="why-score-quote">"You need a new <em>furnace</em>."</div>
+        <div class="why-score-narrator">The HVAC technician knows HVAC. That's exactly what makes them good at their trade.</div>
+        <div class="why-score-scope">
+          <span>Their scope</span>
+          <span class="why-score-scope-val">Heating &amp; cooling</span>
+        </div>
+      </div>
+
+      <div class="why-score-card">
+        <div class="why-score-portrait" style="margin-bottom: 18px;">
+            <img src="images/homepage-contractor-windows.png" alt="Window installer saying you need new windows" width="120" height="80" style="width: 120px; height: 80px; object-fit: contain; display: block;">
+          </div>
+          <div class="why-score-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="4" y="4" width="16" height="16" rx="1"/>
+            <line x1="12" y1="4" x2="12" y2="20"/>
+            <line x1="4" y1="12" x2="20" y2="12"/>
+          </svg>
+        </div>
+        <div class="why-score-quote">"You need new <em>windows</em>."</div>
+        <div class="why-score-narrator">The window company knows windows. They can tell you everything about U-factor and nothing about your attic.</div>
+        <div class="why-score-scope">
+          <span>Their scope</span>
+          <span class="why-score-scope-val">Windows &amp; doors</span>
+        </div>
+      </div>
+
+      <div class="why-score-card">
+        <div class="why-score-portrait" style="margin-bottom: 18px;">
+            <img src="images/homepage-contractor-solar.png" alt="Solar installer saying you need solar" width="120" height="80" style="width: 120px; height: 80px; object-fit: contain; display: block;">
+          </div>
+          <div class="why-score-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2 12h2M20 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="why-score-quote">"You need <em>solar</em>."</div>
+        <div class="why-score-narrator">The solar installer knows PV. Whether solar is the <em>right</em> next upgrade for your home is a different question.</div>
+        <div class="why-score-scope">
+          <span>Their scope</span>
+          <span class="why-score-scope-val">Rooftop generation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-score-close">
+      <span>Each contractor sees their slice. <em>The Home Efficiency Score sees the whole home.</em></span>
+      <a href="how-our-score-guides-you.html" class="why-score-close-link">
+        How our Score will guide you
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5h7M6 1l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM-FIRST ENTRY (new primary nav in v5) -->
+<section id="problems">
+  <div class="container">
+    <div class="section-eyebrow">Where to start</div>
+    <h2 class="section-title">What's going on at <em>home</em>?</h2>
+    <p class="section-lede">Pick whichever sounds most like you. We'll map it to the upgrades that actually help — and the rebates that bring the cost down.</p>
+    <div class="problems-grid">
+      <a href="problems/heating-bill.html" class="problem-btn">
+        <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v8M12 10l-4 4M12 10l4 4M5 18h14M5 22h14" stroke-linecap="round"/></svg></div>
+        <div class="problem-quote">My <em>heating bill</em> is insane.</div>
+        <div class="problem-hint">
+          <span>Heat pump · Insulation · Weatherization</span>
+          <svg class="problem-hint-arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+      </a>
+      <a href="problems/drafty.html" class="problem-btn">
+        <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h13a4 4 0 1 0-4-4M3 13h17a4 4 0 1 1-4 4M3 18h9" stroke-linecap="round"/></svg></div>
+        <div class="problem-quote">My rooms are <em>cold and drafty</em>.</div>
+        <div class="problem-hint">
+          <span>Insulation · Air sealing · Windows</span>
+          <svg class="problem-hint-arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+      </a>
+      <a href="problems/solar.html" class="problem-btn">
+        <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2 12h2M20 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke-linecap="round"/></svg></div>
+        <div class="problem-quote">I want <em>solar</em>, but don't know where to start.</div>
+        <div class="problem-hint">
+          <span>Solar · Battery · Net metering</span>
+          <svg class="problem-hint-arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+      </a>
+      <a href="problems/selling.html" class="problem-btn">
+        <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <div class="problem-quote">I'm <em>planning to sell</em> soon.</div>
+        <div class="problem-hint">
+          <span>HES report · Value-add upgrades</span>
+          <svg class="problem-hint-arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+      </a>
+      <a href="problems/new-home.html" class="problem-btn">
+        <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg></div>
+        <div class="problem-quote">I <em>just bought</em> this place.</div>
+        <div class="problem-hint">
+          <span>Baseline score · Prioritized plan</span>
+          <svg class="problem-hint-arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+      </a>
+      <a href="problems/ac-dying.html" class="problem-btn">
+        <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 17h20M4 13l2-4h12l2 4M6 17v4M18 17v4M9 13V5M15 13V5" stroke-linecap="round"/></svg></div>
+        <div class="problem-quote">My <em>AC is dying</em>.</div>
+        <div class="problem-hint">
+          <span>Heat pump (heats & cools)</span>
+          <svg class="problem-hint-arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+      </a>
+    </div>
+
+    <!-- Demoted solutions-first access (chips) -->
+    <div class="solutions-secondary">
+      <div class="solutions-secondary-label">Or browse by upgrade type</div>
+      <div class="solutions-chip-grid">
+        <a href="categories/solar.html" class="solution-chip">
+          <span class="solution-chip-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2 12h2M20 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke-linecap="round"/></svg></span>
+          Solar
+        </a>
+        <a href="categories/heating-cooling.html" class="solution-chip">
+          <span class="solution-chip-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 6 8 10 12 14C16 10 16 6 12 2Z"/><path d="M6 14C6 18 9 22 12 22C15 22 18 18 18 14"/></svg></span>
+          Heating &amp; Cooling
+        </a>
+        <a href="categories/insulation.html" class="solution-chip">
+          <span class="solution-chip-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>
+          Insulation
+        </a>
+        <a href="categories/windows-doors.html" class="solution-chip">
+          <span class="solution-chip-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="1"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="4" y1="12" x2="20" y2="12"/></svg></span>
+          Windows &amp; Doors
+        </a>
+        <a href="categories/energy-storage.html" class="solution-chip">
+          <span class="solution-chip-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="8" width="16" height="8" rx="2"/><line x1="21" y1="11" x2="21" y2="13" stroke-linecap="round"/><path d="M10 10v4M13 10v4" stroke-linecap="round"/></svg></span>
+          Energy Storage
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="how-section">
+  <div class="container">
+    <div class="section-eyebrow">The Method</div>
+    <h2 class="section-title">Three steps. <em>No pitch. No pressure.</em></h2>
+    <p class="section-lede">We give you the data. If you decide to move forward, we introduce you to one vetted local partner — never five, never a call center, never a number you'll get for months.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-step-icon" style="margin-bottom: 18px;">
+            <div class="img-placeholder aspect-square" data-slot="homepage-step-1-score" style="border-radius: 16px; max-width: 64px; height: 64px;">
+              <div class="img-placeholder-inner" style="padding: 4px;">
+                <div class="label" style="font-size: 7px; letter-spacing: 0.04em;">homepage-step-1-score</div>
+              </div>
+            </div>
+          </div>
+          <div class="how-num">i.</div>
+        <div class="how-title">We <em>score</em> your home</div>
+        <p class="how-desc">A short questionnaire combined with public records — permits, assessor data, climate zone, utility rates — generates your 400–800 score, grade, and a prioritized upgrade list.</p>
+        <div class="how-meta">← About sixty seconds</div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-icon" style="margin-bottom: 18px;">
+            <div class="img-placeholder aspect-square" data-slot="homepage-step-2-stack" style="border-radius: 16px; max-width: 64px; height: 64px;">
+              <div class="img-placeholder-inner" style="padding: 4px;">
+                <div class="label" style="font-size: 7px; letter-spacing: 0.04em;">homepage-step-2-stack</div>
+              </div>
+            </div>
+          </div>
+          <div class="how-num">ii.</div>
+        <div class="how-title">We <em>stack</em> your rebates</div>
+        <p class="how-desc">Your report cross-references every program you qualify for — MassSave, Clean Heat RI, Efficiency Maine, NHSaves, Efficiency Vermont, Energize CT — with April 2026 data. Average homeowner qualifies for $14K+ they've never claimed.</p>
+        <div class="how-meta">← Delivered as a PDF</div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-icon" style="margin-bottom: 18px;">
+            <div class="img-placeholder aspect-square" data-slot="homepage-step-3-decide" style="border-radius: 16px; max-width: 64px; height: 64px;">
+              <div class="img-placeholder-inner" style="padding: 4px;">
+                <div class="label" style="font-size: 7px; letter-spacing: 0.04em;">homepage-step-3-decide</div>
+              </div>
+            </div>
+          </div>
+          <div class="how-num">iii.</div>
+        <div class="how-title">You <em>decide</em> what's next</div>
+        <p class="how-desc">If you want to move forward, we introduce you to one pre-qualified installer with 5+ years' experience, A+ BBB, verified insurance. If you just want the data — that's fine too.</p>
+        <div class="how-meta">← One installer. Never five.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- V6: SAMPLE REPORT PREVIEW -->
+<section class="sample-preview">
+  <div class="container">
+    <div class="sample-preview-grid">
+      <div class="sample-preview-copy">
+        <div class="section-eyebrow">The deliverable</div>
+        <h2 class="section-title">This is what <em>yours</em> will look like.</h2>
+        <p class="section-lede">
+          A four-section report — your overall grade, the reasoning, a prioritized upgrade plan, and our commitment. Delivered as a PDF. Yours forever. This one's from a real Worcester, MA homeowner, with name and address blurred for privacy.
+        </p>
+        <div class="sample-preview-caption">
+          Sample report from a Worcester, MA homeowner. Personal details blurred for privacy.
+        </div>
+        <a href="sample-report.html" class="sample-preview-link">
+          See a full sample report
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+
+      <div>
+        <div class="sample-preview-visual">
+          <div class="sample-preview-float">Page 1 of 4</div>
+
+          <div class="sp-page-head">
+            <img src="logo.png" alt="ProFusion">
+            <div class="sp-page-head-meta">
+              <div>Published</div>
+              <strong>March 12, 2026</strong>
+              <div style="margin-top: 6px;">Report for</div>
+              <strong class="sp-blur">Karen W Havener</strong>
+            </div>
+          </div>
+
+          <div class="sp-title">Your Custom Home Energy Report</div>
+
+          <div class="sp-grade-row">
+            <div class="sp-grade-wrap">
+              <div class="sp-grade-title">Your Overall Grade</div>
+              <div class="sp-grade-gauge">
+                <svg viewBox="0 0 220 130">
+                  <path d="M 20 120 A 90 90 0 0 1 65 42" fill="none" stroke="#EF4444" stroke-width="18" stroke-linecap="round"/>
+                  <path d="M 65 42 A 90 90 0 0 1 110 30" fill="none" stroke="#FB923C" stroke-width="18" stroke-linecap="round"/>
+                  <path d="M 110 30 A 90 90 0 0 1 155 42" fill="none" stroke="#FACC15" stroke-width="18" stroke-linecap="round"/>
+                  <path d="M 155 42 A 90 90 0 0 1 200 120" fill="none" stroke="#3AB44A" stroke-width="18" stroke-linecap="round"/>
+                  <circle cx="110" cy="95" r="34" fill="#3AB44A"/>
+                </svg>
+                <div class="sp-grade-letter">B</div>
+              </div>
+            </div>
+            <div class="sp-cost-card">
+              <div class="sp-cost-title">Annual energy costs</div>
+              <div class="sp-cost-big sp-blur">$4,500</div>
+              <div class="sp-cost-unit">per year</div>
+            </div>
+          </div>
+
+          <div class="sp-long-tiles">
+            <div class="sp-long-tile today">
+              <div class="sp-long-tile-label">Today</div>
+              <div class="sp-long-tile-val sp-blur">$4.5K</div>
+            </div>
+            <div class="sp-long-tile mid">
+              <div class="sp-long-tile-label">Year 25</div>
+              <div class="sp-long-tile-val">$15K+</div>
+            </div>
+            <div class="sp-long-tile full">
+              <div class="sp-long-tile-label">25-Yr Total</div>
+              <div class="sp-long-tile-val">$220K+</div>
+            </div>
+          </div>
+
+          <div class="sp-growth-rows">
+            <div class="sp-growth-row"><div class="sp-growth-year">Yr 1</div><div class="sp-growth-bar"><div class="sp-growth-bar-fill" style="width: 30%;"></div></div><div class="sp-growth-val">$4.5K</div></div>
+            <div class="sp-growth-row"><div class="sp-growth-year">Yr 6</div><div class="sp-growth-bar"><div class="sp-growth-bar-fill" style="width: 39%;"></div></div><div class="sp-growth-val">$5.8K</div></div>
+            <div class="sp-growth-row"><div class="sp-growth-year">Yr 11</div><div class="sp-growth-bar"><div class="sp-growth-bar-fill" style="width: 50%;"></div></div><div class="sp-growth-val">$7.5K</div></div>
+            <div class="sp-growth-row"><div class="sp-growth-year">Yr 16</div><div class="sp-growth-bar"><div class="sp-growth-bar-fill" style="width: 64%;"></div></div><div class="sp-growth-val">$9.6K</div></div>
+            <div class="sp-growth-row"><div class="sp-growth-year">Yr 21</div><div class="sp-growth-bar"><div class="sp-growth-bar-fill" style="width: 83%;"></div></div><div class="sp-growth-val">$12.4K</div></div>
+            <div class="sp-growth-row"><div class="sp-growth-year">Yr 25</div><div class="sp-growth-bar"><div class="sp-growth-bar-fill" style="width: 100%;"></div></div><div class="sp-growth-val">$15.2K</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- V6: YOU DON'T INTERVIEW INSTALLERS — vetting funnel tease -->
+<section class="installers-tease">
+  <div class="container">
+    <div class="section-eyebrow green">The match</div>
+    <h2 class="section-title" style="max-width: 820px;">You don't interview installers. <em>We already did.</em></h2>
+    <p class="section-lede" style="max-width: 680px;">
+      Licensed. Insured. Five-plus years in business. Manufacturer-certified. Rebate-program approved. Warranty-backed. Every installer on our matching list had to clear all six gates &mdash; and out of every <em style="font-family: var(--serif); font-style: italic; color: var(--green-400);">100 who apply</em>, fewer than <em style="font-family: var(--serif); font-style: italic; color: var(--green-400);">1&nbsp;in&nbsp;4</em> make it through.
+    </p>
+
+    <div class="installers-funnel">
+      <div>
+        <div class="installers-stat-num">100</div>
+        <div class="installers-stat-label">Installers<br>who apply</div>
+      </div>
+      <div class="installers-funnel-arrow">
+        <svg width="44" height="14" viewBox="0 0 44 14" fill="none" aria-hidden="true">
+          <path d="M2 7h38M34 2l6 5-6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="installers-stat-num"><em>&lt;1 in 4</em></div>
+        <div class="installers-stat-label">Make it to<br>your list</div>
+      </div>
+    </div>
+
+    <div class="installers-tease-footer">
+      <a href="our-installers.html" class="installers-tease-link">
+        See the full vetting process
+        <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section">
+  <div class="container">
+    <div class="testimonial-grid">
+      <div class="testimonial-image-wrap">
+        <div class="img-placeholder aspect-portrait" data-slot="testimonial-1">
+  <div class="img-placeholder-inner">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="7" r="3"/><path d="M2 22v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/><circle cx="17" cy="9" r="2.5"/><path d="M22 21v-1a4 4 0 0 0-4-4"/></svg>
+    <div class="label">Image slot · testimonial-1</div>
+    <div class="desc">Portrait of homeowner — Elizabeth E. standing in front of their renovated home in Worcester, MA. Warm, natural lighting. Candid smile, approachable — not stock-posed.</div>
+    <div class="dim">Ideal: 800×1000px · 4:5 portrait · JPG</div>
+  </div>
+</div>
+      </div>
+      <div>
+        <div class="section-eyebrow green">Homeowner Story</div>
+        <div class="testimonial-quote">
+          They walked me through incentives I didn't even know <em>existed</em>. My heat pump cost less than half what I'd budgeted — and my January oil bill went from <em>$680 to zero</em>.
+        </div>
+        <div class="testimonial-attr">
+          <div class="testimonial-avatar">
+            <div class="img-placeholder aspect-square" data-slot="testimonial-avatar-1">
+  <div class="img-placeholder-inner">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="7" r="3"/><path d="M2 22v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/><circle cx="17" cy="9" r="2.5"/><path d="M22 21v-1a4 4 0 0 0-4-4"/></svg>
+    <div class="label">Image slot · testimonial-avatar-1</div>
+    <div class="desc">Small headshot of Elizabeth E.</div>
+    <div class="dim">Ideal: 120×120px · 1:1 square · JPG</div>
+  </div>
+</div>
+          </div>
+          <div class="testimonial-attr-text">
+            <strong>Elizabeth E.</strong>
+            <span>Worcester, MA · Homeowner since 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- V6: TWO GUARANTEES -->
+<section class="guarantees-section">
+  <div class="container">
+    <div class="guarantees-header">
+      <div class="section-eyebrow green">What we put in writing</div>
+      <h2 class="section-title">Two <em>guarantees</em>. No fine print.</h2>
+      <p class="section-lede">Most matching services stop caring the moment they hand off your information. These two commitments go with every installer introduction we make.</p>
+    </div>
+
+    <div class="guarantees-grid">
+      <div class="guarantee-block">
+        <div class="guarantee-block-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2L3 7v6c0 5 3.5 9 9 11 5.5-2 9-6 9-11V7l-9-5z" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="guarantee-block-label">Guarantee 01</div>
+        <h3 class="guarantee-block-title">We <em>stand with you</em>.</h3>
+        <p class="guarantee-block-body">If something's off, you call us. <em>We</em> call them. You never chase your installer alone. Every dispute, every delay, every detail you're not happy with — we step in on your side until it's resolved.</p>
+      </div>
+
+      <div class="guarantee-block">
+        <div class="guarantee-block-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="12" r="6"/>
+            <circle cx="12" cy="12" r="2"/>
+          </svg>
+        </div>
+        <div class="guarantee-block-label">Guarantee 02</div>
+        <h3 class="guarantee-block-title">We don't <em>guess</em> who we send.</h3>
+        <p class="guarantee-block-body">The best installer for your home — <em>not</em> the nearest one. Every installer in our network earns their spot and keeps it. We score them after every job and re-weigh the match against your home, your upgrade, and your zip code.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Pre-CTA imagery strip -->
+<section style="padding: 0 0 40px; background: var(--gray-50);">
+  <div class="container">
+    <div class="cta-backdrop">
+      <img src="images/homepage-image2.png" alt="A row of historic New England homes on a quiet street at golden hour" loading="lazy">
+      <div class="cta-backdrop-vignette"></div>
+    </div>
+  </div>
+</section>
+<style>
+.cta-backdrop {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.cta-backdrop img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.cta-backdrop-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 35%, rgba(10,16,32,0.18) 100%),
+    radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(10,16,32,0.20) 100%);
+}
+@media (max-width: 768px) {
+  .cta-backdrop { border-radius: 20px; }
+}
+</style>
+<!-- V6: SERVICE AREA — interactive US tile map -->
+<section class="service-area" id="service-area">
+  <div class="container">
+    <div class="service-area-header">
+      <div class="section-eyebrow green">Service area</div>
+      <h2 class="section-title">Live in <em>11 states</em>. Coming to <em>all 50</em>.</h2>
+      <p class="section-lede">We score, stack, and match in every state shown in blue. The rest are coming &mdash; if you're in a "soon" state, you can still drop in your address and we'll loop you in the moment we go live.</p>
+    </div>
+
+    <div class="usmap-frame">
+      <div class="usmap-status">
+        <div class="usmap-status-label">Coverage map &middot; April 2026</div>
+        <div class="usmap-status-meta">
+          <span class="live">11 live</span> &middot; <span class="soon">39 coming soon</span>
+        </div>
+      </div>
+
+      <div class="usmap" role="img" aria-label="US map showing ProFusion service area: 11 active states in blue, remaining states in grey indicating coming soon">
+        <!-- Row 1 -->
+        <a href="states/maine.html" class="us-state active" data-name="Maine — Active" style="grid-column: 13; grid-row: 1;">ME</a>
+        <!-- Row 2 -->
+        <a href="states/vermont.html" class="us-state active" data-name="Vermont — Active" style="grid-column: 11; grid-row: 2;">VT</a>
+        <a href="states/new-hampshire.html" class="us-state active" data-name="New Hampshire — Active" style="grid-column: 12; grid-row: 2;">NH</a>
+        <!-- Row 3 -->
+        <div class="us-state" data-name="Washington — Coming soon" style="grid-column: 2; grid-row: 3;">WA</div>
+        <div class="us-state" data-name="Minnesota — Coming soon" style="grid-column: 6; grid-row: 3;">MN</div>
+        <a href="states/michigan.html" class="us-state active" data-pending="true" data-name="Michigan — Active (page launching soon)" style="grid-column: 9; grid-row: 3;">MI</a>
+        <a href="states/new-york.html" class="us-state active" data-pending="true" data-name="New York — Active (page launching soon)" style="grid-column: 11; grid-row: 3;">NY</a>
+        <a href="states/massachusetts.html" class="us-state active" data-name="Massachusetts — Active" style="grid-column: 13; grid-row: 3;">MA</a>
+        <!-- Row 4 -->
+        <div class="us-state" data-name="Oregon — Coming soon" style="grid-column: 2; grid-row: 4;">OR</div>
+        <div class="us-state" data-name="Idaho — Coming soon" style="grid-column: 3; grid-row: 4;">ID</div>
+        <div class="us-state" data-name="Montana — Coming soon" style="grid-column: 4; grid-row: 4;">MT</div>
+        <div class="us-state" data-name="North Dakota — Coming soon" style="grid-column: 5; grid-row: 4;">ND</div>
+        <div class="us-state" data-name="Wisconsin — Coming soon" style="grid-column: 6; grid-row: 4;">WI</div>
+        <div class="us-state" data-name="Pennsylvania — Coming soon" style="grid-column: 11; grid-row: 4;">PA</div>
+        <a href="states/connecticut.html" class="us-state active" data-name="Connecticut — Active" style="grid-column: 12; grid-row: 4;">CT</a>
+        <a href="states/rhode-island.html" class="us-state active" data-name="Rhode Island — Active" style="grid-column: 13; grid-row: 4;">RI</a>
+        <!-- Row 5 -->
+        <div class="us-state" data-name="Alaska — Coming soon" style="grid-column: 1; grid-row: 5;">AK</div>
+        <div class="us-state" data-name="California — Coming soon" style="grid-column: 2; grid-row: 5;">CA</div>
+        <div class="us-state" data-name="Nevada — Coming soon" style="grid-column: 3; grid-row: 5;">NV</div>
+        <div class="us-state" data-name="Utah — Coming soon" style="grid-column: 4; grid-row: 5;">UT</div>
+        <div class="us-state" data-name="Wyoming — Coming soon" style="grid-column: 5; grid-row: 5;">WY</div>
+        <div class="us-state" data-name="South Dakota — Coming soon" style="grid-column: 6; grid-row: 5;">SD</div>
+        <div class="us-state" data-name="Iowa — Coming soon" style="grid-column: 7; grid-row: 5;">IA</div>
+        <div class="us-state" data-name="Illinois — Coming soon" style="grid-column: 8; grid-row: 5;">IL</div>
+        <div class="us-state" data-name="Indiana — Coming soon" style="grid-column: 9; grid-row: 5;">IN</div>
+        <div class="us-state" data-name="Ohio — Coming soon" style="grid-column: 10; grid-row: 5;">OH</div>
+        <a href="states/new-jersey.html" class="us-state active" data-pending="true" data-name="New Jersey — Active (page launching soon)" style="grid-column: 11; grid-row: 5;">NJ</a>
+        <!-- Row 6 -->
+        <div class="us-state" data-name="Arizona — Coming soon" style="grid-column: 4; grid-row: 6;">AZ</div>
+        <div class="us-state" data-name="Colorado — Coming soon" style="grid-column: 5; grid-row: 6;">CO</div>
+        <div class="us-state" data-name="Nebraska — Coming soon" style="grid-column: 6; grid-row: 6;">NE</div>
+        <div class="us-state" data-name="Missouri — Coming soon" style="grid-column: 7; grid-row: 6;">MO</div>
+        <div class="us-state" data-name="Kentucky — Coming soon" style="grid-column: 8; grid-row: 6;">KY</div>
+        <div class="us-state" data-name="West Virginia — Coming soon" style="grid-column: 9; grid-row: 6;">WV</div>
+        <div class="us-state" data-name="Virginia — Coming soon" style="grid-column: 10; grid-row: 6;">VA</div>
+        <a href="states/maryland.html" class="us-state active" data-pending="true" data-name="Maryland — Active (page launching soon)" style="grid-column: 11; grid-row: 6;">MD</a>
+        <div class="us-state" data-name="Delaware — Coming soon" style="grid-column: 12; grid-row: 6;">DE</div>
+        <!-- Row 7 -->
+        <div class="us-state" data-name="Hawaii — Coming soon" style="grid-column: 1; grid-row: 7;">HI</div>
+        <div class="us-state" data-name="New Mexico — Coming soon" style="grid-column: 5; grid-row: 7;">NM</div>
+        <div class="us-state" data-name="Kansas — Coming soon" style="grid-column: 6; grid-row: 7;">KS</div>
+        <div class="us-state" data-name="Arkansas — Coming soon" style="grid-column: 7; grid-row: 7;">AR</div>
+        <div class="us-state" data-name="Tennessee — Coming soon" style="grid-column: 8; grid-row: 7;">TN</div>
+        <div class="us-state" data-name="North Carolina — Coming soon" style="grid-column: 9; grid-row: 7;">NC</div>
+        <div class="us-state" data-name="South Carolina — Coming soon" style="grid-column: 10; grid-row: 7;">SC</div>
+        <div class="us-state" data-name="DC — Coming soon" style="grid-column: 12; grid-row: 7;">DC</div>
+        <!-- Row 8 -->
+        <div class="us-state" data-name="Oklahoma — Coming soon" style="grid-column: 6; grid-row: 8;">OK</div>
+        <div class="us-state" data-name="Louisiana — Coming soon" style="grid-column: 7; grid-row: 8;">LA</div>
+        <div class="us-state" data-name="Mississippi — Coming soon" style="grid-column: 8; grid-row: 8;">MS</div>
+        <div class="us-state" data-name="Alabama — Coming soon" style="grid-column: 9; grid-row: 8;">AL</div>
+        <div class="us-state" data-name="Georgia — Coming soon" style="grid-column: 10; grid-row: 8;">GA</div>
+        <!-- Row 9 -->
+        <div class="us-state" data-name="Texas — Coming soon" style="grid-column: 6; grid-row: 9;">TX</div>
+        <a href="states/florida.html" class="us-state active" data-pending="true" data-name="Florida — Active (page launching soon)" style="grid-column: 10; grid-row: 9;">FL</a>
+      </div>
+
+      <div class="usmap-legend">
+        <div class="usmap-legend-item">
+          <span class="usmap-legend-dot active"></span>
+          Active &mdash; click to see your stack
+        </div>
+        <div class="usmap-legend-item">
+          <span class="usmap-legend-dot expanding"></span>
+          Active &mdash; <span class="usmap-legend-meta">page launching soon</span>
+        </div>
+        <div class="usmap-legend-item">
+          <span class="usmap-legend-dot soon"></span>
+          Coming soon
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="cta">
+  <div class="container-narrow final-cta-content">
+    <div class="section-eyebrow green">Ready when you are</div>
+    <h2 class="section-title">Get your <em>Home Efficiency Score</em>.<br>It's free. It's yours.</h2>
+    <p class="section-lede" style="margin: 0 auto 40px; text-align: center;">
+      Sixty seconds. No obligation. The report is yours forever, whether you move forward with upgrades or not.
+    </p>
+    <a href="#" class="btn btn-primary" style="font-size: 17px; padding: 20px 36px;">
+      Generate my Score
+      <svg width="18" height="14" viewBox="0 0 16 14" fill="none">
+        <path d="M1 7h13M9 1l5 6-5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- (Footer states strip removed on homepage — service-area map serves the same purpose) -->
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img src="logo.png" alt="ProFusion Home Solutions">
+        <p style="font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--green-400); margin-bottom: 14px;">Built for the <em style="font-family: var(--serif); font-style: italic;">house</em>. Felt in the <em style="font-family: var(--serif); font-style: italic;">home</em>.</p>
+        <p>The Home Efficiency Score, mapped to your zip &mdash; <em>every state, every rebate</em>. Now serving 11 states. <em>Going nationwide</em>.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="categories/solar.html">Solar</a></li>
+          <li><a href="categories/heating-cooling.html">Heating &amp; Cooling</a></li>
+          <li><a href="categories/insulation.html">Insulation</a></li>
+          <li><a href="categories/windows-doors.html">Windows &amp; Doors</a></li>
+          <li><a href="categories/energy-storage.html">Energy Storage</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>States</h4>
+        <ul>
+          <li><a href="states/connecticut.html">Connecticut</a></li>
+          <li><a href="states/florida.html">Florida</a></li>
+          <li><a href="states/maine.html">Maine</a></li>
+          <li><a href="states/maryland.html">Maryland</a></li>
+          <li><a href="states/massachusetts.html">Massachusetts</a></li>
+          <li><a href="states/michigan.html">Michigan</a></li>
+          <li><a href="states/new-hampshire.html">New Hampshire</a></li>
+          <li><a href="states/new-jersey.html">New Jersey</a></li>
+          <li><a href="states/new-york.html">New York</a></li>
+          <li><a href="states/rhode-island.html">Rhode Island</a></li>
+          <li><a href="states/vermont.html">Vermont</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="2026-changes.html">What changed in 2026</a></li>
+          <li><a href="how-our-score-guides-you.html">How our Score will guide you</a></li>
+          <li><a href="our-installers.html">Who we match you with</a></li>
+          <li><a href="sample-report.html">Sample report</a></li>
+          <li><a href="#">Stories</a></li>
+          <li><a href="https://partners.profusion.solutions">For Installers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 ProFusion Home Solutions LLC · Data current April 2026</div>
+      <div>Now serving 11 states · A+ BBB · Fully Insured</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+}
+</script>
+<script>
+function animateValue(el) {
+  const target = parseFloat(el.dataset.target);
+  const unit = el.dataset.unit || '';
+  const duration = 2000;
+  const start = performance.now();
+  const hasComma = target >= 1000;
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const val = target * eased;
+    let display;
+    if (unit === 'M') display = val.toFixed(val < 10 ? 1 : 0);
+    else if (hasComma) display = Math.floor(val).toLocaleString();
+    else display = Math.floor(val);
+    el.textContent = display + unit;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateValue(e.target);
+      counterObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.counter-value').forEach(el => counterObserver.observe(el));
+</script>
+<script>
+/* ─── Phase B · Tile 1 — "The Score" scroll-triggered animation ─── */
+(function () {
+  const tile = document.getElementById('t1-score');
+  if (!tile) return;
+  const numEl = tile.querySelector('[data-counter]');
+  if (!numEl) return;
+
+  const target = parseInt(numEl.dataset.counter, 10);
+  const start = 400;
+  const duration = 1800; // ms — match the dial fill transition
+
+  function tickScore(now, t0) {
+    const p = Math.min((now - t0) / duration, 1);
+    // ease-out cubic, matches the dial's CSS bezier
+    const eased = 1 - Math.pow(1 - p, 3);
+    const val = Math.round(start + (target - start) * eased);
+    numEl.textContent = val;
+    if (p < 1) requestAnimationFrame((n) => tickScore(n, t0));
+  }
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      tile.classList.add('is-active');
+      requestAnimationFrame((now) => tickScore(now, now));
+      obs.unobserve(tile);
+    });
+  }, { threshold: 0.35 });
+  obs.observe(tile);
+})();
+</script>
+
+</body>
+</html>

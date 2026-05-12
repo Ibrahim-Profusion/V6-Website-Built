@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Energy Storage in Massachusetts · Backup, Bill Control, and Peak Shaving · ProFusion</title>
+<meta name="description" content="Massachusetts has the third-highest residential electric rates in the country and a 4-9 PM peak window that makes batteries earn their keep every single afternoon. Storage in MA is part backup, part bill management, and part dispatch revenue.">
+<link rel="icon" type="image/png" href="../images/Favicon.png">
+<link rel="apple-touch-icon" href="../images/Favicon.png">
+<link rel="canonical" href="https://profusion.solutions/programs/energy-storage-massachusetts.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ProFusion Home Solutions">
+<meta property="og:title" content="Energy Storage in Massachusetts · Backup, Bill Control, and Peak Shaving · ProFusion">
+<meta property="og:description" content="Massachusetts has the third-highest residential electric rates in the country and a 4-9 PM peak window that makes batteries earn their keep every single afternoon. Storage in MA is part backup, part bill management, and part dispatch revenue.">
+<meta property="og:url" content="https://profusion.solutions/programs/energy-storage-massachusetts.html">
+<meta property="og:image" content="https://profusion.solutions/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Energy Storage in Massachusetts · Backup, Bill Control, and Peak Shaving · ProFusion">
+<meta name="twitter:description" content="Massachusetts has the third-highest residential electric rates in the country and a 4-9 PM peak window that makes batteries earn their keep every single afternoon. Storage in MA is part backup, part bill management, and part dispatch revenue.">
+<meta name="twitter:image" content="https://profusion.solutions/images/social-card.png">
+<meta name="twitter:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="theme-color" content="#0A1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+@media (max-width: 1024px) {
+  .program-hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .two-col { grid-template-columns: 1fr; gap: 40px; }
+  .program-hero-stats { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* Massachusetts state accent, matches mass-smart-solar.html navy. */
+:root { --state-accent: #1A4F90; --state-tint: rgba(26, 79, 144, 0.08); }
+
+/* MA peak-window visualization, the daily price curve + battery dispatch overlay. */
+.ma-peak {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 20px;
+  padding: 36px 32px 28px;
+  margin-top: 48px;
+  box-shadow: var(--shadow-sm);
+}
+.ma-peak-head { max-width: 600px; margin-bottom: 24px; }
+.ma-peak-title {
+  font-family: var(--display); font-weight: 500; font-size: 22px;
+  line-height: 1.2; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 8px;
+}
+.ma-peak-title em { font-style: normal; color: var(--state-accent); font-weight: 600; }
+.ma-peak-prose { font-size: 14.5px; line-height: 1.6; color: var(--gray-700); }
+.ma-peak-svg { width: 100%; height: auto; display: block; }
+.ma-peak-svg .grid { stroke: var(--gray-100); stroke-width: 1; }
+.ma-peak-svg .axis { stroke: var(--gray-200); stroke-width: 1; }
+.ma-peak-svg .axis-label { fill: var(--gray-400); font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; }
+.ma-peak-svg .price-curve { fill: rgba(220, 38, 38, 0.12); stroke: #DC2626; stroke-width: 2.5; stroke-linejoin: round; }
+.ma-peak-svg .price-label { font-family: var(--mono); font-size: 11px; font-weight: 600; fill: #DC2626; letter-spacing: 0.04em; }
+.ma-peak-svg .battery-bar { fill: var(--green-500); fill-opacity: 0.18; stroke: var(--green-600); stroke-width: 2; stroke-dasharray: 6 4; }
+.ma-peak-svg .battery-label { font-family: var(--display); font-weight: 600; font-size: 13px; fill: var(--green-700); }
+.ma-peak-svg .hour-label { font-family: var(--mono); font-size: 10px; fill: var(--gray-500); letter-spacing: 0.04em; }
+.ma-peak-svg .peak-window-label { font-family: var(--serif); font-style: italic; font-size: 12px; fill: #DC2626; font-weight: 500; }
+.ma-peak-legend {
+  display: flex; gap: 24px; flex-wrap: wrap; padding-top: 18px; margin-top: 18px;
+  border-top: 1px dashed var(--gray-100);
+}
+.ma-peak-legend-item {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-600);
+}
+.ma-peak-legend-swatch { width: 12px; height: 12px; border-radius: 3px; }
+@media (max-width: 720px) {
+  .ma-peak { padding: 24px 18px 20px; }
+  .ma-peak-svg { min-height: 220px; }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="nav">
+  <a href="../index.html" class="brand"><img src="../logo.png" alt="ProFusion Home Solutions"></a>
+  <ul class="nav-links">
+<li class="has-dropdown">
+      <a href="#">About <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../about-us.html">About Us</a>
+        <a href="../our-customers.html">Our Customers</a>
+        <a href="../for-installers.html">For Installers</a>
+        <a href="../contact.html">Contact Us</a></div>
+    </li>
+    <li><a href="../index.html#map">Service Area</a></li>
+    <li class="has-dropdown">
+      <a href="#">Programs <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../categories/solar.html">Solar</a>
+        <a href="../categories/heating-cooling.html">Heating &amp; Cooling</a>
+        <a href="../categories/insulation.html">Insulation</a>
+        <a href="../categories/windows-doors.html">Windows &amp; Doors</a>
+        <a href="../categories/energy-storage.html">Energy Storage</a></div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Learn <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../index.html#idx2Score"><span class="simple-dropdown-eyebrow">On homepage</span>The Score</a>
+        <a href="../index.html#how"><span class="simple-dropdown-eyebrow">On homepage</span>How it works</a>
+        <div class="simple-dropdown-divider" aria-hidden="true"></div>
+        <a href="../how-our-score-guides-you.html">How our Score guides you</a>
+        <a href="../sample-report.html">See a sample report</a>
+        <a href="../our-installers.html">Who we match you with</a>
+        <a href="../2026-changes.html">What changed in 2026</a></div>
+    </li>
+    <li><a href="../get-my-score.html" class="nav-cta">Get my report</a></li>
+  </ul>
+</nav>
+
+<div class="container breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">/</span>
+  <a href="../categories/energy-storage.html">Energy Storage</a>
+  <span class="sep">/</span>
+  <a href="../states/massachusetts.html">Massachusetts</a>
+  <span class="sep">/</span>
+  <span class="current">Energy Storage Overview</span></div>
+
+<section class="program-hero">
+  <div class="container">
+    <div class="program-hero-inner">
+      <div>
+        <div class="program-hero-meta">
+          <a href="../states/massachusetts.html" class="state-tag">MA · Massachusetts</a>
+          <a href="../categories/energy-storage.html" class="category-tag">Energy Storage</a></div>
+        <h1 class="idx2-h1">Energy Storage in Massachusetts.</h1>
+        <p class="idx2-prose" style="margin-bottom: 36px;">Third-highest residential electric rates in the country. A 4-9 PM peak window that punishes evening usage. Coastal Nor'easters that knock out power without warning. A battery in MA isn't a backup gadget, it's three jobs in one box.</p>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: center; margin-bottom: 32px;">
+          <a href="../get-my-score.html" class="idx2-cta">Get my report
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <a href="#rate-hedge" class="idx2-link">See the rate-hedge math
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+              <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a></div>
+        <div class="program-hero-stats">
+          <div><div class="program-hero-stat-val">~$0.31<em>/kWh</em></div><div class="program-hero-stat-label">Avg residential electric rate</div></div>
+          <div><div class="program-hero-stat-val">$275<em>/kW</em></div><div class="program-hero-stat-label">ConnectedSolutions summer rate</div></div>
+          <div><div class="program-hero-stat-val">~$1,200<em>/yr</em></div><div class="program-hero-stat-label">Typical Powerwall earnings</div></div></div></div>
+      <div class="program-hero-visual">
+        <img src="../images/program-hero-storage-massachusetts.png" alt="A wall-mounted residential battery storage system installed in a Massachusetts home, clean utility install with conduit visible" loading="eager" decoding="async"></div></div></div>
+</section>
+
+<!-- ═══════════════════ Why (the historical force): electric rate climb ═══════════════════ -->
+<section class="rate-hedge is-state-slim" id="rate-hedge" aria-label="Why now: Massachusetts residential electric rate history">
+  <div class="container">
+    <div class="rate-hedge-2col">
+      <div class="rate-hedge-header">
+        <span class="idx2-eyebrow">Why now &middot; Massachusetts</span>
+        <h2 class="idx2-h2">Electric bills <em>have climbed every year</em>.</h2>
+        <p class="idx2-prose" style="margin-top: 18px;">Massachusetts residential electricity climbed from roughly $0.146/kWh in 2010 to $0.315/kWh today, averaging 5-6% per year. A battery sidesteps that climb on two fronts at once: peak-shaving the most expensive hours of every day, and locking in ConnectedSolutions payments at today's $275/kW rate for the next five summers.</p>
+        <div class="rate-hedge-tag" aria-label="The hedge: a battery shaves the peak and locks in dispatch payments">
+          <span class="rate-hedge-tag-label">The hedge</span>
+          <span class="rate-hedge-tag-value">Peak shaving + locked $275/kW dispatch</span></div>
+        <a href="../get-my-score.html" class="idx2-link" style="margin-top: 20px;">Get my report
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+            <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a></div>
+
+      <div class="rate-hedge-chart-card">
+        <div class="rate-hedge-chart-title">Massachusetts residential electric rate</div>
+        <div class="rate-hedge-chart-sub">2010&ndash;2025 &middot; cents per kWh, all-in</div>
+        <svg class="rate-hedge-svg" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Massachusetts residential electricity price history, 2010 to 2025">
+<path class="hedge-wedge" d="M 48.0,231.0 L 87.5,222.0 L 126.9,213.0 L 166.4,205.0 L 205.9,196.0 L 245.3,188.0 L 284.8,176.0 L 324.3,165.0 L 363.7,155.0 L 403.2,142.0 L 442.7,128.0 L 482.1,118.0 L 521.6,108.0 L 561.1,99.0 L 600.5,93.0 L 640.0,87.7 L 640.0,282.0 L 48.0,282.0 Z"/>
+<line class="grid" x1="48" y1="356.0" x2="640" y2="356.0"/>
+<text class="axis-label" x="40" y="359.0" text-anchor="end">$0</text>
+<line class="grid" x1="48" y1="268.6" x2="640" y2="268.6"/>
+<text class="axis-label" x="40" y="271.6" text-anchor="end">low</text>
+<line class="grid" x1="48" y1="181.3" x2="640" y2="181.3"/>
+<text class="axis-label" x="40" y="184.3" text-anchor="end">mid</text>
+<line class="grid" x1="48" y1="93.9" x2="640" y2="93.9"/>
+<text class="axis-label" x="40" y="96.9" text-anchor="end">high</text>
+<line class="axis" x1="48" y1="356" x2="640" y2="356"/>
+<text class="axis-label" x="48.0" y="372" text-anchor="middle">2010</text>
+<text class="axis-label" x="245.3" y="372" text-anchor="middle">2015</text>
+<text class="axis-label" x="442.7" y="372" text-anchor="middle">2020</text>
+<text class="axis-label" x="640.0" y="372" text-anchor="middle">2025</text>
+<line class="solar-line" x1="48" y1="282.0" x2="640" y2="282.0" pathLength="1"/>
+<path class="natl-avg-line" pathLength="1" d="M 48.0,256.9 L 87.5,255.4 L 126.9,254.1 L 166.4,251.9 L 205.9,248.8 L 245.3,247.5 L 284.8,248.4 L 324.3,245.5 L 363.7,245.7 L 403.2,244.5 L 442.7,242.9 L 482.1,238.5 L 521.6,226.6 L 561.1,219.3 L 600.5,216.9 L 640.0,211.9"/>
+<text class="natl-avg-label" x="648.0" y="215.6">US avg $0.169/kWh</text>
+<path class="util-line" pathLength="1" d="M 48.0,231.0 L 87.5,222.0 L 126.9,213.0 L 166.4,205.0 L 205.9,196.0 L 245.3,188.0 L 284.8,176.0 L 324.3,165.0 L 363.7,155.0 L 403.2,142.0 L 442.7,128.0 L 482.1,118.0 L 521.6,108.0 L 561.1,99.0 L 600.5,93.0 L 640.0,87.7" stroke="#DC2626"/>
+<text class="util-label" x="648.0" y="91.7" fill="#DC2626">MA all-in $0.315/kWh</text>
+<text class="util-label" x="40" y="234.0" fill="#DC2626" text-anchor="end">$0.146/kWh</text>
+<text class="solar-label" x="648" y="286.0">Your stored kWh (peak-shaving)</text>
+<text class="hedge-wedge-label" x="363.7" y="220.7" text-anchor="middle">value of every shifted kWh</text>
+<text class="axis-label" x="12" y="190.0" text-anchor="middle" transform="rotate(-90 12 190.0)">¢/kWh, residential all-in</text>
+</svg>
+        <div class="rate-hedge-legend">
+          <span class="rate-hedge-legend-item"><span class="rate-hedge-legend-swatch" style="background: #DC2626;"></span>MA residential rate</span>
+          <span class="rate-hedge-legend-item"><span class="rate-hedge-legend-swatch" style="background: var(--green-500);"></span>Your stored kWh</span>
+          <span class="rate-hedge-legend-item"><span class="rate-hedge-legend-swatch natl"></span>US national average</span></div>
+        <div class="rate-hedge-source">Source &middot; EIA Form 861, residential class, 2010&ndash;2025. State averages and the US national line both pulled from the same dataset for an apples-to-apples comparison.</div><div class="rate-hedge-utilities"><span class="rate-hedge-utilities-label">Major utilities covered</span><span class="rate-hedge-utilities-list">Eversource, National Grid, Unitil</span></div></div></div></div>
+</section>
+
+<!-- ═══════════════════ How (the proof): real ConnectedSolutions stack ═══════════════════ -->
+<section class="solar-example" aria-label="A real Massachusetts battery storage project">
+  <div class="container">
+    <div class="solar-example-inner">
+      <div class="solar-example-prose">
+        <span class="idx2-eyebrow">A real example &middot; Massachusetts</span>
+        <h2 class="idx2-h2">What a <em>13.5 kWh Powerwall</em> actually returns.</h2>
+        <p class="idx2-prose" style="margin-top: 24px;">A single Powerwall 3 (or Enphase IQ Battery, FranklinWH, or equivalent) earns three ways at once. ConnectedSolutions pays you to let the utility dispatch the battery on summer peak afternoons, at a rate locked for 5 summers. Peak-shaving the 4-9 PM window replaces the most expensive grid kWh of your day. And backup keeps the lights on when the Nor'easter hits.</p>
+        <a href="#components" class="idx2-link" style="margin-top: 28px;">See the pieces of the stack
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+            <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a></div>
+      <aside class="solar-example-card" aria-label="What you get back">
+        <div class="solar-example-card-eyebrow">Annual value &middot; Massachusetts</div>
+        <div class="solar-example-card-row is-revenue" data-reveal="1">
+          <span class="solar-example-card-label">ConnectedSolutions summer dispatch ($275/kW × 5 kW avg)</span>
+          <span class="solar-example-card-num">+$1,200/yr</span></div>
+        <div class="solar-example-card-row is-revenue" data-reveal="2">
+          <span class="solar-example-card-label">Peak shaving (4-9 PM, ~2,500 kWh shifted at $0.31/kWh spread)</span>
+          <span class="solar-example-card-num">+$400/yr</span></div>
+        <div class="solar-example-card-row is-revenue" data-reveal="3">
+          <span class="solar-example-card-label">Solar self-consumption boost (SMART export at retail)</span>
+          <span class="solar-example-card-num">+$300/yr</span></div>
+        <div class="solar-example-card-divider" data-reveal="4"></div>
+        <div class="solar-example-card-final" data-reveal="5">
+          <span class="solar-example-card-label">5-year locked ConnectedSolutions total</span>
+          <span class="solar-example-card-num is-final">up to $6,875</span></div>
+        <div class="solar-example-card-vs" data-reveal="6" aria-label="Cost of doing nothing">
+          Cost of doing nothing &middot; <strong>~$45,000</strong> over 15 years</div>
+        <div class="solar-example-card-foot" data-reveal="7">
+          Cumulative MA residential electric bills at 5%/yr (commodity, delivery, and service charges). ConnectedSolutions rate of $275/kW locked at enrollment for 5 summers. Lease/PPA financing available, no money down on day one.</div>
+        <a href="../get-my-score.html" class="solar-example-card-cta" data-reveal="7">Match this to my home
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+            <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </aside></div></div>
+</section>
+
+<section class="program-section">
+  <div class="container">
+    <div class="program-section-head">
+      <span class="idx2-eyebrow">01 · Why It Works Here</span>
+      <h2 class="idx2-h2">Massachusetts batteries earn <em>three different ways</em>.</h2>
+      <p class="idx2-lede">In a low-rate state with a stable grid, residential storage is mostly about backup peace of mind. In Massachusetts, the same battery does three things at once, and each one stands on its own economically.</p></div>
+
+    <div class="ma-peak">
+      <div class="ma-peak-head">
+        <div class="ma-peak-title">A day in the life of a <em>Massachusetts battery</em>.</div>
+        <p class="ma-peak-prose">Eversource and National Grid time-of-use rates spike from 4 to 9 PM. Solar charges the battery at midday for free, the battery discharges through the peak window, and your most expensive grid hour becomes something you stored at the cheapest hour.</p></div>
+      <svg class="ma-peak-svg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A day in the life of a Massachusetts battery: midnight to midnight price curve with the 4-9 PM peak window and the battery discharge bar overlaid">
+        <!-- grid lines -->
+        <line class="grid" x1="48" y1="180" x2="780" y2="180"/>
+        <line class="grid" x1="48" y1="130" x2="780" y2="130"/>
+        <line class="grid" x1="48" y1="80"  x2="780" y2="80"/>
+        <!-- y-axis labels -->
+        <text class="axis-label" x="40" y="184" text-anchor="end">low</text>
+        <text class="axis-label" x="40" y="134" text-anchor="end">mid</text>
+        <text class="axis-label" x="40" y="84"  text-anchor="end">peak</text>
+        <!-- x-axis -->
+        <line class="axis" x1="48" y1="180" x2="780" y2="180"/>
+        <!-- price curve: low at night → mid in morning → low midday → rises 4PM → peaks 6PM → drops 9PM → low again -->
+        <path class="price-curve" d="M 48,165 L 90,165 L 130,160 L 175,150 L 220,140 L 265,130 L 310,135 L 355,150 L 400,160 L 445,165 L 490,140 L 535,105 L 580,80 L 615,82 L 650,100 L 690,140 L 735,162 L 780,165 L 780,180 L 48,180 Z"/>
+        <!-- battery discharge bar covering 4-9 PM window -->
+        <rect class="battery-bar" x="490" y="60" width="200" height="120" rx="6"/>
+        <text class="battery-label" x="590" y="50" text-anchor="middle">Battery discharging</text>
+        <text class="battery-label" x="590" y="115" text-anchor="middle">your stored kWh</text>
+        <!-- price-curve label -->
+        <text class="price-label" x="600" y="74" text-anchor="middle">$0.31+/kWh peak</text>
+        <!-- "ConnectedSolutions dispatch events" annotation -->
+        <text class="peak-window-label" x="590" y="206" text-anchor="middle">ConnectedSolutions dispatch window</text>
+        <!-- x-axis hour labels -->
+        <text class="hour-label" x="48"  y="220" text-anchor="middle">12 AM</text>
+        <text class="hour-label" x="171" y="220" text-anchor="middle">6 AM</text>
+        <text class="hour-label" x="294" y="220" text-anchor="middle">9 AM</text>
+        <text class="hour-label" x="417" y="220" text-anchor="middle">12 PM</text>
+        <text class="hour-label" x="490" y="220" text-anchor="middle">4 PM</text>
+        <text class="hour-label" x="690" y="220" text-anchor="middle">9 PM</text>
+        <text class="hour-label" x="780" y="220" text-anchor="middle">12 AM</text>
+      </svg>
+      <div class="ma-peak-legend">
+        <span class="ma-peak-legend-item"><span class="ma-peak-legend-swatch" style="background: #DC2626;"></span>Grid price curve</span>
+        <span class="ma-peak-legend-item"><span class="ma-peak-legend-swatch" style="background: var(--green-500);"></span>Battery dispatch</span>
+        <span class="ma-peak-legend-item">Source &middot; Eversource &amp; National Grid MA tariff schedules</span>
+      </div>
+    </div>
+
+    <div class="solar-overview-grid">
+      <div class="solar-overview-stat">
+        <div class="solar-overview-stat-num">$275<span class="solar-overview-stat-unit">/kW</span></div>
+        <div class="solar-overview-stat-label">ConnectedSolutions summer rate</div>
+        <div class="solar-overview-stat-sub">Locked for 5 summers at enrollment, paid by Eversource, National Grid, and Cape Light Compact</div></div>
+      <div class="solar-overview-stat">
+        <div class="solar-overview-stat-num">60<span class="solar-overview-stat-unit"> max</span></div>
+        <div class="solar-overview-stat-label">Dispatch events per summer</div>
+        <div class="solar-overview-stat-sub">3 hours max each, June through September, 3-8 PM window only</div></div>
+      <div class="solar-overview-stat">
+        <div class="solar-overview-stat-num">13.5<span class="solar-overview-stat-unit"> kWh</span></div>
+        <div class="solar-overview-stat-label">Powerwall 3 usable capacity</div>
+        <div class="solar-overview-stat-sub">11.5 kW continuous AC output, stackable to multiple units</div></div>
+      <div class="solar-overview-stat">
+        <div class="solar-overview-stat-num">10<span class="solar-overview-stat-unit"> yrs</span></div>
+        <div class="solar-overview-stat-label">Manufacturer warranty</div>
+        <div class="solar-overview-stat-sub">70% capacity retention at year 10, unlimited cycles. Same across Powerwall, Enphase, FranklinWH.</div></div></div>
+    <div style="margin-top: 36px;">
+      <a href="../get-my-score.html" class="idx2-link">Get my report
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+          <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a></div>
+</div>
+</section>
+
+<section class="program-section alt" id="components">
+  <div class="container">
+    <div class="program-section-head">
+      <span class="idx2-eyebrow">02 &middot; The Components</span>
+      <h2 class="idx2-h2">Every <em>value line</em>, spelled out.</h2>
+      <p class="idx2-lede">A Massachusetts home battery earns three ways at once. Each line stands on its own. Stacked, they're the math that makes the project pencil.</p></div>
+    <div class="rebates-card" style="max-width: 900px;">
+      <ul class="rebate-list">
+        <li><span class="label">ConnectedSolutions summer dispatch rate</span><span class="amount">$275/kW</span></li>
+        <li><span class="label">Typical Powerwall 3 annual earnings (5 kW avg dispatch)</span><span class="amount">~$1,200/yr</span></li>
+        <li><span class="label">5-year locked total (rate fixed at enrollment)</span><span class="amount">$6,000-$6,875</span></li>
+        <li><span class="label">Winter dispatch (Targeted, optional)</span><span class="amount">$50/kW</span></li>
+        <li><span class="label">Peak-shaving 4-9 PM bill savings</span><span class="amount">~$400/yr typical</span></li>
+        <li><span class="label">Lease / PPA financing (Section 48 ITC passes through)</span><span class="amount">no money down</span></li>
+        <li><span class="label">Equipment lifespan and warranty</span><span class="amount">10 yrs &middot; 70% capacity</span></li>
+      </ul></div>
+    
+    <div style="margin-top: 36px;">
+      <a href="../get-my-score.html" class="idx2-link">Get my report
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+          <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a></div>
+</div>
+</section>
+
+<section class="solar-timeline" aria-label="Massachusetts battery install timeline">
+  <div class="container">
+    <div class="solar-timeline-head">
+      <span class="idx2-eyebrow">03 &middot; Install Timeline</span>
+      <h2 class="idx2-h2">From <em>first call</em> to <em>first dispatch event</em>.</h2>
+      <p class="idx2-lede">A typical Massachusetts battery install runs 7&ndash;12 weeks from first call to Permission to Operate, with ConnectedSolutions activation following shortly after.</p></div>
+    <div class="solar-timeline-list">
+      <div class="solar-timeline-item">
+        <div class="solar-timeline-num">01.</div>
+        <div class="solar-timeline-content">
+          <div class="solar-timeline-title">Site survey &amp; load study</div>
+          <div class="solar-timeline-desc">In-home electrical assessment, panel inspection, NEC 705.12 calculation, ConnectedSolutions eligibility confirmation. Designs the backup loads panel.</div></div>
+        <div class="solar-timeline-when">Weeks 1-2</div></div>
+      <div class="solar-timeline-item">
+        <div class="solar-timeline-num">02.</div>
+        <div class="solar-timeline-content">
+          <div class="solar-timeline-title">Permits + utility interconnection + ConnectedSolutions enrollment</div>
+          <div class="solar-timeline-desc">Municipal building/electrical permit, utility interconnection application (Eversource or National Grid parallel review), ConnectedSolutions paperwork in parallel.</div></div>
+        <div class="solar-timeline-when">Weeks 3-6</div></div>
+      <div class="solar-timeline-item">
+        <div class="solar-timeline-num">03.</div>
+        <div class="solar-timeline-content">
+          <div class="solar-timeline-title">Equipment procurement</div>
+          <div class="solar-timeline-desc">Powerwall 3 (or Enphase IQ Battery, FranklinWH) ordered. Lead time varies 2-6 weeks depending on installer's Tesla supply relationship. Often overlaps with permit work.</div></div>
+        <div class="solar-timeline-when">Weeks 4-8</div></div>
+      <div class="solar-timeline-item">
+        <div class="solar-timeline-num">04.</div>
+        <div class="solar-timeline-content">
+          <div class="solar-timeline-title">Installation &amp; commissioning</div>
+          <div class="solar-timeline-desc">Install is typically 1 day on-site (4-6 hour panel power-off). Utility witness/PTO follows in 3-7 days.</div></div>
+        <div class="solar-timeline-when">Weeks 7-9</div></div>
+      <div class="solar-timeline-item">
+        <div class="solar-timeline-num">05.</div>
+        <div class="solar-timeline-content">
+          <div class="solar-timeline-title">ConnectedSolutions activation</div>
+          <div class="solar-timeline-desc">Device enrolled in the program API. First dispatch event timing depends on season: a June install can dispatch within days; an off-season install banks value until the following summer.</div></div>
+        <div class="solar-timeline-when">Post-install</div></div>
+    </div>
+    <div style="margin-top: 40px;">
+      <a href="../get-my-score.html" class="idx2-link">Get my report
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+          <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a></div></div>
+</section>
+
+<section class="solar-faq">
+  <div class="container">
+    <div class="program-section-head">
+      <span class="idx2-eyebrow">04 &middot; Honest FAQ</span>
+      <h2 class="idx2-h2">The <em>real questions</em> Massachusetts homeowners ask.</h2>
+      <p class="idx2-lede">The questions that actually come up in the first installer conversation, answered straight, for a typical MA homeowner in 2026.</p></div>
+    <div class="solar-faq-list">
+      <details class="solar-faq-item">
+        <summary class="solar-faq-q">Should I size for backup or for bill management?</summary>
+        <div class="solar-faq-a"><p>Both, but the priority shifts the design. If you primarily want whole-home backup through a Nor'easter, you size to your essential loads (fridge, well pump, furnace blower, internet) for at least 24 hours. If your priority is shaving the 4-9 PM peak, you size to your typical evening kWh draw plus margin. A single 13.5 kWh Powerwall handles both for most MA homes; bigger homes or homes with cold-climate heat pumps often want two.</p></div>
+      </details>
+      <details class="solar-faq-item">
+        <summary class="solar-faq-q">When exactly are MA peak rates highest?</summary>
+        <div class="solar-faq-a"><p>Most MA utilities, Eversource, National Grid, Unitil, peak between 4 PM and 9 PM on weekdays year-round, with the steepest summer events on hot afternoons when AC load surges. ConnectedSolutions dispatch events generally fall inside that window. Your battery's daily discharge schedule is auto-tuned to this; you don't manage it manually.</p></div>
+      </details>
+      <details class="solar-faq-item">
+        <summary class="solar-faq-q">What happens during a ConnectedSolutions dispatch event?</summary>
+        <div class="solar-faq-a"><p>The utility signals your battery to discharge to the grid (or to offset your home load) for up to 3 hours during a peak event. You get notified, but no action is required. You're capped at 60 events per summer season. If a storm hits during a scheduled dispatch, the battery prioritizes your home's backup, you don't lose your reserve to the program.</p></div>
+      </details>
+      <details class="solar-faq-item">
+        <summary class="solar-faq-q">How do batteries hold up during a Nor'easter or hurricane?</summary>
+        <div class="solar-faq-a"><p>Lithium-iron-phosphate batteries (the chemistry used by Powerwall 3, Enphase IQ, FranklinWH) are rated for outdoor and indoor install across all MA temperature ranges. The bigger risk during a multi-day Nor'easter is sizing, a single battery covers essentials for 24-36 hours. Pairing storage with solar lets the battery recharge from the array on subsequent storm days, extending effective backup indefinitely if the panels can see daylight.</p></div>
+      </details>
+      <details class="solar-faq-item">
+        <summary class="solar-faq-q">Is a battery worth more with solar, or as a standalone install?</summary>
+        <div class="solar-faq-a"><p>Lease/PPA financing carries the commercial Section 48 ITC through to the homeowner as lower monthly payments. Paired with solar, the battery captures excess midday production at zero marginal cost, that's the highest-economic-value setup. Standalone, the battery still earns ConnectedSolutions revenue and shaves your peak window, but its charging energy comes from the grid at off-peak rates rather than free. For an MA home with no solar, a standalone battery is a slower payback; with solar already in place, it's a strong addition.</p></div>
+      </details>
+      <details class="solar-faq-item">
+        <summary class="solar-faq-q">Does a battery change anything about NEM 3.0 / SMART?</summary>
+        <div class="solar-faq-a"><p>Yes, and in a good way. Massachusetts SMART tariff economics favor self-consumption over export. Storage lets you absorb your midday solar surplus and redeploy it during the 4-9 PM peak rather than exporting it at a discounted rate. For SMART-tariff homes, this can recover meaningful value the export rate leaves on the table.</p></div>
+      </details></div></div>
+</section>
+
+<!-- ═══════════════════ Related Massachusetts programs ═══════════════════ -->
+<section class="solar-related" aria-label="Other Massachusetts programs">
+  <div class="container">
+    <div class="program-section-head">
+      <span class="idx2-eyebrow">All Massachusetts programs</span>
+      <h2 class="idx2-h2">The full <em>Massachusetts</em> upgrade menu.</h2>
+      <p class="idx2-lede">Every Massachusetts program a homeowner can layer in. The badge marks the ones that pair most naturally with the program on this page.</p></div>
+    <div class="solar-related-list">
+      <a href="mass-smart-solar.html" class="solar-related-card is-cat-solar is-stacks-well">
+        <svg class="solar-related-card-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <rect x="14" y="14" width="36" height="36" rx="3"/></svg>
+        <div class="solar-related-card-content">
+          <span class="solar-related-card-tag">MA &middot; Mass Smart Solar Program</span>
+          <div class="solar-related-card-title">Solar charges the battery for free during the day. The battery self-consumes in the evening, NEB or net-metering credits stay intact.</div></div>
+        <span class="solar-related-card-badge" aria-label="This program stacks well with this one">Stacks well</span>
+        <span class="solar-related-card-arrow" aria-hidden="true">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      </a>
+      <a href="masssave-heat-pump.html" class="solar-related-card is-cat-heatpump is-stacks-well">
+        <svg class="solar-related-card-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <rect x="14" y="14" width="36" height="36" rx="3"/></svg>
+        <div class="solar-related-card-content">
+          <span class="solar-related-card-tag">MA &middot; Mass Save Heat Pump Rebates</span>
+          <div class="solar-related-card-title">Heat pumps add winter electric load. Storage keeps the heat pump running through outages, especially long ones.</div></div>
+        <span class="solar-related-card-badge" aria-label="This program stacks well with this one">Stacks well</span>
+        <span class="solar-related-card-arrow" aria-hidden="true">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      </a>
+      <a href="masssave-insulation.html" class="solar-related-card is-cat-insulation">
+        <svg class="solar-related-card-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <rect x="14" y="14" width="36" height="36" rx="3"/></svg>
+        <div class="solar-related-card-content">
+          <span class="solar-related-card-tag">MA &middot; Mass Save Insulation</span>
+          <div class="solar-related-card-title">Tighten the envelope first. A weatherized house holds heat longer per battery-kWh, every storm-night hour stretches further.</div></div>
+        <span class="solar-related-card-arrow" aria-hidden="true">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      </a>
+      <a href="masssave-windows.html" class="solar-related-card is-cat-windows">
+        <svg class="solar-related-card-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <rect x="14" y="14" width="36" height="36" rx="3"/></svg>
+        <div class="solar-related-card-content">
+          <span class="solar-related-card-tag">MA &middot; Mass Save Windows</span>
+          <div class="solar-related-card-title">ENERGY STAR windows cut winter heat loss and summer load. Window-side rooms feel the change from day one.</div></div>
+        <span class="solar-related-card-arrow" aria-hidden="true">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      </a>
+    </div></div>
+</section>
+
+<section class="cta-strip">
+  <div class="container-narrow">
+    <h3>See how storage fits <em>your specific Massachusetts home</em>.</h3>
+    <p>Your Home Efficiency Score sizes the right battery for your panel and bill, models the ConnectedSolutions revenue, runs the rate-hedge math, and shows your real payback, based on your address and your actual utility.</p>
+    <a href="../get-my-score.html" class="btn btn-white">Get my report
+      <svg width="16" height="14" viewBox="0 0 16 14" fill="none"><path d="M1 7h13M9 1l5 6-5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a></div>
+</section>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-offices">
+      <h4 class="footer-offices-head">Visit us</h4>
+      <div class="footer-offices-row is-single">
+        <article class="footer-office">
+          <div class="footer-office-map">
+            <iframe
+              src="https://maps.google.com/maps?q=24+Spice+Street+Boston+MA+02129&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="Map of ProFusion Boston office, 24 Spice Street, Boston, MA"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="footer-office-meta">
+            <div class="footer-office-tag">New England</div>
+            <div class="footer-office-name">Boston, MA</div>
+            <div class="footer-office-addr">24 Spice Street<br>Boston, MA 02129</div>
+            <div class="footer-office-phone"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+13393304289">+1 (339) 330-4289</a></div>
+            <a class="footer-office-link" href="https://maps.google.com/?q=24+Spice+Street+Boston+MA+02129" target="_blank" rel="noopener">
+              Open in Maps
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a></div>
+        </article></div></div>
+
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img src="../logo.png" alt="ProFusion Home Solutions">
+        <p style="font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--green-400); margin-bottom: 14px;">Built for the <em style="font-family: var(--serif); font-style: italic;">house</em>. Felt in the <em style="font-family: var(--serif); font-style: italic;">home</em>.</p>
+        <p>The Home Efficiency Score, mapped to your zip, <em>every state, every rebate</em>. Now serving 11 states. <em>Going nationwide</em>.</p></div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="../categories/solar.html">Solar</a></li>
+          <li><a href="../categories/heating-cooling.html">Heating &amp; Cooling</a></li>
+          <li><a href="../categories/insulation.html">Insulation</a></li>
+          <li><a href="../categories/windows-doors.html">Windows &amp; Doors</a></li>
+          <li><a href="../categories/energy-storage.html">Energy Storage</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="../how-our-score-guides-you.html">How our Score guides you</a></li>
+          <li><a href="../sample-report.html">See a sample report</a></li>
+          <li><a href="../our-installers.html">Who we match you with</a></li>
+          <li><a href="../2026-changes.html">What changed in 2026</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../contact.html">Contact us</a></li>
+          <li><a href="../get-my-score.html">Get my report</a></li>
+          <li><a href="../for-installers.html">For Installers</a></li>
+        </ul></div></div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 ProFusion Home Solutions LLC</div>
+      <div>Now serving 11 states &middot; A+ BBB &middot; Fully Insured</div></div></div>
+</footer>
+<script>
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+}
+
+// Rate-hedge chart reveal observer
+(function() {
+  const section = document.getElementById('rate-hedge');
+  if (!section) return;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion) { section.classList.add('is-in-view'); return; }
+  if (!('IntersectionObserver' in window)) { section.classList.add('is-in-view'); return; }
+  const obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) { section.classList.add('is-in-view'); obs.unobserve(section); }
+    });
+  }, { threshold: 0.3 });
+  obs.observe(section);
+})();
+
+// Solar-example scrollytelling reveal observer
+(function() {
+  const section = document.querySelector('.solar-example');
+  if (!section) return;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion) { section.classList.add('is-revealed'); return; }
+  if (!('IntersectionObserver' in window)) { section.classList.add('is-revealed'); return; }
+  const obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) { section.classList.add('is-revealed'); obs.unobserve(section); }
+    });
+  }, { threshold: 0.35 });
+  obs.observe(section);
+})();
+</script>
+<script defer src="../mobile-nav.js"></script>
+</body>
+</html>

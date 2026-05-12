@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Florida Utility Programs · FPL, Duke Energy, TECO, JEA, OUC · ProFusion</title>
+<meta name="description" content="Every Florida utility-side benefit in one place: FPL, Duke Energy Florida, Tampa Electric (TECO), JEA, and OUC. HB 741 net-metering stepdown, JEA's $4,000 battery rebate, OUC's reduced-export tariff, and the FL solar tax exemption. Verified May 2026.">
+<link rel="icon" type="image/png" href="../images/Favicon.png">
+<link rel="apple-touch-icon" href="../images/Favicon.png">
+<link rel="canonical" href="https://profusion.solutions/utility-programs/florida.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ProFusion Home Solutions">
+<meta property="og:title" content="Florida Utility Programs · FPL, Duke Energy, TECO, JEA, OUC · ProFusion">
+<meta property="og:description" content="Every Florida utility-side benefit in one place: FPL, Duke Energy Florida, Tampa Electric (TECO), JEA, and OUC. HB 741 net-metering stepdown, JEA">
+<meta property="og:url" content="https://profusion.solutions/utility-programs/florida.html">
+<meta property="og:image" content="https://profusion.solutions/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Florida Utility Programs · FPL, Duke Energy, TECO, JEA, OUC · ProFusion">
+<meta name="twitter:description" content="Every Florida utility-side benefit in one place: FPL, Duke Energy Florida, Tampa Electric (TECO), JEA, and OUC. HB 741 net-metering stepdown, JEA">
+<meta name="twitter:image" content="https://profusion.solutions/images/social-card.png">
+<meta name="twitter:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="theme-color" content="#0A1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+
+:root { --state-accent: #0A4A7E; --state-tint: rgba(10, 74, 126, 0.08); }
+
+/* ════════════════════════════════════════════════════════════════════
+   UTILITY-PROGRAMS PAGE STYLES
+   The pattern: a state-level hero, a "headline finding" callout, then
+   a stack of utility sections. Each utility has 5 collapsible category
+   blocks. Open by default on desktop, collapsed on mobile.
+   ════════════════════════════════════════════════════════════════════ */
+.up-hero { padding: 56px 0 40px; }
+.up-hero-inner { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; margin-bottom: 56px; }
+.up-hero-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+.up-hero-pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: var(--state-tint); border: 1px solid var(--state-accent); border-radius: 100px; color: var(--state-accent); font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+.up-hero-pill-dot { width: 6px; height: 6px; background: var(--state-accent); border-radius: 50%; }
+.up-hero-meta-label { font-family: var(--mono); font-size: 11px; color: var(--gray-400); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
+.up-meta { display: inline-block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500); font-weight: 600; margin-bottom: 4px; }
+.up-hero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(36px, 4.8vw, 56px); line-height: 1.05; letter-spacing: -0.035em; color: var(--ink); margin-bottom: 24px; }
+.up-hero h1 em { font-style: normal; font-weight: 500; color: var(--state-accent); letter-spacing: -0.02em; }
+.up-hero-lede { font-family: var(--serif-body); font-size: 18px; line-height: 1.65; color: var(--gray-700); margin-bottom: 0; }
+.up-hero-visual { position: relative; aspect-ratio: 4/5; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 48px -16px rgba(10, 16, 32, 0.18), 0 1px 2px rgba(10, 16, 32, 0.06); background: var(--gray-50); }
+.up-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.up-hero-float-pill { position: absolute; top: 20px; right: 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); padding: 10px 16px; border-radius: 100px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--state-accent); box-shadow: var(--shadow-sm); z-index: 2; }
+.up-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 28px 0; border-top: 1px solid var(--gray-100); border-bottom: 1px solid var(--gray-100); margin-bottom: 56px; }
+
+/* Closing image band — visual breath before the CTA */
+.up-imgband { padding: 24px 0 8px; }
+.up-imgband-frame { aspect-ratio: 16 / 6; border-radius: 24px; overflow: hidden; position: relative; border: 1px solid var(--gray-100); }
+.up-imgband-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.up-imgband-cap { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-400); margin-top: 16px; text-align: center; font-weight: 500; }
+.up-imgband-cap em { font-family: var(--serif); font-style: italic; font-size: 13px; letter-spacing: 0; text-transform: none; color: var(--gray-600); font-weight: 400; }
+.up-stat-num { font-family: var(--display); font-weight: 500; font-size: 36px; line-height: 1; letter-spacing: -0.025em; color: var(--state-accent); margin-bottom: 6px; display: flex; align-items: baseline; gap: 4px; }
+.up-stat-num em { font-family: var(--mono); font-style: normal; font-size: 0.45em; color: var(--gray-400); font-weight: 500; letter-spacing: 0.02em; }
+.up-stat-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-500); font-weight: 500; }
+
+/* Headline-finding callout — the "wow" find for the state */
+.up-headline { background: var(--state-tint); border: 1px solid rgba(10, 74, 126, 0.2); border-radius: 24px; padding: 36px 40px; margin-bottom: 64px; max-width: 920px; }
+.up-headline-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--state-accent); font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.up-headline-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--state-accent); }
+.up-headline h2 { font-family: var(--display); font-weight: 500; font-size: 28px; letter-spacing: -0.02em; line-height: 1.2; color: var(--ink); margin-bottom: 16px; }
+.up-headline h2 em { font-style: normal; color: var(--state-accent); font-weight: 500; letter-spacing: -0.01em; }
+.up-headline p { font-family: var(--serif-body); font-size: 17px; line-height: 1.65; color: var(--gray-700); margin: 0; }
+
+/* Utility section — one per IOU */
+.up-utility { padding: 56px 0 24px; border-top: 1px solid var(--gray-100); }
+.up-utility:first-of-type { border-top: none; padding-top: 8px; }
+.up-utility-head { max-width: 880px; margin-bottom: 36px; }
+.up-utility-tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-500); font-weight: 700; margin-bottom: 10px; }
+.up-utility h2 { font-family: var(--display); font-weight: 500; font-size: 38px; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 12px; line-height: 1.05; }
+.up-utility h2 em { font-style: normal; color: var(--state-accent); font-weight: 500; letter-spacing: -0.02em; }
+.up-utility-blurb { font-family: var(--serif-body); font-size: 16px; line-height: 1.65; color: var(--gray-700); }
+.up-categories { display: grid; grid-template-columns: 1fr; gap: 16px; }
+
+/* Category block — collapsible <details> with all programs inside */
+.up-cat { background: white; border: 1px solid var(--gray-100); border-radius: 16px; overflow: hidden; transition: box-shadow 0.2s; }
+.up-cat:hover { box-shadow: var(--shadow-sm); }
+.up-cat[open] { box-shadow: var(--shadow-sm); }
+.up-cat summary { list-style: none; padding: 22px 28px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; gap: 16px; }
+.up-cat summary::-webkit-details-marker { display: none; }
+.up-cat-label { display: flex; align-items: center; gap: 14px; }
+.up-cat-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--gray-50); color: var(--state-accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.up-cat-icon svg { width: 18px; height: 18px; }
+.up-cat-title { font-family: var(--display); font-weight: 500; font-size: 18px; color: var(--ink); letter-spacing: -0.01em; }
+.up-cat-count { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-400); font-weight: 600; }
+.up-cat-chevron { color: var(--gray-400); transition: transform 0.2s; flex-shrink: 0; }
+.up-cat[open].up-cat-chevron { transform: rotate(180deg); color: var(--state-accent); }
+.up-cat-body { padding: 0 28px 28px; border-top: 1px solid var(--gray-100); padding-top: 22px; }
+
+/* Individual program — name, value, eligibility, source */
+.up-program { padding: 18px 0; border-bottom: 1px dashed var(--gray-100); }
+.up-program:last-child { border-bottom: none; padding-bottom: 4px; }
+.up-program-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }
+.up-program-name { font-family: var(--display); font-weight: 600; font-size: 15px; color: var(--ink); letter-spacing: -0.005em; flex: 1; min-width: 240px; }
+.up-program-value { font-family: var(--mono); font-size: 13px; font-weight: 600; color: var(--state-accent); white-space: nowrap; }
+.up-program-desc { font-family: var(--serif-body); font-size: 15px; line-height: 1.6; color: var(--gray-700); margin-bottom: 8px; }
+.up-program-source { font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; color: var(--gray-500); }
+.up-program-source a { color: var(--gray-500); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; }
+.up-program-source a:hover { color: var(--state-accent); }
+.up-program-tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-500); padding: 2px 8px; border: 1px solid var(--gray-200); border-radius: 4px; margin-left: 6px; vertical-align: middle; }
+.up-program-tag.is-flagship { color: var(--state-accent); border-color: var(--state-accent); background: var(--state-tint); font-weight: 600; }
+
+@media (max-width: 960px) {.up-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+.up-hero-visual { max-width: 520px; margin: 0 auto; aspect-ratio: 4/5; }
+.up-imgband-frame { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 760px) {.up-stats { grid-template-columns: 1fr; gap: 16px; }
+.up-headline { padding: 28px 24px; }
+.up-utility h2 { font-size: 30px; }
+.up-cat summary { padding: 18px 20px; }
+.up-cat-body { padding-left: 20px; padding-right: 20px; }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="nav">
+  <a href="../index.html" class="brand"><img src="../logo.png" alt="ProFusion Home Solutions"></a>
+  <ul class="nav-links">
+<li class="has-dropdown">
+      <a href="#">About <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../about-us.html">About Us</a>
+        <a href="../our-customers.html">Our Customers</a>
+        <a href="../for-installers.html">For Installers</a>
+        <a href="../contact.html">Contact Us</a></div>
+    </li>
+    <li><a href="../index.html#map">Service Area</a></li>
+    <li class="has-dropdown">
+      <a href="#">Programs <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../categories/solar.html">Solar</a>
+        <a href="../categories/heating-cooling.html">Heating &amp; Cooling</a>
+        <a href="../categories/insulation.html">Insulation</a>
+        <a href="../categories/windows-doors.html">Windows &amp; Doors</a>
+        <a href="../categories/energy-storage.html">Energy Storage</a></div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Learn <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../index.html#idx2Score"><span class="simple-dropdown-eyebrow">On homepage</span>The Score</a>
+        <a href="../index.html#how"><span class="simple-dropdown-eyebrow">On homepage</span>How it works</a>
+        <div class="simple-dropdown-divider" aria-hidden="true"></div>
+        <a href="../how-our-score-guides-you.html">How our Score guides you</a>
+        <a href="../sample-report.html">See a sample report</a>
+        <a href="../our-installers.html">Who we match you with</a>
+        <a href="../2026-changes.html">What changed in 2026</a></div>
+    </li>
+    <li><a href="../get-my-score.html" class="nav-cta">Get my report</a></li>
+  </ul>
+</nav>
+
+<div class="container breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">/</span>
+  <a href="../states/florida.html">Florida</a>
+  <span class="sep">/</span>
+  <span class="current">Utility programs</span></div>
+
+<section class="up-hero">
+  <div class="container">
+    <div class="up-hero-inner">
+      <div>
+        <div class="up-hero-meta">
+          <span class="up-meta">FL · Florida</span></div>
+        <h1>Florida's solar regime is <em>stepping down</em>, and your enrollment date matters.</h1>
+        <p class="up-hero-lede">Florida runs two parallel utility worlds: the big investor-owned utilities (FPL, Duke Energy Florida, TECO) and the municipals (JEA, OUC, Lakeland). The IOUs all follow HB 741, the 2025 net-metering stepdown that drops residential export compensation from 75% of retail in 2024-2025 to 60% in 2026 and 50% by 2027-2028. The munis set their own export rates and most have already moved to avoided-cost. On the appliance side, heat pump rebates are modest (Florida is cooling-dominant), and the federal 25C/25D credits both expired Dec 31, 2025. Here's what each utility actually offers, in 2026.</p></div>
+      <div class="up-hero-visual">
+        <div class="up-hero-float-pill">FL · Utilities</div>
+        <img src="../images/up-hero-florida.png" alt="A single-story Florida stucco home with a barrel-tile or shingle roof in late-afternoon golden hour, royal palms framing the driveway, a pole-mounted distribution transformer visible at the property edge, pastel exterior under hot-climate light" class="up-hero-img" loading="eager" decoding="async"></div></div>
+
+    <div class="up-stats">
+      <div>
+        <div class="up-stat-num">~$0.135<em>/kWh</em></div>
+        <div class="up-stat-label">Avg residential electric rate (FL, 2026)</div></div>
+      <div>
+        <div class="up-stat-num">60%<em> of retail</em></div>
+        <div class="up-stat-label">FPL/Duke/TECO net metering, 2026 enrollees (HB 741)</div></div>
+      <div>
+        <div class="up-stat-num">100%<em> exempt</em></div>
+        <div class="up-stat-label">FL state sales tax + property tax on residential solar</div></div></div>
+
+    <div class="up-headline">
+      <div class="up-headline-eyebrow">The one most homeowners miss</div>
+      <h2>HB 741 is <em>compressing the window</em> for full-value solar in Florida, and the 2026 step is the steepest one yet.</h2>
+      <p>Customers approved in 2024-2025 receive 75% of retail rate for exports for the life of their interconnection. Enrollees in 2026 drop to 60% of retail. By 2027-2028 the rate falls to 50%. FPL, Duke Energy Florida, and TECO all follow the same statutory schedule. Munis (JEA, OUC, Lakeland) set their own export terms and most have already moved to avoided-cost compensation; OUC went to roughly 4.6 cents per kWh effective July 1, 2025 (from a retail rate around 11.8 cents). Two homes on the same street can have very different solar economics depending on the month they enrolled.</p></div></div>
+</section>
+
+<section class="up-coverage" aria-label="Utility coverage at a glance">
+  <div class="container">
+    <div class="up-coverage-head">
+      <span class="idx2-eyebrow">Coverage at a glance</span>
+      <h2 class="up-coverage-h2">Who offers <em>what</em>.</h2>
+      <p class="up-coverage-lede">A read across the state. Each cell shows the program count by category. The <span class="up-cm-flag-inline">&#9733;</span> marks utilities with a flagship or unique program in that category, the ones worth a closer look.</p></div>
+    <div class="up-coverage-frame">
+      <table class="up-coverage-table">
+        <thead>
+          <tr>
+            <th scope="col" class="up-cm-corner">Utility</th>
+            <th scope="col" class="up-cm-colhead"><span class="up-cm-colicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span><span class="up-cm-collabel">Heat pumps</span></th><th scope="col" class="up-cm-colhead"><span class="up-cm-colicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span><span class="up-cm-collabel">Solar</span></th><th scope="col" class="up-cm-colhead"><span class="up-cm-colicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span><span class="up-cm-collabel">Storage</span></th><th scope="col" class="up-cm-colhead"><span class="up-cm-colicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span><span class="up-cm-collabel">Insulation</span></th><th scope="col" class="up-cm-colhead"><span class="up-cm-colicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></span><span class="up-cm-collabel">Windows</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row" class="up-cm-rowhead">FPL Florida Power & Light</th><td class="up-cm-cell is-3plus"><span class="up-cm-num">3</span></td><td class="up-cm-cell is-3plus"><span class="up-cm-num">3</span><span class="up-cm-flag" aria-label="Includes flagship program">★</span></td><td class="up-cm-cell is-2"><span class="up-cm-num">2</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-empty" aria-label="No program"></td></tr><tr><th scope="row" class="up-cm-rowhead">Duke Energy Florida</th><td class="up-cm-cell is-3plus"><span class="up-cm-num">3</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-empty" aria-label="No program"></td></tr><tr><th scope="row" class="up-cm-rowhead">Tampa Electric TECO</th><td class="up-cm-cell is-2"><span class="up-cm-num">2</span></td><td class="up-cm-cell is-2"><span class="up-cm-num">2</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-empty" aria-label="No program"></td></tr><tr><th scope="row" class="up-cm-rowhead">JEA Jacksonville · municipal</th><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-2"><span class="up-cm-num">2</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span><span class="up-cm-flag" aria-label="Includes flagship program">★</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-empty" aria-label="No program"></td></tr><tr><th scope="row" class="up-cm-rowhead">OUC Orlando Utilities Commission ·…</th><td class="up-cm-cell is-2"><span class="up-cm-num">2</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-2"><span class="up-cm-num">2</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td></tr>
+        </tbody>
+      </table></div></div>
+</section>
+
+
+
+<!-- ═══════════════════════════ FPL ═══════════════════════════ -->
+<section class="up-utility">
+  <div class="container">
+    <div class="up-utility-head">
+      <div class="up-utility-tag">Utility · 1 of 5</div>
+      <h2>FPL <em>Florida Power &amp; Light</em></h2>
+      <p class="up-utility-blurb">FPL is by far the largest utility in Florida, serving roughly 5.8 million customer accounts and around half of all Florida homes. As an investor-owned utility, FPL follows the HB 741 net-metering schedule. FPL also has a pending rate plan that would raise a typical 1,000 kWh bill from $134.14 to $151.99 by the end of the plan period.</p></div>
+
+    <div class="up-categories">
+
+      <!-- Heat pumps -->
+      <details class="up-cat" open>
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span>
+            <span>
+              <span class="up-cat-title">Heat pumps</span>
+              <span class="up-cat-count">· 3 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">FPL A/C Rebate</div>
+              <div class="up-program-value">$200 instant</div></div>
+            <div class="up-program-desc">$200 instant rebate as a credit on the contractor's invoice when using a qualified FPL contractor for a high-efficiency A/C or heat pump install. Modest by Northeast standards, typical for the Florida pattern.</div>
+            <div class="up-program-source"><a href="https://www.fpl.com/save/programs/ac-rebate.html" target="_blank" rel="noopener">FPL A/C rebate program →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">FPL Residential A/C Program Standards</div>
+              <div class="up-program-value">Tiered by SEER2/EER2</div></div>
+            <div class="up-program-desc">Rebate amounts are tiered by SEER2 and EER2 thresholds; the $200 figure above sits at the entry tier. Higher-efficiency tiers exist but residential rebate caps remain modest.</div>
+            <div class="up-program-source"><a href="https://www.fpl.com/content/dam/fplgp/us/en/save/pdf/residential-air-conditioning-program-standards.pdf" target="_blank" rel="noopener">FPL residential A/C program standards (PDF) →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">No FPL discounted heat pump electric tariff</div>
+              <div class="up-program-value"></div></div>
+            <div class="up-program-desc">FPL residential service is generally flat / non-TOU; no heat-pump-specific seasonal tariff exists, in contrast to programs like Eversource's R-1HP in Massachusetts.</div>
+            <div class="up-program-source">FPL residential rate schedule</div></div></div>
+      </details>
+
+      <!-- Solar -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
+            <span>
+              <span class="up-cat-title">Solar</span>
+              <span class="up-cat-count">· 3 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">FPL Net Metering (HB 741, 2026)<span class="up-program-tag is-flagship">Flagship</span></div>
+              <div class="up-program-value">60% of retail · 2026 step</div></div>
+            <div class="up-program-desc">Full retail-rate net metering still applies for systems approved by Dec 31, 2025; <strong>2026 enrollees receive 60% of retail rate</strong> for exports per HB 741. Annual true-up in January at the average annual cost of generation (roughly $0.02-$0.03 per kWh wholesale). System sizing capped at 115% of annual consumption.</div>
+            <div class="up-program-source"><a href="https://www.fpl.com/clean-energy/net-metering.html" target="_blank" rel="noopener">FPL net metering →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">FPL Rate Plan (2026-2029)</div>
+              <div class="up-program-value">~$18/mo by 2029</div></div>
+            <div class="up-program-desc">FPL's filed rate plan would raise a typical 1,000 kWh residential bill from $134.14 to $151.99 by the end of the plan period, roughly $18 per month by 2029. Rising retail rates partially offset the HB 741 export-rate haircut for self-consumed solar.</div>
+            <div class="up-program-source"><a href="https://sunvena.com/fpl-electric-bill-rate-changes/" target="_blank" rel="noopener">FPL 2026-2029 rate plan analysis →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">No FPL solar rebate</div>
+              <div class="up-program-value"></div></div>
+            <div class="up-program-desc">FPL does not offer a residential solar rebate. Florida's sales-tax exemption and 100% property-tax exemption on residential solar are state-level (not utility), and apply across all FL utilities.</div>
+            <div class="up-program-source"><a href="https://www.energysage.com/local-data/net-metering/fpl/" target="_blank" rel="noopener">FPL net-metering reference →</a></div></div></div>
+      </details>
+
+      <!-- Energy storage -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span>
+            <span>
+              <span class="up-cat-title">Energy storage</span>
+              <span class="up-cat-count">· 2 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">FPL OnCall (DR program)</div>
+              <div class="up-program-value">$50–$100/yr bill credit</div></div>
+            <div class="up-program-desc">Free enrollment demand-response program. FPL briefly cycles the AC compressor during peak periods (15-minute on/off windows) for a $50-$100 annual bill credit. Minimal comfort impact; the easiest signup in the FPL stack.</div>
+            <div class="up-program-source"><a href="https://www.fpl.com/save/programs.html" target="_blank" rel="noopener">FPL save programs →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">No FPL residential battery rebate</div>
+              <div class="up-program-value"></div></div>
+            <div class="up-program-desc">No FPL residential battery rebate identified. FPL's Thermal Energy Storage program is commercial/business-only. [NEEDS RESEARCH: an "EnergyServer"-branded reference circulates in marketing material; not verifiable in FPL's residential program library.]</div>
+            <div class="up-program-source"><a href="https://www.fpl.com/business/save/programs/thermal-storage.html" target="_blank" rel="noopener">FPL thermal storage (commercial only) →</a></div></div></div>
+      </details>
+
+      <!-- Insulation -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Insulation &amp; weatherization</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">FPL Home Energy Survey</div>
+              <div class="up-program-value">Free + contractor rebates</div></div>
+            <div class="up-program-desc">Free home energy survey identifies insulation and air-sealing opportunities. Direct rebates flow through participating contractors for insulation upgrades and duct sealing.</div>
+            <div class="up-program-source"><a href="https://www.fpl.com/save/programs.html" target="_blank" rel="noopener">FPL save programs →</a></div></div></div>
+      </details>
+
+      <!-- Windows & doors -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Windows &amp; doors</span>
+              <span class="up-cat-count">· no utility rebate</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">No utility rebate available</div>
+              <div class="up-program-value"></div></div>
+            <div class="up-program-desc">FPL does not offer a windows or doors rebate. Florida homeowners can use the state Home Hardening tax credit for impact-resistant windows (a separate program); verify 2026 status with the Florida Department of Revenue. Federal 25C credit expired Dec 31, 2025.</div></div></div>
+      </details></div></div>
+</section>
+
+<!-- ═══════════════════════════ DUKE ENERGY FLORIDA ═══════════════════════════ -->
+<section class="up-utility">
+  <div class="container">
+    <div class="up-utility-head">
+      <div class="up-utility-tag">Utility · 2 of 5</div>
+      <h2>Duke Energy <em>Florida</em></h2>
+      <p class="up-utility-blurb">Duke Energy Florida serves roughly 1.9 million customers across 35 counties in central and northern Florida (St. Petersburg through the I-4 corridor and the Big Bend region). Duke's HVAC rebate is the most generous on the Florida IOU side, and the PowerPair solar-plus-battery program may extend from North Carolina into FL on a pilot basis.</p></div>
+
+    <div class="up-categories">
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span>
+            <span>
+              <span class="up-cat-title">Heat pumps</span>
+              <span class="up-cat-count">· 3 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Duke FL HVAC Replacement Rebate</div>
+              <div class="up-program-value">$500–$1,000</div></div>
+            <div class="up-program-desc">Tiered HVAC replacement rebate: $1,000 for replacing existing strip heat with higher-efficiency equipment; $600 for replacing existing strip heat at the lower tier; $500 for replacing an existing heat pump. The most generous IOU-side HVAC rebate in Florida.</div>
+            <div class="up-program-source"><a href="https://www.duke-energy.com/Home/Products/Home-Energy-Improvement/HVAC-Replacement?jur=FL01" target="_blank" rel="noopener">Duke FL HVAC replacement →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Heat Pump Water Heater Rebate</div>
+              <div class="up-program-value">Available · contractor-administered</div></div>
+            <div class="up-program-desc">HPWH rebate available through Duke FL appliance rebates. Specific dollar amount varies by unit and SEER/COP tier; verify the published 2026 schedule before quoting.</div>
+            <div class="up-program-source"><a href="https://www.duke-energy.com/home/products/home-energy-improvement/heat-pump-water-heater" target="_blank" rel="noopener">Duke heat pump water heater →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Smart Thermostat Rebate</div>
+              <div class="up-program-value">$75–$100</div></div>
+            <div class="up-program-desc">$75-$100 rebate on a qualifying ENERGY STAR smart thermostat; pairs naturally with an HVAC replacement rebate.</div>
+            <div class="up-program-source"><a href="https://www.dukeenergyrebates.com/florida/" target="_blank" rel="noopener">Duke FL rebates portal →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
+            <span>
+              <span class="up-cat-title">Solar</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Duke FL Net Metering (HB 741, 2026)</div>
+              <div class="up-program-value">60% of retail · 2026 step</div></div>
+            <div class="up-program-desc">Same statewide HB 741 stepdown applies: 2026 enrollees receive 60% of retail rate for exports. Three system tiers by size (Tier 1 ≤10 kW, Tier 2 10-100 kW, Tier 3 100-2,000 kW); the residential standard sits comfortably in Tier 1.</div>
+            <div class="up-program-source"><a href="https://www.energysage.com/local-data/net-metering/duke-energy/" target="_blank" rel="noopener">Duke FL net metering reference →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span>
+            <span>
+              <span class="up-cat-title">Energy storage</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Duke Energy PowerPair (FL pilot status)</div>
+              <div class="up-program-value">Solar + battery · upfront incentive</div></div>
+            <div class="up-program-desc">PowerPair pairs new solar with a residential battery for an upfront incentive plus dispatch participation. Originally piloted in North Carolina; FL pilot status is unconfirmed and may still be NC-only. [NEEDS RESEARCH: Duke FL PowerPair program status May 2026.]</div>
+            <div class="up-program-source"><a href="https://www.duke-energy.com/home/products/powerpair" target="_blank" rel="noopener">Duke PowerPair program page →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Insulation &amp; weatherization</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Duke FL Home Energy Improvement Program</div>
+              <div class="up-program-value">Audit + direct-install</div></div>
+            <div class="up-program-desc">Free audit plus direct-install measures (LEDs, low-flow fixtures, weatherstripping). Larger insulation and duct projects flow through participating contractors with rebates layered on top.</div>
+            <div class="up-program-source"><a href="https://www.duke-energy.com/Home/Products/Home-Energy-Improvement/HVAC-Replacement?jur=FL01" target="_blank" rel="noopener">Duke FL home energy improvement →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Windows &amp; doors</span>
+              <span class="up-cat-count">· no utility rebate</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">No utility rebate available</div>
+              <div class="up-program-value"></div></div>
+            <div class="up-program-desc">Duke FL does not offer a windows or doors rebate. Federal 25C credit expired Dec 31, 2025; the FL Home Hardening tax credit may apply to impact-resistant windows separately.</div></div></div>
+      </details></div></div>
+</section>
+
+<!-- ═══════════════════════════ TECO ═══════════════════════════ -->
+<section class="up-utility">
+  <div class="container">
+    <div class="up-utility-head">
+      <div class="up-utility-tag">Utility · 3 of 5</div>
+      <h2>Tampa Electric <em>TECO</em></h2>
+      <p class="up-utility-blurb">Tampa Electric (TECO) serves roughly 830,000 customers across the greater Tampa Bay area: Hillsborough County and parts of Polk, Pasco, and Pinellas. TECO's residential rebate stack is the leanest of the three Florida IOUs but follows the same statewide HB 741 schedule on the solar side.</p></div>
+
+    <div class="up-categories">
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span>
+            <span>
+              <span class="up-cat-title">Heat pumps</span>
+              <span class="up-cat-count">· 2 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">TECO Heating &amp; Cooling Rebate</div>
+              <div class="up-program-value">$100–$500</div></div>
+            <div class="up-program-desc">A/C efficiency rebate of $100-$500 depending on the SEER2/EER2 tier. Modest residential HVAC incentives consistent with the Florida pattern.</div>
+            <div class="up-program-source"><a href="https://www.tampaelectric.com/residential/saveenergy/heatingcooling/" target="_blank" rel="noopener">TECO heating &amp; cooling →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Smart Thermostat Rebate</div>
+              <div class="up-program-value">$75–$100</div></div>
+            <div class="up-program-desc">$75-$100 rebate on a qualifying ENERGY STAR smart thermostat. Pairs cleanly with an HVAC replacement on the same project.</div>
+            <div class="up-program-source"><a href="https://www.tampaelectric.com/residential/saveenergy/heatingcooling/" target="_blank" rel="noopener">TECO heating &amp; cooling →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
+            <span>
+              <span class="up-cat-title">Solar</span>
+              <span class="up-cat-count">· 2 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">TECO Net Metering (HB 741, 2026)</div>
+              <div class="up-program-value">60% of retail · 2026 step</div></div>
+            <div class="up-program-desc">Same statewide HB 741 stepdown: 60% of retail rate for new 2026 enrollees.</div>
+            <div class="up-program-source"><a href="https://getsolarmax.com/tampa-electric-teco-solar-incentives/" target="_blank" rel="noopener">TECO solar incentives reference →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">TECO Sun Select</div>
+              <div class="up-program-value">Voluntary green-power purchase</div></div>
+            <div class="up-program-desc">Voluntary green-power purchase program; not a rooftop solar incentive. Customers buy renewable kWh blocks for a small premium. Useful only if a household wants to claim 100% renewable energy without owning hardware.</div>
+            <div class="up-program-source"><a href="https://www.tampaelectric.com/solarsolutions/solareducation/incentives/" target="_blank" rel="noopener">TECO Sun Select page →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span>
+            <span>
+              <span class="up-cat-title">Energy storage</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">No TECO residential battery rebate</div>
+              <div class="up-program-value"></div></div>
+            <div class="up-program-desc">No TECO residential battery rebate identified. Customers wanting a battery typically pair it with solar through direct financing and rely on self-consumption math against the HB 741 export-rate haircut.</div>
+            <div class="up-program-source">TECO customer service · May 2026 verification</div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Insulation &amp; weatherization</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">TECO Direct-Install + Audit</div>
+              <div class="up-program-value">Free audit · contractor rebates</div></div>
+            <div class="up-program-desc">Free home energy audit plus direct-install measures (LEDs, low-flow). Insulation and duct sealing flow through participating contractor rebates; specific dollar values vary by measure.</div>
+            <div class="up-program-source"><a href="https://www.tampaelectric.com/residential/saveenergy/heatingcooling/" target="_blank" rel="noopener">TECO save energy →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Windows &amp; doors</span>
+              <span class="up-cat-count">· no utility rebate</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">No utility rebate available</div>
+              <div class="up-program-value"></div></div>
+            <div class="up-program-desc">TECO does not offer a windows or doors rebate. Federal 25C credit expired Dec 31, 2025.</div></div></div>
+      </details></div></div>
+</section>
+
+<!-- ═══════════════════════════ JEA ═══════════════════════════ -->
+<section class="up-utility">
+  <div class="container">
+    <div class="up-utility-head">
+      <div class="up-utility-tag">Utility · 4 of 5</div>
+      <h2>JEA <em>Jacksonville · municipal</em></h2>
+      <p class="up-utility-blurb">JEA (originally Jacksonville Electric Authority) is a Duval County municipal utility serving roughly 510,000 electric customers, around 6% of Florida's load. As a muni, JEA sets its own rules and runs a richer utility-side rebate stack than the IOUs, including one of the most generous battery rebates in Florida; pair that with avoided-cost solar exports and JEA territory leans hard toward solar-plus-battery rather than solar-only.</p></div>
+
+    <div class="up-categories">
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span>
+            <span>
+              <span class="up-cat-title">Heat pumps</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">JEA Heating &amp; Cooling Rebate</div>
+              <div class="up-program-value">$200 + $50 thermostat</div></div>
+            <div class="up-program-desc">$200 rebate for an ENERGY STAR-certified central A/C, heat pump, or ductless mini-split (AHRI-certified, with minimum SEER2/EER2/HSPF2 thresholds), plus $50 for a smart thermostat installed on the same project. Equipment must be purchased Oct 1, 2025 to Sept 30, 2026; rebate applications must be submitted within 90 days, postmarked by Oct 10, 2026.</div>
+            <div class="up-program-source"><a href="https://www.jea.com/residential_customers/residential_rebates/heating_and_cooling_rebates/" target="_blank" rel="noopener">JEA heating &amp; cooling rebates →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
+            <span>
+              <span class="up-cat-title">Solar</span>
+              <span class="up-cat-count">· 2 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">JEA Solar Rebate</div>
+              <div class="up-program-value">$0.50/W · $4,000 max</div></div>
+            <div class="up-program-desc">$0.50 per watt up to a $4,000 cap for residential rooftop solar. One of the few utility-side solar rebates available anywhere in Florida; partially offsets the avoided-cost-only export rate.</div>
+            <div class="up-program-source"><a href="https://www.ohmsnap.com/utilities/florida/jea-jacksonville/solar" target="_blank" rel="noopener">JEA solar rebate reference →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">JEA Distributed Generation Program</div>
+              <div class="up-program-value">Avoided cost · not 1:1 retail</div></div>
+            <div class="up-program-desc">JEA does <strong>not</strong> offer 1:1 retail-rate net metering. Exports are paid at JEA's avoided-cost wholesale rate, significantly below retail. Battery-paired solar is strongly recommended in JEA territory to maximize self-consumption.</div>
+            <div class="up-program-source"><a href="https://www.ohmsnap.com/utilities/florida/jea-jacksonville/solar" target="_blank" rel="noopener">JEA distributed generation reference →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span>
+            <span>
+              <span class="up-cat-title">Energy storage</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">JEA Battery Storage Rebate<span class="up-program-tag is-flagship">Flagship</span></div>
+              <div class="up-program-value">$4,000 · solar-paired</div></div>
+            <div class="up-program-desc">$4,000 rebate for battery systems with at least 6 kWh capacity and a 10-year warranty, when installed alongside solar. One of the more generous battery rebates in Florida and a direct response to JEA's avoided-cost export framework: the rebate makes self-consumption-first solar-plus-battery the default economic answer.</div>
+            <div class="up-program-source"><a href="https://nationprousa.com/jacksonville-solar/" target="_blank" rel="noopener">JEA battery rebate reference →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Insulation &amp; weatherization</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">JEA Residential Energy Efficiency Program</div>
+              <div class="up-program-value">Audit + rebates</div></div>
+            <div class="up-program-desc">Free home energy audit plus rebates for insulation, air sealing, and duct improvements. Specific dollar amounts vary by measure; verify the published 2026 schedule before quoting.</div>
+            <div class="up-program-source"><a href="https://www.jea.com/residential_customers/residential_rebates/heating_and_cooling_rebates/" target="_blank" rel="noopener">JEA residential rebates →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Windows &amp; doors</span>
+              <span class="up-cat-count">· no utility rebate</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">No utility rebate available</div>
+              <div class="up-program-value"></div></div>
+            <div class="up-program-desc">JEA does not offer a windows or doors rebate. Federal 25C credit expired Dec 31, 2025; the FL Home Hardening tax credit may apply to impact-resistant windows separately.</div></div></div>
+      </details></div></div>
+</section>
+
+<!-- ═══════════════════════════ OUC ═══════════════════════════ -->
+<section class="up-utility">
+  <div class="container">
+    <div class="up-utility-head">
+      <div class="up-utility-tag">Utility · 5 of 5</div>
+      <h2>OUC <em>Orlando Utilities Commission · municipal</em></h2>
+      <p class="up-utility-blurb">OUC is a Central Florida municipal utility serving Orlando and parts of St. Cloud, around 250,000 electric customers. OUC moved to reduced solar exports (about 4.6 cents per kWh, well below the roughly 11.8 cents retail rate) effective July 1, 2025, while introducing a $2,000 battery rebate the same day. The new DemandLevel pricing tariff (early 2026) makes battery dispatch on peak windows directly relevant to monthly fixed charges.</p></div>
+
+    <div class="up-categories">
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span>
+            <span>
+              <span class="up-cat-title">Heat pumps</span>
+              <span class="up-cat-count">· 2 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">OUC Heat Pump A/C Rebate</div>
+              <div class="up-program-value">$45–$1,150</div></div>
+            <div class="up-program-desc">Tiered rebate of $45-$1,150 based on tonnage and SEER2; the top tier requires 15.2+ SEER2. The widest rebate range of any Florida utility on the heat pump category.</div>
+            <div class="up-program-source"><a href="https://www.ouc.com/solutions-programs/savings/rebates/" target="_blank" rel="noopener">OUC rebates page →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Solar Thermal Water Heater Rebate</div>
+              <div class="up-program-value">up to $900</div></div>
+            <div class="up-program-desc">Up to $900 for a solar thermal (not photovoltaic) water heater, which OUC estimates saves up to $280 per year on bills. Distinct from the heat pump water heater path; a niche but compelling option for Central FL irradiance.</div>
+            <div class="up-program-source"><a href="https://www.ouc.com/solutions-programs/savings/rebates/" target="_blank" rel="noopener">OUC rebates page →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
+            <span>
+              <span class="up-cat-title">Solar</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">OUC Net Metering (post-July 2025)</div>
+              <div class="up-program-value">~4.6¢/kWh export</div></div>
+            <div class="up-program-desc">For new enrollees on or after July 1, 2025, OUC pays roughly 4.6 cents per kWh for exported energy, well below the retail rate of about 11.8 cents per kWh. Pre-July-2025 customers are grandfathered at 1:1 retail for 20 years. Battery-paired solar is the default play in OUC territory.</div>
+            <div class="up-program-source"><a href="https://www.ouc.com/solutions-programs/solar-programs/rooftop-solar/" target="_blank" rel="noopener">OUC rooftop solar →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span>
+            <span>
+              <span class="up-cat-title">Energy storage</span>
+              <span class="up-cat-count">· 2 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">OUC Battery Storage Rebate</div>
+              <div class="up-program-value">up to $2,000/premises</div></div>
+            <div class="up-program-desc">Up to $2,000 per premises (effective July 1, 2025), one of the few FL utility battery rebates. Designed in tandem with the reduced-export tariff to make solar-plus-battery the dominant residential configuration in OUC territory.</div>
+            <div class="up-program-source"><a href="https://www.ouc.com/solutions-programs/savings/rebates/" target="_blank" rel="noopener">OUC rebates page →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">OUC DemandLevel Pricing</div>
+              <div class="up-program-value">$5/$10/$15 fixed by peak</div></div>
+            <div class="up-program-desc">Early-2026 tariff combining a lower variable kWh charge with a monthly fixed charge ($5, $10, or $15) tied to the household's peak usage. A battery dispatching across peak windows can substantially reduce the monthly fixed charge, making OUC's storage stack more valuable than the rebate alone implies.</div>
+            <div class="up-program-source"><a href="https://www.ouc.com/about/news/ouc-offers-amended-plan-to-modernize-pricing-structures/" target="_blank" rel="noopener">OUC DemandLevel announcement →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Insulation &amp; weatherization</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">OUC Home Energy Audit + Rebates</div>
+              <div class="up-program-value">Audit + insulation/duct rebates</div></div>
+            <div class="up-program-desc">Free home energy audit plus rebates for insulation, duct sealing, and (uniquely among the reviewed FL utilities) windows. The widest envelope-improvement stack on the FL muni side.</div>
+            <div class="up-program-source"><a href="https://www.ouc.com/solutions-programs/savings/rebates/" target="_blank" rel="noopener">OUC rebates page →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Windows &amp; doors</span>
+              <span class="up-cat-count">· limited rebate</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">OUC Home Energy Rebate (HER) Window Rebate</div>
+              <div class="up-program-value">Limited · verify amount</div></div>
+            <div class="up-program-desc">OUC offers limited window and duct rebates through its HER program; FL-unique among the reviewed utilities. Specific 2026 dollar amount per ENERGY STAR window is not consistently published and should be verified at audit. [NEEDS RESEARCH: current 2026 amount per ENERGY STAR window.]</div>
+            <div class="up-program-source"><a href="https://www.ouc.com/solutions-programs/savings/rebates/" target="_blank" rel="noopener">OUC rebates page →</a></div></div></div>
+      </details></div></div>
+</section>
+
+<!-- ═══════════════════════════ CLOSING IMAGE BAND ═══════════════════════════ -->
+<section class="up-imgband">
+  <div class="container">
+    <div class="up-imgband-frame">
+      <img src="../images/up-imgband-florida.png" alt="A wide horizontal shot of a Florida residential street at peak utility load: late afternoon palms casting long shadows, AC condensers visible at the side yards, distribution lines and a pole transformer in frame, settled hot-climate mood" loading="lazy" decoding="async"></div>
+    <p class="up-imgband-cap">FPL alone serves <em>~50% of Florida homes;</em> the rest is Duke, TECO, JEA, OUC, and a handful of munis.</p></div>
+</section>
+
+<!-- ═══════════════════════════ CTA STRIP ═══════════════════════════ -->
+<section class="cta-strip">
+  <div class="container-narrow">
+    <h3>Want the math run for <em>your specific FL address</em>?</h3>
+    <p>Your Home Efficiency Score figures out which Florida utility you're on, where you sit on the HB 741 stepdown schedule, and what your full stack looks like, IOU rules or muni rules, for your zip code, your roof, your bill.</p>
+    <a href="../get-my-score.html" class="btn btn-white">Get my report
+      <svg width="16" height="14" viewBox="0 0 16 14" fill="none"><path d="M1 7h13M9 1l5 6-5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a></div>
+</section>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-offices">
+      <h4 class="footer-offices-head">Visit us</h4>
+      <div class="footer-offices-row is-single">
+        <article class="footer-office">
+          <div class="footer-office-map">
+            <iframe
+              src="https://maps.google.com/maps?q=505+S+Broadway+Hicksville+NY+11801&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="Map of ProFusion Hicksville office, 505 S Broadway, Hicksville, NY"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="footer-office-meta">
+            <div class="footer-office-tag">Southeast</div>
+            <div class="footer-office-name">Hicksville, NY</div>
+            <div class="footer-office-addr">505 S Broadway<br>Hicksville, NY 11801</div>
+            <div class="footer-office-phone"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+15166133990">+1 (516) 613-3990</a></div>
+            <a class="footer-office-link" href="https://maps.google.com/?q=505+S+Broadway+Hicksville+NY+11801" target="_blank" rel="noopener">
+              Open in Maps
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a></div>
+        </article></div></div>
+
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img src="../logo.png" alt="ProFusion Home Solutions">
+        <p style="font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--green-400); margin-bottom: 14px;">Built for the <em style="font-family: var(--serif); font-style: italic;">house</em>. Felt in the <em style="font-family: var(--serif); font-style: italic;">home</em>.</p>
+        <p>The Home Efficiency Score, mapped to your zip, <em>every state, every rebate</em>. Now serving 11 states. <em>Going nationwide</em>.</p></div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="../categories/solar.html">Solar</a></li>
+          <li><a href="../categories/heating-cooling.html">Heating &amp; Cooling</a></li>
+          <li><a href="../categories/insulation.html">Insulation</a></li>
+          <li><a href="../categories/windows-doors.html">Windows &amp; Doors</a></li>
+          <li><a href="../categories/energy-storage.html">Energy Storage</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="../how-our-score-guides-you.html">How our Score guides you</a></li>
+          <li><a href="../sample-report.html">See a sample report</a></li>
+          <li><a href="../our-installers.html">Who we match you with</a></li>
+          <li><a href="../2026-changes.html">What changed in 2026</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../contact.html">Contact us</a></li>
+          <li><a href="../get-my-score.html">Get my report</a></li>
+          <li><a href="../for-installers.html">For Installers</a></li>
+        </ul></div></div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 ProFusion Home Solutions LLC</div>
+      <div>Now serving 11 states &middot; A+ BBB &middot; Fully Insured</div></div></div>
+</footer>
+<script>
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+}
+</script>
+<script defer src="../mobile-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Massachusetts SMART Solar · Massachusetts · ProFusion</title>
+<meta name="description" content="SMART (Solar Massachusetts Renewable Target) is the state's flagship solar incentive. SMART 3.0 base block pays $0.03/kWh for 10 years, doubled for income-qualified households. Stack with net metering, the MA state credit, and storage adders.">
+<link rel="icon" type="image/png" href="../images/Favicon.png">
+<link rel="apple-touch-icon" href="../images/Favicon.png">
+<link rel="canonical" href="https://profusion.solutions/programs/mass-smart-solar.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ProFusion Home Solutions">
+<meta property="og:title" content="Massachusetts SMART Solar · Massachusetts · ProFusion">
+<meta property="og:description" content="SMART (Solar Massachusetts Renewable Target) is the state">
+<meta property="og:url" content="https://profusion.solutions/programs/mass-smart-solar.html">
+<meta property="og:image" content="https://profusion.solutions/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Massachusetts SMART Solar · Massachusetts · ProFusion">
+<meta name="twitter:description" content="SMART (Solar Massachusetts Renewable Target) is the state">
+<meta name="twitter:image" content="https://profusion.solutions/images/social-card.png">
+<meta name="twitter:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="theme-color" content="#0A1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+:root { --state-accent: #1A4F90; --state-tint: rgba(26, 79, 144, 0.08); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PROGRAM HERO — split-screen, photographic right, idx2 typography left
+   ═══════════════════════════════════════════════════════════════════════════ */.program-hero {
+  padding: 32px 0 80px;
+}.program-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: center;
+}.program-hero-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}.program-hero-meta .state-tag,.program-hero-meta .category-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  text-decoration: none;
+  color: var(--state-accent);
+  background: var(--state-tint);
+  border: 1px solid rgba(26, 79, 144, 0.18);
+  transition: background 0.2s, color 0.2s;
+}.program-hero-meta .category-tag {
+  background: var(--green-50);
+  color: var(--green-700);
+  border-color: rgba(46, 154, 61, 0.18);
+}.program-hero-meta .state-tag:hover,.program-hero-meta .category-tag:hover { filter: brightness(0.96); }.program-hero h1.idx2-h1 { max-width: 16ch; margin-bottom: 24px; }.program-hero .idx2-prose { max-width: 52ch; margin-bottom: 36px; }.program-hero-cta-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 48px;
+}.program-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-top: 32px;
+  border-top: 1px solid var(--gray-100);
+}.program-hero-stat-val {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  color: var(--state-accent);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}.program-hero-stat-val .unit {
+  font-family: var(--mono);
+  font-size: 0.5em;
+  font-weight: 500;
+  color: var(--gray-400);
+  letter-spacing: 0.04em;
+  margin-left: 4px;
+}.program-hero-stat-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--gray-400);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}.program-hero-visual {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 48px -16px rgba(10, 16, 32, 0.18), 0 1px 2px rgba(10, 16, 32, 0.06);
+  background: var(--gray-50);
+}.program-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }.program-hero-float-pill {
+  position: absolute; top: 20px; right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 10px 16px; border-radius: 100px;
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  font-weight: 600; color: var(--state-accent);
+  box-shadow: var(--shadow-sm); z-index: 2;
+}
+
+@media (max-width: 1024px) {.program-hero-inner { grid-template-columns: 1fr; gap: 48px; }
+}
+@media (max-width: 640px) {.program-hero-stats { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   WHY-NOW · compact rate-hedge with chart-on-right + the hedge tag
+   Same pattern as the MA state page. Section is the page's gray-50 anchor.
+   ═══════════════════════════════════════════════════════════════════════════ */.rate-hedge.is-state-slim { padding: 56px 0; }.rate-hedge.is-state-slim.rate-hedge-2col {
+  max-width: var(--idx2-container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
+  gap: 56px;
+  align-items: center;
+}.rate-hedge.is-state-slim.rate-hedge-header { max-width: none; margin-bottom: 0; }.rate-hedge.is-state-slim.rate-hedge-chart-card { padding: 24px 28px; }.rate-hedge.is-state-slim.rate-hedge-source { font-size: 11px; line-height: 1.5; margin-top: 14px; }
+
+/* Override shared italic-serif H2 emphasis with idx2 color-only emphasis */.rate-hedge.is-state-slim h2.idx2-h2 em {
+  font-family: var(--display);
+  font-style: normal;
+  font-weight: 600;
+  color: var(--blue-700);
+}
+
+/* The hedge tag — slim mono pill in the header column */.rate-hedge-tag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 8px 14px;
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 100px;
+  box-shadow: 0 1px 2px rgba(10, 16, 32, 0.04);
+}.rate-hedge-tag-label {
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500);
+}.rate-hedge-tag-value {
+  font-family: var(--mono); font-size: 12px; font-weight: 600;
+  color: var(--green-700); font-feature-settings: 'tnum';
+}
+
+/* Choreographed motion — utility lines draw on as the section enters viewport */.rate-hedge.is-state-slim.util-line,.rate-hedge.is-state-slim.solar-line,.rate-hedge.is-state-slim.solar-line-credit {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.6s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1));
+}.rate-hedge.is-state-slim.solar-line { transition-delay: 0.1s; }.rate-hedge.is-state-slim.solar-line-credit { transition-delay: 0.1s; }.rate-hedge.is-state-slim.util-line:nth-of-type(1) { transition-delay: 0.45s; }.rate-hedge.is-state-slim.util-line:nth-of-type(2) { transition-delay: 0.6s; }.rate-hedge.is-state-slim.hedge-wedge {
+  opacity: 0;
+  transition: opacity 0.7s ease 1.6s;
+}.rate-hedge.is-state-slim.hedge-wedge-label,.rate-hedge.is-state-slim.util-label,.rate-hedge.is-state-slim.solar-label,.rate-hedge.is-state-slim text.solar-label-credit {
+  opacity: 0;
+  transition: opacity 0.5s ease 1.9s;
+}.rate-hedge.is-state-slim.is-in-view.util-line,.rate-hedge.is-state-slim.is-in-view.solar-line,.rate-hedge.is-state-slim.is-in-view.solar-line-credit { stroke-dashoffset: 0; }.rate-hedge.is-state-slim.is-in-view.hedge-wedge,.rate-hedge.is-state-slim.is-in-view.hedge-wedge-label,.rate-hedge.is-state-slim.is-in-view.util-label,.rate-hedge.is-state-slim.is-in-view.solar-label,.rate-hedge.is-state-slim.is-in-view text.solar-label-credit { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {.rate-hedge.is-state-slim.util-line,.rate-hedge.is-state-slim.solar-line,.rate-hedge.is-state-slim.solar-line-credit { stroke-dashoffset: 0; transition: none; }.rate-hedge.is-state-slim.hedge-wedge,.rate-hedge.is-state-slim.hedge-wedge-label,.rate-hedge.is-state-slim.util-label,.rate-hedge.is-state-slim.solar-label,.rate-hedge.is-state-slim text.solar-label-credit { opacity: 1; transition: none; }
+}
+@media (max-width: 1024px) {.rate-hedge.is-state-slim.rate-hedge-2col { grid-template-columns: 1fr; gap: 36px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   WORKED EXAMPLE · scrollytelling reveal
+   Page's "money moment" — amber-toned eyebrow signals the role.
+   ═══════════════════════════════════════════════════════════════════════════ */.solar-example {
+  background: white;
+  padding: var(--idx2-section) 0;
+}.solar-example .idx2-eyebrow { color: #B45309; }.solar-example .idx2-eyebrow::before { background: #F59E0B; }.solar-example-inner {
+  max-width: var(--idx2-container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 80px;
+  align-items: center;
+}.solar-example-prose { max-width: 56ch; }.solar-example-inline-num {
+  font-family: var(--mono);
+  font-feature-settings: 'tnum';
+  color: var(--gray-800);
+  font-weight: 500;
+}.solar-example-card {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 20px;
+  padding: 36px 40px;
+  box-shadow: 0 1px 2px rgba(10, 16, 32, 0.04), 0 1px 3px rgba(10, 16, 32, 0.05);
+}.solar-example-card-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gray-400);
+  margin-bottom: 22px;
+}.solar-example-card-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 12px 0;
+  font-family: var(--display); font-size: 15px;
+  color: var(--gray-800);
+}.solar-example-card-row.is-cost { color: var(--ink); }.solar-example-card-row.is-deduct { color: var(--green-700); }.solar-example-card-row.is-revenue { color: var(--green-700); }.solar-example-card-label {
+  font-family: var(--display); font-weight: 400;
+  color: var(--gray-600);
+}.solar-example-card-row.is-deduct.solar-example-card-label,.solar-example-card-row.is-revenue.solar-example-card-label {
+  color: var(--green-700);
+  font-weight: 500;
+}.solar-example-card-num {
+  font-family: var(--mono);
+  font-feature-settings: 'tnum';
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--gray-800);
+}.solar-example-card-row.is-deduct.solar-example-card-num,.solar-example-card-row.is-revenue.solar-example-card-num {
+  color: var(--green-700);
+}.solar-example-card-divider { height: 1px; background: var(--gray-100); margin: 12px 0; }.solar-example-card-final {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 14px 0 18px;
+}.solar-example-card-final .solar-example-card-label {
+  font-family: var(--display); font-weight: 500;
+  font-size: 14px; color: var(--gray-800);
+}.solar-example-card-num.is-final {
+  font-family: var(--mono);
+  font-feature-settings: 'tnum';
+  font-size: 28px; font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--green-700);
+}
+
+/* Red counter-stat — "cost of doing nothing", a single tight line for clean
+   contrast with the green total above. Same red as the rate-hedge chart's
+   utility lines, so the color ties the bad outcome to the climbing utility. */.solar-example-card-vs {
+  padding: 8px 0 4px;
+  margin-top: -2px;
+  font-family: var(--display); font-weight: 500;
+  font-size: 13.5px; line-height: 1.4;
+  color: #DC2626;
+  text-align: left;
+}.solar-example-card-vs strong {
+  font-family: var(--mono);
+  font-feature-settings: 'tnum';
+  font-size: 16px; font-weight: 600;
+  letter-spacing: -0.015em;
+  color: #DC2626;
+  margin: 0 2px;
+}.solar-example-card-foot {
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-family: var(--display); font-size: 13px;
+  line-height: 1.55;
+  color: var(--gray-600);
+  max-width: 36ch;
+}.solar-example-card-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 18px;
+  font-family: var(--display); font-weight: 500; font-size: 14px;
+  color: var(--state-accent, var(--blue-700));
+  text-decoration: none;
+  padding: 8px 0;
+  transition: gap var(--idx2-quick, 0.22s);
+}.solar-example-card-cta:hover { gap: 10px; }
+
+/* Scrollytelling sequential reveal */.solar-example-card [data-reveal] {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.55s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1)),
+    transform 0.55s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1));
+}.solar-example-card [data-reveal="1"] { transition-delay: 0.10s; }       /* MA state credit */.solar-example-card [data-reveal="2"] { transition-delay: 0.50s; }       /* SMART payments */.solar-example-card [data-reveal="3"] { transition-delay: 0.90s; }       /* Net metering */.solar-example-card [data-reveal="4"] { transition-delay: 1.30s; transform: scaleX(0.4); transform-origin: left; }  /* divider */.solar-example-card [data-reveal="5"] { transition-delay: 1.60s; }       /* total stacked (green pulse) */.solar-example-card [data-reveal="6"] { transition-delay: 2.20s; }       /* red counter-stat */.solar-example-card [data-reveal="7"] { transition-delay: 2.70s; }       /* foot text + CTA */.solar-example.is-revealed.solar-example-card [data-reveal] {
+  opacity: 1;
+  transform: none;
+}.solar-example.is-revealed.solar-example-card-num.is-final {
+  animation: solar-example-final-pulse 0.7s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1)) 1.70s both;
+}
+@keyframes solar-example-final-pulse {
+  0%   { transform: scale(1); }
+  45%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {.solar-example-card [data-reveal] {
+    opacity: 1; transform: none; transition: none;
+  }.solar-example-card-num.is-final { animation: none !important; }
+}
+@media (max-width: 960px) {.solar-example-inner { grid-template-columns: 1fr; gap: 48px; }.solar-example-card { padding: 28px 24px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PROGRAM COMPONENTS · vertical-flow row cards (no bento)
+   Each piece of the SMART stack is its own row with a category color stripe.
+   ═══════════════════════════════════════════════════════════════════════════ */.solar-components {
+  background: #FAF9F6;     /* warm cream — paper-like menu of incentives */
+  padding: var(--idx2-section) 0;
+}.solar-components-head { max-width: 760px; margin-bottom: 56px; }.solar-components-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Each component is a <details> element — click summary to expand the deeper
+   explanation. Visually identical to row cards when collapsed; opens cleanly. */.solar-component-row {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 16px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(10, 16, 32, 0.04);
+  transition: transform 0.25s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1)),
+              box-shadow 0.25s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1)),
+              border-color 0.25s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1));
+}.solar-component-row:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px -8px rgba(10, 16, 32, 0.10), 0 1px 2px rgba(10, 16, 32, 0.04);
+  border-color: var(--gray-200);
+}.solar-component-row[open] {
+  border-color: var(--gray-200);
+  box-shadow: 0 6px 20px -10px rgba(10, 16, 32, 0.12), 0 1px 2px rgba(10, 16, 32, 0.04);
+}.solar-component-row::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: var(--row-accent, var(--gray-300));
+}.solar-component-row.is-base    { --row-accent: var(--green-500); }     /* SMART base — green */.solar-component-row.is-bonus   { --row-accent: #F59E0B; }              /* low-income adder — amber */.solar-component-row.is-credit  { --row-accent: var(--blue-700); }      /* state tax credit — blue */.solar-component-row.is-meter   { --row-accent: #14B8A6; }              /* net metering — teal */.solar-component-row.is-storage { --row-accent: #8B5CF6; }              /* storage adder — purple */
+
+/* Summary acts as the closed row — click anywhere to expand */.solar-component-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 28px;
+  display: grid;
+  grid-template-columns: 56px 1fr auto 24px;
+  gap: 24px;
+  align-items: center;
+}.solar-component-summary::-webkit-details-marker { display: none; }.solar-component-icon {
+  width: 44px; height: 44px;
+  color: var(--row-accent, var(--gray-700));
+  opacity: 0.7;
+  transition: opacity 0.25s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1));
+}.solar-component-row:hover.solar-component-icon,.solar-component-row[open].solar-component-icon { opacity: 1; }.solar-component-content { display: flex; flex-direction: column; gap: 5px; min-width: 0; }.solar-component-title {
+  font-family: var(--display); font-weight: 500; font-size: 19px;
+  line-height: 1.25; letter-spacing: -0.018em; color: var(--ink);
+}.solar-component-tagline {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: 14.5px; line-height: 1.4; color: var(--gray-600);
+}.solar-component-amount {
+  text-align: right;
+  align-self: center;
+}.solar-component-amount-val {
+  font-family: var(--display); font-weight: 500;
+  font-size: 20px; line-height: 1; letter-spacing: -0.025em;
+  color: var(--green-700);
+}.solar-component-amount-label {
+  font-family: var(--mono); font-size: 9.5px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--gray-500); margin-top: 4px;
+}
+
+/* Toggle indicator (+/×) — rotates 45° when open */.solar-component-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; height: 24px;
+  font-family: var(--mono); font-size: 22px; font-weight: 400;
+  color: var(--gray-400);
+  line-height: 1;
+  transition: transform 0.3s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1)),
+              color 0.25s;
+}.solar-component-row[open].solar-component-toggle {
+  transform: rotate(45deg);
+  color: var(--row-accent, var(--state-accent));
+}
+
+/* Expanded body — aligned with the title column */.solar-component-detail {
+  padding: 4px 28px 26px 88px;
+  border-top: 1px dashed var(--gray-100);
+  margin-top: 0;
+  font-family: var(--serif-body, var(--display));
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--gray-700);
+  max-width: 78ch;
+}.solar-component-detail p { margin-top: 16px; }.solar-component-detail p:first-child { margin-top: 18px; }.solar-component-detail strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {.solar-component-summary {
+    grid-template-columns: 44px 1fr 24px;
+    gap: 16px;
+    padding: 20px 22px;
+  }.solar-component-amount {
+    grid-column: 2;
+    text-align: left;
+    margin-top: 4px;
+  }.solar-component-amount-val { font-size: 16px; }.solar-component-toggle { grid-column: 3; grid-row: 1; align-self: start; }.solar-component-detail { padding: 4px 22px 22px 22px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TIMELINE · vertical-flow numbered rows
+   ═══════════════════════════════════════════════════════════════════════════ */.solar-timeline {
+  background: white;
+  padding: var(--idx2-section) 0;
+}.solar-timeline-head { max-width: 720px; margin-bottom: 56px; }.solar-timeline-list {
+  display: flex; flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--gray-100);
+}.solar-timeline-item {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 32px;
+  align-items: baseline;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--gray-100);
+}.solar-timeline-num {
+  font-family: var(--mono);
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--state-accent);
+  font-feature-settings: 'tnum';
+}.solar-timeline-content { display: flex; flex-direction: column; gap: 6px; max-width: 56ch; }.solar-timeline-title {
+  font-family: var(--display); font-weight: 500;
+  font-size: 19px; line-height: 1.25; letter-spacing: -0.018em;
+  color: var(--ink);
+}.solar-timeline-desc {
+  font-family: var(--serif-body, var(--display));
+  font-size: 14.5px; line-height: 1.55;
+  color: var(--gray-600);
+}.solar-timeline-when {
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--gray-500); white-space: nowrap;
+}
+@media (max-width: 720px) {.solar-timeline-item { grid-template-columns: 60px 1fr; gap: 18px; }.solar-timeline-when { grid-column: 2; margin-top: 4px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FAQ · accordion, cool tint background to mark the "directory" feel
+   ═══════════════════════════════════════════════════════════════════════════ */.solar-faq {
+  background: #F8FAFB;
+  padding: var(--idx2-section) 0 56px;       /* tighter bottom — transitions into Related */
+}.solar-faq-head { max-width: 720px; margin-bottom: 48px; }.solar-faq-list {
+  max-width: 880px;
+  border-top: 1px solid var(--gray-200);
+}.solar-faq-item {
+  border-bottom: 1px solid var(--gray-200);
+}.solar-faq-q {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 24px 0;
+  font-family: var(--display); font-weight: 500;
+  font-size: 17px; letter-spacing: -0.01em;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.2s;
+}.solar-faq-q::-webkit-details-marker { display: none; }.solar-faq-q::after {
+  content: '+';
+  font-family: var(--mono); font-size: 22px; font-weight: 400;
+  color: var(--gray-400);
+  transition: transform 0.25s, color 0.25s;
+}.solar-faq-item[open].solar-faq-q::after { content: '−'; color: var(--state-accent); }.solar-faq-item[open].solar-faq-q { color: var(--state-accent); }.solar-faq-q:hover { color: var(--state-accent); }.solar-faq-a {
+  padding: 0 0 28px 0;
+  font-family: var(--serif-body, var(--display));
+  font-size: 15.5px; line-height: 1.65; color: var(--gray-700);
+  max-width: 70ch;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RELATED PROGRAMS · vertical-flow row cards with rebate hooks
+   - Lives on the same cool tint as the FAQ above so the two sections read as
+     one "explore further" zone, separated by a hairline divider.
+   - Each card shows tag + program name + a one-line rebate hook + amount,
+     so a homeowner sees what's in it for them before clicking.
+   ═══════════════════════════════════════════════════════════════════════════ */.solar-related {
+  background: #F8FAFB;       /* matches FAQ above for tonal continuity */
+  padding: 56px 0 var(--idx2-section);
+  border-top: 1px solid var(--gray-200);
+}.solar-related-head { max-width: 720px; margin-bottom: 40px; }.solar-related-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}.solar-related-card {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 14px;
+  padding: 20px 26px;
+  display: grid;
+  grid-template-columns: 44px 1fr auto 24px;
+  gap: 22px;
+  align-items: center;
+  text-decoration: none;
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(10, 16, 32, 0.03);
+  transition: transform 0.25s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1)),
+              box-shadow 0.25s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1)),
+              border-color 0.25s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1));
+}.solar-related-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px -8px rgba(10, 16, 32, 0.10), 0 1px 2px rgba(10, 16, 32, 0.04);
+  border-color: var(--gray-200);
+}.solar-related-card-icon {
+  width: 36px; height: 36px;
+  color: var(--row-accent, var(--gray-700));
+  opacity: 0.7;
+  transition: opacity 0.25s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1));
+}.solar-related-card:hover.solar-related-card-icon { opacity: 1; }.solar-related-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}.solar-related-card-tag {
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--row-accent, var(--state-accent));
+}.solar-related-card-title {
+  font-family: var(--display); font-weight: 500;
+  font-size: 17px; line-height: 1.25;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+}.solar-related-card-hook {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: 13.5px; line-height: 1.4;
+  color: var(--gray-600);
+}.solar-related-card-amount {
+  text-align: right;
+  align-self: center;
+}.solar-related-card-amount-val {
+  font-family: var(--display); font-weight: 500;
+  font-size: 17px; line-height: 1; letter-spacing: -0.02em;
+  color: var(--green-700);
+}.solar-related-card-amount-label {
+  font-family: var(--mono); font-size: 9px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--gray-500); margin-top: 3px;
+}.solar-related-card-arrow {
+  width: 14px; height: 10px;
+  color: var(--gray-400);
+  transition: transform 0.25s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1)),
+              color 0.25s;
+}.solar-related-card:hover.solar-related-card-arrow {
+  transform: translateX(3px);
+  color: var(--row-accent, var(--state-accent));
+}
+
+/* Category coloring — icon, tag, and hover arrow share the accent */.solar-related-card.is-cat-heatpump   { --row-accent: var(--blue-700); }.solar-related-card.is-cat-insulation { --row-accent: var(--green-500); }.solar-related-card.is-cat-storage    { --row-accent: #8B5CF6; }.solar-related-card.is-cat-windows    { --row-accent: #14B8A6; }
+
+@media (max-width: 720px) {.solar-related-card {
+    grid-template-columns: 36px 1fr;
+    gap: 16px;
+    padding: 18px 20px;
+  }.solar-related-card-amount {
+    grid-column: 2;
+    text-align: left;
+    margin-top: 4px;
+  }.solar-related-card-amount-val { font-size: 15px; }.solar-related-card-arrow { display: none; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="idx2-skip-link">Skip to main content</a>
+
+<nav class="site-nav" id="nav">
+  <a href="../index.html" class="brand"><img src="../logo.png" alt="ProFusion Home Solutions"></a>
+  <ul class="nav-links">
+<li class="has-dropdown">
+      <a href="#">About <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../about-us.html">About Us</a>
+        <a href="../our-customers.html">Our Customers</a>
+        <a href="../for-installers.html">For Installers</a>
+        <a href="../contact.html">Contact Us</a></div>
+    </li>
+    <li><a href="../index.html#map">Service Area</a></li>
+    <li class="has-dropdown">
+      <a href="#">Programs <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../categories/solar.html">Solar</a>
+        <a href="../categories/heating-cooling.html">Heating &amp; Cooling</a>
+        <a href="../categories/insulation.html">Insulation</a>
+        <a href="../categories/windows-doors.html">Windows &amp; Doors</a>
+        <a href="../categories/energy-storage.html">Energy Storage</a></div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Learn <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../index.html#idx2Score"><span class="simple-dropdown-eyebrow">On homepage</span>The Score</a>
+        <a href="../index.html#how"><span class="simple-dropdown-eyebrow">On homepage</span>How it works</a>
+        <div class="simple-dropdown-divider" aria-hidden="true"></div>
+        <a href="../how-our-score-guides-you.html">How our Score guides you</a>
+        <a href="../sample-report.html">See a sample report</a>
+        <a href="../our-installers.html">Who we match you with</a>
+        <a href="../2026-changes.html">What changed in 2026</a></div>
+    </li>
+    <li><a href="../get-my-score.html" class="nav-cta">Get my report</a></li>
+  </ul>
+</nav>
+
+<div class="container breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">/</span>
+  <a href="../categories/solar.html">Solar</a>
+  <span class="sep">/</span>
+  <a href="../states/massachusetts.html">Massachusetts</a>
+  <span class="sep">/</span>
+  <span class="current">Massachusetts SMART Solar</span></div>
+
+<!-- ═══════════════════ Hero ═══════════════════ -->
+<section class="program-hero" id="main-content">
+  <div class="container">
+    <div class="program-hero-inner">
+      <div>
+        <div class="program-hero-meta">
+          <a href="../states/massachusetts.html" class="state-tag">MA · Massachusetts</a>
+          <a href="../categories/solar.html" class="category-tag">Solar</a></div>
+        <h1 class="idx2-h1">The Commonwealth's <em>solar incentive,</em> spelled out.</h1>
+        <p class="idx2-prose">SMART (Solar Massachusetts Renewable Target) is the state's flagship solar incentive program. Production-based payments for 10 years, stackable with net metering, the MA state tax credit, and battery adders. Locked-in flat rates for 30 years against a utility that keeps climbing.</p>
+        <div class="program-hero-cta-row">
+          <a href="../get-my-score.html" class="idx2-cta">Get my report
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <a href="#rate-hedge" class="idx2-link">See how the math works
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+              <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a></div>
+        <div class="program-hero-stats">
+          <div><div class="program-hero-stat-val">3-6&cent;</div><div class="program-hero-stat-label">SMART rate · per kWh</div></div>
+          <div><div class="program-hero-stat-val">10<span class="unit">yrs</span></div><div class="program-hero-stat-label">Production-payment term</div></div>
+          <div><div class="program-hero-stat-val">25<span class="unit">kW</span></div><div class="program-hero-stat-label">Residential system cap</div></div></div></div>
+      <div class="program-hero-visual">
+        <div class="program-hero-float-pill">MA · SMART Solar</div>
+        <img class="program-hero-img" src="../images/program-hero-mass-smart-solar.jpg" alt="A residential rooftop solar installation in progress, Massachusetts" loading="eager" decoding="async"></div></div></div>
+</section>
+
+<!-- ═══════════════════ Why (the historical force): the rate-hedge ═══════════════════ -->
+<section class="rate-hedge is-state-slim" id="rate-hedge" aria-label="Why now: Massachusetts utility rates vs. solar LCOE">
+  <div class="container">
+    <div class="rate-hedge-2col">
+      <div class="rate-hedge-header">
+        <span class="idx2-eyebrow">Why solar &middot; Massachusetts</span>
+        <h2 class="idx2-h2">Your utility <em>more than doubled.</em> Solar didn't.</h2>
+        <p class="idx2-prose" style="margin-top: 18px;">You paid 14.5&cent;/kWh in 2010. Today you pay 33&cent;. A typical 8&nbsp;kW rooftop system at standard New England install pricing locks you in at roughly 10&cent;/kWh for 30 years, regardless of what your utility does next.</p>
+        <div class="rate-hedge-tag" aria-label="The hedge: solar's flat baseline">
+          <span class="rate-hedge-tag-label">The hedge</span>
+          <span class="rate-hedge-tag-value">~10&cent;/kWh, flat 30 yrs</span></div>
+        <a href="../get-my-score.html" class="idx2-link" style="margin-top: 20px;">Get my report
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+            <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a></div>
+
+      <div class="rate-hedge-chart-card">
+        <div class="rate-hedge-chart-title">Residential rate &times; solar LCOE &middot; Massachusetts</div>
+        <div class="rate-hedge-chart-sub">2010&ndash;2025 &middot; cents per kWh</div>
+        <svg class="rate-hedge-svg" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Massachusetts residential electric rate vs solar LCOE, 2010 to 2025">
+          <path class="hedge-wedge" d="M 48.0,229.3 L 87.5,218.8 L 126.9,212.7 L 166.4,202.2 L 205.9,207.5 L 245.3,195.2 L 284.8,185.6 L 324.3,159.4 L 363.7,159.4 L 403.2,155.1 L 442.7,150.7 L 482.1,137.6 L 521.6,63.3 L 561.1,50.2 L 600.5,63.3 L 640.0,67.7 L 640.0,268.6 L 48.0,268.6 Z"/>
+          <line class="grid" x1="48" y1="356.0" x2="640" y2="356.0"/>
+          <text class="axis-label" x="40" y="359.0" text-anchor="end">0&cent;</text>
+          <line class="grid" x1="48" y1="268.6" x2="640" y2="268.6"/>
+          <text class="axis-label" x="40" y="271.6" text-anchor="end">10&cent;</text>
+          <line class="grid" x1="48" y1="181.3" x2="640" y2="181.3"/>
+          <text class="axis-label" x="40" y="184.3" text-anchor="end">20&cent;</text>
+          <line class="grid" x1="48" y1="93.9" x2="640" y2="93.9"/>
+          <text class="axis-label" x="40" y="96.9" text-anchor="end">30&cent;</text>
+          <line class="axis" x1="48" y1="356" x2="640" y2="356"/>
+          <text class="axis-label" x="48.0" y="372" text-anchor="middle">2010</text>
+          <text class="axis-label" x="245.3" y="372" text-anchor="middle">2015</text>
+          <text class="axis-label" x="442.7" y="372" text-anchor="middle">2020</text>
+          <text class="axis-label" x="640.0" y="372" text-anchor="middle">2025</text>
+          <line class="solar-line" x1="48" y1="268.6" x2="640" y2="268.6" pathLength="1"/>
+          <path class="natl-avg-line" pathLength="1" d="M 48.0,261.4 L 87.5,259.9 L 126.9,258.6 L 166.4,256.5 L 205.9,253.5 L 245.3,252.3 L 284.8,253.1 L 324.3,250.3 L 363.7,250.5 L 403.2,249.3 L 442.7,247.8 L 482.1,243.5 L 521.6,232.0 L 561.1,225.0 L 600.5,222.7 L 640.0,217.8"/>
+<text class="natl-avg-label" x="648.0" y="221.5">US avg $0.169/kWh</text>
+<path class="util-line" pathLength="1" d="M 48.0,229.3 L 87.5,218.8 L 126.9,212.7 L 166.4,202.2 L 205.9,207.5 L 245.3,195.2 L 284.8,185.6 L 324.3,159.4 L 363.7,159.4 L 403.2,155.1 L 442.7,150.7 L 482.1,137.6 L 521.6,63.3 L 561.1,50.2 L 600.5,63.3 L 640.0,67.7" stroke="#DC2626"/>
+          <text class="util-label" x="648.0" y="71.7" fill="#DC2626">Eversource MA 33.0&cent;</text>
+          
+
+<path class="util-line" pathLength="1" d="M 48.0,233.7 L 87.5,224.9 L 126.9,216.2 L 166.4,207.5 L 205.9,207.5 L 245.3,194.4 L 284.8,194.4 L 324.3,163.8 L 363.7,163.8 L 403.2,159.4 L 442.7,155.1 L 482.1,141.9 L 521.6,76.4 L 561.1,63.3 L 600.5,76.4 L 640.0,80.8" stroke="#F59E0B"/>
+          <text class="util-label" x="648.0" y="57.7" fill="#F59E0B">National Grid 31.5&cent;</text>
+          <text class="solar-label" x="648" y="272.6">Solar ~10&cent;/kWh</text>
+          <text class="hedge-wedge-label" x="363.7" y="215.0" text-anchor="middle">your rate hedge</text>
+          <text class="axis-label" x="12" y="190.0" text-anchor="middle" transform="rotate(-90 12 190.0)">&cent;/kWh, residential</text>
+        </svg>
+        <div class="rate-hedge-legend">
+          <span class="rate-hedge-legend-item"><span class="rate-hedge-legend-swatch" style="background: #DC2626;"></span>Eversource MA</span>
+          <span class="rate-hedge-legend-item"><span class="rate-hedge-legend-swatch" style="background: #F59E0B;"></span>National Grid MA</span>
+          <span class="rate-hedge-legend-item"><span class="rate-hedge-legend-swatch" style="background: var(--green-500);"></span>Solar LCOE</span>
+          <span class="rate-hedge-legend-item"><span class="rate-hedge-legend-swatch natl"></span>US national average</span></div>
+        <div class="rate-hedge-source">Source &middot; EIA Form 861, residential class, 2010&ndash;2025. State averages and the US national line both pulled from the same dataset for an apples-to-apples comparison.</div><div class="rate-hedge-utilities"><span class="rate-hedge-utilities-label">Major utilities covered</span><span class="rate-hedge-utilities-list">Eversource, National Grid, Unitil</span></div></div></div></div>
+</section>
+
+<!-- ═══════════════════ How (the proof): scrollytelling worked example ═══════════════════ -->
+<section class="solar-example" aria-label="A real Massachusetts SMART Solar project">
+  <div class="container">
+    <div class="solar-example-inner">
+      <div class="solar-example-prose">
+        <span class="idx2-eyebrow">Worked example &middot; Cambridge, MA</span>
+        <h2 class="idx2-h2"><em>25 years of math,</em> told in one card.</h2>
+        <p class="idx2-prose" style="margin-top: 24px;">An 8&nbsp;kW rooftop system in Cambridge qualifies for the MA state solar tax credit (<span class="solar-example-inline-num">$1,000</span> off your state return), SMART 3.0 production payments (<span class="solar-example-inline-num">$2,916</span> over ten years), and net metering credits at retail rate for the system's lifespan. Massachusetts utility rates have averaged 5% per year over the last decade. Even at a more conservative 4% projection, those net-metering credits compound to roughly <span class="solar-example-inline-num">$120,000</span> over 25 years. Lease and 0% APR loan financing both available, with most homeowners going solar with no money down on day one.</p></div>
+
+      <aside class="solar-example-card" aria-label="What you get back over 25 years">
+        <div class="solar-example-card-eyebrow">25-year benefit stack &middot; 8 kW &middot; Cambridge, MA</div>
+        <div class="solar-example-card-row is-revenue" data-reveal="1">
+          <span class="solar-example-card-label">MA state solar tax credit</span>
+          <span class="solar-example-card-num">+$1,000</span></div>
+        <div class="solar-example-card-row is-revenue" data-reveal="2">
+          <span class="solar-example-card-label">SMART 3.0 payments &middot; 10 yrs</span>
+          <span class="solar-example-card-num">+$2,916</span></div>
+        <div class="solar-example-card-row is-revenue" data-reveal="3">
+          <span class="solar-example-card-label">Net metering @ 4% inflation &middot; 25 yrs</span>
+          <span class="solar-example-card-num">+$120,000</span></div>
+        <div class="solar-example-card-divider" data-reveal="4"></div>
+        <div class="solar-example-card-final" data-reveal="5">
+          <span class="solar-example-card-label">Maximum benefit (with all stacks)</span>
+          <span class="solar-example-card-num is-final">up to $124,000</span></div>
+        <div class="solar-example-card-vs" data-reveal="6" aria-label="Cost of doing nothing">
+          Cost of doing nothing &middot; <strong>~$120,000</strong> to utility over 25 years</div>
+        <div class="solar-example-card-foot" data-reveal="7">Lease and 0% APR loan financing both available. No money down on day one. Math assumes 4%/yr utility-rate inflation and 0.5%/yr panel degradation; at the 5%/yr Massachusetts has historically averaged, the 25-year benefit climbs above $140,000.
+          <a href="../get-my-score.html" class="solar-example-card-cta">Match this to my home
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+              <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a></div>
+      </aside></div></div>
+</section>
+
+<!-- ═══════════════════ How (the components): every piece of the SMART stack ═══════════════════ -->
+<section class="solar-components" id="components" aria-label="Massachusetts SMART Solar program components">
+  <div class="container">
+    <div class="solar-components-head">
+      <span class="idx2-eyebrow">SMART 3.0 &middot; the stack</span>
+      <h2 class="idx2-h2">The <em>pieces of the stack,</em> by category.</h2>
+      <p class="idx2-lede">Each piece pays you in a different way over a different time horizon. Your installer files most of the paperwork; you sign at the end.</p></div>
+
+    <div class="solar-components-list">
+      <details class="solar-component-row is-base">
+        <summary class="solar-component-summary">
+          <svg class="solar-component-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="32" cy="20" r="6"/>
+            <path d="M32 6v3M32 31v3M46 20h3M15 20h3M22 10l2 2M40 10l-2 2M22 30l2-2M40 30l-2-2"/>
+            <rect x="10" y="40" width="44" height="18" rx="2"/>
+            <path d="M22 40v18M42 40v18M10 49h44"/>
+          </svg>
+          <div class="solar-component-content">
+            <div class="solar-component-title">SMART 3.0 base block</div>
+            <div class="solar-component-tagline">Per-kWh production payment for residential systems under 25 kW. Paid out over a 10-year term.</div></div>
+          <div class="solar-component-amount">
+            <div class="solar-component-amount-val">$0.03<span style="font-size:0.55em; color: var(--gray-500); margin-left: 2px;">/kWh</span></div>
+            <div class="solar-component-amount-label">10-year term</div></div>
+          <span class="solar-component-toggle" aria-hidden="true">+</span></summary>
+        <div class="solar-component-detail">
+          <p>Your inverter (or a separate production meter installed at the time of Permission to Operate) tracks every kWh the system produces. Each billing cycle, your utility multiplies that production by your locked-in <strong>$0.03/kWh rate</strong> and either credits the amount to your bill or sends a check, depending on the utility.</p>
+          <p>The payment is on <strong>production, not net export</strong>. You get paid for every kWh whether you used it at home or sent it to the grid. The rate is locked in at the time your SMART application is approved, so the payment doesn't change for the full 10 years.</p>
+          <p>After year 10 the SMART payments stop, but the panels keep generating for another 15 to 20 years and net metering credits continue indefinitely.</p></div></details>
+
+      <details class="solar-component-row is-bonus">
+        <summary class="solar-component-summary">
+          <svg class="solar-component-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M32 8l4 12 12 1-9 9 3 13-10-7-10 7 3-13-9-9 12-1z"/>
+          </svg>
+          <div class="solar-component-content">
+            <div class="solar-component-title">Low-income adder</div>
+            <div class="solar-component-tagline">Doubles the base rate for income-qualified households. Same 10-year term, paid alongside the base block.</div></div>
+          <div class="solar-component-amount">
+            <div class="solar-component-amount-val">$0.06<span style="font-size:0.55em; color: var(--gray-500); margin-left: 2px;">/kWh</span></div>
+            <div class="solar-component-amount-label">Income-qualified</div></div>
+          <span class="solar-component-toggle" aria-hidden="true">+</span></summary>
+        <div class="solar-component-detail">
+          <p>You qualify if your household is at or below <strong>60% of state median income</strong> (roughly $77,000 for a family of four in 2026). Documentation accepted: tax returns, pay stubs, or active enrollment in LIHEAP, MassHealth, or SNAP.</p>
+          <p>The adder doubles your base SMART rate to <strong>$0.06/kWh</strong> on the same 10-year payment schedule. No separate application beyond the income paperwork. Your installer files it with the standard SMART package.</p>
+          <p>Your installer must be SMART-certified for low-income work, which most established Massachusetts solar installers are. We confirm certification before scheduling the site visit.</p></div></details>
+
+      <details class="solar-component-row is-credit">
+        <summary class="solar-component-summary">
+          <svg class="solar-component-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="10" y="14" width="44" height="36" rx="3"/>
+            <path d="M10 24h44M22 36h6M22 42h12"/>
+            <circle cx="44" cy="40" r="5"/>
+            <path d="M42 40h4M44 38v4"/>
+          </svg>
+          <div class="solar-component-content">
+            <div class="solar-component-title">MA state solar tax credit</div>
+            <div class="solar-component-tagline">25% of eligible project, capped at $1,000. Claimed once on your state return the year you install.</div></div>
+          <div class="solar-component-amount">
+            <div class="solar-component-amount-val">$1,000</div>
+            <div class="solar-component-amount-label">Max one-time</div></div>
+          <span class="solar-component-toggle" aria-hidden="true">+</span></summary>
+        <div class="solar-component-detail">
+          <p>Claim it on <strong>Schedule SC, line 1 (Solar/Wind Energy Credit)</strong> of your Massachusetts state return for the tax year your system received Permission to Operate. The credit is 25% of eligible project value, capped at $1,000. The cap is reached on most residential systems.</p>
+          <p>If your state tax liability that year is under $1,000, the unused portion <strong>carries forward up to 3 years</strong>. Lifetime cap is one $1,000 credit per primary residence; you can't claim it again if you replace the system.</p>
+          <p>Stacks cleanly with SMART production payments and net metering credits. Your installer files the SMART package; you claim the state credit yourself when you file.</p></div></details>
+
+      <details class="solar-component-row is-meter">
+        <summary class="solar-component-summary">
+          <svg class="solar-component-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="32" cy="32" r="20"/>
+            <path d="M32 22v10l8 4"/>
+            <path d="M32 12v3M32 49v3M52 32h-3M15 32h-3"/>
+          </svg>
+          <div class="solar-component-content">
+            <div class="solar-component-title">Net metering</div>
+            <div class="solar-component-tagline">Excess generation credits roll back at retail rate every billing cycle. Effectively free electricity stored on your utility's books.</div></div>
+          <div class="solar-component-amount">
+            <div class="solar-component-amount-val">Retail</div>
+            <div class="solar-component-amount-label">Per kWh exported</div></div>
+          <span class="solar-component-toggle" aria-hidden="true">+</span></summary>
+        <div class="solar-component-detail">
+          <p>Each billing cycle your utility nets your production against your consumption. <strong>Class I net metering</strong> (residential systems &le; 25 kW) credits any excess at full retail rate. A kWh exported at noon is worth the same as a kWh you'd have bought at midnight.</p>
+          <p>Credits <strong>roll forward indefinitely</strong> for residential customers. There's no annual true-up requirement in Massachusetts; you don't lose unused credits at the end of the year.</p>
+          <p>Banked credits stay with the property, not the customer. If you sell the home, credits transfer with the property. If you close the account without a buyer, they zero out. Different rules apply to community solar subscriptions and commercial Class II/III systems.</p></div></details>
+
+      <details class="solar-component-row is-storage">
+        <summary class="solar-component-summary">
+          <svg class="solar-component-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="14" y="14" width="36" height="42" rx="3"/>
+            <path d="M22 8h6v6h-6zM36 8h6v6h-6z"/>
+            <path d="M22 24h20M22 32h20M22 40h20M22 48h12"/>
+          </svg>
+          <div class="solar-component-content">
+            <div class="solar-component-title">Energy Storage Adder</div>
+            <div class="solar-component-tagline">Bonus per-kWh payment for batteries that participate in ConnectedSolutions dispatch events. Stacks with your SMART base block.</div></div>
+          <div class="solar-component-amount">
+            <div class="solar-component-amount-val">Varies</div>
+            <div class="solar-component-amount-label">By battery size</div></div>
+          <span class="solar-component-toggle" aria-hidden="true">+</span></summary>
+        <div class="solar-component-detail">
+          <p>Two stackable battery payments running on different mechanisms. The <strong>Storage Adder</strong> is part of SMART itself: an extra per-kWh payment for systems that include a battery dispatched into approved events. <strong>ConnectedSolutions</strong> is a separate utility program (Eversource, National Grid) that pays you per discharge during peak demand events, typically 30 to 60 events per summer.</p>
+          <p>They stack: the Storage Adder pays you for storing solar production through the SMART program, ConnectedSolutions pays you separately for letting the utility discharge your battery during peak grid stress.</p>
+          <p>Combined, they typically pay back a paired battery in <strong>5 to 7 years</strong>, independent of any solar economics. We model this side-by-side with the panels-only option for every storage-curious customer.</p></div></details></div></div>
+    <div style="margin-top: 40px; text-align: left;">
+      <a href="../get-my-score.html" class="idx2-link">Get my report
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+          <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a></div>
+  
+</section>
+
+<!-- ═══════════════════ How (the path): timeline from quote to PTO ═══════════════════ -->
+<section class="solar-timeline" aria-label="Solar install timeline">
+  <div class="container">
+    <div class="solar-timeline-head">
+      <span class="idx2-eyebrow">04 &middot; Install Timeline</span>
+      <h2 class="idx2-h2">From <em>first call</em> to permission to operate.</h2>
+      <p class="idx2-lede">A typical Massachusetts residential solar install runs 12&ndash;16 weeks from site survey to grid interconnection. Permitting and inspection sit on most of that runway.</p></div>
+    <div class="solar-timeline-list">
+      <div class="solar-timeline-item">
+        <div class="solar-timeline-num">01.</div>
+        <div class="solar-timeline-content">
+          <div class="solar-timeline-title">Site survey &amp; system design</div>
+          <div class="solar-timeline-desc">Contractor evaluates roof orientation, shade, structural load, and produces a system design with an annual production estimate.</div></div>
+        <div class="solar-timeline-when">Week 1</div></div>
+      <div class="solar-timeline-item">
+        <div class="solar-timeline-num">02.</div>
+        <div class="solar-timeline-content">
+          <div class="solar-timeline-title">Permitting &amp; utility interconnection app</div>
+          <div class="solar-timeline-desc">Building permits filed with the town; interconnection application filed with the local utility. Review typically runs 6&ndash;8 weeks.</div></div>
+        <div class="solar-timeline-when">Weeks 2-8</div></div>
+      <div class="solar-timeline-item">
+        <div class="solar-timeline-num">03.</div>
+        <div class="solar-timeline-content">
+          <div class="solar-timeline-title">Equipment procurement</div>
+          <div class="solar-timeline-desc">Panels, inverter, racking, and balance-of-system components ordered after permit approval. Lead times depend on configuration.</div></div>
+        <div class="solar-timeline-when">Weeks 6-10</div></div>
+      <div class="solar-timeline-item">
+        <div class="solar-timeline-num">04.</div>
+        <div class="solar-timeline-content">
+          <div class="solar-timeline-title">Installation</div>
+          <div class="solar-timeline-desc">Most residential installs complete in 1&ndash;3 days on-site. Building permit inspection follows a few days later.</div></div>
+        <div class="solar-timeline-when">Weeks 10-12</div></div>
+      <div class="solar-timeline-item">
+        <div class="solar-timeline-num">05.</div>
+        <div class="solar-timeline-content">
+          <div class="solar-timeline-title">Permission to operate (PTO)</div>
+          <div class="solar-timeline-desc">Final utility inspection and net-metering activation. PTO is when the system legally begins exporting and earning credits.</div></div>
+        <div class="solar-timeline-when">Weeks 12-16</div></div>
+    </div>
+    <div style="margin-top: 40px;">
+      <a href="../get-my-score.html" class="idx2-link">Get my report
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+          <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a></div></div>
+</section>
+
+<!-- ═══════════════════ FAQ · the honest one ═══════════════════ -->
+<section class="solar-faq" aria-label="Massachusetts SMART Solar FAQ">
+  <div class="container">
+    <div class="solar-faq-head">
+      <span class="idx2-eyebrow">The honest FAQ</span>
+      <h2 class="idx2-h2">Questions homeowners <em>actually ask.</em></h2>
+      <p class="idx2-lede">The questions that come up in the first installer conversation, answered for a typical Massachusetts homeowner.</p></div>
+
+    <div class="solar-faq-list">
+      <details class="solar-faq-item">
+        <summary class="solar-faq-q">Is solar still worth it in Massachusetts?</summary>
+        <div class="solar-faq-a">
+          <p>Yes, more than ever. Massachusetts utility rates have averaged 5% annual increases for 15 years and show no sign of slowing. Locking in a flat 30-year rate that lands far below your current bill, before SMART payments and net metering even enter the math, comes out positive on essentially every south-facing residential roof in the state. The longer your utility climbs, the better the math gets.</p></div></details>
+      <details class="solar-faq-item">
+        <summary class="solar-faq-q">Should I buy the system or lease it?</summary>
+        <div class="solar-faq-a">
+          <p>Both work, and the right answer depends on your cash position and how long you plan to be in the home. With a cash purchase, you own the system, claim the MA state credit yourself, and collect SMART payments and net metering credits directly. With a lease or PPA, the lease company owns and maintains the system and passes through savings as lower monthly payments, typically below your current utility bill from day one. The buy path builds equity faster; the lease path requires zero upfront cost. We model both for every customer and show the 25-year math side by side.</p></div></details>
+      <details class="solar-faq-item">
+        <summary class="solar-faq-q">What's the difference between SMART 2.0 and 3.0?</summary>
+        <div class="solar-faq-a">
+          <p>SMART 3.0 has slightly different incentive rates and stricter eligibility, including construction-start-date requirements. For most new residential projects breaking ground in 2026 and beyond, SMART 3.0 is the program. SMART 2.0 remains open only for projects that began construction before December 31, 2025.</p></div></details>
+      <details class="solar-faq-item">
+        <summary class="solar-faq-q">Do I need a battery?</summary>
+        <div class="solar-faq-a">
+          <p>Not for the panels themselves. Net metering effectively uses the grid as your battery during the day. A real battery (paired with the Energy Storage Adder + ConnectedSolutions) makes sense if you want backup during outages, want to time-shift consumption away from peak rates, or want the higher SMART payments that batteries unlock. Most of our MA solar customers add a battery 6&ndash;18 months after install.</p></div></details>
+      <details class="solar-faq-item">
+        <summary class="solar-faq-q">How long does the SMART payment actually last?</summary>
+        <div class="solar-faq-a">
+          <p>Ten years from the date of permission to operate. After year 10, the panels keep producing for another 15&ndash;20 years. You just stop receiving the production payment. Net metering credits continue for the system's lifespan.</p></div></details></div></div>
+    <div style="margin-top: 40px; text-align: left;">
+      <a href="../get-my-score.html" class="idx2-link">Get my report
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+          <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a></div>
+  
+</section>
+
+<!-- ═══════════════════ Related Massachusetts programs ═══════════════════ -->
+<section class="solar-related" aria-label="Other Massachusetts programs">
+  <div class="container">
+    <div class="program-section-head">
+      <span class="idx2-eyebrow">All Massachusetts programs</span>
+      <h2 class="idx2-h2">The full <em>Massachusetts</em> upgrade menu.</h2>
+      <p class="idx2-lede">Every Massachusetts program a homeowner can layer in. The badge marks the ones that pair most naturally with the program on this page.</p></div>
+    <div class="solar-related-list">
+      <a href="masssave-heat-pump.html" class="solar-related-card is-cat-heatpump is-stacks-well">
+        <svg class="solar-related-card-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <rect x="14" y="14" width="36" height="36" rx="3"/></svg>
+        <div class="solar-related-card-content">
+          <span class="solar-related-card-tag">MA &middot; Mass Save Heat Pump Rebates</span>
+          <div class="solar-related-card-title">Solar's biggest job is offsetting load. A heat pump roughly doubles your electric load (and zeros out fossil heat). Sized together, the array carries both.</div></div>
+        <span class="solar-related-card-badge" aria-label="This program stacks well with this one">Stacks well</span>
+        <span class="solar-related-card-arrow" aria-hidden="true">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      </a>
+      <a href="masssave-insulation.html" class="solar-related-card is-cat-insulation">
+        <svg class="solar-related-card-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <rect x="14" y="14" width="36" height="36" rx="3"/></svg>
+        <div class="solar-related-card-content">
+          <span class="solar-related-card-tag">MA &middot; Mass Save Insulation</span>
+          <div class="solar-related-card-title">Insulation cuts the load <em>before</em> sizing the array. A tighter house needs fewer panels, which makes the whole project cheaper.</div></div>
+        <span class="solar-related-card-arrow" aria-hidden="true">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      </a>
+      <a href="masssave-windows.html" class="solar-related-card is-cat-windows">
+        <svg class="solar-related-card-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <rect x="14" y="14" width="36" height="36" rx="3"/></svg>
+        <div class="solar-related-card-content">
+          <span class="solar-related-card-tag">MA &middot; Mass Save Windows</span>
+          <div class="solar-related-card-title">ENERGY STAR windows trim cooling load through the summer (when your array produces most). Less load means more credit banking.</div></div>
+        <span class="solar-related-card-arrow" aria-hidden="true">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      </a>
+      <a href="energy-storage-massachusetts.html" class="solar-related-card is-cat-storage is-stacks-well">
+        <svg class="solar-related-card-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <rect x="14" y="14" width="36" height="36" rx="3"/></svg>
+        <div class="solar-related-card-content">
+          <span class="solar-related-card-tag">MA &middot; ConnectedSolutions Battery</span>
+          <div class="solar-related-card-title">Pair the array with a battery. Solar charges the battery midday, the battery powers the house at night, and the system islands automatically during outages.</div></div>
+        <span class="solar-related-card-badge" aria-label="This program stacks well with this one">Stacks well</span>
+        <span class="solar-related-card-arrow" aria-hidden="true">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      </a>
+    </div></div>
+</section>
+
+<section class="cta-strip">
+  <div class="container-narrow">
+    <h3>Your <em>Massachusetts</em> Solar Score is waiting.</h3>
+    <p>See your exact SMART tier, net metering eligibility, and a 25-year cash-flow projection for your address. Free, no obligation, sixty seconds.</p>
+    <a href="../get-my-score.html" class="btn btn-white">Get my report
+      <svg width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M1 7h13M9 1l5 6-5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a></div>
+</section>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-offices">
+      <h4 class="footer-offices-head">Visit us</h4>
+      <div class="footer-offices-row is-single">
+        <article class="footer-office">
+          <div class="footer-office-map">
+            <iframe
+              src="https://maps.google.com/maps?q=24+Spice+Street+Boston+MA+02129&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="Map of ProFusion Boston office, 24 Spice Street, Boston, MA"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="footer-office-meta">
+            <div class="footer-office-tag">New England</div>
+            <div class="footer-office-name">Boston, MA</div>
+            <div class="footer-office-addr">24 Spice Street<br>Boston, MA 02129</div>
+            <div class="footer-office-phone"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+13393304289">+1 (339) 330-4289</a></div>
+            <a class="footer-office-link" href="https://maps.google.com/?q=24+Spice+Street+Boston+MA+02129" target="_blank" rel="noopener">
+              Open in Maps
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a></div>
+        </article></div></div>
+
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img src="../logo.png" alt="ProFusion Home Solutions">
+        <p style="font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--green-400); margin-bottom: 14px;">Built for the <em style="font-family: var(--serif); font-style: italic;">house</em>. Felt in the <em style="font-family: var(--serif); font-style: italic;">home</em>.</p>
+        <p>The Home Efficiency Score, mapped to your zip, <em>every state, every rebate</em>. Now serving 11 states. <em>Going nationwide</em>.</p></div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="../categories/solar.html">Solar</a></li>
+          <li><a href="../categories/heating-cooling.html">Heating &amp; Cooling</a></li>
+          <li><a href="../categories/insulation.html">Insulation</a></li>
+          <li><a href="../categories/windows-doors.html">Windows &amp; Doors</a></li>
+          <li><a href="../categories/energy-storage.html">Energy Storage</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="../how-our-score-guides-you.html">How our Score guides you</a></li>
+          <li><a href="../sample-report.html">See a sample report</a></li>
+          <li><a href="../our-installers.html">Who we match you with</a></li>
+          <li><a href="../2026-changes.html">What changed in 2026</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../contact.html">Contact us</a></li>
+          <li><a href="../get-my-score.html">Get my report</a></li>
+          <li><a href="../for-installers.html">For Installers</a></li>
+        </ul></div></div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 ProFusion Home Solutions LLC</div>
+      <div>Now serving 11 states &middot; A+ BBB &middot; Fully Insured</div></div></div>
+</footer>
+<script>
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+}
+
+// Rate-hedge chart — draw lines on as the section enters viewport.
+(function() {
+  const section = document.getElementById('rate-hedge');
+  if (!section) return;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion) { section.classList.add('is-in-view'); return; }
+  if (!('IntersectionObserver' in window)) { section.classList.add('is-in-view'); return; }
+  const obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        section.classList.add('is-in-view');
+        obs.unobserve(section);
+      }
+    });
+  }, { threshold: 0.3 });
+  obs.observe(section);
+})();
+
+// Worked-example scrollytelling — bottom-line card builds line-by-line.
+(function() {
+  const section = document.querySelector('.solar-example');
+  if (!section) return;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion) { section.classList.add('is-revealed'); return; }
+  if (!('IntersectionObserver' in window)) { section.classList.add('is-revealed'); return; }
+  const obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        section.classList.add('is-revealed');
+        obs.unobserve(section);
+      }
+    });
+  }, { threshold: 0.35 });
+  obs.observe(section);
+})();
+</script>
+<script defer src="../mobile-nav.js"></script>
+</body>
+</html>

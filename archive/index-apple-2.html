@@ -1,0 +1,2560 @@
+<!DOCTYPE html>
+<!--
+  ════════════════════════════════════════════════════════════════════
+  ProFusion Home Solutions · Vercel-core asymmetric (taste-skill verbatim)
+  ════════════════════════════════════════════════════════════════════
+  Built using `taste-skill` rules applied verbatim. This intentionally
+  moves OUT of the Apple-editorial lane (which the canonical
+  index-apple.html occupies) and INTO Vercel-core asymmetric Bento.
+
+  Taste-skill rules enforced here:
+    · NO centered hero/H1 (LAYOUT_VARIANCE > 4 → asymmetric only)
+    · NO oversized H1 — control hierarchy with weight + color
+    · NO gradient text on large headers
+    · NO 3-equal-cards horizontal feature row (zig-zag / asymmetric)
+    · Max 1 accent color (Public Trust Blue is THE accent;
+      Savings Green is demoted to semantic state only)
+    · Liquid Glass nav with inner refraction
+    · `:active` tactile press feedback on tap
+    · Spring physics easing on interactive transitions
+    · No Inter, no #000, no Lila/purple gradients, no emojis
+
+  Brand layer preserved (impeccable identity-preservation):
+    · Geist + Geist Mono + Instrument Serif italic (existing brand)
+    · Public Trust Blue + Savings Green + Warm Peach + Alert Red palette
+    · The Engineer Next Door North Star
+    · Anti-pitch ethos
+  ════════════════════════════════════════════════════════════════════
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ProFusion · Built for the house. Felt in the home.</title>
+<meta name="description" content="ProFusion Home Solutions: a single Home Efficiency Score for every home, every rebate stacked, vetted installers if you choose to act. Now serving 11 states.">
+<meta name="theme-color" content="#0A1020">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   ProFusion · Vercel-core asymmetric (.ap2- prefix)
+   taste-skill verbatim. Brand tokens from shared.css, layout
+   restructured for asymmetric / Bento composition.
+   ═══════════════════════════════════════════════════════════════ */
+
+.ap2-page section { padding: 0; }
+
+:root {
+  /* taste-skill restrained type scale — no oversized H1 */
+  --ap2-h0:  clamp(48px, 6.5vw, 88px);   /* hero display, controlled  */
+  --ap2-h1:  clamp(40px, 5.5vw, 64px);   /* section signature heads   */
+  --ap2-h2:  clamp(28px, 3.5vw, 44px);   /* sub-section heads         */
+  --ap2-h3:  22px;                        /* card / step heads         */
+  --ap2-body-lg: clamp(17px, 1.3vw, 20px);
+  --ap2-body:    16px;
+  --ap2-small:   14px;
+  --ap2-label:   12px;
+
+  /* Spacing rhythm */
+  --ap2-section: 140px;
+  --ap2-section-tight: 100px;
+  --ap2-container: 1280px;
+
+  /* Spring-physics easing per taste-skill MOTION_INTENSITY 6 */
+  --ap2-spring: cubic-bezier(0.34, 1.40, 0.64, 1);
+  --ap2-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ap2-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ap2-quick: 220ms;
+  --ap2-state: 600ms;
+}
+
+.ap2-page {
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: var(--ap2-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "ss02", "cv11";
+}
+
+.ap2-container { max-width: var(--ap2-container); margin: 0 auto; padding: 0 32px; }
+
+/* ═══════════════════════════ TYPE — controlled scream ═══════════════════════════
+   Per taste-skill: "The first heading should not scream. Control hierarchy
+   with weight and color, not just massive scale." H weights are heavier than
+   the Apple-editorial draft; sizes are smaller. */
+
+.ap2-h0 {
+  font-family: var(--display); font-weight: 600;
+  font-size: var(--ap2-h0); line-height: 1.0;
+  letter-spacing: -0.04em; color: var(--ink);
+}
+.ap2-h0 em {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  letter-spacing: -0.025em; color: var(--blue-700);
+}
+
+.ap2-h1 {
+  font-family: var(--display); font-weight: 600;
+  font-size: var(--ap2-h1); line-height: 1.05;
+  letter-spacing: -0.035em; color: var(--ink);
+}
+.ap2-h1 em {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  color: var(--blue-700);
+}
+
+.ap2-h2 {
+  font-family: var(--display); font-weight: 600;
+  font-size: var(--ap2-h2); line-height: 1.1;
+  letter-spacing: -0.025em; color: var(--ink);
+}
+.ap2-h2 em {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  color: var(--blue-700);
+}
+
+.ap2-h3 {
+  font-family: var(--display); font-weight: 600;
+  font-size: var(--ap2-h3); line-height: 1.2;
+  letter-spacing: -0.015em; color: var(--ink);
+}
+.ap2-h3 em {
+  font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--blue-700);
+}
+
+.ap2-lede {
+  font-size: var(--ap2-body-lg); line-height: 1.55;
+  color: var(--gray-600);
+  max-width: 65ch;
+}
+.ap2-lede em { font-family: var(--serif); font-style: italic; color: var(--ink); font-weight: 400; }
+
+/* Eyebrow — single accent rule: Public Trust Blue, NOT green */
+.ap2-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--mono); font-size: var(--ap2-label);
+  font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--blue-700);
+  margin-bottom: 24px;
+}
+.ap2-eyebrow::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--blue-700);
+}
+
+/* ═══════════════════════════ CTAs — :active tactile press ═══════════════════════════ */
+
+.ap2-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--blue-700); color: white;
+  padding: 18px 32px;
+  border-radius: 100px;
+  font-family: var(--display); font-weight: 500; font-size: 16px;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  min-height: 48px;
+  box-shadow: 0 4px 16px -4px rgba(26, 79, 144, 0.32);
+  transition: transform var(--ap2-quick) var(--ap2-spring),
+              background var(--ap2-quick),
+              box-shadow var(--ap2-quick);
+}
+.ap2-cta:hover {
+  transform: translateY(-2px);
+  background: var(--blue-900);
+  box-shadow: 0 12px 28px -6px rgba(10, 46, 92, 0.45);
+}
+/* taste-skill: "On :active, use -translate-y-[1px] or scale-[0.98]" */
+.ap2-cta:active {
+  transform: translateY(0) scale(0.98);
+  transition: transform 80ms ease-out;
+}
+.ap2-cta:focus-visible { outline: 3px solid var(--blue-300); outline-offset: 4px; }
+.ap2-cta svg { transition: transform var(--ap2-quick) var(--ap2-spring); }
+.ap2-cta:hover svg { transform: translateX(4px); }
+
+.ap2-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--display); font-weight: 500; font-size: 15px;
+  color: var(--blue-700); text-decoration: none;
+  padding: 8px 0;
+  transition: gap var(--ap2-quick), color var(--ap2-quick);
+}
+.ap2-link:hover { gap: 10px; color: var(--blue-900); }
+.ap2-link:focus-visible { outline: 2px solid var(--blue-300); outline-offset: 4px; border-radius: 4px; }
+
+.ap2-secondary {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--display); font-weight: 500; font-size: 15px;
+  color: var(--gray-700); text-decoration: none;
+  padding: 8px 0;
+  transition: color var(--ap2-quick), gap var(--ap2-quick);
+}
+.ap2-secondary:hover { color: var(--ink); gap: 10px; }
+
+/* ═══════════════════════════ NAV — Liquid Glass refraction ═══════════════════════════ */
+
+.ap2-nav {
+  position: fixed; top: 16px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: calc(100% - 32px); max-width: 1280px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(28px) saturate(1.8);
+  -webkit-backdrop-filter: blur(28px) saturate(1.8);
+  /* taste-skill Liquid Glass: 1px inner border + inset refraction */
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    inset 0 0 0 1px rgba(10, 16, 32, 0.04),
+    0 1px 2px rgba(10, 16, 32, 0.04),
+    0 8px 24px -12px rgba(10, 16, 32, 0.10);
+  border-radius: 100px;
+  padding: 10px 12px 10px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+.ap2-nav.scrolled {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    inset 0 0 0 1px rgba(10, 16, 32, 0.06),
+    0 4px 12px rgba(10, 16, 32, 0.06),
+    0 12px 32px -10px rgba(10, 16, 32, 0.14);
+}
+.ap2-nav .brand { display: flex; align-items: center; text-decoration: none; height: 32px; }
+.ap2-nav .brand img { height: 100%; width: auto; }
+.ap2-nav-links { display: flex; gap: 4px; list-style: none; align-items: center; padding: 0; margin: 0; }
+.ap2-nav-links a {
+  color: var(--gray-800); text-decoration: none;
+  font-size: 14px; font-weight: 500;
+  padding: 10px 16px; border-radius: 999px;
+  min-height: 40px;
+  display: inline-flex; align-items: center;
+  transition: background var(--ap2-quick), color var(--ap2-quick);
+}
+.ap2-nav-links a:hover { background: rgba(26, 79, 144, 0.06); color: var(--blue-700); }
+.ap2-nav-links a:focus-visible { outline: 2px solid var(--blue-300); outline-offset: 2px; }
+.ap2-nav-cta {
+  background: var(--blue-700) !important; color: white !important;
+  padding: 10px 20px !important;
+}
+.ap2-nav-cta:hover { background: var(--blue-900) !important; transform: translateY(-1px); }
+.ap2-nav-cta:active { transform: translateY(0) scale(0.97); }
+
+@media (max-width: 760px) {
+  .ap2-nav-links li:nth-child(1),
+  .ap2-nav-links li:nth-child(2),
+  .ap2-nav-links li:nth-child(3) { display: none; }
+}
+
+/* ═══════════════════════════ HERO — Acme-style centered (with sample report) ═══════════════════════════
+   Adapted from the shadcn/Acme hero pattern (originally React + Framer Motion).
+   Translated to GSAP entrance stagger:
+     · Centered eyebrow → h1 → sub → CTAs → tech-stack row, all fade up
+     · Below: bordered/rounded image container with the sample-report Page 1
+     · Bottom fade-to-white gradient blends the report into the page
+   Existing fixed nav (`.ap2-nav`) stays at the top of the page. */
+
+.ap2-hero {
+  padding: 140px 32px 60px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.ap2-hero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex; flex-direction: column;
+  align-items: center;
+}
+.ap2-hero-eyebrow {
+  font-family: var(--mono); font-size: 13px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--blue-700);
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-bottom: 28px;
+  opacity: 0; transform: translateY(20px);
+}
+.ap2-hero-eyebrow .dot {
+  display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--blue-700);
+  box-shadow: 0 0 0 3px rgba(26, 79, 144, 0.18);
+}
+@keyframes ap2-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(26, 79, 144, 0.18); }
+  50%      { box-shadow: 0 0 0 8px rgba(26, 79, 144, 0.04); }
+}
+.ap2-hero.is-in .ap2-hero-eyebrow .dot { animation: ap2-pulse 2.4s infinite; }
+
+.ap2-hero-h0 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(40px, 7vw, 96px);
+  line-height: 1.0; letter-spacing: -0.045em;
+  color: var(--ink);
+  max-width: 920px;
+  margin: 0 0 24px;
+  opacity: 0; transform: translateY(20px);
+}
+.ap2-hero-h0 .find-it {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  color: var(--blue-700);
+  letter-spacing: -0.025em;
+}
+.ap2-hero-sub {
+  font-size: clamp(17px, 1.4vw, 22px); line-height: 1.5;
+  color: var(--gray-600);
+  max-width: 640px;
+  margin: 0 auto 36px;
+  opacity: 0; transform: translateY(20px);
+}
+.ap2-hero-sub strong { color: var(--ink); font-weight: 600; }
+.ap2-hero-sub em { font-family: var(--serif); font-style: italic; color: var(--ink); font-weight: 400; }
+
+.ap2-hero-ctas {
+  display: inline-flex; gap: 14px; align-items: center; flex-wrap: wrap; justify-content: center;
+  margin-bottom: 32px;
+  opacity: 0; transform: translateY(20px);
+}
+.ap2-hero-cta-outline {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: white; color: var(--ink);
+  padding: 17px 24px;
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  font-family: var(--display); font-weight: 500; font-size: 15px;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  min-height: 48px;
+  transition: border-color var(--ap2-quick), transform var(--ap2-quick) var(--ap2-spring), box-shadow var(--ap2-quick);
+}
+.ap2-hero-cta-outline:hover { border-color: var(--blue-300); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.ap2-hero-cta-outline:active { transform: translateY(0) scale(0.98); }
+.ap2-hero-cta-outline:focus-visible { outline: 2px solid var(--blue-300); outline-offset: 4px; }
+.ap2-hero-cta-outline svg { transition: transform var(--ap2-quick) var(--ap2-spring); }
+.ap2-hero-cta-outline:hover svg { transform: translateX(3px); }
+
+/* Tech-stack pill row */
+.ap2-hero-stack-row {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  margin-bottom: 56px;
+  opacity: 0; transform: translateY(20px);
+}
+.ap2-hero-stack-pills {
+  display: inline-flex; align-items: center; gap: 16px;
+  font-family: var(--display); font-size: 13px;
+  flex-wrap: wrap; justify-content: center;
+}
+.ap2-hero-stack-pill { color: var(--blue-700); font-weight: 500; }
+.ap2-hero-stack-divider { color: var(--gray-400); font-weight: 500; }
+.ap2-hero-stack-tagline {
+  font-family: var(--display); font-size: 13px;
+  color: var(--gray-500); font-weight: 400;
+}
+
+/* Image container with sample report inside */
+.ap2-hero-figure {
+  width: 100%;
+  border: 1px solid var(--gray-100);
+  padding: 8px;
+  border-radius: 28px;
+  position: relative;
+  background: white;
+  opacity: 0; transform: translateY(40px);
+}
+.ap2-hero-figure-inner {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--gray-100);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 24px 56px -16px rgba(10, 16, 32, 0.18), 0 12px 24px -12px rgba(10, 16, 32, 0.10);
+}
+/* Bottom fade: report blends into page background like the Acme demo */
+.ap2-hero-figure-fade {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 50%;
+  background: linear-gradient(to top, white 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+}
+
+/* GSAP-triggered entrance (one-shot stagger on page load) */
+.ap2-hero.is-in .ap2-hero-eyebrow,
+.ap2-hero.is-in .ap2-hero-h0,
+.ap2-hero.is-in .ap2-hero-sub,
+.ap2-hero.is-in .ap2-hero-ctas,
+.ap2-hero.is-in .ap2-hero-stack-row,
+.ap2-hero.is-in .ap2-hero-figure {
+  opacity: 1; transform: translateY(0);
+  transition: opacity 0.5s var(--ap2-ease-out), transform 0.5s var(--ap2-ease-out);
+}
+.ap2-hero.is-in .ap2-hero-eyebrow    { transition-delay: 0.10s; }
+.ap2-hero.is-in .ap2-hero-h0         { transition-delay: 0.20s; }
+.ap2-hero.is-in .ap2-hero-sub        { transition-delay: 0.30s; }
+.ap2-hero.is-in .ap2-hero-ctas       { transition-delay: 0.40s; }
+.ap2-hero.is-in .ap2-hero-stack-row  { transition-delay: 0.50s; }
+.ap2-hero.is-in .ap2-hero-figure     { transition: opacity 0.8s var(--ap2-ease-out) 0.60s, transform 0.8s var(--ap2-ease-out) 0.60s; }
+
+/* ═══════════════════════════ EMBEDDED SAMPLE REPORT (Page 1) ═══════════════════════════
+   Reproduces sample-report.html Page 1 inside the hero figure container.
+   Customer info redacted; scores filled in (Grade B = 622, Grade A target = 758). */
+
+.ap2-sr-page {
+  background: white;
+  padding: 36px 40px;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  gap: 24px;
+  color: var(--ink);
+}
+.ap2-sr-head {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--gray-100);
+}
+.ap2-sr-head-brand img { height: 28px; }
+.ap2-sr-head-meta {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--gray-500); text-align: right;
+  line-height: 1.7;
+}
+.ap2-sr-head-meta strong {
+  display: block;
+  font-family: var(--display); font-weight: 600;
+  font-size: 12px; letter-spacing: -0.005em;
+  color: var(--ink); text-transform: none;
+  margin-bottom: 2px;
+}
+/* Redacted bars: black blocks with REDACTED label, faithful "real document" effect */
+.ap2-sr-redact {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--ink);
+  padding: 1px 10px;
+  border-radius: 3px;
+  user-select: none;
+  position: relative;
+  font-feature-settings: "tnum";
+}
+.ap2-sr-redact::after {
+  content: 'REDACTED';
+  position: absolute;
+  inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: var(--mono); font-size: 8px; font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.ap2-sr-h2 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(22px, 2vw, 28px);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+/* Grade gauge + Cost card */
+.ap2-sr-grade-row {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+.ap2-sr-grade-card {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: 16px;
+  padding: 22px 24px;
+  text-align: left;
+}
+.ap2-sr-grade-label {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gray-500); font-weight: 600;
+  margin-bottom: 6px;
+}
+.ap2-sr-grade-sub {
+  font-family: var(--display); font-size: 12px;
+  color: var(--gray-600); margin-bottom: 14px;
+}
+.ap2-sr-gauge {
+  position: relative;
+  width: 100%; max-width: 260px;
+  margin: 0 auto;
+}
+.ap2-sr-gauge svg { width: 100%; height: auto; display: block; }
+.ap2-sr-gauge-readout {
+  position: absolute;
+  bottom: 18%;
+  left: 50%; transform: translateX(-50%);
+  text-align: center;
+}
+.ap2-sr-gauge-letter {
+  font-family: var(--display); font-weight: 700;
+  font-size: 32px; line-height: 1; color: white;
+  letter-spacing: -0.04em;
+}
+.ap2-sr-gauge-score {
+  margin-top: 4px;
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.06em; color: rgba(255, 255, 255, 0.8);
+  font-weight: 600; font-feature-settings: "tnum";
+}
+.ap2-sr-cost-card {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 16px;
+  padding: 22px 24px;
+  display: flex; flex-direction: column;
+}
+.ap2-sr-cost-title {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gray-500); font-weight: 600;
+  margin-bottom: 12px;
+}
+.ap2-sr-cost-big {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(28px, 3vw, 40px);
+  letter-spacing: -0.03em; color: var(--ink); line-height: 1;
+  margin-bottom: 4px;
+  display: flex; align-items: baseline; gap: 8px;
+}
+.ap2-sr-cost-big .unit {
+  font-family: var(--display); font-size: 13px;
+  color: var(--gray-500); font-weight: 500; letter-spacing: 0;
+}
+.ap2-sr-cost-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--gray-100);
+}
+.ap2-sr-cost-grid-item {
+  display: flex; flex-direction: column; gap: 2px;
+}
+.ap2-sr-cost-grid-label {
+  font-family: var(--mono); font-size: 9.5px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gray-500); font-weight: 600;
+}
+.ap2-sr-cost-grid-val {
+  font-family: var(--display); font-weight: 600;
+  font-size: 16px; color: var(--ink); letter-spacing: -0.01em;
+  font-feature-settings: "tnum";
+}
+
+/* Long-term cost tiles — Today / Year 25 / 25-Year Total */
+.ap2-sr-longterm-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 4px;
+}
+.ap2-sr-longterm-head h3 {
+  font-family: var(--display); font-weight: 600;
+  font-size: 14px; letter-spacing: 0.02em; text-transform: uppercase;
+  color: var(--blue-700);
+}
+.ap2-sr-longterm-head-meta {
+  font-family: var(--mono); font-size: 9.5px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gray-500); font-weight: 600;
+}
+.ap2-sr-longterm-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+.ap2-sr-longterm-tile {
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex; flex-direction: column; gap: 4px;
+  border: 1px solid var(--gray-100);
+}
+.ap2-sr-longterm-tile.today  { background: var(--white); }
+.ap2-sr-longterm-tile.mid    { background: #FFF6E8; border-color: #FCE3B6; }
+.ap2-sr-longterm-tile.full   { background: #FDECEC; border-color: #F8C8C8; }
+.ap2-sr-longterm-tile-label {
+  font-family: var(--mono); font-size: 9.5px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gray-600); font-weight: 600;
+}
+.ap2-sr-longterm-tile-val {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(20px, 2vw, 26px); letter-spacing: -0.02em;
+  color: var(--ink); line-height: 1;
+  font-feature-settings: "tnum";
+}
+.ap2-sr-longterm-tile.mid  .ap2-sr-longterm-tile-val { color: #B8730A; }
+.ap2-sr-longterm-tile.full .ap2-sr-longterm-tile-val { color: #B91C1C; }
+.ap2-sr-longterm-tile-foot {
+  font-family: var(--display); font-size: 11px;
+  color: var(--gray-500); font-weight: 400;
+}
+
+/* Cost-growth bars — six rows showing escalation */
+.ap2-sr-growth {
+  border-top: 1px solid var(--gray-100);
+  padding-top: 18px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.ap2-sr-growth-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 4px;
+}
+.ap2-sr-growth-head h3 {
+  font-family: var(--display); font-weight: 600;
+  font-size: 13px; letter-spacing: 0.02em; text-transform: uppercase;
+  color: var(--blue-700);
+}
+.ap2-sr-growth-head-meta {
+  font-family: var(--mono); font-size: 9px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gray-500); font-weight: 600;
+}
+.ap2-sr-growth-row {
+  display: grid;
+  grid-template-columns: 48px 1fr 56px;
+  align-items: center;
+  gap: 12px;
+}
+.ap2-sr-growth-year {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.08em; color: var(--gray-600); font-weight: 600;
+}
+.ap2-sr-growth-bar {
+  position: relative;
+  height: 8px;
+  background: var(--gray-100);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.ap2-sr-growth-bar-fill {
+  position: absolute; inset: 0 auto 0 0;
+  background: linear-gradient(to right, #FACC15 0%, #FB923C 60%, #EF4444 100%);
+  border-radius: 999px;
+  transition: width 0.6s var(--ap2-ease-out);
+}
+.ap2-sr-growth-val {
+  font-family: var(--mono); font-size: 11px;
+  color: var(--ink); font-weight: 600;
+  text-align: right;
+  font-feature-settings: "tnum";
+}
+.ap2-sr-growth-foot {
+  margin-top: 6px;
+  font-family: var(--display); font-size: 11px;
+  color: var(--gray-500); font-style: italic; font-family: var(--serif); font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .ap2-sr-grade-row { grid-template-columns: 1fr; }
+  .ap2-sr-page { padding: 28px 28px; gap: 18px; }
+}
+@media (max-width: 760px) {
+  .ap2-hero { padding: 120px 16px 40px; }
+  .ap2-hero-figure { padding: 6px; border-radius: 22px; }
+  .ap2-hero-figure-inner { border-radius: 16px; }
+  .ap2-sr-page { padding: 20px 18px; gap: 16px; }
+  .ap2-sr-cost-big { font-size: 24px; }
+  .ap2-sr-longterm-tiles { grid-template-columns: 1fr; }
+  .ap2-sr-growth-row { grid-template-columns: 40px 1fr 50px; gap: 8px; }
+}
+
+/* ═══════════════════════════ STAT STRIP — left-aligned, not centered ═══════════════════════════ */
+
+.ap2-stat {
+  padding: 48px 32px;
+  border-top: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--gray-100);
+}
+.ap2-stat-inner {
+  max-width: var(--ap2-container); margin: 0 auto;
+}
+.ap2-stat p {
+  font-family: var(--mono); font-size: 13px;
+  letter-spacing: 0.06em; color: var(--gray-600);
+  font-weight: 500;
+  line-height: 1.7;
+}
+.ap2-stat strong { color: var(--ink); font-weight: 600; }
+
+/* (Cost section CSS removed — section deleted in HTML.) */
+
+/* ═══════════════════════════ TRANSFORMATION ═══════════════════════════ */
+
+.ap2-trans {
+  background: white;
+  position: relative;
+  border-bottom: 1px solid var(--gray-100);
+}
+/* Section head LEFT-ALIGNED (not centered) */
+.ap2-trans-head {
+  padding: var(--ap2-section) 32px 64px;
+  max-width: var(--ap2-container); margin: 0 auto;
+}
+.ap2-trans-head .ap2-eyebrow { display: inline-flex; }
+.ap2-trans-head .ap2-h1 { margin-bottom: 24px; max-width: 800px; }
+.ap2-trans-head .ap2-h1 em { color: var(--blue-700); }
+
+.ap2-trans-grid {
+  position: relative;
+  max-width: var(--ap2-container); margin: 0 auto;
+  padding: 0 32px 120px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* LEFT — stage stack */
+.ap2-trans-stages { display: flex; flex-direction: column; }
+.ap2-trans-stage {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 0;
+  max-width: 480px;
+}
+.ap2-trans-stage-eyebrow {
+  font-family: var(--mono); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 24px;
+  display: inline-flex; align-items: center; gap: 12px;
+}
+.ap2-trans-stage-eyebrow::before {
+  content: ''; width: 28px; height: 1.5px; background: var(--gray-400);
+}
+.ap2-trans-stage-h {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(32px, 4.2vw, 52px);
+  line-height: 1.05; letter-spacing: -0.03em;
+  color: var(--ink); margin-bottom: 24px;
+}
+.ap2-trans-stage-h em {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  color: var(--blue-700);
+}
+.ap2-trans-stage-body {
+  font-size: 17px; line-height: 1.6; color: var(--gray-700); max-width: 460px;
+}
+.ap2-trans-stage-body em {
+  font-family: var(--serif); font-style: italic; color: var(--ink); font-weight: 400;
+}
+
+/* Stage 5 result panel */
+.ap2-trans-result {
+  margin-top: 36px;
+  padding: 28px 28px 24px;
+  background: rgba(26, 79, 144, 0.04);
+  border: 1px solid rgba(26, 79, 144, 0.18);
+  border-radius: 16px;
+}
+.ap2-trans-result-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.ap2-trans-result-cell:not(:last-child) {
+  border-right: 1px dashed rgba(26, 79, 144, 0.20);
+  padding-right: 14px;
+}
+.ap2-trans-result-label {
+  font-family: var(--mono); font-size: 9.5px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gray-500); margin-bottom: 8px;
+}
+.ap2-trans-result-val {
+  font-family: var(--display); font-weight: 600; font-size: 26px;
+  letter-spacing: -0.025em; color: var(--blue-700);
+  font-feature-settings: "tnum";
+}
+/* Savings Green ONLY as semantic-state on the after-grade letter */
+.ap2-trans-result-val.grade {
+  font-family: var(--serif); font-style: italic; font-weight: 600;
+  font-size: 32px; color: var(--green-700);
+}
+.ap2-trans-result-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 18px;
+  font-family: var(--display); font-weight: 500; font-size: 14px;
+  color: var(--blue-700); text-decoration: none;
+  transition: gap var(--ap2-quick) var(--ap2-spring);
+}
+.ap2-trans-result-cta:hover { gap: 10px; }
+
+/* RIGHT — pinned house */
+.ap2-trans-house-col {
+  position: sticky; top: 0;
+  height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 24px 0;
+}
+.ap2-trans-house-wrap {
+  width: 100%;
+  max-width: 560px;
+  position: relative;
+}
+.ap2-trans-house-svg {
+  width: 100%; height: auto;
+  display: block;
+  filter: drop-shadow(0 28px 60px rgba(10, 16, 32, 0.10));
+}
+
+.ap2-trans-meta {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 28px;
+  padding: 18px 22px;
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+}
+.ap2-trans-meta-cell:not(:last-child) {
+  border-right: 1px dashed var(--gray-100); padding-right: 14px;
+}
+.ap2-trans-meta-label {
+  font-family: var(--mono); font-size: 9.5px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gray-500); margin-bottom: 4px;
+}
+.ap2-trans-meta-val {
+  font-family: var(--display); font-weight: 600; font-size: 28px;
+  line-height: 1; letter-spacing: -0.025em; color: var(--ink);
+  font-feature-settings: "tnum";
+  display: flex; align-items: baseline; gap: 8px;
+}
+.ap2-trans-meta-val .unit {
+  font-family: var(--mono); font-size: 11px; color: var(--gray-500);
+  font-weight: 500; letter-spacing: 0.04em; font-feature-settings: normal;
+}
+.ap2-trans-meta-val.bill { color: #B91C1C; }
+/* Savings Green ONLY as semantic-state on the after-state */
+.ap2-trans-meta-val.bill.locked { color: var(--green-700); }
+.ap2-trans-grade-letter {
+  font-family: var(--serif); font-style: italic; font-weight: 600;
+  font-size: 32px;
+  background: #FEE8E8; color: #B91C1C;
+  padding: 2px 14px; border-radius: 10px;
+  line-height: 1; letter-spacing: -0.02em;
+  transition: background 0.6s var(--ap2-spring), color 0.6s var(--ap2-spring);
+}
+.ap2-trans-grade-letter.good { background: var(--green-50); color: var(--green-700); }
+.ap2-trans-meta-trend {
+  display: inline-block; margin-left: 6px;
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.06em; color: #B91C1C;
+}
+.ap2-trans-meta-trend.locked { color: var(--green-700); }
+
+@media (max-width: 900px) {
+  .ap2-trans-grid { grid-template-columns: 1fr; gap: 0; padding-bottom: 80px; }
+  .ap2-trans-house-col {
+    height: 60vh; background: white;
+    border-bottom: 1px solid var(--gray-100); z-index: 5; padding: 12px 16px;
+  }
+  .ap2-trans-house-wrap { max-width: 360px; }
+  .ap2-trans-meta { display: none; }
+  .ap2-trans-stage { min-height: auto; padding: 56px 0; max-width: 100%; }
+  .ap2-trans-stages { padding: 0 0 32px; }
+}
+
+/* ═══════════════════════════ THREE SLICES — compact 3-row card list ═══════════════════════════
+   Compressed from zig-zag (~500px per row) to a tight row-list (~100px per row).
+   Each row: small photo · scope tag · quote · narrator. Same content, ~60% less
+   real estate. Vertical stacking is taste-skill-compliant (the ban is on
+   3-equal-cards-HORIZONTAL, not vertical). */
+
+.ap2-slices {
+  padding: var(--ap2-section-tight) 32px var(--ap2-section);
+  background: var(--gray-50);
+}
+.ap2-slices-inner {
+  max-width: var(--ap2-container); margin: 0 auto;
+}
+.ap2-slices-head { margin-bottom: 40px; max-width: 800px; }
+.ap2-slices-head .ap2-eyebrow { display: inline-flex; }
+.ap2-slices-head .ap2-h1 { margin-bottom: 16px; }
+.ap2-slices-head .ap2-lede { max-width: 65ch; }
+
+.ap2-slices-list {
+  display: flex; flex-direction: column; gap: 12px;
+  max-width: 980px;
+}
+.ap2-slice {
+  display: grid;
+  grid-template-columns: 64px 132px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 18px 24px 18px 18px;
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 16px;
+  opacity: 0; transform: translateY(12px);
+  transition: opacity 0.5s var(--ap2-ease-out),
+              transform 0.5s var(--ap2-ease-out),
+              border-color 0.3s,
+              box-shadow 0.3s;
+}
+.ap2-slice.is-in { opacity: 1; transform: translateY(0); }
+.ap2-slice:hover {
+  border-color: var(--blue-300);
+  box-shadow: 0 6px 16px -8px rgba(10, 16, 32, 0.10);
+}
+.ap2-slice-photo {
+  width: 64px; height: 64px;
+  border-radius: 12px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.ap2-slice-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.ap2-slice-scope-label {
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--blue-700);
+}
+.ap2-slice-quote {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.3; letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.ap2-slice-quote em {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  color: var(--blue-700);
+}
+.ap2-slice-narrator {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--serif); font-style: italic;
+  font-size: 13.5px; line-height: 1.4;
+  color: var(--gray-600);
+}
+.ap2-slice-scope {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gray-500); font-weight: 500;
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* Tagline — quieter, less ceremonial than the zig-zag version had */
+.ap2-slices-tagline {
+  margin: 32px 0 0;
+  max-width: 720px;
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(17px, 1.5vw, 20px);
+  color: var(--gray-700); letter-spacing: -0.005em;
+  line-height: 1.5;
+}
+.ap2-slices-tagline em {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  color: var(--ink);
+}
+
+@media (max-width: 760px) {
+  .ap2-slice {
+    grid-template-columns: 56px 1fr;
+    grid-template-rows: auto auto;
+    gap: 12px 16px;
+    padding: 14px 16px;
+  }
+  .ap2-slice-photo { width: 56px; height: 56px; grid-row: 1 / span 2; }
+  .ap2-slice-scope-label { grid-column: 2; grid-row: 1; }
+  .ap2-slice-quote { grid-column: 2; grid-row: 2; font-size: 16px; }
+  .ap2-slice-scope { grid-column: 2; text-align: left; font-size: 9.5px; }
+  .ap2-slice-narrator { font-size: 12.5px; }
+}
+
+/* ═══════════════════════════ MATCH — The Vetting Ladder ═══════════════════════════
+   Reimagined per /impeccable: the abstract "100 → <1 in 4" funnel was theater math.
+   Replaced with an explicit 6-rung descent ladder that shows each gate, the
+   eliminations at that gate, and a running total. Editorial table treatment,
+   no cards. The brand is "math you can audit" — so we audit it. */
+
+.ap2-match {
+  padding: var(--ap2-section) 32px;
+  background: white;
+}
+.ap2-match-inner {
+  max-width: var(--ap2-container); margin: 0 auto;
+}
+.ap2-match-head {
+  max-width: 800px; margin: 0 0 56px;
+}
+.ap2-match-head .ap2-eyebrow { display: inline-flex; }
+.ap2-match-head .ap2-h1 { margin-bottom: 20px; }
+.ap2-match-head .ap2-lede { max-width: 65ch; }
+
+/* The ladder: 8 rows (start + 6 gates + end) on a horizontal grid */
+.ap2-vet {
+  max-width: 920px;
+  border-top: 1px solid var(--gray-200);
+}
+.ap2-vet-row {
+  display: grid;
+  grid-template-columns: 56px 1fr 100px 84px 88px;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--gray-100);
+  position: relative;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity 0.5s var(--ap2-ease-out), transform 0.5s var(--ap2-ease-out);
+}
+.ap2-vet-row.is-in { opacity: 1; transform: translateY(0); }
+
+/* Step ordinal — mono, muted */
+.ap2-vet-step {
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gray-500);
+  font-feature-settings: "tnum";
+}
+/* The gate name + sub */
+.ap2-vet-gate {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.ap2-vet-gate-name {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(17px, 1.6vw, 20px);
+  letter-spacing: -0.015em; color: var(--ink);
+  line-height: 1.25;
+}
+.ap2-vet-gate-sub {
+  font-family: var(--display); font-size: 13.5px; line-height: 1.45;
+  color: var(--gray-600); max-width: 60ch;
+}
+/* Elimination — mono dollar-style red */
+.ap2-vet-elim {
+  font-family: var(--mono); font-size: 13px; font-weight: 600;
+  color: var(--gray-500);
+  letter-spacing: 0.02em;
+  font-feature-settings: "tnum";
+  text-align: right;
+  white-space: nowrap;
+}
+.ap2-vet-elim strong {
+  color: #B91C1C; font-weight: 600;
+}
+/* Mini bar showing remaining percentage */
+.ap2-vet-bar {
+  position: relative;
+  height: 6px;
+  background: var(--gray-100);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.ap2-vet-bar-fill {
+  position: absolute; inset: 0 auto 0 0;
+  background: var(--blue-700);
+  border-radius: 999px;
+  transition: width 0.8s var(--ap2-ease-out);
+}
+/* Running remaining count */
+.ap2-vet-remain {
+  font-family: var(--mono); font-size: 13px; font-weight: 600;
+  color: var(--ink);
+  font-feature-settings: "tnum";
+  text-align: right;
+}
+.ap2-vet-remain .ap2-vet-of {
+  color: var(--gray-500); font-weight: 500;
+}
+
+/* Header & footer rows are special: bigger numerics, no eliminations */
+.ap2-vet-row.head,
+.ap2-vet-row.foot {
+  background: var(--gray-50);
+  padding: 26px 24px;
+  border-radius: 0;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+  margin: 0 -24px;
+}
+.ap2-vet-row.head {
+  margin-top: -1px;
+  border-radius: 14px 14px 0 0;
+}
+.ap2-vet-row.foot {
+  border-radius: 0 0 14px 14px;
+}
+.ap2-vet-row.head .ap2-vet-gate-name,
+.ap2-vet-row.foot .ap2-vet-gate-name {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(20px, 1.8vw, 24px);
+  letter-spacing: -0.02em; color: var(--ink);
+}
+.ap2-vet-row.foot .ap2-vet-gate-name em {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  color: var(--blue-700);
+}
+.ap2-vet-row.head .ap2-vet-remain,
+.ap2-vet-row.foot .ap2-vet-remain {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(30px, 3.2vw, 40px);
+  letter-spacing: -0.025em;
+  color: var(--ink); line-height: 1;
+}
+.ap2-vet-row.foot .ap2-vet-remain { color: var(--blue-700); }
+.ap2-vet-row.head .ap2-vet-elim,
+.ap2-vet-row.foot .ap2-vet-elim,
+.ap2-vet-row.head .ap2-vet-bar,
+.ap2-vet-row.foot .ap2-vet-bar { visibility: hidden; }
+
+.ap2-match-stand {
+  margin: 48px 0 0;
+  max-width: 640px;
+  font-family: var(--display); font-weight: 400; font-size: 18px; line-height: 1.55;
+  color: var(--gray-600);
+}
+.ap2-match-stand em {
+  font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--ink);
+}
+.ap2-match-foot { margin-top: 28px; }
+
+@media (max-width: 760px) {
+  .ap2-vet-row {
+    grid-template-columns: 40px 1fr 88px;
+    grid-template-areas:
+      "step gate gate"
+      ".    bar  remain"
+      ".    elim elim";
+    gap: 8px 14px;
+    padding: 18px 0;
+  }
+  .ap2-vet-step  { grid-area: step; }
+  .ap2-vet-gate  { grid-area: gate; }
+  .ap2-vet-bar   { grid-area: bar; }
+  .ap2-vet-remain{ grid-area: remain; }
+  .ap2-vet-elim  { grid-area: elim; text-align: left; }
+  .ap2-vet-row.head .ap2-vet-bar,
+  .ap2-vet-row.foot .ap2-vet-bar,
+  .ap2-vet-row.head .ap2-vet-elim,
+  .ap2-vet-row.foot .ap2-vet-elim { display: none; }
+}
+
+/* ═══════════════════════════ HOW IT WORKS — The Process Spec ═══════════════════════════
+   Reimagined per /impeccable: the asymmetric 3-step was a known pattern. Replaced with
+   three full-width hairline-separated rows, each laid out as a typed engineering spec:
+   ordinal numeral · h3 + body · mono "spec block" with literal fields (Time/Input/Output,
+   Trigger/Action/Promise). Reads like documentation, not marketing. */
+
+.ap2-how {
+  padding: var(--ap2-section-tight) 32px var(--ap2-section);
+  background: var(--gray-50);
+}
+.ap2-how-inner {
+  max-width: var(--ap2-container); margin: 0 auto;
+}
+.ap2-how-head {
+  max-width: 800px; margin-bottom: 64px;
+}
+.ap2-how-head .ap2-eyebrow { display: inline-flex; }
+.ap2-how-head .ap2-h1 { margin-bottom: 20px; }
+.ap2-how-head .ap2-lede { max-width: 65ch; }
+
+.ap2-how-steps {
+  display: flex; flex-direction: column;
+  border-top: 1px solid var(--gray-200);
+}
+
+.ap2-how-step {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.7fr) minmax(0, 1.3fr) minmax(280px, 1fr);
+  gap: 56px;
+  align-items: start;
+  padding: 48px 0;
+  border-bottom: 1px solid var(--gray-200);
+  opacity: 0; transform: translateY(16px);
+}
+.ap2-how-step.is-in {
+  opacity: 1; transform: translateY(0);
+  transition: opacity 0.7s var(--ap2-ease-out), transform 0.7s var(--ap2-ease-out);
+}
+
+/* Big mono ordinal — engineer's table of contents number */
+.ap2-how-num {
+  font-family: var(--mono); font-weight: 500;
+  font-size: clamp(56px, 7vw, 96px);
+  letter-spacing: -0.02em; line-height: 0.92;
+  color: var(--ink);
+  font-feature-settings: "tnum";
+}
+.ap2-how-num-tag {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--blue-700);
+}
+
+/* Middle: heading + body */
+.ap2-how-body h3 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(24px, 2.6vw, 32px);
+  color: var(--ink); letter-spacing: -0.02em; line-height: 1.15;
+  margin-bottom: 14px;
+}
+.ap2-how-body h3 em {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  color: var(--blue-700);
+}
+.ap2-how-body p {
+  font-size: 16px; line-height: 1.6; color: var(--gray-700);
+  max-width: 48ch;
+}
+
+/* Right: the spec block. Mono. Field/value pairs. Read it like documentation. */
+.ap2-how-spec {
+  display: flex; flex-direction: column;
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 22px 24px;
+}
+.ap2-how-spec-head {
+  font-family: var(--mono); font-size: 9.5px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gray-500);
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--gray-200);
+  margin-bottom: 12px;
+}
+.ap2-how-spec-row {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 14px;
+  padding: 7px 0;
+  align-items: baseline;
+}
+.ap2-how-spec-row + .ap2-how-spec-row { border-top: 1px solid var(--gray-100); }
+.ap2-how-spec-key {
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gray-500);
+}
+.ap2-how-spec-val {
+  font-family: var(--mono); font-size: 13px; font-weight: 500;
+  color: var(--ink); letter-spacing: 0.005em;
+  line-height: 1.5;
+  font-feature-settings: "tnum";
+}
+.ap2-how-spec-val.accent  { color: var(--blue-700); }
+.ap2-how-spec-val.free    { color: var(--green-700); font-weight: 600; }
+.ap2-how-spec-val.cond    { color: #B8730A; font-style: italic; font-family: var(--serif); font-size: 14px; }
+
+@media (max-width: 1024px) {
+  .ap2-how-step {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 40px 0;
+  }
+  .ap2-how-num { font-size: 64px; }
+  .ap2-how-num-tag { margin-top: 8px; }
+  .ap2-how-spec { max-width: 520px; }
+}
+@media (max-width: 760px) {
+  .ap2-how-num { font-size: 56px; }
+  .ap2-how-spec-row { grid-template-columns: 70px 1fr; gap: 10px; }
+  .ap2-how-steps { gap: 36px; }
+}
+
+/* ═══════════════════════════ SERVICE AREA MAP — left-aligned head ═══════════════════════════ */
+
+.ap2-map {
+  padding: var(--ap2-section) 32px;
+  background: white;
+}
+.ap2-map-inner {
+  max-width: var(--ap2-container); margin: 0 auto;
+}
+.ap2-map-head {
+  max-width: 800px; margin: 0 0 56px;
+}
+.ap2-map-head .ap2-eyebrow { display: inline-flex; }
+.ap2-map-head .ap2-h1 { margin-bottom: 20px; }
+.ap2-map-head .ap2-lede { max-width: 65ch; }
+
+.ap2-usmap-frame {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 24px;
+  padding: 36px 28px 28px;
+  max-width: 1100px; margin: 0;
+  box-shadow: var(--shadow-sm);
+}
+.ap2-usmap-status {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 18px; margin-bottom: 22px;
+  border-bottom: 1px dashed var(--gray-100);
+  font-family: var(--mono); font-size: 11px; color: var(--gray-500);
+  letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;
+  flex-wrap: wrap; gap: 10px;
+}
+.ap2-usmap-status .live { color: var(--blue-700); }
+.ap2-usmap-status .soon { color: var(--gray-500); }
+.ap2-usmap {
+  display: grid; grid-template-columns: repeat(13, 1fr);
+  gap: 6px; aspect-ratio: 13/9;
+  font-family: var(--mono);
+}
+.ap2-us-state {
+  background: var(--gray-50); color: var(--gray-400);
+  font-size: 11px; font-weight: 600;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background var(--ap2-quick), color var(--ap2-quick),
+              transform var(--ap2-quick) var(--ap2-spring),
+              box-shadow var(--ap2-quick);
+  cursor: default; min-height: 44px;
+}
+.ap2-us-state.active {
+  background: var(--blue-700);
+  color: white; cursor: pointer;
+}
+.ap2-us-state.active:hover { transform: scale(1.06); box-shadow: var(--shadow-md); z-index: 2; }
+.ap2-us-state.active:active { transform: scale(1.02); }
+.ap2-us-state.active:focus-visible { outline: 2px solid var(--blue-300); outline-offset: 2px; }
+/* Pending states use Public Trust Blue (lighter shade) — single-accent */
+.ap2-us-state[data-pending="true"] {
+  background: var(--blue-500);
+}
+.ap2-usmap-legend {
+  display: flex; gap: 24px;
+  margin-top: 24px; padding-top: 18px;
+  border-top: 1px dashed var(--gray-100);
+  font-family: var(--mono); font-size: 11px; color: var(--gray-600);
+  letter-spacing: 0.06em; flex-wrap: wrap;
+}
+.ap2-usmap-legend-item { display: inline-flex; align-items: center; gap: 8px; }
+.ap2-usmap-legend-dot { width: 14px; height: 14px; border-radius: 4px; }
+.ap2-usmap-legend-dot.active { background: var(--blue-700); }
+.ap2-usmap-legend-dot.expanding { background: var(--blue-500); }
+.ap2-usmap-legend-dot.soon { background: var(--gray-200); }
+
+/* ═══════════════════════════ FINAL CTA — split-screen (was centered) ═══════════════════════════ */
+
+.ap2-final {
+  padding: var(--ap2-section) 32px;
+  background: white;
+  position: relative;
+}
+.ap2-final-grid {
+  max-width: var(--ap2-container); margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 80px;
+  align-items: center;
+}
+.ap2-final-text { max-width: 600px; }
+.ap2-final-h0 { margin-bottom: 28px; }
+/* No gradient on Final CTA italic — solid Public Trust Blue */
+.ap2-final-h0 em {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  color: var(--blue-700);
+  letter-spacing: -0.025em;
+}
+.ap2-final-sub { margin-bottom: 40px; }
+.ap2-final-image {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4/3;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+}
+.ap2-final-image img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+}
+.ap2-final-image::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(10, 16, 32, 0.20) 100%);
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .ap2-final-grid { grid-template-columns: 1fr; gap: 48px; }
+  .ap2-final-image { aspect-ratio: 16/9; }
+}
+
+/* ═══════════════════════════ FOOTER ═══════════════════════════ */
+
+.ap2-footer {
+  background: white;
+  padding: 96px 32px 36px;
+  border-top: 1px solid var(--gray-100);
+}
+.ap2-footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+  max-width: 1280px; margin: 0 auto;
+}
+.ap2-footer-about img { height: 28px; margin-bottom: 16px; }
+/* Footer tagline now uses Public Trust Blue (single-accent rule) */
+.ap2-footer-tagline {
+  font-family: var(--serif); font-style: italic;
+  font-size: 16px; color: var(--blue-700);
+  margin-bottom: 12px;
+}
+.ap2-footer-about p { font-size: 13.5px; line-height: 1.6; color: var(--gray-600); max-width: 360px; }
+.ap2-footer-press {
+  margin-top: 22px;
+  font-family: var(--mono); font-size: 10.5px;
+  letter-spacing: 0.06em; color: var(--gray-400);
+}
+.ap2-footer-press strong { color: var(--gray-700); font-weight: 600; }
+.ap2-footer-col h4 {
+  font-family: var(--display); font-weight: 600; font-size: 13px;
+  color: var(--ink); letter-spacing: -0.01em; margin-bottom: 16px;
+}
+.ap2-footer-col ul { list-style: none; padding: 0; margin: 0; }
+.ap2-footer-col li { margin-bottom: 10px; }
+.ap2-footer-col a {
+  font-size: 13px; color: var(--gray-700); text-decoration: none;
+  transition: color var(--ap2-quick);
+}
+.ap2-footer-col a:hover { color: var(--blue-700); }
+.ap2-footer-bottom {
+  max-width: 1280px; margin: 64px auto 0; padding: 22px 0 0;
+  border-top: 1px solid var(--gray-100);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; color: var(--gray-500);
+}
+@media (max-width: 760px) { .ap2-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+
+/* ═══════════════════════════ REDUCED MOTION ═══════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .ap2-hero-eyebrow .dot { animation: none; }
+  .ap2-slice, .ap2-how-step { opacity: 1 !important; transform: none !important; }
+  .ap2-arc-fg { stroke-dashoffset: 89 !important; }
+  .ap2-arc-cap-grade { opacity: 1 !important; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+<body class="ap2-page">
+
+<a href="#main" class="ap2-skip" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.cssText='position:fixed;top:8px;left:8px;width:auto;height:auto;padding:12px 18px;background:#0A1020;color:#fff;border-radius:8px;z-index:200;font-family:Geist,sans-serif;font-size:14px;'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;'">Skip to main content</a>
+
+<!-- ═════════════ NAV ═════════════ -->
+<nav class="ap2-nav" id="ap2Nav" aria-label="Primary">
+  <a href="index.html" class="brand"><img src="logo.png" alt="ProFusion Home Solutions"></a>
+  <ul class="ap2-nav-links">
+    <li><a href="#trans">The Score</a></li>
+    <li><a href="#map">Programs</a></li>
+    <li><a href="how-our-score-guides-you.html">Learn</a></li>
+    <li><a href="get-my-score.html" class="ap2-nav-cta">Get my Score</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+
+<!-- ═════════════ HERO — Acme-style centered + sample report ═════════════ -->
+<header class="ap2-hero" id="ap2Hero">
+  <div class="ap2-hero-inner">
+
+    <div class="ap2-hero-eyebrow"><span class="dot" aria-hidden="true"></span>The Home Efficiency Score</div>
+
+    <h1 class="ap2-hero-h0">
+      Your home has a Score.
+      <span class="find-it">Find&nbsp;it.</span>
+    </h1>
+
+    <p class="ap2-hero-sub">A single number that reads everything that <strong>actually matters</strong> about your house, your utility, and the moment you're in, then tells you which upgrade moves the needle.</p>
+
+    <div class="ap2-hero-ctas">
+      <a href="get-my-score.html" class="ap2-cta">
+        Get my Score
+        <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true"><path d="M1 6h11M8 1l4 5-4 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="sample-report.html" class="ap2-hero-cta-outline">
+        See a sample report
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+
+    <div class="ap2-hero-stack-row">
+      <div class="ap2-hero-stack-pills">
+        <span class="ap2-hero-stack-pill">Every rebate stacked</span>
+        <span class="ap2-hero-stack-divider">·</span>
+        <span class="ap2-hero-stack-pill">Every state, federal, utility</span>
+        <span class="ap2-hero-stack-divider">·</span>
+        <span class="ap2-hero-stack-pill">Vetted installers</span>
+      </div>
+      <p class="ap2-hero-stack-tagline">Now serving 11 states. Going nationwide.</p>
+    </div>
+
+    <!-- Sample-report image container (Page 1, redacted, scores filled in) -->
+    <figure class="ap2-hero-figure" aria-label="Sample Home Energy Report shown for a Worcester, MA home: Grade B (score 622) today, with 25-year cost of doing nothing">
+
+      <div class="ap2-hero-figure-inner">
+
+        <!-- ─── Page 1: Overall Grade + Costs ─── -->
+        <div class="ap2-sr-page">
+
+          <header class="ap2-sr-head">
+            <div class="ap2-sr-head-brand">
+              <img src="logo.png" alt="ProFusion Home Solutions">
+            </div>
+            <div class="ap2-sr-head-meta">
+              <div>Published</div>
+              <strong>March 12, 2026</strong>
+              <div style="margin-top: 8px;">Report for</div>
+              <strong><span class="ap2-sr-redact">Karen W Havener&nbsp;&nbsp;</span></strong>
+              <div style="margin-top: 4px;"><span class="ap2-sr-redact">97 Puritan Ave, Worcester, MA&nbsp;&nbsp;</span></div>
+            </div>
+          </header>
+
+          <h2 class="ap2-sr-h2">Your Custom Home Energy Report</h2>
+
+          <div class="ap2-sr-grade-row">
+
+            <!-- Grade gauge -->
+            <div class="ap2-sr-grade-card">
+              <div class="ap2-sr-grade-label">Your Overall Grade</div>
+              <div class="ap2-sr-grade-sub">Based on your home energy assessment</div>
+              <div class="ap2-sr-gauge">
+                <svg viewBox="0 0 220 130" role="img" aria-label="Grade gauge: B">
+                  <path d="M 20 120 A 90 90 0 0 1 65 42" fill="none" stroke="#EF4444" stroke-width="16" stroke-linecap="round"/>
+                  <path d="M 65 42 A 90 90 0 0 1 110 30" fill="none" stroke="#FB923C" stroke-width="16" stroke-linecap="round"/>
+                  <path d="M 110 30 A 90 90 0 0 1 155 42" fill="none" stroke="#FACC15" stroke-width="16" stroke-linecap="round"/>
+                  <path d="M 155 42 A 90 90 0 0 1 200 120" fill="none" stroke="#3AB44A" stroke-width="16" stroke-linecap="round"/>
+                  <circle cx="110" cy="95" r="36" fill="#3AB44A"/>
+                </svg>
+                <div class="ap2-sr-gauge-readout">
+                  <div class="ap2-sr-gauge-letter">B</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cost card -->
+            <div class="ap2-sr-cost-card">
+              <div class="ap2-sr-cost-title">Your Current Annual Energy Costs</div>
+              <div class="ap2-sr-cost-big">$4,500 <span class="unit">per year</span></div>
+              <div class="ap2-sr-cost-grid">
+                <div class="ap2-sr-cost-grid-item">
+                  <div class="ap2-sr-cost-grid-label">Electricity</div>
+                  <div class="ap2-sr-cost-grid-val">$2,100</div>
+                </div>
+                <div class="ap2-sr-cost-grid-item">
+                  <div class="ap2-sr-cost-grid-label">Heating</div>
+                  <div class="ap2-sr-cost-grid-val">$2,400</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ─── Long-term cost tiles ─── -->
+          <div class="ap2-sr-longterm-head">
+            <h3>Understanding Long-Term Costs</h3>
+            <div class="ap2-sr-longterm-head-meta">25-year horizon · MA</div>
+          </div>
+          <div class="ap2-sr-longterm-tiles">
+            <div class="ap2-sr-longterm-tile today">
+              <div class="ap2-sr-longterm-tile-label">Today</div>
+              <div class="ap2-sr-longterm-tile-val">$4,500</div>
+              <div class="ap2-sr-longterm-tile-foot">per year</div>
+            </div>
+            <div class="ap2-sr-longterm-tile mid">
+              <div class="ap2-sr-longterm-tile-label">Year 25</div>
+              <div class="ap2-sr-longterm-tile-val">$15K+</div>
+              <div class="ap2-sr-longterm-tile-foot">per year</div>
+            </div>
+            <div class="ap2-sr-longterm-tile full">
+              <div class="ap2-sr-longterm-tile-label">25-Year Total</div>
+              <div class="ap2-sr-longterm-tile-val">$220K+</div>
+              <div class="ap2-sr-longterm-tile-foot">without upgrades</div>
+            </div>
+          </div>
+
+          <!-- ─── Cost-growth bars ─── -->
+          <div class="ap2-sr-growth">
+            <div class="ap2-sr-growth-head">
+              <h3>Annual Energy Cost Over Time</h3>
+              <div class="ap2-sr-growth-head-meta">Avg rate increase · MA</div>
+            </div>
+            <div class="ap2-sr-growth-row"><div class="ap2-sr-growth-year">Year 1</div><div class="ap2-sr-growth-bar"><div class="ap2-sr-growth-bar-fill" style="width: 30%;"></div></div><div class="ap2-sr-growth-val">$4.5K</div></div>
+            <div class="ap2-sr-growth-row"><div class="ap2-sr-growth-year">Year 6</div><div class="ap2-sr-growth-bar"><div class="ap2-sr-growth-bar-fill" style="width: 39%;"></div></div><div class="ap2-sr-growth-val">$5.8K</div></div>
+            <div class="ap2-sr-growth-row"><div class="ap2-sr-growth-year">Year 11</div><div class="ap2-sr-growth-bar"><div class="ap2-sr-growth-bar-fill" style="width: 50%;"></div></div><div class="ap2-sr-growth-val">$7.5K</div></div>
+            <div class="ap2-sr-growth-row"><div class="ap2-sr-growth-year">Year 16</div><div class="ap2-sr-growth-bar"><div class="ap2-sr-growth-bar-fill" style="width: 64%;"></div></div><div class="ap2-sr-growth-val">$9.6K</div></div>
+            <div class="ap2-sr-growth-row"><div class="ap2-sr-growth-year">Year 21</div><div class="ap2-sr-growth-bar"><div class="ap2-sr-growth-bar-fill" style="width: 83%;"></div></div><div class="ap2-sr-growth-val">$12.4K</div></div>
+            <div class="ap2-sr-growth-row"><div class="ap2-sr-growth-year">Year 25</div><div class="ap2-sr-growth-bar"><div class="ap2-sr-growth-bar-fill" style="width: 100%;"></div></div><div class="ap2-sr-growth-val">$15.2K</div></div>
+            <div class="ap2-sr-growth-foot">Without upgrades. Based on average annual rate increase.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="ap2-hero-figure-fade" aria-hidden="true"></div>
+    </figure>
+
+  </div>
+</header>
+
+<!-- ═════════════ STAT STRIP — left-aligned ═════════════ -->
+<section class="ap2-stat" aria-label="Coverage and impact">
+  <div class="ap2-stat-inner">
+    <p>
+      <strong>$30M+</strong> stacked for homeowners across <strong>11 states</strong>.
+      Going nationwide.
+    </p>
+  </div>
+</section>
+
+<!-- (Cost section removed — the embedded sample report in the hero already
+     conveys the 25-year cost, rate-growth chart, and long-term tiles.) -->
+
+<!-- ═════════════ TRANSFORMATION — left-aligned head ═════════════ -->
+<section class="ap2-trans" id="trans" aria-label="The transformation">
+  <div class="ap2-trans-head">
+    <div class="ap2-eyebrow">The transformation</div>
+    <h2 class="ap2-h1">Same house. <em>Different math.</em></h2>
+    <p class="ap2-lede" style="margin: 24px 0 0;">A real Worcester home. Watch what each upgrade does, the moment it lands, with every rebate already in the math.</p>
+  </div>
+
+  <div class="ap2-trans-grid">
+
+    <div class="ap2-trans-stages">
+
+      <article class="ap2-trans-stage" data-stage="0">
+        <div class="ap2-trans-stage-eyebrow">Today</div>
+        <h3 class="ap2-trans-stage-h">Your home, today.</h3>
+        <p class="ap2-trans-stage-body">Worcester, MA · 1,650 sq ft · oil heat · single-pane windows. Annual energy cost $5,800. Climbing 5.2% a year.</p>
+      </article>
+
+      <article class="ap2-trans-stage" data-stage="1">
+        <div class="ap2-trans-stage-eyebrow">Step 01</div>
+        <h3 class="ap2-trans-stage-h">Tighten the envelope.</h3>
+        <p class="ap2-trans-stage-body">MassSave covers 100%. The biggest single-dollar move on most homes: invisible to the eye, brutal to the bills.</p>
+      </article>
+
+      <article class="ap2-trans-stage" data-stage="2">
+        <div class="ap2-trans-stage-eyebrow">Step 02</div>
+        <h3 class="ap2-trans-stage-h">Stop burning oil.</h3>
+        <p class="ap2-trans-stage-body">MassSave + 25C federal stacked. Same machine heats and cools, working clean to −10°F. Net cost after rebates: $4,500.</p>
+      </article>
+
+      <article class="ap2-trans-stage" data-stage="3">
+        <div class="ap2-trans-stage-eyebrow">Step 03</div>
+        <h3 class="ap2-trans-stage-h">Make your own power.</h3>
+        <p class="ap2-trans-stage-body">6.5 kW system, leased, $0 down. MA SMART production payments lock in $1,200/yr in savings from day one.</p>
+      </article>
+
+      <article class="ap2-trans-stage" data-stage="4">
+        <div class="ap2-trans-stage-eyebrow">Step 04</div>
+        <h3 class="ap2-trans-stage-h">Stop leaking light.</h3>
+        <p class="ap2-trans-stage-body">MassSave $75 per window. The smallest move on this list, but the one your guests will actually compliment you on.</p>
+      </article>
+
+      <article class="ap2-trans-stage" data-stage="5">
+        <div class="ap2-trans-stage-eyebrow">After</div>
+        <h3 class="ap2-trans-stage-h">Your home, optimized.</h3>
+        <p class="ap2-trans-stage-body">Grade A. $5,800/yr saved. $248,800 over 25 years. Same house. Same yard. Different math.</p>
+
+        <div class="ap2-trans-result" id="ap2TransResult" aria-live="polite">
+          <div class="ap2-trans-result-row">
+            <div class="ap2-trans-result-cell">
+              <div class="ap2-trans-result-label">New grade</div>
+              <div class="ap2-trans-result-val grade">A</div>
+            </div>
+            <div class="ap2-trans-result-cell">
+              <div class="ap2-trans-result-label">Annual savings</div>
+              <div class="ap2-trans-result-val">$5,800</div>
+            </div>
+            <div class="ap2-trans-result-cell">
+              <div class="ap2-trans-result-label">25-year savings</div>
+              <div class="ap2-trans-result-val">$248,800</div>
+            </div>
+          </div>
+          <a href="get-my-score.html" class="ap2-trans-result-cta">
+            Your home's transformation starts with one number. Get my Score
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="ap2-trans-house-col">
+      <div class="ap2-trans-house-wrap">
+
+        <svg class="ap2-trans-house-svg" viewBox="0 0 720 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A two-story Colonial home transforming through five energy upgrades">
+          <defs>
+            <linearGradient id="ap2trSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0"    stop-color="#FFE7CC"/>
+              <stop offset="0.55" stop-color="#FFD4A8"/>
+              <stop offset="1"    stop-color="#F8C4A6"/>
+            </linearGradient>
+            <linearGradient id="ap2trGround" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#A6C089"/>
+              <stop offset="1" stop-color="#88A66E"/>
+            </linearGradient>
+            <linearGradient id="ap2trWall" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#F8F2E5"/>
+              <stop offset="1" stop-color="#E8DEC9"/>
+            </linearGradient>
+            <linearGradient id="ap2trWallSide" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#EBE0CB"/>
+              <stop offset="1" stop-color="#D6C9B0"/>
+            </linearGradient>
+            <linearGradient id="ap2trRoof" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#5C7388"/>
+              <stop offset="1" stop-color="#42566A"/>
+            </linearGradient>
+            <linearGradient id="ap2trRoofSide" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#4A5E72"/>
+              <stop offset="1" stop-color="#324354"/>
+            </linearGradient>
+            <linearGradient id="ap2trWindow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFE9A8"/>
+              <stop offset="1" stop-color="#F4C878"/>
+            </linearGradient>
+            <linearGradient id="ap2trWindowNew" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFF3CC"/>
+              <stop offset="1" stop-color="#FFD98F"/>
+            </linearGradient>
+            <pattern id="ap2trInsulation" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+              <rect width="14" height="14" fill="#F4D78A"/>
+              <path d="M0 7 Q3.5 3 7 7 T14 7" stroke="#E8B85A" stroke-width="1.4" fill="none" opacity="0.7"/>
+              <path d="M0 12 Q3.5 9 7 12 T14 12" stroke="#E8B85A" stroke-width="1.2" fill="none" opacity="0.55"/>
+            </pattern>
+            <linearGradient id="ap2trSolar" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#1E3A5F"/>
+              <stop offset="1" stop-color="#0A1F38"/>
+            </linearGradient>
+            <radialGradient id="ap2trGlow" cx="0.5" cy="0.45" r="0.6">
+              <stop offset="0"   stop-color="#FFD98F" stop-opacity="0.4"/>
+              <stop offset="0.55" stop-color="#FFC56A" stop-opacity="0.18"/>
+              <stop offset="1"   stop-color="#FFC56A" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="ap2trWallWarm" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFE9C4" stop-opacity="0.55"/>
+              <stop offset="1" stop-color="#F8D49A" stop-opacity="0.35"/>
+            </linearGradient>
+            <filter id="ap2trHouseShadow" x="-15%" y="-15%" width="130%" height="130%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+              <feOffset dx="0" dy="8" result="offsetblur"/>
+              <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+              <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <rect width="720" height="600" fill="url(#ap2trSky)"/>
+          <path d="M0 480 Q140 440 290 470 Q440 500 580 460 Q650 440 720 460 L720 510 L0 510 Z" fill="#C8D4B0" opacity="0.7"/>
+          <path d="M0 500 Q170 470 310 495 Q450 520 600 485 Q670 470 720 485 L720 530 L0 530 Z" fill="#B4C9A0" opacity="0.55"/>
+          <rect x="0" y="498" width="720" height="102" fill="url(#ap2trGround)"/>
+
+          <circle cx="600" cy="120" r="44" fill="#FFE9A8" opacity="0.9"/>
+          <circle cx="600" cy="120" r="28" fill="#FFD98F"/>
+
+          <g id="ap2-house-sunrays" opacity="0">
+            <g stroke="#FFD98F" stroke-width="3" stroke-linecap="round" opacity="0.85">
+              <line x1="600" y1="50" x2="600" y2="68"/>
+              <line x1="660" y1="80" x2="650" y2="92"/>
+              <line x1="540" y1="80" x2="550" y2="92"/>
+              <line x1="690" y1="120" x2="672" y2="120"/>
+              <line x1="528" y1="120" x2="510" y2="120"/>
+              <line x1="660" y1="160" x2="650" y2="148"/>
+              <line x1="540" y1="160" x2="550" y2="148"/>
+            </g>
+          </g>
+
+          <g id="ap2-house-smoke" opacity="1">
+            <g fill="#A8A8A8" opacity="0.65">
+              <ellipse cx="486" cy="100" rx="14" ry="10"/>
+              <ellipse cx="498" cy="78"  rx="18" ry="13"/>
+              <ellipse cx="478" cy="56"  rx="22" ry="15"/>
+              <ellipse cx="500" cy="34"  rx="26" ry="17"/>
+            </g>
+          </g>
+
+          <g filter="url(#ap2trHouseShadow)">
+            <polygon points="200,510 200,300 240,260 480,260 480,510" fill="url(#ap2trWall)"/>
+            <polygon points="480,260 540,275 540,510 480,510" fill="url(#ap2trWallSide)"/>
+            <polygon points="200,300 340,180 480,260 240,260" fill="url(#ap2trRoof)"/>
+            <polygon points="480,260 540,275 540,295 540,295 480,300 480,260" fill="url(#ap2trRoofSide)"/>
+            <polygon points="340,180 480,260 540,275 400,195" fill="url(#ap2trRoofSide)"/>
+            <rect x="194" y="500" width="352" height="14" fill="#9C8A6F"/>
+            <rect x="468" y="100" width="36" height="92" fill="#B8907A"/>
+            <rect x="464" y="100" width="44" height="10" fill="#9F7660"/>
+            <rect x="332" y="408" width="42" height="92" rx="3" fill="#5E7E94"/>
+            <rect x="338" y="416" width="30" height="76" rx="2" fill="#7593AE" opacity="0.7"/>
+            <circle cx="367" cy="456" r="2" fill="#FFD98F"/>
+            <rect x="324" y="500" width="58" height="6" fill="#7A6F5C"/>
+
+            <g id="ap2-house-insulation" opacity="0">
+              <rect x="496" y="320" width="36" height="100" fill="url(#ap2trInsulation)"/>
+              <path d="M496 320 L532 320 L532 420 L496 420 Z" fill="none" stroke="#A8855A" stroke-width="1.4"/>
+              <path d="M488 314 L500 322 L504 318 L498 312 Z" fill="#D6C9B0"/>
+              <text x="514" y="438" font-family="Geist Mono, monospace" font-size="8" font-weight="600" fill="#7A5C2E" text-anchor="middle" letter-spacing="0.06em">INSULATED</text>
+            </g>
+
+            <g id="ap2-house-wall-tint" opacity="0">
+              <polygon points="200,510 200,300 240,260 480,260 480,510" fill="url(#ap2trWallWarm)"/>
+            </g>
+
+            <g id="ap2-house-windows-old" opacity="1">
+              <rect x="248" y="312" width="56" height="64" rx="2" fill="url(#ap2trWindow)" stroke="#9C8A6F" stroke-width="2"/>
+              <line x1="276" y1="312" x2="276" y2="376" stroke="#9C8A6F" stroke-width="1.6"/>
+              <line x1="248" y1="344" x2="304" y2="344" stroke="#9C8A6F" stroke-width="1.6"/>
+              <rect x="380" y="312" width="56" height="64" rx="2" fill="url(#ap2trWindow)" stroke="#9C8A6F" stroke-width="2"/>
+              <line x1="408" y1="312" x2="408" y2="376" stroke="#9C8A6F" stroke-width="1.6"/>
+              <line x1="380" y1="344" x2="436" y2="344" stroke="#9C8A6F" stroke-width="1.6"/>
+              <rect x="248" y="412" width="56" height="64" rx="2" fill="url(#ap2trWindow)" stroke="#9C8A6F" stroke-width="2"/>
+              <line x1="276" y1="412" x2="276" y2="476" stroke="#9C8A6F" stroke-width="1.6"/>
+              <line x1="248" y1="444" x2="304" y2="444" stroke="#9C8A6F" stroke-width="1.6"/>
+              <rect x="408" y="412" width="42" height="64" rx="2" fill="url(#ap2trWindow)" stroke="#9C8A6F" stroke-width="2"/>
+              <line x1="429" y1="412" x2="429" y2="476" stroke="#9C8A6F" stroke-width="1.6"/>
+              <line x1="408" y1="444" x2="450" y2="444" stroke="#9C8A6F" stroke-width="1.6"/>
+            </g>
+
+            <g id="ap2-house-windows-new" opacity="0">
+              <rect x="246" y="310" width="60" height="68" rx="3" fill="url(#ap2trWindowNew)" stroke="#3C5066" stroke-width="3"/>
+              <rect x="252" y="316" width="48" height="56" rx="1.5" fill="none" stroke="#5C7388" stroke-width="1.4" opacity="0.7"/>
+              <line x1="276" y1="316" x2="276" y2="372" stroke="#3C5066" stroke-width="1.8"/>
+              <line x1="252" y1="344" x2="300" y2="344" stroke="#3C5066" stroke-width="1.8"/>
+              <rect x="378" y="310" width="60" height="68" rx="3" fill="url(#ap2trWindowNew)" stroke="#3C5066" stroke-width="3"/>
+              <rect x="384" y="316" width="48" height="56" rx="1.5" fill="none" stroke="#5C7388" stroke-width="1.4" opacity="0.7"/>
+              <line x1="408" y1="316" x2="408" y2="372" stroke="#3C5066" stroke-width="1.8"/>
+              <line x1="384" y1="344" x2="432" y2="344" stroke="#3C5066" stroke-width="1.8"/>
+              <rect x="246" y="410" width="60" height="68" rx="3" fill="url(#ap2trWindowNew)" stroke="#3C5066" stroke-width="3"/>
+              <rect x="252" y="416" width="48" height="56" rx="1.5" fill="none" stroke="#5C7388" stroke-width="1.4" opacity="0.7"/>
+              <line x1="276" y1="416" x2="276" y2="472" stroke="#3C5066" stroke-width="1.8"/>
+              <line x1="252" y1="444" x2="300" y2="444" stroke="#3C5066" stroke-width="1.8"/>
+              <rect x="406" y="410" width="46" height="68" rx="3" fill="url(#ap2trWindowNew)" stroke="#3C5066" stroke-width="3"/>
+              <rect x="412" y="416" width="34" height="56" rx="1.5" fill="none" stroke="#5C7388" stroke-width="1.4" opacity="0.7"/>
+              <line x1="429" y1="416" x2="429" y2="472" stroke="#3C5066" stroke-width="1.8"/>
+              <line x1="412" y1="444" x2="446" y2="444" stroke="#3C5066" stroke-width="1.8"/>
+            </g>
+
+            <g id="ap2-house-drafts" opacity="1" stroke="#7A8FB0" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M310 320 l8 -2 l-6 6 l8 -2"/>
+              <path d="M310 360 l8 -2 l-6 6 l8 -2"/>
+              <path d="M442 320 l8 -2 l-6 6 l8 -2"/>
+              <path d="M310 420 l8 -2 l-6 6 l8 -2"/>
+              <path d="M310 460 l8 -2 l-6 6 l8 -2"/>
+              <path d="M328 504 l8 -2 l-6 6 l8 -2"/>
+            </g>
+
+            <g id="ap2-house-oilTank" opacity="1">
+              <ellipse cx="620" cy="478" rx="56" ry="14" fill="#5C5050"/>
+              <rect x="564" y="430" width="112" height="48" rx="6" fill="#7A6E66"/>
+              <ellipse cx="620" cy="430" rx="56" ry="14" fill="#9A8C82"/>
+              <ellipse cx="620" cy="430" rx="56" ry="14" fill="none" stroke="#5C5050" stroke-width="1.5"/>
+              <rect x="612" y="412" width="16" height="20" fill="#5C5050" rx="2"/>
+              <text x="620" y="462" font-family="Geist Mono, monospace" font-size="8" font-weight="600" fill="#3A2E26" text-anchor="middle" letter-spacing="0.04em">OIL</text>
+            </g>
+
+            <g id="ap2-house-heatpump" opacity="0">
+              <rect x="556" y="486" width="76" height="6" fill="#888"/>
+              <rect x="562" y="442" width="64" height="44" rx="4" fill="#E8ECF3" stroke="#9CA8B8" stroke-width="1.4"/>
+              <circle cx="594" cy="464" r="14" fill="#FFFFFF" stroke="#9CA8B8" stroke-width="1.2"/>
+              <circle cx="594" cy="464" r="2" fill="#9CA8B8"/>
+              <line x1="594" y1="450" x2="594" y2="478" stroke="#C0C9D6" stroke-width="1.4"/>
+              <line x1="580" y1="464" x2="608" y2="464" stroke="#C0C9D6" stroke-width="1.4"/>
+              <rect x="568" y="448" width="20" height="2" fill="#C0C9D6"/>
+              <rect x="568" y="453" width="20" height="2" fill="#C0C9D6"/>
+              <rect x="568" y="458" width="20" height="2" fill="#C0C9D6"/>
+            </g>
+
+            <g id="ap2-house-airflow-warm" opacity="0" stroke="#E67841" stroke-width="2" fill="none" stroke-linecap="round">
+              <path d="M300 350 Q340 320 380 350" stroke-dasharray="2 4"/>
+              <path d="M380 350 l-6 -3 l3 6 z" fill="#E67841" stroke="none"/>
+              <path d="M380 440 Q340 470 300 440" stroke-dasharray="2 4"/>
+              <path d="M300 440 l6 -3 l-3 6 z" fill="#E67841" stroke="none"/>
+            </g>
+
+            <g id="ap2-house-solarpanels" opacity="0">
+              <g fill="url(#ap2trSolar)" stroke="#0A1F38" stroke-width="0.8">
+                <polygon points="252,250 304,236 304,260 252,272"/>
+                <polygon points="308,236 360,222 360,246 308,260"/>
+                <polygon points="364,222 416,208 416,232 364,246"/>
+                <polygon points="252,276 304,262 304,284 252,296"/>
+                <polygon points="308,262 360,250 360,272 308,284"/>
+                <polygon points="364,250 416,238 416,260 364,272"/>
+              </g>
+              <g stroke="#3A5780" stroke-width="0.6" opacity="0.7">
+                <line x1="265" y1="247" x2="291" y2="266"/>
+                <line x1="278" y1="244" x2="278" y2="262"/>
+                <line x1="321" y1="233" x2="347" y2="252"/>
+                <line x1="334" y1="230" x2="334" y2="248"/>
+                <line x1="377" y1="219" x2="403" y2="238"/>
+                <line x1="390" y1="216" x2="390" y2="234"/>
+              </g>
+            </g>
+
+            <g id="ap2-house-glow" opacity="0">
+              <rect x="120" y="80" width="500" height="440" fill="url(#ap2trGlow)"/>
+            </g>
+          </g>
+
+          <g fill="#7E9D67" opacity="0.7">
+            <path d="M180 510 q4 -8 8 0"/>
+            <path d="M548 510 q4 -8 8 0"/>
+            <path d="M88 514 q4 -8 8 0"/>
+            <path d="M650 514 q4 -8 8 0"/>
+          </g>
+        </svg>
+
+        <div class="ap2-trans-meta" aria-live="polite">
+          <div class="ap2-trans-meta-cell">
+            <div class="ap2-trans-meta-label">Annual bill</div>
+            <div class="ap2-trans-meta-val bill" id="ap2TransBill">
+              $5,800<span class="unit">/yr</span>
+            </div>
+            <div class="ap2-trans-meta-trend" id="ap2TransTrend">↑ rising 5.2%/yr</div>
+          </div>
+          <div class="ap2-trans-meta-cell">
+            <div class="ap2-trans-meta-label">Today's grade</div>
+            <div class="ap2-trans-meta-val">
+              <span class="ap2-trans-grade-letter" id="ap2TransGrade">D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═════════════ THREE SLICES — compact row-list ═════════════ -->
+<section class="ap2-slices" aria-label="Three contractors, one home">
+  <div class="ap2-slices-inner">
+
+    <div class="ap2-slices-head">
+      <div class="ap2-eyebrow">Three contractors. One home.</div>
+      <h2 class="ap2-h1">Each one sees their slice.</h2>
+      <p class="ap2-lede">Three good people, three good answers, three completely different upgrades.</p>
+    </div>
+
+    <div class="ap2-slices-list" id="ap2Slices">
+      <article class="ap2-slice">
+        <div class="ap2-slice-photo">
+          <img src="images/homepage-contractor-hva100x100.jpeg" alt="Photograph of an HVAC technician">
+        </div>
+        <div class="ap2-slice-scope-label">Heating &amp; cooling</div>
+        <div>
+          <p class="ap2-slice-quote">"You need a new furnace."</p>
+          <span class="ap2-slice-narrator">The HVAC tech knows HVAC. That's why they're good at their trade.</span>
+        </div>
+        <div class="ap2-slice-scope">Their scope · <strong>HVAC only</strong></div>
+      </article>
+
+      <article class="ap2-slice">
+        <div class="ap2-slice-photo">
+          <img src="images/homepage-contractor-windows.png" alt="Photograph of a window installer">
+        </div>
+        <div class="ap2-slice-scope-label">Windows &amp; doors</div>
+        <div>
+          <p class="ap2-slice-quote">"You need new windows."</p>
+          <span class="ap2-slice-narrator">U-factor expert. Doesn't see your attic.</span>
+        </div>
+        <div class="ap2-slice-scope">Their scope · <strong>Windows only</strong></div>
+      </article>
+
+      <article class="ap2-slice">
+        <div class="ap2-slice-photo">
+          <img src="images/homepage-contractor-solar.png" alt="Photograph of a solar installer">
+        </div>
+        <div class="ap2-slice-scope-label">Rooftop generation</div>
+        <div>
+          <p class="ap2-slice-quote">"You need solar."</p>
+          <span class="ap2-slice-narrator">PV expert. Whether solar is your right next move is a different question.</span>
+        </div>
+        <div class="ap2-slice-scope">Their scope · <strong>Solar only</strong></div>
+      </article>
+    </div>
+
+    <p class="ap2-slices-tagline">Each contractor sees their slice. The Home Efficiency Score sees the whole home.</p>
+
+  </div>
+</section>
+
+<!-- ═════════════ MATCH — The Vetting Ladder ═════════════
+     Math you can audit: 100 in → 18 out, gate by gate. -->
+<section class="ap2-match" aria-label="The match">
+  <div class="ap2-match-inner">
+    <div class="ap2-match-head">
+      <div class="ap2-eyebrow">The match</div>
+      <h2 class="ap2-h1">You don't interview installers. <em>We already did.</em></h2>
+      <p class="ap2-lede">Six gates, every job. Below: the math, gate by gate, on a typical 100 applicants in our pipeline.</p>
+    </div>
+
+    <div class="ap2-vet" id="ap2Vet" role="table" aria-label="Vetting ladder: six gates from 100 applicants down to 18">
+
+      <div class="ap2-vet-row head" role="row">
+        <div class="ap2-vet-step" role="cell">Start</div>
+        <div class="ap2-vet-gate" role="cell">
+          <div class="ap2-vet-gate-name">Installers in our pipeline</div>
+        </div>
+        <div class="ap2-vet-elim" role="cell" aria-hidden="true"></div>
+        <div class="ap2-vet-bar" role="cell" aria-hidden="true"></div>
+        <div class="ap2-vet-remain" role="cell">100</div>
+      </div>
+
+      <div class="ap2-vet-row" role="row">
+        <div class="ap2-vet-step" role="cell">01</div>
+        <div class="ap2-vet-gate" role="cell">
+          <div class="ap2-vet-gate-name">State license, current</div>
+          <div class="ap2-vet-gate-sub">Verified against the state board, not a paper copy on file. Re-checked every 90 days.</div>
+        </div>
+        <div class="ap2-vet-elim" role="cell"><strong>−18</strong> fail</div>
+        <div class="ap2-vet-bar" role="cell"><div class="ap2-vet-bar-fill" style="width: 82%;"></div></div>
+        <div class="ap2-vet-remain" role="cell">82<span class="ap2-vet-of"> / 100</span></div>
+      </div>
+
+      <div class="ap2-vet-row" role="row">
+        <div class="ap2-vet-step" role="cell">02</div>
+        <div class="ap2-vet-gate" role="cell">
+          <div class="ap2-vet-gate-name">Liability + workers' comp</div>
+          <div class="ap2-vet-gate-sub">Both policies, both active, certificate listing ProFusion as additional insured.</div>
+        </div>
+        <div class="ap2-vet-elim" role="cell"><strong>−14</strong> fail</div>
+        <div class="ap2-vet-bar" role="cell"><div class="ap2-vet-bar-fill" style="width: 68%;"></div></div>
+        <div class="ap2-vet-remain" role="cell">68<span class="ap2-vet-of"> / 100</span></div>
+      </div>
+
+      <div class="ap2-vet-row" role="row">
+        <div class="ap2-vet-step" role="cell">03</div>
+        <div class="ap2-vet-gate" role="cell">
+          <div class="ap2-vet-gate-name">Five years in business, same name</div>
+          <div class="ap2-vet-gate-sub">No phoenix LLCs. The company name on the truck is the company name on the warranty.</div>
+        </div>
+        <div class="ap2-vet-elim" role="cell"><strong>−22</strong> fail</div>
+        <div class="ap2-vet-bar" role="cell"><div class="ap2-vet-bar-fill" style="width: 46%;"></div></div>
+        <div class="ap2-vet-remain" role="cell">46<span class="ap2-vet-of"> / 100</span></div>
+      </div>
+
+      <div class="ap2-vet-row" role="row">
+        <div class="ap2-vet-step" role="cell">04</div>
+        <div class="ap2-vet-gate" role="cell">
+          <div class="ap2-vet-gate-name">Manufacturer certification</div>
+          <div class="ap2-vet-gate-sub">Trained and credentialed by the equipment maker, on the equipment lines they install. Not just a logo on the website.</div>
+        </div>
+        <div class="ap2-vet-elim" role="cell"><strong>−15</strong> fail</div>
+        <div class="ap2-vet-bar" role="cell"><div class="ap2-vet-bar-fill" style="width: 31%;"></div></div>
+        <div class="ap2-vet-remain" role="cell">31<span class="ap2-vet-of"> / 100</span></div>
+      </div>
+
+      <div class="ap2-vet-row" role="row">
+        <div class="ap2-vet-step" role="cell">05</div>
+        <div class="ap2-vet-gate" role="cell">
+          <div class="ap2-vet-gate-name">Rebate-program approved</div>
+          <div class="ap2-vet-gate-sub">On the active contractor lists for the programs in your state. Without this, the rebate doesn't actually land.</div>
+        </div>
+        <div class="ap2-vet-elim" role="cell"><strong>−9</strong> fail</div>
+        <div class="ap2-vet-bar" role="cell"><div class="ap2-vet-bar-fill" style="width: 22%;"></div></div>
+        <div class="ap2-vet-remain" role="cell">22<span class="ap2-vet-of"> / 100</span></div>
+      </div>
+
+      <div class="ap2-vet-row" role="row">
+        <div class="ap2-vet-step" role="cell">06</div>
+        <div class="ap2-vet-gate" role="cell">
+          <div class="ap2-vet-gate-name">Workmanship + product warranty</div>
+          <div class="ap2-vet-gate-sub">A real warranty document, not a verbal promise. Honored at the company level, not just by the original installer.</div>
+        </div>
+        <div class="ap2-vet-elim" role="cell"><strong>−4</strong> fail</div>
+        <div class="ap2-vet-bar" role="cell"><div class="ap2-vet-bar-fill" style="width: 18%;"></div></div>
+        <div class="ap2-vet-remain" role="cell">18<span class="ap2-vet-of"> / 100</span></div>
+      </div>
+
+      <div class="ap2-vet-row foot" role="row">
+        <div class="ap2-vet-step" role="cell">Result</div>
+        <div class="ap2-vet-gate" role="cell">
+          <div class="ap2-vet-gate-name">Make it to <em>your list</em></div>
+        </div>
+        <div class="ap2-vet-elim" role="cell" aria-hidden="true"></div>
+        <div class="ap2-vet-bar" role="cell" aria-hidden="true"></div>
+        <div class="ap2-vet-remain" role="cell">18</div>
+      </div>
+
+    </div>
+
+    <p class="ap2-match-stand">And if something's off, you call us. We call them. You never chase your installer alone.</p>
+
+    <div class="ap2-match-foot">
+      <a href="our-installers.html" class="ap2-link">See the full vetting process
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════ HOW IT WORKS — The Process Spec ═════════════
+     Three full-width hairline rows. Each row reads like a typed engineer's spec sheet:
+     ordinal · headline + body · literal field/value spec block. Documentation, not marketing. -->
+<section class="ap2-how" aria-label="How it works">
+  <div class="ap2-how-inner">
+    <div class="ap2-how-head">
+      <div class="ap2-eyebrow">How it works</div>
+      <h2 class="ap2-h1">Three steps. <em>That's it.</em></h2>
+      <p class="ap2-lede">No installer in your living room. No pressure. Just the math, the matches, and your call. Each step, written out.</p>
+    </div>
+
+    <div class="ap2-how-steps" id="ap2HowSteps">
+
+      <article class="ap2-how-step">
+        <div>
+          <div class="ap2-how-num">01</div>
+          <span class="ap2-how-num-tag">Drop your address</span>
+        </div>
+        <div class="ap2-how-body">
+          <h3>You give us an address. <em>That's all we need.</em></h3>
+          <p>Sixty seconds. We pull satellite data, your local utility tariffs, and every rebate funding in your zip. No call, no installer in your living room, no obligation to do anything next.</p>
+        </div>
+        <div class="ap2-how-spec">
+          <div class="ap2-how-spec-head">Step 01 · Spec</div>
+          <div class="ap2-how-spec-row">
+            <div class="ap2-how-spec-key">Time</div>
+            <div class="ap2-how-spec-val accent">~60 seconds</div>
+          </div>
+          <div class="ap2-how-spec-row">
+            <div class="ap2-how-spec-key">Input</div>
+            <div class="ap2-how-spec-val">Street address, email</div>
+          </div>
+          <div class="ap2-how-spec-row">
+            <div class="ap2-how-spec-key">Output</div>
+            <div class="ap2-how-spec-val">Score + Grade</div>
+          </div>
+          <div class="ap2-how-spec-row">
+            <div class="ap2-how-spec-key">Cost</div>
+            <div class="ap2-how-spec-val free">$0 · free, forever</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ap2-how-step">
+        <div>
+          <div class="ap2-how-num">02</div>
+          <span class="ap2-how-num-tag">Read your Score</span>
+        </div>
+        <div class="ap2-how-body">
+          <h3>You read the math. <em>Then nothing happens.</em></h3>
+          <p>Your grade, your ranked upgrades, every rebate already stacked into the numbers. The full report, delivered as a PDF. Yours forever. No installer queue gets your contact info. No drip campaign starts.</p>
+        </div>
+        <div class="ap2-how-spec">
+          <div class="ap2-how-spec-head">Step 02 · Spec</div>
+          <div class="ap2-how-spec-row">
+            <div class="ap2-how-spec-key">Format</div>
+            <div class="ap2-how-spec-val">PDF · 4 pages</div>
+          </div>
+          <div class="ap2-how-spec-row">
+            <div class="ap2-how-spec-key">Includes</div>
+            <div class="ap2-how-spec-val">Grade · Roadmap · Rebates · Match</div>
+          </div>
+          <div class="ap2-how-spec-row">
+            <div class="ap2-how-spec-key">Shared</div>
+            <div class="ap2-how-spec-val">Never. Only you.</div>
+          </div>
+          <div class="ap2-how-spec-row">
+            <div class="ap2-how-spec-key">Yours</div>
+            <div class="ap2-how-spec-val free">Forever, no strings</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ap2-how-step">
+        <div>
+          <div class="ap2-how-num">03</div>
+          <span class="ap2-how-num-tag">Meet your match</span>
+        </div>
+        <div class="ap2-how-body">
+          <h3>You ask. <em>We match.</em></h3>
+          <p>If (and only if) you say so, we hand-pick a vetted installer for the one upgrade you choose. We stay on the line until the work is done and the rebate has landed. If something's off, you call us. We call them.</p>
+        </div>
+        <div class="ap2-how-spec">
+          <div class="ap2-how-spec-head">Step 03 · Spec</div>
+          <div class="ap2-how-spec-row">
+            <div class="ap2-how-spec-key">Trigger</div>
+            <div class="ap2-how-spec-val cond">Only if you ask</div>
+          </div>
+          <div class="ap2-how-spec-row">
+            <div class="ap2-how-spec-key">Match</div>
+            <div class="ap2-how-spec-val">1 vetted installer · 6 gates passed</div>
+          </div>
+          <div class="ap2-how-spec-row">
+            <div class="ap2-how-spec-key">Support</div>
+            <div class="ap2-how-spec-val">We stay on the line</div>
+          </div>
+          <div class="ap2-how-spec-row">
+            <div class="ap2-how-spec-key">Cost</div>
+            <div class="ap2-how-spec-val free">$0 · paid by the installer</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════ SERVICE AREA MAP — left-aligned head ═════════════ -->
+<section class="ap2-map" id="map" aria-label="Service area">
+  <div class="ap2-map-inner">
+    <div class="ap2-map-head">
+      <div class="ap2-eyebrow">Service area</div>
+      <h2 class="ap2-h1">11 states. <em>Going nationwide.</em></h2>
+      <p class="ap2-lede">We score, stack, and match in every state shown in blue. The rest are coming. Drop in your address and we'll loop you in the moment we go live.</p>
+    </div>
+
+    <div class="ap2-usmap-frame">
+      <div class="ap2-usmap-status">
+        <div>Coverage map · April 2026</div>
+        <div><span class="live">11 live</span> · <span class="soon">39 coming soon</span></div>
+      </div>
+
+      <div class="ap2-usmap" role="img" aria-label="US map: 11 active states in blue, remaining states coming soon">
+        <a href="states/maine.html" class="ap2-us-state active" style="grid-column: 13; grid-row: 1;">ME</a>
+        <a href="states/vermont.html" class="ap2-us-state active" style="grid-column: 11; grid-row: 2;">VT</a>
+        <a href="states/new-hampshire.html" class="ap2-us-state active" style="grid-column: 12; grid-row: 2;">NH</a>
+        <div class="ap2-us-state" style="grid-column: 2; grid-row: 3;">WA</div>
+        <div class="ap2-us-state" style="grid-column: 6; grid-row: 3;">MN</div>
+        <a href="states/michigan.html" class="ap2-us-state active" data-pending="true" style="grid-column: 9; grid-row: 3;">MI</a>
+        <a href="states/new-york.html" class="ap2-us-state active" data-pending="true" style="grid-column: 11; grid-row: 3;">NY</a>
+        <a href="states/massachusetts.html" class="ap2-us-state active" style="grid-column: 13; grid-row: 3;">MA</a>
+        <div class="ap2-us-state" style="grid-column: 2; grid-row: 4;">OR</div>
+        <div class="ap2-us-state" style="grid-column: 3; grid-row: 4;">ID</div>
+        <div class="ap2-us-state" style="grid-column: 4; grid-row: 4;">MT</div>
+        <div class="ap2-us-state" style="grid-column: 5; grid-row: 4;">ND</div>
+        <div class="ap2-us-state" style="grid-column: 6; grid-row: 4;">WI</div>
+        <div class="ap2-us-state" style="grid-column: 11; grid-row: 4;">PA</div>
+        <a href="states/connecticut.html" class="ap2-us-state active" style="grid-column: 12; grid-row: 4;">CT</a>
+        <a href="states/rhode-island.html" class="ap2-us-state active" style="grid-column: 13; grid-row: 4;">RI</a>
+        <div class="ap2-us-state" style="grid-column: 1; grid-row: 5;">AK</div>
+        <div class="ap2-us-state" style="grid-column: 2; grid-row: 5;">CA</div>
+        <div class="ap2-us-state" style="grid-column: 3; grid-row: 5;">NV</div>
+        <div class="ap2-us-state" style="grid-column: 4; grid-row: 5;">UT</div>
+        <div class="ap2-us-state" style="grid-column: 5; grid-row: 5;">WY</div>
+        <div class="ap2-us-state" style="grid-column: 6; grid-row: 5;">SD</div>
+        <div class="ap2-us-state" style="grid-column: 7; grid-row: 5;">IA</div>
+        <div class="ap2-us-state" style="grid-column: 8; grid-row: 5;">IL</div>
+        <div class="ap2-us-state" style="grid-column: 9; grid-row: 5;">IN</div>
+        <div class="ap2-us-state" style="grid-column: 10; grid-row: 5;">OH</div>
+        <a href="states/new-jersey.html" class="ap2-us-state active" data-pending="true" style="grid-column: 11; grid-row: 5;">NJ</a>
+        <div class="ap2-us-state" style="grid-column: 4; grid-row: 6;">AZ</div>
+        <div class="ap2-us-state" style="grid-column: 5; grid-row: 6;">CO</div>
+        <div class="ap2-us-state" style="grid-column: 6; grid-row: 6;">NE</div>
+        <div class="ap2-us-state" style="grid-column: 7; grid-row: 6;">MO</div>
+        <div class="ap2-us-state" style="grid-column: 8; grid-row: 6;">KY</div>
+        <div class="ap2-us-state" style="grid-column: 9; grid-row: 6;">WV</div>
+        <div class="ap2-us-state" style="grid-column: 10; grid-row: 6;">VA</div>
+        <a href="states/maryland.html" class="ap2-us-state active" data-pending="true" style="grid-column: 11; grid-row: 6;">MD</a>
+        <div class="ap2-us-state" style="grid-column: 12; grid-row: 6;">DE</div>
+        <div class="ap2-us-state" style="grid-column: 1; grid-row: 7;">HI</div>
+        <div class="ap2-us-state" style="grid-column: 5; grid-row: 7;">NM</div>
+        <div class="ap2-us-state" style="grid-column: 6; grid-row: 7;">KS</div>
+        <div class="ap2-us-state" style="grid-column: 7; grid-row: 7;">AR</div>
+        <div class="ap2-us-state" style="grid-column: 8; grid-row: 7;">TN</div>
+        <div class="ap2-us-state" style="grid-column: 9; grid-row: 7;">NC</div>
+        <div class="ap2-us-state" style="grid-column: 10; grid-row: 7;">SC</div>
+        <div class="ap2-us-state" style="grid-column: 12; grid-row: 7;">DC</div>
+        <div class="ap2-us-state" style="grid-column: 6; grid-row: 8;">OK</div>
+        <div class="ap2-us-state" style="grid-column: 7; grid-row: 8;">LA</div>
+        <div class="ap2-us-state" style="grid-column: 8; grid-row: 8;">MS</div>
+        <div class="ap2-us-state" style="grid-column: 9; grid-row: 8;">AL</div>
+        <div class="ap2-us-state" style="grid-column: 10; grid-row: 8;">GA</div>
+        <div class="ap2-us-state" style="grid-column: 6; grid-row: 9;">TX</div>
+        <a href="states/florida.html" class="ap2-us-state active" data-pending="true" style="grid-column: 10; grid-row: 9;">FL</a>
+      </div>
+
+      <div class="ap2-usmap-legend">
+        <div class="ap2-usmap-legend-item"><span class="ap2-usmap-legend-dot active"></span>Active</div>
+        <div class="ap2-usmap-legend-item"><span class="ap2-usmap-legend-dot expanding"></span>Active · page launching soon</div>
+        <div class="ap2-usmap-legend-item"><span class="ap2-usmap-legend-dot soon"></span>Coming soon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════ FINAL CTA — split-screen (was centered) ═════════════ -->
+<section class="ap2-final" id="cta" aria-label="Get my Score">
+  <div class="ap2-final-grid">
+    <div class="ap2-final-text">
+      <div class="ap2-eyebrow">Ready when you are</div>
+      <h2 class="ap2-h0 ap2-final-h0">Ready to see <em>your Score</em>?</h2>
+      <p class="ap2-lede ap2-final-sub">Sixty seconds. No obligation. Yours forever, whether you upgrade or not.</p>
+      <a href="get-my-score.html" class="ap2-cta">
+        Get my Score
+        <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true"><path d="M1 6h11M8 1l4 5-4 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="ap2-final-image">
+      <img src="images/homepage-image2.png" alt="A row of historic New England homes on a quiet street at golden hour">
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═════════════ FOOTER ═════════════ -->
+<footer class="ap2-footer">
+  <div class="ap2-footer-grid">
+    <div class="ap2-footer-about">
+      <img src="logo.png" alt="ProFusion Home Solutions">
+      <p class="ap2-footer-tagline">Built for the house. Felt in the home.</p>
+      <p>The Home Efficiency Score, mapped to your zip: every state, every rebate. Now serving 11 states. Going nationwide.</p>
+      <div class="ap2-footer-press">As featured in · <strong>Boston Globe</strong> · <strong>Portland Press Herald</strong></div>
+    </div>
+    <div class="ap2-footer-col">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="categories/solar.html">Solar</a></li>
+        <li><a href="categories/heating-cooling.html">Heating &amp; Cooling</a></li>
+        <li><a href="categories/insulation.html">Insulation</a></li>
+        <li><a href="categories/windows-doors.html">Windows &amp; Doors</a></li>
+        <li><a href="categories/energy-storage.html">Energy Storage</a></li>
+      </ul>
+    </div>
+    <div class="ap2-footer-col">
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="how-our-score-guides-you.html">How our Score guides you</a></li>
+        <li><a href="sample-report.html">Sample report</a></li>
+        <li><a href="our-installers.html">Who we match you with</a></li>
+        <li><a href="2026-changes.html">What changed in 2026</a></li>
+      </ul>
+    </div>
+    <div class="ap2-footer-col">
+      <h4>Get started</h4>
+      <ul>
+        <li><a href="get-my-score.html">Get my Score</a></li>
+        <li><a href="sample-report.html">See a sample report</a></li>
+        <li><a href="our-installers.html">Meet our installers</a></li>
+        <li><a href="states/massachusetts.html">My state's stack</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ap2-footer-bottom">
+    <div>© 2026 ProFusion Home Solutions LLC · Data current April 2026</div>
+    <div>Built for the house. Felt in the home.</div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  const nav = document.getElementById('ap2Nav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  }
+
+  const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const $ = (sel) => document.querySelector(sel);
+  const parts = {
+    smoke:        $('#ap2-house-smoke'),
+    oilTank:      $('#ap2-house-oilTank'),
+    heatpump:     $('#ap2-house-heatpump'),
+    solarpanels:  $('#ap2-house-solarpanels'),
+    insulation:   $('#ap2-house-insulation'),
+    windowsOld:   $('#ap2-house-windows-old'),
+    windowsNew:   $('#ap2-house-windows-new'),
+    airflowWarm:  $('#ap2-house-airflow-warm'),
+    sunrays:      $('#ap2-house-sunrays'),
+    drafts:       $('#ap2-house-drafts'),
+    glow:         $('#ap2-house-glow'),
+    wallTint:     $('#ap2-house-wall-tint'),
+  };
+  const transBill  = document.getElementById('ap2TransBill');
+  const transTrend = document.getElementById('ap2TransTrend');
+  const transGrade = document.getElementById('ap2TransGrade');
+  const transResult = document.getElementById('ap2TransResult');
+
+  const arcFg     = document.getElementById('ap2ArcFg');
+  const arcNum    = document.getElementById('ap2ArcNum');
+  const arcGrade  = document.getElementById('ap2ArcGrade');
+
+  const fmtBill = (n) => '$' + Math.round(n).toLocaleString('en-US') + '<span class="unit">/yr</span>';
+  const fmtUSD  = (n) => '$' + Math.round(n).toLocaleString('en-US');
+
+  function paintFinalState () {
+    if (parts.smoke)       parts.smoke.style.opacity = 0;
+    if (parts.oilTank)     parts.oilTank.style.opacity = 0.15;
+    if (parts.drafts)      parts.drafts.style.opacity = 0;
+    if (parts.windowsOld)  parts.windowsOld.style.opacity = 0;
+    if (parts.windowsNew)  parts.windowsNew.style.opacity = 1;
+    if (parts.insulation)  parts.insulation.style.opacity = 0.85;
+    if (parts.wallTint)    parts.wallTint.style.opacity = 0.6;
+    if (parts.heatpump)    parts.heatpump.style.opacity = 1;
+    if (parts.airflowWarm) parts.airflowWarm.style.opacity = 0.8;
+    if (parts.solarpanels) parts.solarpanels.style.opacity = 1;
+    if (parts.sunrays)     parts.sunrays.style.opacity = 0.6;
+    if (parts.glow)        parts.glow.style.opacity = 1;
+    if (transBill)  transBill.innerHTML = '$1,200<span class="unit">/yr</span>';
+    if (transBill)  transBill.classList.add('locked');
+    if (transTrend) { transTrend.textContent = '↓ locked 30 yrs'; transTrend.classList.add('locked'); }
+    if (transGrade) { transGrade.textContent = 'A'; transGrade.classList.add('good'); }
+    if (transResult) { transResult.style.opacity = 1; transResult.style.transform = 'translateY(0)'; }
+    /* Hero: paint final state of the entrance stagger */
+    const _hero = document.getElementById('ap2Hero');
+    if (_hero) _hero.classList.add('is-in');
+    document.querySelectorAll('.ap2-slice, .ap2-how-step, .ap2-vet-row').forEach(el => { el.classList.add('is-in'); });
+  }
+
+  if (prefersReduce || !window.gsap || !window.ScrollTrigger) {
+    paintFinalState();
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ─── Hero entrance stagger (Acme-style fade-up; CSS-driven via .is-in) ───
+     Translates the React/Framer Motion pattern:
+       initial { opacity: 0, y: 20 } → animate { opacity: 1, y: 0 }
+       with stagger delays 0.1s … 0.6s
+     Implemented as a single class toggle; CSS owns the per-element delays. */
+  const hero = document.getElementById('ap2Hero');
+  if (hero) {
+    /* Trigger on next frame so CSS transitions fire after initial paint */
+    requestAnimationFrame(() => { hero.classList.add('is-in'); });
+  }
+
+  /* Hero arc reveal — no longer in the hero (sample report doesn't include
+     the Score arc gauge). Kept for compatibility if arc elements exist. */
+  if (arcFg && arcNum && arcGrade) {
+    const arcCounter = { v: 400 };
+    const arcTl = gsap.timeline({ delay: 0.3 });
+    arcTl
+      .to(arcFg, { strokeDashoffset: 89, duration: 1.6, ease: 'power3.out' }, 0)
+      .to(arcCounter, {
+        v: 758, duration: 1.6, ease: 'power3.out',
+        onUpdate: () => { arcNum.textContent = Math.round(arcCounter.v); }
+      }, 0)
+      .to(arcGrade, { opacity: 1, duration: 0.4, ease: 'power2.out' }, 1.3);
+  }
+
+  /* Slice + how-step entrance reveals */
+  gsap.utils.toArray('.ap2-slice').forEach((el, i) => {
+    ScrollTrigger.create({
+      trigger: el, start: 'top 88%',
+      onEnter: () => { setTimeout(() => el.classList.add('is-in'), i * 80); },
+    });
+  });
+  gsap.utils.toArray('.ap2-how-step').forEach((el, i) => {
+    ScrollTrigger.create({
+      trigger: el, start: 'top 88%',
+      onEnter: () => { setTimeout(() => el.classList.add('is-in'), i * 80); },
+    });
+  });
+  /* Vetting ladder: row-by-row reveal (head + 6 gates + foot = 8 rows) */
+  gsap.utils.toArray('.ap2-vet-row').forEach((el, i) => {
+    ScrollTrigger.create({
+      trigger: el, start: 'top 90%',
+      onEnter: () => { setTimeout(() => el.classList.add('is-in'), i * 70); },
+    });
+  });
+
+  /* Transformation pinned timeline */
+  gsap.set([parts.heatpump, parts.solarpanels, parts.insulation, parts.windowsNew,
+            parts.sunrays, parts.glow, parts.airflowWarm, parts.wallTint],
+            { opacity: 0 });
+  gsap.set([parts.smoke, parts.oilTank, parts.windowsOld, parts.drafts], { opacity: 1 });
+  gsap.set(transResult, { opacity: 0, y: 14 });
+
+  const billCounter = { bill: 5800 };
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.ap2-trans-grid',
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: 0.7
+    }
+  });
+
+  tl.to(parts.insulation, { opacity: 0.85, duration: 0.06 }, 0.06)
+    .to(parts.wallTint,   { opacity: 0.6,  duration: 0.08 }, 0.08)
+    .to(parts.drafts,     { opacity: 0.25, duration: 0.05 }, 0.10)
+    .to(billCounter, {
+      bill: 5500, duration: 0.12,
+      onUpdate: () => { transBill.innerHTML = fmtBill(billCounter.bill); }
+    }, 0.06)
+    .call(() => { transGrade.textContent = 'C-'; }, null, 0.18);
+
+  tl.to(parts.smoke,       { opacity: 0,    duration: 0.06 }, 0.24)
+    .to(parts.oilTank,     { opacity: 0.12, duration: 0.06 }, 0.26)
+    .to(parts.heatpump,    { opacity: 1,    duration: 0.05 }, 0.28)
+    .to(parts.airflowWarm, { opacity: 0.85, duration: 0.05 }, 0.32)
+    .to(billCounter, {
+      bill: 4100, duration: 0.12,
+      onUpdate: () => { transBill.innerHTML = fmtBill(billCounter.bill); }
+    }, 0.24)
+    .call(() => { transGrade.textContent = 'C+'; }, null, 0.38);
+
+  tl.to(parts.solarpanels, { opacity: 1,    duration: 0.06 }, 0.44)
+    .to(parts.sunrays,     { opacity: 0.65, duration: 0.06 }, 0.50)
+    .to(billCounter, {
+      bill: 1800, duration: 0.12,
+      onUpdate: () => { transBill.innerHTML = fmtBill(billCounter.bill); }
+    }, 0.44)
+    .call(() => { transGrade.textContent = 'B+'; }, null, 0.58);
+
+  tl.to(parts.windowsOld, { opacity: 0, duration: 0.05 }, 0.64)
+    .to(parts.windowsNew, { opacity: 1, duration: 0.05 }, 0.64)
+    .to(parts.drafts,     { opacity: 0, duration: 0.05 }, 0.68)
+    .to(billCounter, {
+      bill: 1200, duration: 0.12,
+      onUpdate: () => { transBill.innerHTML = fmtBill(billCounter.bill); }
+    }, 0.64)
+    .call(() => { transGrade.textContent = 'A-'; }, null, 0.78);
+
+  tl.to(parts.glow, { opacity: 1, duration: 0.10 }, 0.86)
+    .call(() => {
+      transGrade.textContent = 'A';
+      transGrade.classList.add('good');
+      transBill.classList.add('locked');
+      transTrend.textContent = '↓ locked 30 yrs';
+      transTrend.classList.add('locked');
+    }, null, 0.92)
+    .to(transResult, { opacity: 1, y: 0, duration: 0.10 }, 0.90);
+
+  ScrollTrigger.create({
+    trigger: '.ap2-trans-grid',
+    start: 'top top',
+    end: 'bottom bottom',
+    onUpdate: (self) => {
+      if (self.progress < 0.90 && transGrade.classList.contains('good')) {
+        transGrade.classList.remove('good');
+        transBill.classList.remove('locked');
+        transTrend.classList.remove('locked');
+        transTrend.textContent = '↑ rising 5.2%/yr';
+      }
+    }
+  });
+
+})();
+</script>
+
+</body>
+</html>

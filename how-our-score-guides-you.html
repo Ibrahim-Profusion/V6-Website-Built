@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Our Score Will Guide You · ProFusion</title>
+<meta name="description" content="Every home gets a different recommendation. The Home Efficiency Score reads your house, climate, electric rate, envelope, equipment, sun, and the advice that follows comes from the Score, not a formula.">
+<link rel="icon" type="image/png" href="images/Favicon.png">
+<link rel="apple-touch-icon" href="images/Favicon.png">
+<link rel="canonical" href="https://profusion.solutions/how-our-score-guides-you.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ProFusion Home Solutions">
+<meta property="og:title" content="How Our Score Will Guide You · ProFusion">
+<meta property="og:description" content="Every home gets a different recommendation. The Home Efficiency Score reads your house, climate, electric rate, envelope, equipment, sun, and the advice that follows comes from the Score, not a formula.">
+<meta property="og:url" content="https://profusion.solutions/how-our-score-guides-you.html">
+<meta property="og:image" content="https://profusion.solutions/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Our Score Will Guide You · ProFusion">
+<meta name="twitter:description" content="Every home gets a different recommendation. The Home Efficiency Score reads your house, climate, electric rate, envelope, equipment, sun, and the advice that follows comes from the Score, not a formula.">
+<meta name="twitter:image" content="https://profusion.solutions/images/social-card.png">
+<meta name="twitter:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="theme-color" content="#0A1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ════════════════════════════════════════════════════════════════════
+   how-our-score-guides-you.html — How the Score guides every recommendation
+   (Sprint 2 migration). White canvas, idx2- conventions: Geist for short-form
+   + structure; Source Serif 4 for long-form passages (lede, body prose,
+   example narratives). Instrument Serif is reserved for the single earned
+   italic moment in the anti-formula callout. Mono is reserved for numerics
+   and short code-like labels (eyebrow numbers, score values, state chips).
+   Two-anchor elevation: only the.anti-formula dark callout carries resting
+   shadow-lg as the page's visual anchor. Every other card is flat at rest
+   and lifts on hover.
+   ════════════════════════════════════════════════════════════════════ */
+.guide-hero { padding: 40px 0 60px; }
+.guide-hero-inner { max-width: 880px; }
+.guide-chip { display: inline-flex; align-items: center; gap: 10px; background: white; border: 1px solid var(--gray-100); padding: 8px 16px 8px 8px; border-radius: 100px; font-size: 13px; font-weight: 500; color: var(--gray-800); margin-bottom: 32px; box-shadow: var(--shadow-sm); }
+.guide-chip-badge { background: var(--blue-700); color: white; padding: 3px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; font-family: var(--mono); letter-spacing: 0.04em; }
+.guide-chip-ts { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--gray-600); font-weight: 500; }
+.guide-h1 { font-family: var(--display); font-weight: 500; font-size: clamp(44px, 6vw, 76px); line-height: 1.02; letter-spacing: -0.04em; color: var(--ink); margin-bottom: 24px; }
+.guide-h1 em { font-style: normal; font-weight: 500; color: var(--blue-700); letter-spacing: -0.02em; }
+.guide-lede { font-family: var(--serif-body); font-size: clamp(18px, 1.4vw, 21px); line-height: 1.6; color: var(--gray-700); margin-bottom: 36px; max-width: 720px; }
+.guide-lede em { font-style: normal; color: var(--blue-700); }
+.guide-section { padding: 80px 0; }
+.guide-section.alt { background: var(--gray-50); }
+.guide-section-inner { max-width: 880px; }
+.guide-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-700); margin-bottom: 24px; }
+.guide-eyebrow::before { content: ""; width: 6px; height: 6px; background: var(--green-500); border-radius: 50%; flex-shrink: 0; }
+.guide-h2 { font-family: var(--display); font-weight: 500; font-size: clamp(28px, 3.2vw, 42px); line-height: 1.15; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 14px; }
+.guide-h2 em { font-style: normal; font-weight: 500; color: var(--blue-700); letter-spacing: -0.02em; }
+.guide-body p { font-family: var(--serif-body); font-size: clamp(18px, 1.4vw, 21px); line-height: 1.6; color: var(--gray-700); margin-bottom: 20px; max-width: 720px; }
+.guide-body p em { font-style: normal; color: var(--blue-700); }
+
+/* The single earned italic moment on this page — the punchline emphasis
+   in the anti-formula callout. */
+.earned-italic { font-family: var(--serif); font-style: italic; font-weight: 400; }
+
+/* Inputs grid */
+.inputs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 40px 0 0; border-top: 1px solid var(--gray-200); }
+.input-tile {
+  background: transparent; border: none; border-bottom: 1px solid var(--gray-100); border-right: 1px solid var(--gray-200); border-radius: 0; padding: 22px 24px;
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.input-tile:nth-child(3n) { border-right: none; }
+.input-tile:nth-last-child(-n+3) { border-bottom: none; }
+.input-tile-icon {
+  flex-shrink: 0; width: 32px; height: 32px;
+  background: transparent; color: var(--blue-700); border-radius: 0;
+  display: flex; align-items: center; justify-content: flex-start;
+}
+.input-tile-icon svg { width: 22px; height: 22px; }
+.input-tile-body { flex: 1; min-width: 0; }
+.input-tile-title { font-family: var(--display); font-weight: 600; font-size: 15px; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.005em; }
+.input-tile-desc { font-size: 14px; line-height: 1.55; color: var(--gray-700); }
+@media (max-width: 768px) {
+  .inputs-grid { grid-template-columns: 1fr; border-top: 1px solid var(--gray-200); }
+  .input-tile { border-right: none; border-bottom: 1px solid var(--gray-100); padding: 18px 0; }
+  .input-tile:last-child { border-bottom: none; }
+}
+
+/* Example homes — flat at rest, lift on hover. */
+.examples-intro { font-family: var(--serif-body); font-size: 19px; line-height: 1.7; color: var(--gray-800); max-width: 740px; margin-bottom: 8px; }
+.examples-intro em { font-style: normal; color: var(--blue-700); }
+.example-stack { display: grid; gap: 28px; margin-top: 48px; }
+.example-card {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 24px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.example-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.example-card-grid { display: grid; grid-template-columns: 280px 1fr; gap: 0; }
+.example-card-photo {
+  background: var(--gray-50);
+  border-right: 1px solid var(--gray-100);
+  position: relative;
+  min-height: 320px;
+}
+.example-card-photo.img-placeholder {
+  border: none; border-radius: 0; height: 100%; min-height: 320px;
+}
+.example-card-body { padding: 32px 36px; }
+.example-card-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.example-meta-chip {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+  font-weight: 600; padding: 4px 10px; border-radius: 100px;
+  background: var(--gray-50); color: var(--gray-600);
+  border: 1px solid var(--gray-100);
+}
+.example-meta-chip.state { background: var(--blue-50); color: var(--blue-700); border-color: rgba(26, 79, 144, 0.15); }
+.example-card h3 { font-family: var(--display); font-weight: 600; font-size: 26px; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.02em; }
+.example-card h3 em { font-style: normal; font-weight: 600; color: var(--blue-700); }
+.example-card-score {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-bottom: 18px;
+  padding: 10px 16px;
+  background: var(--gray-50); border-radius: 12px;
+}
+.example-card-score-num {
+  font-family: var(--mono); font-size: 26px; font-weight: 600; color: var(--ink);
+  line-height: 1;
+}
+.example-card-score-grade {
+  font-family: var(--display); font-weight: 600; font-size: 14px;
+  padding: 4px 10px; border-radius: 8px; color: white;
+}
+.example-card-score-label { font-size: 12px; color: var(--gray-600); font-family: var(--mono); letter-spacing: 0.04em; }
+.example-card p { font-family: var(--serif-body); font-size: 16px; line-height: 1.7; color: var(--gray-800); margin-bottom: 14px; }
+.example-card p em { font-style: normal; color: var(--blue-700); }
+/* Recommendation block — full hairline border, no side-stripe. */
+.example-card-rec {
+  margin-top: 18px;
+  padding: 18px 22px;
+  background: linear-gradient(135deg, rgba(26, 79, 144, 0.04), rgba(58, 180, 74, 0.06));
+  border: 1px solid rgba(46, 154, 61, 0.22);
+  border-radius: 12px;
+}
+.example-rec-label { font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: 0; text-transform: none; color: var(--green-700); margin-bottom: 6px; }
+.example-rec-text { font-family: var(--display); font-weight: 600; font-size: 17px; color: var(--ink); line-height: 1.4; letter-spacing: -0.01em; }
+.example-rec-text em { font-style: normal; font-weight: 600; color: var(--blue-700); }
+@media (max-width: 768px) {.example-card-grid { grid-template-columns: 1fr; }
+.example-card-photo { border-right: none; border-bottom: 1px solid var(--gray-100); min-height: 220px; }
+.example-card-photo.img-placeholder { min-height: 220px; }
+.example-card-body { padding: 24px 22px; }
+}
+
+/* Anti-formula callout — the page's visual anchor.
+   The ONE element on this page that carries resting elevation (shadow-lg). */
+.anti-formula {
+  background: linear-gradient(135deg, var(--ink), #1a2332);
+  color: white;
+  border-radius: 28px;
+  padding: 56px 48px;
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.anti-formula::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(58, 180, 74, 0.18), transparent 70%);
+  pointer-events: none;
+}
+.anti-formula-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-400); font-weight: 600; margin-bottom: 14px; }
+.anti-formula h3 { font-family: var(--display); font-weight: 600; font-size: clamp(26px, 3vw, 36px); line-height: 1.15; letter-spacing: -0.025em; margin-bottom: 16px; max-width: 680px; }
+/* Earned italic — the punchline of the page. */
+.anti-formula h3 em.earned-italic { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--green-400); }
+.anti-formula p { font-family: var(--serif-body); font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.82); max-width: 680px; }
+.anti-formula p em { font-style: normal; color: white; font-weight: 600; }
+@media (max-width: 768px) {.anti-formula { padding: 36px 26px; } }
+
+/* CTA — flat italic emphasis, no recurring serif decoration. */
+.cta-strip { background: linear-gradient(135deg, var(--blue-700), var(--green-700)); padding: 80px 0; text-align: center; color: white; margin-top: 0; }
+.cta-strip h3 { font-family: var(--display); font-weight: 600; font-size: clamp(28px, 4vw, 42px); margin-bottom: 14px; letter-spacing: -0.025em; }
+.cta-strip h3 em { font-style: normal; font-weight: 600; color: rgba(255,255,255,0.95); }
+.cta-strip p { font-size: 17px; color: rgba(255,255,255,0.85); margin-bottom: 28px; max-width: 620px; margin-left: auto; margin-right: auto; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="nav">
+  <a href="index.html" class="brand"><img src="logo.png" alt="ProFusion Home Solutions"></a>
+  <ul class="nav-links">
+<li class="has-dropdown">
+      <a href="#">About <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="about-us.html">About Us</a>
+        <a href="our-customers.html">Our Customers</a>
+        <a href="for-installers.html">For Installers</a>
+        <a href="contact.html">Contact Us</a></div>
+    </li>
+    <li><a href="index.html#map">Service Area</a></li>
+    <li class="has-dropdown">
+      <a href="#">Programs <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="categories/solar.html">Solar</a>
+        <a href="categories/heating-cooling.html">Heating &amp; Cooling</a>
+        <a href="categories/insulation.html">Insulation</a>
+        <a href="categories/windows-doors.html">Windows &amp; Doors</a>
+        <a href="categories/energy-storage.html">Energy Storage</a></div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Learn <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="index.html#idx2Score"><span class="simple-dropdown-eyebrow">On homepage</span>The Score</a>
+        <a href="index.html#how"><span class="simple-dropdown-eyebrow">On homepage</span>How it works</a>
+        <div class="simple-dropdown-divider" aria-hidden="true"></div>
+        <a href="how-our-score-guides-you.html">How our Score guides you</a>
+        <a href="sample-report.html">See a sample report</a>
+        <a href="our-installers.html">Who we match you with</a>
+        <a href="2026-changes.html">What changed in 2026</a></div>
+    </li>
+    <li><a href="get-my-score.html" class="nav-cta">Get my report</a></li>
+  </ul>
+</nav>
+
+<!-- Breadcrumb -->
+<div class="container breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="sep">/</span>
+  <span class="current">How our Score will guide you</span></div>
+
+<!-- HERO -->
+<section class="guide-hero">
+  <div class="container">
+    <div class="guide-hero-inner">
+      <span class="idx2-eyebrow">Method &middot; How the Score guides every recommendation</span>
+      <h1 class="guide-h1">No formulas. <em>No phases.</em> Just the truth your house tells us.</h1>
+      <p class="guide-lede">Most companies hand every homeowner the same playbook, <em>insulate first, then heat pumps, then solar.</em> We don't. The Home Efficiency Score reads <em>your</em> house and points to the upgrade that moves <em>your</em> Score the most for the dollars you spend.</p>
+      <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: center; margin-top: 8px;">
+        <a href="get-my-score.html" class="idx2-cta">Get my report
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+            <path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="sample-report.html" class="idx2-link">See a sample report
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+            <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a></div></div></div>
+</section>
+
+<!-- WHAT THE SCORE READS -->
+<section class="guide-section alt">
+  <div class="container">
+    <div class="guide-section-inner">
+      <div class="guide-eyebrow">What the Score reads</div>
+      <h2 class="guide-h2">Your <em>Energy Report</em> is the whole answer.</h2>
+      <div class="guide-body">
+        <p>Before any contractor crosses your threshold, the Score has already pulled the data that actually matters, what your home is, what it costs to run, what your roof sees, and what your utility will pay for upgrades this month.</p>
+        <p>The recommendation that comes out the other side isn't a generic checklist. It's the one upgrade (or stack of upgrades) where <em>the math, the climate, and the rebate calendar all line up at the same time</em>.</p></div>
+
+      <div class="inputs-grid">
+        <div class="input-tile">
+          <div class="input-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="input-tile-body">
+            <div class="input-tile-title">Home envelope</div>
+            <div class="input-tile-desc">Year built, square footage, insulation R-values, air leakage, window U-values.</div></div></div>
+        <div class="input-tile">
+          <div class="input-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="input-tile-body">
+            <div class="input-tile-title">Electric rate</div>
+            <div class="input-tile-desc">What your utility actually charges per kWh, plus time-of-use, demand, and net-meter rules in your zip.</div></div></div>
+        <div class="input-tile">
+          <div class="input-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2 12h2M20 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke-linecap="round"/></svg></div>
+          <div class="input-tile-body">
+            <div class="input-tile-title">Solar potential</div>
+            <div class="input-tile-desc">Roof area, pitch, azimuth, and shading from satellite + LiDAR, matched to your local production curve.</div></div></div>
+        <div class="input-tile">
+          <div class="input-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 6 8 10 12 14C16 10 16 6 12 2Z" fill="currentColor" fill-opacity="0.2"/><path d="M6 14C6 18 9 22 12 22C15 22 18 18 18 14" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="input-tile-body">
+            <div class="input-tile-title">Heating &amp; cooling load</div>
+            <div class="input-tile-desc">Climate zone, design temps, equipment age and efficiency, what your existing system is really costing you.</div></div></div>
+        <div class="input-tile">
+          <div class="input-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 7v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-5z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="input-tile-body">
+            <div class="input-tile-title">Live rebate stack</div>
+            <div class="input-tile-desc">Every state, federal, utility, and IRA program you qualify for, with current funding levels, not last year's numbers.</div></div></div>
+        <div class="input-tile">
+          <div class="input-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" stroke-linecap="round"/></svg></div>
+          <div class="input-tile-body">
+            <div class="input-tile-title">Climate &amp; weather</div>
+            <div class="input-tile-desc">Heating &amp; cooling degree-days, humidity, peak demand windows, what your house actually has to fight.</div></div></div></div></div></div>
+</section>
+
+<!-- WHY NOT A FORMULA -->
+<section class="guide-section">
+  <div class="container">
+    <div class="guide-section-inner">
+      <div class="guide-eyebrow">Why we don't sell a formula</div>
+      <h2 class="guide-h2">Two homes, two streets apart, get <em>different answers</em>.</h2>
+      <div class="guide-body">
+        <p>You'll see the same advice from the rest of the industry: <em>do the envelope first, then mechanicals, then generation.</em> It sounds reasonable. It's also wrong as often as it's right.</p>
+        <p>A leaky 1880s Brooklyn brownstone with $0.34/kWh ConEd rates and a flat tarred roof needs a completely different first move than a tight 2015 build in Newark with a 30-year mortgage and a south-facing roof. The Score sees that. A formula doesn't.</p></div>
+
+      <div class="anti-formula">
+        <div class="anti-formula-eyebrow">Our promise</div>
+        <h3>The Score makes the call, <em class="earned-italic">not us, not the installer, not a script.</em></h3>
+        <p>Whatever the data says is the highest-ROI move for your house, that's what shows up at the top of your report. Even when it's the upgrade we make less margin on. Even when it contradicts the &ldquo;right way&rdquo; everyone else preaches.</p></div></div></div>
+</section>
+
+<!-- FOUR EXAMPLE HOMES -->
+<section class="guide-section alt">
+  <div class="container">
+    <div class="guide-section-inner">
+      <div class="guide-eyebrow">Four real-world reads</div>
+      <h2 class="guide-h2">Same Score engine. <em>Four very different recommendations.</em></h2>
+      <p class="examples-intro">Below are four composite homes, each based on the actual housing stock, climate, and rebate landscape we see every week. <em>Notice how the top recommendation never repeats.</em></p>
+
+      <div class="example-stack">
+
+        <!-- Example 1 — 1962 Cape, Worcester MA -->
+        <div class="example-card">
+          <div class="example-card-grid">
+            <div class="example-card-photo">
+              <img src="images/example-home-worcester-cape.png" alt="A modest 1960s Cape Cod-style house in a Worcester, Massachusetts neighborhood, vinyl siding and original single-pane windows" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div class="example-card-body">
+              <div class="example-card-meta">
+                <span class="example-meta-chip state">MA · Worcester</span>
+                <span class="example-meta-chip">1962 Cape · 1,400 sq ft</span>
+                <span class="example-meta-chip">Oil heat · $0.31/kWh</span></div>
+              <h3>The leaky <em>oil-heated Cape</em>.</h3>
+              <div class="example-card-score">
+                <span class="example-card-score-grade" style="background: #DC2626;">D-</span>
+                <span class="example-card-score-label">CURRENT SCORE</span></div>
+              <p>Blower-door reads 7.8 ACH50 (terrible). Attic R-11. Original 1962 oil furnace at 76% AFUE burning 800+ gallons a winter. South-facing roof but deeply shaded by mature oaks. MassSave covers <em>100% of weatherization up to $10,000</em>.</p>
+              <div class="example-card-rec">
+                <div class="example-rec-label">Score's top recommendation</div>
+                <div class="example-rec-text">Air-seal &amp; insulate <em>now</em>. The MassSave program pays for it in full and the Score jumps from D&minus; territory to C+ before any equipment is touched.</div></div></div></div></div>
+
+        <!-- Example 2 — 1990s ranch, Tampa FL -->
+        <div class="example-card">
+          <div class="example-card-grid">
+            <div class="example-card-photo">
+              <img src="images/example-home-tampa-ranch.png" alt="A single-story 1990s Florida ranch home with stucco exterior and palm trees, bright Tampa-area daylight" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div class="example-card-body">
+              <div class="example-card-meta">
+                <span class="example-meta-chip state">FL · Tampa</span>
+                <span class="example-meta-chip">1994 ranch · 1,850 sq ft</span>
+                <span class="example-meta-chip">All-electric · $0.165/kWh</span></div>
+              <h3>The sun-baked <em>Florida ranch</em>.</h3>
+              <div class="example-card-score">
+                <span class="example-card-score-grade" style="background: #F59E0B;">C+</span>
+                <span class="example-card-score-label">CURRENT SCORE</span></div>
+              <p>Decent envelope (4.2 ACH50), R-30 attic, 14 SEER central AC running 9 months a year. Big unshaded south-facing roof with 25° pitch, <em>basically built for solar</em>. FL has no solar income tax, 100% sales-tax exemption, and a lifetime property-tax exemption on the added home value.</p>
+              <div class="example-card-rec">
+                <div class="example-rec-label">Score's top recommendation</div>
+                <div class="example-rec-text">Rooftop <em>solar lease or PPA</em>, sized to summer cooling load. Insulation can wait, the math says generation pays back faster here.</div></div></div></div></div>
+
+        <!-- Example 3 — 1880s Victorian, Brooklyn NY -->
+        <div class="example-card">
+          <div class="example-card-grid">
+            <div class="example-card-photo">
+              <img src="images/example-home-brooklyn-victorian.png" alt="A late-1800s Brooklyn Victorian rowhouse with brick facade, tall windows, and a classic stoop" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div class="example-card-body">
+              <div class="example-card-meta">
+                <span class="example-meta-chip state">NY · Brooklyn</span>
+                <span class="example-meta-chip">1887 Victorian · 2,200 sq ft</span>
+                <span class="example-meta-chip">Gas steam · $0.34/kWh</span></div>
+              <h3>The historic <em>Brooklyn brownstone</em>.</h3>
+              <div class="example-card-score">
+                <span class="example-card-score-grade" style="background: #DC2626;">D-</span>
+                <span class="example-card-score-label">CURRENT SCORE</span></div>
+              <p>Plaster-on-brick walls (impossible to dense-pack without a major rip-out), single-pane sash windows the landmark commission won't let you replace, gas-fired steam radiators. Roof is flat and gets full sun. ConEd electric is among the highest in the country. NY-Sun + 25% state solar tax credit + 30% federal.</p>
+              <div class="example-card-rec">
+                <div class="example-rec-label">Score's top recommendation</div>
+                <div class="example-rec-text">Flat-roof <em>solar with battery backup</em> first. Envelope work here is constrained by the building, offsetting $0.34 power gives the bigger Score lift, faster.</div></div></div></div></div>
+
+        <!-- Example 4 — 2015 new build, Newark NJ -->
+        <div class="example-card">
+          <div class="example-card-grid">
+            <div class="example-card-photo">
+              <img src="images/example-home-newark-newbuild.png" alt="A modern 2015-vintage suburban two-story home with fiber-cement siding, double-pane windows, and an attached garage in a New Jersey suburb" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div class="example-card-body">
+              <div class="example-card-meta">
+                <span class="example-meta-chip state">NJ · Newark suburbs</span>
+                <span class="example-meta-chip">2015 build · 2,400 sq ft</span>
+                <span class="example-meta-chip">Gas furnace · $0.18/kWh</span></div>
+              <h3>The tight <em>2015 builder spec</em>.</h3>
+              <div class="example-card-score">
+                <span class="example-card-score-grade" style="background: #3AB44A;">B+</span>
+                <span class="example-card-score-label">CURRENT SCORE</span></div>
+              <p>Code-built envelope (2.1 ACH50, R-49 attic), 92% AFUE gas furnace, 16 SEER AC. Already efficient, the gains from another inch of insulation are tiny. Gas furnace is mid-life. NJ Whole House offers $7,500 toward heat-pump conversion, plus federal 25C credits.</p>
+              <div class="example-card-rec">
+                <div class="example-rec-label">Score's top recommendation</div>
+                <div class="example-rec-text">Convert to a <em>cold-climate heat pump</em> at the next furnace replacement window. Pair with whole-home electrification rebates, Score climbs to A territory.</div></div></div></div></div></div></div></div>
+</section>
+
+<!-- WHAT YOUR REPORT WILL CONTAIN -->
+<section class="guide-section">
+  <div class="container">
+    <div class="guide-section-inner">
+      <div class="guide-eyebrow">What you'll actually see</div>
+      <h2 class="guide-h2">Your report ranks moves by <em>Score lift per dollar</em>.</h2>
+      <div class="guide-body">
+        <p>When you generate your Home Efficiency Score, you don't get a pamphlet of generic tips. You get a ranked list, specific to your address, that shows:</p>
+        <p style="padding: 18px 22px; border: 1px solid rgba(46, 154, 61, 0.22); background: linear-gradient(135deg, rgba(26, 79, 144, 0.04), rgba(58, 180, 74, 0.06)); border-radius: 12px;">
+          <strong style="font-family: var(--display); font-weight: 600; color: var(--ink);">Each upgrade ranked by Score lift &divide; payback.</strong> The math is transparent. You see how much each move lifts your grade, every rebate it qualifies for, and how long it takes to recoup through bills and benefits.
+        </p>
+        <p>Sometimes the top move is insulation. Sometimes it's solar. Sometimes it's swapping a 25-year-old furnace for a heat pump and skipping the rest. <em>The Score decides, your house tells it what to say.</em></p>
+        <p>And because we're not paid by any single contractor or manufacturer, there's no incentive to push a particular product. The recommendation is just the math.</p></div></div></div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="container-narrow">
+    <h3>See what <em>your house</em> actually needs.</h3>
+    <p>Ten minutes, no installer in your living room. Get the ranked list of upgrades the Score recommends for your specific address, with current rebates already calculated in.</p>
+    <a href="index.html#cta" class="btn btn-white">
+      Get my report
+      <svg width="16" height="14" viewBox="0 0 16 14" fill="none">
+        <path d="M1 7h13M9 1l5 6-5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a></div>
+</section>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-offices">
+      <h4 class="footer-offices-head">Visit us</h4>
+      <div class="footer-offices-row is-pair">
+        <article class="footer-office">
+          <div class="footer-office-map">
+            <iframe
+              src="https://maps.google.com/maps?q=24+Spice+Street+Boston+MA+02129&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="Map of ProFusion Boston office, 24 Spice Street, Boston, MA"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="footer-office-meta">
+            <div class="footer-office-tag">New England</div>
+            <div class="footer-office-name">Boston, MA</div>
+            <div class="footer-office-addr">24 Spice Street<br>Boston, MA 02129</div>
+            <div class="footer-office-phone"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+13393304289">+1 (339) 330-4289</a></div>
+            <a class="footer-office-link" href="https://maps.google.com/?q=24+Spice+Street+Boston+MA+02129" target="_blank" rel="noopener">
+              Open in Maps
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a></div>
+        </article>
+        <article class="footer-office">
+          <div class="footer-office-map">
+            <iframe
+              src="https://maps.google.com/maps?q=505+S+Broadway+Hicksville+NY+11801&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="Map of ProFusion Hicksville office, 505 S Broadway, Hicksville, NY"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="footer-office-meta">
+            <div class="footer-office-tag">Head Office</div>
+            <div class="footer-office-name">Hicksville, NY</div>
+            <div class="footer-office-addr">505 S Broadway<br>Hicksville, NY 11801</div>
+            <div class="footer-office-phone"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+15166133990">+1 (516) 613-3990</a></div>
+            <a class="footer-office-link" href="https://maps.google.com/?q=505+S+Broadway+Hicksville+NY+11801" target="_blank" rel="noopener">
+              Open in Maps
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a></div>
+        </article></div></div>
+
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img src="logo.png" alt="ProFusion Home Solutions">
+        <p style="font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--green-400); margin-bottom: 14px;">Built for the <em style="font-family: var(--serif); font-style: italic;">house</em>. Felt in the <em style="font-family: var(--serif); font-style: italic;">home</em>.</p>
+        <p>The Home Efficiency Score, mapped to your zip, <em>every state, every rebate</em>. Now serving 11 states. <em>Going nationwide</em>.</p></div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="categories/solar.html">Solar</a></li>
+          <li><a href="categories/heating-cooling.html">Heating &amp; Cooling</a></li>
+          <li><a href="categories/insulation.html">Insulation</a></li>
+          <li><a href="categories/windows-doors.html">Windows &amp; Doors</a></li>
+          <li><a href="categories/energy-storage.html">Energy Storage</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="how-our-score-guides-you.html">How our Score guides you</a></li>
+          <li><a href="sample-report.html">See a sample report</a></li>
+          <li><a href="our-installers.html">Who we match you with</a></li>
+          <li><a href="2026-changes.html">What changed in 2026</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="get-my-score.html">Get my report</a></li>
+          <li><a href="for-installers.html">For Installers</a></li>
+        </ul></div></div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 ProFusion Home Solutions LLC</div>
+      <div>Now serving 11 states &middot; A+ BBB &middot; Fully Insured</div></div></div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+}
+</script>
+
+<script defer src="mobile-nav.js"></script>
+</body>
+</html>

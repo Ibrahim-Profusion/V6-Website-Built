@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us · ProFusion Home Solutions</title>
+<meta name="description" content="Get in touch with ProFusion Home Solutions. Two offices: Boston, MA and Hicksville, NY. We typically respond within one business day.">
+<link rel="icon" type="image/png" href="images/Favicon.png">
+<link rel="apple-touch-icon" href="images/Favicon.png">
+<link rel="canonical" href="https://profusion.solutions/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ProFusion Home Solutions">
+<meta property="og:title" content="Contact Us · ProFusion Home Solutions">
+<meta property="og:description" content="Get in touch with ProFusion Home Solutions. Two offices: Boston, MA and Hicksville, NY. We typically respond within one business day.">
+<meta property="og:url" content="https://profusion.solutions/contact.html">
+<meta property="og:image" content="https://profusion.solutions/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact Us · ProFusion Home Solutions">
+<meta name="twitter:description" content="Get in touch with ProFusion Home Solutions. Two offices: Boston, MA and Hicksville, NY. We typically respond within one business day.">
+<meta name="twitter:image" content="https://profusion.solutions/images/social-card.png">
+<meta name="twitter:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="theme-color" content="#0A1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ════════════════════════════════════════════════════════════════════
+   contact.html — Get in touch (Sprint 2 migration)
+   Two offices, three contact methods, one promise. White canvas, idx2-
+   conventions: Geist for short-form + structure; Source Serif 4 for
+   the lede and the promise prose; Instrument Serif reserved for the
+   single earned italic moment in the final CTA. Mono is reserved for
+   code-like labels (eyebrows, address tags). Two-anchor elevation: the.contact-promise is the page's visual anchor and the only resting
+   shadow-lg on the page.
+   ════════════════════════════════════════════════════════════════════ */
+.contact-hero { padding: 140px 0 40px; }
+.contact-hero-inner { max-width: 880px; }
+.contact-h1 { font-family: var(--display); font-weight: 600; font-size: clamp(44px, 6vw, 76px); line-height: 1.02; letter-spacing: -0.04em; color: var(--ink); margin-bottom: 28px; }
+.contact-h1 em { font-style: normal; font-weight: 600; color: var(--blue-700); }
+.contact-lede { font-family: var(--serif-body); font-size: 19px; line-height: 1.7; color: var(--gray-700); margin-bottom: 0; max-width: 720px; }
+.contact-lede em { font-style: normal; color: var(--blue-700); }
+
+/* Methods + offices grid */
+.contact-section { padding: 60px 0 60px; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 56px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-section { padding: 48px 0 48px; }
+}
+
+/* Methods column — flat at rest, lift on hover. */
+.contact-methods { display: grid; gap: 18px; }
+.contact-method {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 18px;
+  padding: 24px 26px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: none;
+  transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+}
+.contact-method:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--gray-200);
+}
+.contact-method-icon {
+  flex-shrink: 0;
+  width: 44px; height: 44px;
+  background: var(--blue-50);
+  color: var(--blue-700);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+.contact-method-icon svg { width: 22px; height: 22px; }
+.contact-method-body { flex: 1; min-width: 0; padding-top: 2px; }
+.contact-method-label {
+  font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gray-500); margin-bottom: 6px;
+}
+.contact-method-value {
+  font-family: var(--display); font-weight: 600; font-size: 19px;
+  color: var(--ink); letter-spacing: -0.015em; line-height: 1.25;
+  margin-bottom: 4px;
+}
+.contact-method-meta {
+  font-size: 13.5px; line-height: 1.5; color: var(--gray-600);
+}
+
+/* Visual anchor — the only resting shadow-lg on the page. */
+.contact-promise {
+  margin-top: 24px; padding: 28px 30px;
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+}
+.contact-promise-label {
+  font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--green-700); margin-bottom: 10px;
+}
+.contact-promise-text {
+  font-family: var(--serif-body); font-size: 17px; font-weight: 400;
+  line-height: 1.65; color: var(--gray-800);
+}
+.contact-promise-text strong {
+  font-family: var(--display); font-style: normal; font-weight: 600; color: var(--ink);
+}
+
+/* Offices column */
+.contact-offices-head {
+  font-family: var(--mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 18px;
+}
+.contact-offices { display: grid; gap: 24px; }
+.contact-office {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.contact-office-map {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--gray-50);
+}
+.contact-office-map iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0;
+  display: block;
+}
+.contact-office-body { padding: 22px 24px; }
+.contact-office-name {
+  font-family: var(--display); font-weight: 600; font-size: 18px;
+  color: var(--ink); letter-spacing: -0.01em; margin-bottom: 8px;
+  display: flex; align-items: center; gap: 10px;
+}
+.contact-office-name svg { color: var(--blue-700); }
+.contact-office-address {
+  font-size: 14.5px; line-height: 1.5; color: var(--gray-700);
+  margin-bottom: 12px;
+}
+.contact-office-tag {
+  font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--green-700);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.contact-office-tag::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green-500);
+}
+.contact-office-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 12px;
+  font-family: var(--display); font-weight: 500; font-size: 13.5px;
+  color: var(--blue-700); text-decoration: none;
+  transition: gap 0.2s;
+}
+.contact-office-link:hover { gap: 10px; }
+.contact-office-phone {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 4px;
+  font-family: var(--display); font-weight: 500; font-size: 14.5px;
+  color: var(--gray-700);
+  padding: 6px 12px 6px 10px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: 100px;
+}
+.contact-office-phone svg { color: var(--blue-700); flex-shrink: 0; }
+.contact-office-phone a { color: var(--ink); text-decoration: none; font-feature-settings: "tnum"; }
+.contact-office-phone a:hover { color: var(--blue-700); }
+
+/* ── Contact form card (now inside the upper 2-col grid, right column) ── */
+.contact-form-wrap {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 24px;
+  padding: 38px 40px;
+  box-shadow:
+    0 1px 2px rgba(10, 16, 32, 0.04),
+    0 18px 48px -20px rgba(10, 16, 32, 0.14);
+  position: relative;
+}
+.contact-form-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 90px;
+  background: linear-gradient(to bottom, rgba(26, 79, 144, 0.025), transparent);
+  border-radius: 24px 24px 0 0;
+  pointer-events: none;
+}
+.contact-form-wrap > * { position: relative; z-index: 1; }
+
+/* ── Offices section (now below the methods+form section) ── */
+.contact-offices-section {
+  padding: 0 0 100px;
+}
+.contact-offices-section-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 36px;
+}
+.contact-offices-section-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--green-700);
+  margin-bottom: 14px;
+}
+.contact-offices-section-eyebrow::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green-500);
+}
+.contact-offices-section-title {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(28px, 3.2vw, 38px);
+  line-height: 1.12; letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0;
+}
+.contact-offices-section-title em {
+  font-style: normal;
+  color: var(--blue-700);
+}
+.contact-offices-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+@media (max-width: 760px) {
+  .contact-offices-row { grid-template-columns: 1fr; gap: 24px; }
+}
+.contact-form-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-700); font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.contact-form-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green-500); }
+.contact-form-title { font-family: var(--display); font-weight: 600; font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.025em; color: var(--ink); margin-bottom: 10px; line-height: 1.2; }
+.contact-form-title em { font-style: normal; color: var(--blue-700); }
+.contact-form-sub { font-family: var(--serif-body); font-size: 16px; line-height: 1.55; color: var(--gray-700); margin-bottom: 32px; }
+.contact-form { display: flex; flex-direction: column; gap: 18px; }
+.contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.contact-field { display: flex; flex-direction: column; gap: 6px; }
+.contact-field-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500); font-weight: 600; }
+.contact-input, .contact-textarea {
+  font-family: var(--display); font-size: 16px; color: var(--ink);
+  padding: 14px 16px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: 12px;
+  transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+  -webkit-appearance: none; appearance: none;
+  min-height: 48px;
+  width: 100%;
+  font-weight: 400;
+}
+.contact-input::placeholder, .contact-textarea::placeholder { color: var(--gray-400); }
+.contact-input:hover, .contact-textarea:hover { background: white; }
+.contact-input:focus, .contact-textarea:focus { background: white; border-color: var(--blue-700); box-shadow: 0 0 0 3px rgba(26, 79, 144, 0.15); outline: none; }
+.contact-textarea { min-height: 140px; resize: vertical; line-height: 1.5; padding-top: 14px; font-family: var(--serif-body); font-size: 15.5px; }
+.contact-submit { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--ink); color: white; padding: 16px 32px; border-radius: 100px; font-family: var(--display); font-weight: 500; font-size: 15px; text-decoration: none; border: none; cursor: pointer; min-height: 52px; margin-top: 8px; align-self: flex-start; transition: transform 0.2s, background 0.2s, box-shadow 0.2s; }
+.contact-submit:hover { background: var(--blue-700); transform: translateY(-2px); box-shadow: 0 12px 28px -6px rgba(26, 79, 144, 0.35); }
+.contact-submit svg { transition: transform 0.2s; }
+.contact-submit:hover svg { transform: translateX(4px); }
+.contact-form-footnote { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em; color: var(--gray-500); margin-top: 14px; padding-top: 18px; border-top: 1px dashed var(--gray-100); line-height: 1.55; }
+.contact-form-success { background: var(--green-50); border: 1px solid #B7E5C1; border-radius: 16px; padding: 22px 26px; margin-bottom: 28px; display: flex; align-items: flex-start; gap: 16px; }
+.contact-form-success-icon { flex-shrink: 0; width: 36px; height: 36px; border-radius: 999px; background: var(--green-500); display: inline-flex; align-items: center; justify-content: center; color: white; }
+.contact-form-success-icon svg { width: 18px; height: 18px; }
+.contact-form-success-title { font-family: var(--display); font-weight: 600; font-size: 17px; color: var(--ink); margin-bottom: 4px; }
+.contact-form-success-body { font-family: var(--serif-body); font-size: 14.5px; line-height: 1.55; color: var(--gray-700); margin: 0; }
+@media (max-width: 720px) {
+  .contact-form-wrap { padding: 32px 24px; border-radius: 18px; }
+  .contact-form-row { grid-template-columns: 1fr; }
+}
+
+/* CTA strip */
+.contact-cta { background: var(--gray-50); border-top: 1px solid var(--gray-100); border-bottom: 1px solid var(--gray-100); padding: 80px 0; text-align: center; }
+.contact-cta h2 { font-family: var(--display); font-weight: 600; font-size: clamp(32px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 18px; }
+/* The single earned italic moment on this page — the punchline emphasis on the CTA. */
+.contact-cta h2 em.earned-italic { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--green-700); }
+.contact-cta p { font-size: 17px; line-height: 1.6; color: var(--gray-700); max-width: 580px; margin: 0 auto 28px; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="nav">
+  <a href="index.html" class="brand"><img src="logo.png" alt="ProFusion Home Solutions"></a>
+  <ul class="nav-links">
+<li class="has-dropdown">
+      <a href="#">About <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="about-us.html">About Us</a>
+        <a href="our-customers.html">Our Customers</a>
+        <a href="for-installers.html">For Installers</a>
+        <a href="contact.html">Contact Us</a></div>
+    </li>
+    <li><a href="index.html#map">Service Area</a></li>
+    <li class="has-dropdown">
+      <a href="#">Programs <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="categories/solar.html">Solar</a>
+        <a href="categories/heating-cooling.html">Heating &amp; Cooling</a>
+        <a href="categories/insulation.html">Insulation</a>
+        <a href="categories/windows-doors.html">Windows &amp; Doors</a>
+        <a href="categories/energy-storage.html">Energy Storage</a></div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Learn <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="index.html#idx2Score"><span class="simple-dropdown-eyebrow">On homepage</span>The Score</a>
+        <a href="index.html#how"><span class="simple-dropdown-eyebrow">On homepage</span>How it works</a>
+        <div class="simple-dropdown-divider" aria-hidden="true"></div>
+        <a href="how-our-score-guides-you.html">How our Score guides you</a>
+        <a href="sample-report.html">See a sample report</a>
+        <a href="our-installers.html">Who we match you with</a>
+        <a href="2026-changes.html">What changed in 2026</a></div>
+    </li>
+    <li><a href="get-my-score.html" class="nav-cta">Get my report</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="contact-hero">
+  <div class="container">
+    <div class="contact-hero-inner">
+      <h1 class="contact-h1">Get <em>in touch</em>.</h1>
+      <p class="contact-lede">A real person reads every message. We typically respond within <em>one business day</em>, usually faster. No phone tree, no ticket queue, no installer in your living room until you say so.</p></div></div>
+</section>
+
+<!-- Methods + Form (form moved up from the bottom) -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT · contact methods + promise -->
+      <div>
+        <div class="contact-methods">
+
+          <a href="mailto:info@profusion.solutions" class="contact-method">
+            <div class="contact-method-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg></div>
+            <div class="contact-method-body">
+              <div class="contact-method-label">Email</div>
+              <div class="contact-method-value">info@profusion.solutions</div>
+              <div class="contact-method-meta">For homeowner questions, partnerships, or media.</div></div>
+          </a>
+
+          <!--
+            Phone tile · state-aware. Defaults to the Hicksville (NY) office number,
+            swaps to Boston when the visitor is in a New England state (MA, RI, CT, ME, NH, VT).
+            See the geo-detect script at the bottom of the page.
+          -->
+          <a href="tel:+15166133990"
+             class="contact-method"
+             id="contact-phone-tile"
+             data-phone-default="+1 (516) 613-3990"
+             data-phone-default-href="tel:+15166133990"
+             data-phone-default-meta="Hicksville office &middot; Mon&ndash;Fri, 9am&ndash;6pm ET"
+             data-phone-ne="+1 (339) 330-4289"
+             data-phone-ne-href="tel:+13393304289"
+             data-phone-ne-meta="Boston office &middot; Mon&ndash;Fri, 9am&ndash;6pm ET">
+            <div class="contact-method-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg></div>
+            <div class="contact-method-body">
+              <div class="contact-method-label">Phone</div>
+              <div class="contact-method-value" data-phone-value>+1 (516) 613-3990</div>
+              <div class="contact-method-meta" data-phone-meta>Hicksville office &middot; Mon&ndash;Fri, 9am&ndash;6pm ET</div></div>
+          </a>
+
+          <a href="get-my-score.html" class="contact-method">
+            <div class="contact-method-icon" aria-hidden="true" style="background: var(--green-50); color: var(--green-700);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linejoin="round"/>
+                <path d="M9 22V12h6v10"/>
+              </svg></div>
+            <div class="contact-method-body">
+              <div class="contact-method-label" style="font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: 0; text-transform: none; color: var(--green-700);">Just here for the report</div>
+              <div class="contact-method-value">Get your Home Energy Report</div>
+              <div class="contact-method-meta">Sixty seconds. Free, forever. No call required.</div></div>
+          </a></div>
+
+        <div class="contact-promise">
+          <div class="contact-promise-label">Our promise</div>
+          <div class="contact-promise-text">
+            <strong>If something's off, you call us.</strong> We call them. You never chase your installer alone, every dispute, every delay, we step in on your side until it's resolved.</div></div></div>
+
+      <!-- RIGHT · the contact form (moved up from the bottom of the page) -->
+      <div id="form">
+        <div class="contact-form-wrap">
+          <div class="contact-form-eyebrow">Send us a note</div>
+          <h2 class="contact-form-title">Got a question, or something <em>on your mind</em>?</h2>
+          <p class="contact-form-sub">If you'd rather not email or call, drop a note here. A real person reads it. We get back within one business day, usually faster.</p>
+
+          <!--
+            FORM HANDLER · this form submits to Web3Forms (free tier, no backend).
+            TO ACTIVATE:
+            1. Go to https://web3forms.com → enter your inbox (e.g. info@profusion.solutions)
+            2. Copy the access key it emails you
+            3. Replace REPLACE_WITH_WEB3FORMS_KEY below with that key
+            Same key can be reused on the Get-my-report form on get-my-score.html.
+          -->
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" autocomplete="on">
+
+            <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY">
+            <input type="hidden" name="subject" value="New message from the Contact page">
+            <input type="hidden" name="from_name" value="ProFusion &middot; Contact form">
+            <input type="hidden" name="redirect" value="https://profusion.solutions/contact.html?submitted=true#form">
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="contact-form-row">
+              <div class="contact-field">
+                <label class="contact-field-label" for="contact-name">Your name</label>
+                <input class="contact-input" id="contact-name" name="name" type="text" autocomplete="name" placeholder="First and last" required aria-required="true"></div>
+              <div class="contact-field">
+                <label class="contact-field-label" for="contact-email">Email</label>
+                <input class="contact-input" id="contact-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-required="true"></div></div>
+
+            <div class="contact-field">
+              <label class="contact-field-label" for="contact-phone">Phone (optional)</label>
+              <input class="contact-input" id="contact-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(508) 555-0142"></div>
+
+            <div class="contact-field">
+              <label class="contact-field-label" for="contact-message">What's on your mind?</label>
+              <textarea class="contact-textarea" id="contact-message" name="message" placeholder="A quick sentence or two about what you'd like to talk about. Suggestions, questions, partnership ideas, anything." required aria-required="true"></textarea></div>
+
+            <button type="submit" class="contact-submit">
+              Send the note
+              <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true">
+                <path d="M1 6h11M8 1l4 5-4 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+            <div class="contact-form-footnote">
+              A real person reads every message. We typically respond within one business day. We don't sell or share your details.</div>
+          </form>
+        </div>
+      </div>
+
+    </div></div>
+</section>
+
+<!-- Offices (now below the methods+form section, side-by-side instead of stacked) -->
+<section class="contact-offices-section">
+  <div class="container">
+    <div class="contact-offices-section-head">
+      <div class="contact-offices-section-eyebrow">Our offices</div>
+      <h2 class="contact-offices-section-title">Boston and <em>Hicksville</em>.</h2>
+    </div>
+
+    <div class="contact-offices-row">
+
+      <article class="contact-office">
+        <div class="contact-office-map">
+          <iframe
+            src="https://maps.google.com/maps?q=24+Spice+Street+Boston+MA+02129&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            title="Map of ProFusion Home Solutions Boston office at 24 Spice Street, Boston, MA"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="contact-office-body">
+          <div class="contact-office-tag">New England</div>
+          <div class="contact-office-name" style="margin-top: 8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 22s-8-7-8-13a8 8 0 1 1 16 0c0 6-8 13-8 13z" stroke-linejoin="round"/>
+              <circle cx="12" cy="9" r="3"/>
+            </svg>
+            Boston, MA</div>
+          <div class="contact-office-address">24 Spice Street<br>Boston, MA 02129</div>
+          <div class="contact-office-phone">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <a href="tel:+13393304289">+1 (339) 330-4289</a></div>
+          <a href="https://maps.google.com/?q=24+Spice+Street+Boston+MA+02129" target="_blank" rel="noopener" class="contact-office-link">
+            Open in Google Maps
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+              <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a></div>
+      </article>
+
+      <article class="contact-office">
+        <div class="contact-office-map">
+          <iframe
+            src="https://maps.google.com/maps?q=505+S+Broadway+Hicksville+NY+11801&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            title="Map of ProFusion Home Solutions Hicksville office at 505 S Broadway, Hicksville, NY"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="contact-office-body">
+          <div class="contact-office-tag">Head Office &middot; NY/NJ/MD/MI/FL</div>
+          <div class="contact-office-name" style="margin-top: 8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 22s-8-7-8-13a8 8 0 1 1 16 0c0 6-8 13-8 13z" stroke-linejoin="round"/>
+              <circle cx="12" cy="9" r="3"/>
+            </svg>
+            Hicksville, NY</div>
+          <div class="contact-office-address">505 S Broadway<br>Hicksville, NY 11801</div>
+          <div class="contact-office-phone">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <a href="tel:+15166133990">+1 (516) 613-3990</a></div>
+          <a href="https://maps.google.com/?q=505+S+Broadway+Hicksville+NY+11801" target="_blank" rel="noopener" class="contact-office-link">
+            Open in Google Maps
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+              <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a></div>
+      </article>
+
+    </div></div>
+</section>
+
+<!-- Final CTA -->
+<section class="contact-cta">
+  <div class="container">
+    <h2>Ready to see <em class="earned-italic">your Score</em>?</h2>
+    <p>Sixty seconds. Free, forever. Yours whether you upgrade or not.</p>
+    <a href="get-my-score.html" class="btn btn-primary" style="font-size: 16px; padding: 18px 32px;">
+      Get my report
+      <svg width="14" height="12" viewBox="0 0 14 12" fill="none"><path d="M1 6h11M8 1l4 5-4 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a></div>
+</section>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img src="logo.png" alt="ProFusion Home Solutions">
+        <p style="font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--green-400); margin-bottom: 14px;">Built for the <em style="font-family: var(--serif); font-style: italic;">house</em>. Felt in the <em style="font-family: var(--serif); font-style: italic;">home</em>.</p>
+        <p>The Home Efficiency Score, mapped to your zip, <em>every state, every rebate</em>. Now serving 11 states. <em>Going nationwide</em>.</p></div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="categories/solar.html">Solar</a></li>
+          <li><a href="categories/heating-cooling.html">Heating &amp; Cooling</a></li>
+          <li><a href="categories/insulation.html">Insulation</a></li>
+          <li><a href="categories/windows-doors.html">Windows &amp; Doors</a></li>
+          <li><a href="categories/energy-storage.html">Energy Storage</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="how-our-score-guides-you.html">How our Score guides you</a></li>
+          <li><a href="sample-report.html">See a sample report</a></li>
+          <li><a href="our-installers.html">Who we match you with</a></li>
+          <li><a href="2026-changes.html">What changed in 2026</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about-us.html">About us</a></li>
+          <li><a href="our-customers.html">Our Customers</a></li>
+          <li><a href="for-installers.html">For Installers</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="get-my-score.html">Get my report</a></li>
+        </ul></div></div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 ProFusion Home Solutions LLC</div>
+      <div>Now serving 11 states &middot; A+ BBB &middot; Fully Insured</div></div></div>
+</footer>
+
+<script defer src="mobile-nav.js"></script>
+<script>
+// State-aware phone tile. Default values point at the NY/main toll-free.
+// If the visitor's IP geolocates to a New England state, we swap to the
+// Boston-region number stored in data-phone-ne / data-phone-ne-href.
+// Uses ipapi.co (no API key, 1000 req/day free). Falls back silently to
+// the default values on any error.
+(function () {
+  var NE = ['MA', 'RI', 'CT', 'ME', 'NH', 'VT'];
+  var tile = document.getElementById('contact-phone-tile');
+  if (!tile) return;
+  var valueEl = tile.querySelector('[data-phone-value]');
+  var metaEl = tile.querySelector('[data-phone-meta]');
+  if (!valueEl || !metaEl) return;
+
+  // Don't refetch within a session.
+  var cached = null;
+  try { cached = sessionStorage.getItem('pf_visitor_state'); } catch (e) {}
+
+  function applyState(stateCode) {
+    if (!stateCode) return;
+    var isNE = NE.indexOf(stateCode.toUpperCase()) >= 0;
+    if (!isNE) return;
+    var num = tile.getAttribute('data-phone-ne');
+    var href = tile.getAttribute('data-phone-ne-href');
+    var meta = tile.getAttribute('data-phone-ne-meta');
+    if (num) valueEl.innerHTML = num;
+    if (href) tile.setAttribute('href', href);
+    if (meta) metaEl.innerHTML = meta;
+  }
+
+  if (cached) {
+    applyState(cached);
+    return;
+  }
+
+  fetch('https://ipapi.co/json/', { headers: { 'Accept': 'application/json' } })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (data) {
+      if (!data || data.country_code !== 'US' || !data.region_code) return;
+      try { sessionStorage.setItem('pf_visitor_state', data.region_code); } catch (e) {}
+      applyState(data.region_code);
+    })
+    .catch(function () { /* silent fail; default values stay */ });
+})();
+</script>
+<script>
+// Show a success banner inside the contact form when Web3Forms redirects back with ?submitted=true.
+(function () {
+  if (new URLSearchParams(window.location.search).get('submitted') !== 'true') return;
+  var wrap = document.querySelector('.contact-form-wrap');
+  if (!wrap) return;
+  var banner = document.createElement('div');
+  banner.className = 'contact-form-success';
+  banner.setAttribute('role', 'status');
+  banner.innerHTML =
+    '<div class="contact-form-success-icon" aria-hidden="true">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
+    '</div>' +
+    '<div>' +
+      '<div class="contact-form-success-title">Thanks. The note is in.</div>' +
+      '<p class="contact-form-success-body">A real person will read it and get back within one business day, usually faster. If something is time-sensitive, email <a href="mailto:info@profusion.solutions">info@profusion.solutions</a> directly.</p>' +
+    '</div>';
+  wrap.insertBefore(banner, wrap.firstChild);
+  banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+})();
+</script>
+</body>
+</html>

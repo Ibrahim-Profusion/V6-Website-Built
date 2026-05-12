@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maine Utility Programs · Central Maine Power, Versant Power · ProFusion</title>
+<meta name="description" content="Every Maine utility-side benefit in one place: Efficiency Maine heat pump rebates, Net Energy Billing 1:1 retail credit, ConnectedSolutions battery dispatch, weatherization. Verified May 2026.">
+<link rel="icon" type="image/png" href="../images/Favicon.png">
+<link rel="apple-touch-icon" href="../images/Favicon.png">
+<link rel="canonical" href="https://profusion.solutions/utility-programs/maine.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ProFusion Home Solutions">
+<meta property="og:title" content="Maine Utility Programs · Central Maine Power, Versant Power · ProFusion">
+<meta property="og:description" content="Every Maine utility-side benefit in one place: Efficiency Maine heat pump rebates, Net Energy Billing 1:1 retail credit, ConnectedSolutions battery dispatch, weatherization. Verified May 2026.">
+<meta property="og:url" content="https://profusion.solutions/utility-programs/maine.html">
+<meta property="og:image" content="https://profusion.solutions/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maine Utility Programs · Central Maine Power, Versant Power · ProFusion">
+<meta name="twitter:description" content="Every Maine utility-side benefit in one place: Efficiency Maine heat pump rebates, Net Energy Billing 1:1 retail credit, ConnectedSolutions battery dispatch, weatherization. Verified May 2026.">
+<meta name="twitter:image" content="https://profusion.solutions/images/social-card.png">
+<meta name="twitter:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="theme-color" content="#0A1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+
+:root { --state-accent: #2E9A3D; --state-tint: rgba(46, 154, 61, 0.08); }
+
+/* ════════════════════════════════════════════════════════════════════
+   UTILITY-PROGRAMS PAGE STYLES
+   The pattern: a state-level hero, a "headline finding" callout, then
+   a stack of utility sections. Each utility has 5 collapsible category
+   blocks. Open by default on desktop, collapsed on mobile.
+   ════════════════════════════════════════════════════════════════════ */
+.up-hero { padding: 56px 0 40px; }
+.up-hero-inner { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; margin-bottom: 56px; }
+.up-hero-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+.up-hero-pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: var(--state-tint); border: 1px solid var(--state-accent); border-radius: 100px; color: var(--state-accent); font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+.up-hero-pill-dot { width: 6px; height: 6px; background: var(--state-accent); border-radius: 50%; }
+.up-hero-meta-label { font-family: var(--mono); font-size: 11px; color: var(--gray-400); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
+.up-meta { display: inline-block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500); font-weight: 600; margin-bottom: 4px; }
+.up-hero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(36px, 4.8vw, 56px); line-height: 1.05; letter-spacing: -0.035em; color: var(--ink); margin-bottom: 24px; }
+.up-hero h1 em { font-style: normal; font-weight: 500; color: var(--state-accent); letter-spacing: -0.02em; }
+.up-hero-lede { font-family: var(--serif-body); font-size: 18px; line-height: 1.65; color: var(--gray-700); margin-bottom: 0; }
+.up-hero-visual { position: relative; aspect-ratio: 4/5; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 48px -16px rgba(10, 16, 32, 0.18), 0 1px 2px rgba(10, 16, 32, 0.06); background: var(--gray-50); }
+.up-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.up-hero-float-pill { position: absolute; top: 20px; right: 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); padding: 10px 16px; border-radius: 100px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--state-accent); box-shadow: var(--shadow-sm); z-index: 2; }
+.up-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 28px 0; border-top: 1px solid var(--gray-100); border-bottom: 1px solid var(--gray-100); margin-bottom: 56px; }
+
+/* Closing image band — visual breath before the CTA */
+.up-imgband { padding: 24px 0 8px; }
+.up-imgband-frame { aspect-ratio: 16 / 6; border-radius: 24px; overflow: hidden; position: relative; border: 1px solid var(--gray-100); }
+.up-imgband-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.up-imgband-cap { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-400); margin-top: 16px; text-align: center; font-weight: 500; }
+.up-imgband-cap em { font-family: var(--serif); font-style: italic; font-size: 13px; letter-spacing: 0; text-transform: none; color: var(--gray-600); font-weight: 400; }
+.up-stat-num { font-family: var(--display); font-weight: 500; font-size: 36px; line-height: 1; letter-spacing: -0.025em; color: var(--state-accent); margin-bottom: 6px; display: flex; align-items: baseline; gap: 4px; }
+.up-stat-num em { font-family: var(--mono); font-style: normal; font-size: 0.45em; color: var(--gray-400); font-weight: 500; letter-spacing: 0.02em; }
+.up-stat-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-500); font-weight: 500; }
+
+/* Headline-finding callout — the "wow" find for the state */
+.up-headline { background: var(--state-tint); border: 1px solid rgba(46, 154, 61, 0.2); border-radius: 24px; padding: 36px 40px; margin-bottom: 64px; max-width: 920px; }
+.up-headline-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--state-accent); font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.up-headline-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--state-accent); }
+.up-headline h2 { font-family: var(--display); font-weight: 500; font-size: 28px; letter-spacing: -0.02em; line-height: 1.2; color: var(--ink); margin-bottom: 16px; }
+.up-headline h2 em { font-style: normal; color: var(--state-accent); font-weight: 500; letter-spacing: -0.01em; }
+.up-headline p { font-family: var(--serif-body); font-size: 17px; line-height: 1.65; color: var(--gray-700); margin: 0; }
+
+/* Utility section — one per IOU */
+.up-utility { padding: 56px 0 24px; border-top: 1px solid var(--gray-100); }
+.up-utility:first-of-type { border-top: none; padding-top: 8px; }
+.up-utility-head { max-width: 880px; margin-bottom: 36px; }
+.up-utility-tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-500); font-weight: 700; margin-bottom: 10px; }
+.up-utility h2 { font-family: var(--display); font-weight: 500; font-size: 38px; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 12px; line-height: 1.05; }
+.up-utility h2 em { font-style: normal; color: var(--state-accent); font-weight: 500; letter-spacing: -0.02em; }
+.up-utility-blurb { font-family: var(--serif-body); font-size: 16px; line-height: 1.65; color: var(--gray-700); }
+.up-categories { display: grid; grid-template-columns: 1fr; gap: 16px; }
+
+/* Category block — collapsible <details> with all programs inside */
+.up-cat { background: white; border: 1px solid var(--gray-100); border-radius: 16px; overflow: hidden; transition: box-shadow 0.2s; }
+.up-cat:hover { box-shadow: var(--shadow-sm); }
+.up-cat[open] { box-shadow: var(--shadow-sm); }
+.up-cat summary { list-style: none; padding: 22px 28px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; gap: 16px; }
+.up-cat summary::-webkit-details-marker { display: none; }
+.up-cat-label { display: flex; align-items: center; gap: 14px; }
+.up-cat-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--gray-50); color: var(--state-accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.up-cat-icon svg { width: 18px; height: 18px; }
+.up-cat-title { font-family: var(--display); font-weight: 500; font-size: 18px; color: var(--ink); letter-spacing: -0.01em; }
+.up-cat-count { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-400); font-weight: 600; }
+.up-cat-chevron { color: var(--gray-400); transition: transform 0.2s; flex-shrink: 0; }
+.up-cat[open].up-cat-chevron { transform: rotate(180deg); color: var(--state-accent); }
+.up-cat-body { padding: 0 28px 28px; border-top: 1px solid var(--gray-100); padding-top: 22px; }
+
+/* Individual program — name, value, eligibility, source */
+.up-program { padding: 18px 0; border-bottom: 1px dashed var(--gray-100); }
+.up-program:last-child { border-bottom: none; padding-bottom: 4px; }
+.up-program-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }
+.up-program-name { font-family: var(--display); font-weight: 600; font-size: 15px; color: var(--ink); letter-spacing: -0.005em; flex: 1; min-width: 240px; }
+.up-program-value { font-family: var(--mono); font-size: 13px; font-weight: 600; color: var(--state-accent); white-space: nowrap; }
+.up-program-desc { font-family: var(--serif-body); font-size: 15px; line-height: 1.6; color: var(--gray-700); margin-bottom: 8px; }
+.up-program-source { font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; color: var(--gray-500); }
+.up-program-source a { color: var(--gray-500); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; }
+.up-program-source a:hover { color: var(--state-accent); }
+.up-program-tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-500); padding: 2px 8px; border: 1px solid var(--gray-200); border-radius: 4px; margin-left: 6px; vertical-align: middle; }
+.up-program-tag.is-flagship { color: var(--state-accent); border-color: var(--state-accent); background: var(--state-tint); font-weight: 600; }
+
+@media (max-width: 960px) {.up-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+.up-hero-visual { max-width: 520px; margin: 0 auto; aspect-ratio: 4/5; }
+.up-imgband-frame { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 760px) {.up-stats { grid-template-columns: 1fr; gap: 16px; }
+.up-headline { padding: 28px 24px; }
+.up-utility h2 { font-size: 30px; }
+.up-cat summary { padding: 18px 20px; }
+.up-cat-body { padding-left: 20px; padding-right: 20px; }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="nav">
+  <a href="../index.html" class="brand"><img src="../logo.png" alt="ProFusion Home Solutions"></a>
+  <ul class="nav-links">
+<li class="has-dropdown">
+      <a href="#">About <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../about-us.html">About Us</a>
+        <a href="../our-customers.html">Our Customers</a>
+        <a href="../for-installers.html">For Installers</a>
+        <a href="../contact.html">Contact Us</a></div>
+    </li>
+    <li><a href="../index.html#map">Service Area</a></li>
+    <li class="has-dropdown">
+      <a href="#">Programs <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../categories/solar.html">Solar</a>
+        <a href="../categories/heating-cooling.html">Heating &amp; Cooling</a>
+        <a href="../categories/insulation.html">Insulation</a>
+        <a href="../categories/windows-doors.html">Windows &amp; Doors</a>
+        <a href="../categories/energy-storage.html">Energy Storage</a></div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Learn <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../index.html#idx2Score"><span class="simple-dropdown-eyebrow">On homepage</span>The Score</a>
+        <a href="../index.html#how"><span class="simple-dropdown-eyebrow">On homepage</span>How it works</a>
+        <div class="simple-dropdown-divider" aria-hidden="true"></div>
+        <a href="../how-our-score-guides-you.html">How our Score guides you</a>
+        <a href="../sample-report.html">See a sample report</a>
+        <a href="../our-installers.html">Who we match you with</a>
+        <a href="../2026-changes.html">What changed in 2026</a></div>
+    </li>
+    <li><a href="../get-my-score.html" class="nav-cta">Get my report</a></li>
+  </ul>
+</nav>
+
+<div class="container breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">/</span>
+  <a href="../states/maine.html">Maine</a>
+  <span class="sep">/</span>
+  <span class="current">Utility programs</span></div>
+
+<section class="up-hero">
+  <div class="container">
+    <div class="up-hero-inner">
+      <div>
+        <div class="up-hero-meta">
+          <span class="up-meta">ME · Maine</span></div>
+        <h1>Maine's utility stack is <em>thinner</em>, but the rebates run deep.</h1>
+        <p class="up-hero-lede">Maine works differently from the rest of New England. Almost every state-side rebate runs through Efficiency Maine Trust, an independent statewide administrator, not the utilities themselves. CMP and Versant Power split the state geographically: CMP covers the southern half, Versant the northern. The utility-side stack is leaner than Massachusetts, but Efficiency Maine's heat pump rebates are among the most generous in the region, and Net Energy Billing still pays full retail. Here's what each utility offers, in 2026.</p></div>
+      <div class="up-hero-visual">
+        <div class="up-hero-float-pill">ME · Utilities</div>
+        <img src="../images/up-hero-maine.png" alt="A rural Maine neighborhood at late afternoon, white-clapboard farmhouse-style homes set back from a country road with distribution lines running pole-to-pole along the shoulder" class="up-hero-img" loading="eager" decoding="async"></div></div>
+
+    <div class="up-stats">
+      <div>
+        <div class="up-stat-num">~$0.27<em>–$0.32/kWh</em></div>
+        <div class="up-stat-label">Avg residential rate · CMP to Versant</div></div>
+      <div>
+        <div class="up-stat-num">$3,000<em>/unit</em></div>
+        <div class="up-stat-label">Efficiency Maine HP rebate · low-income tier</div></div>
+      <div>
+        <div class="up-stat-num">1:1<em> retail</em></div>
+        <div class="up-stat-label">Net Energy Billing credit value</div></div></div>
+
+    <div class="up-headline">
+      <div class="up-headline-eyebrow">The one most homeowners miss</div>
+      <h2>Efficiency Maine's heat pump rebate <em>stacks up to three units</em>, putting $9,000 on the table for a low-income whole-home install.</h2>
+      <p>The standard rebate is $1,000 per heat pump, but it tiers up by income: $2,000/unit at moderate income (80-150% AMI), $3,000/unit at low income (under 80% AMI). And it stacks: up to three units per home. That's a $3,000, $6,000, or $9,000 total rebate, before any federal credit, on the same hardware. Whole-home ducted systems run the same tier structure at $3,000 to $9,000 per system. Available identically across CMP and Versant territories, since Efficiency Maine is statewide.</p></div></div>
+</section>
+
+<section class="up-coverage" aria-label="Utility coverage at a glance">
+  <div class="container">
+    <div class="up-coverage-head">
+      <span class="idx2-eyebrow">Coverage at a glance</span>
+      <h2 class="up-coverage-h2">Who offers <em>what</em>.</h2>
+      <p class="up-coverage-lede">A read across the state. Each cell shows the program count by category. The <span class="up-cm-flag-inline">&#9733;</span> marks utilities with a flagship or unique program in that category, the ones worth a closer look.</p></div>
+    <div class="up-coverage-frame">
+      <table class="up-coverage-table">
+        <thead>
+          <tr>
+            <th scope="col" class="up-cm-corner">Utility</th>
+            <th scope="col" class="up-cm-colhead"><span class="up-cm-colicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span><span class="up-cm-collabel">Heat pumps</span></th><th scope="col" class="up-cm-colhead"><span class="up-cm-colicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span><span class="up-cm-collabel">Solar</span></th><th scope="col" class="up-cm-colhead"><span class="up-cm-colicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span><span class="up-cm-collabel">Storage</span></th><th scope="col" class="up-cm-colhead"><span class="up-cm-colicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span><span class="up-cm-collabel">Insulation</span></th><th scope="col" class="up-cm-colhead"><span class="up-cm-colicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></span><span class="up-cm-collabel">Windows</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row" class="up-cm-rowhead">Central Maine Power</th><td class="up-cm-cell is-2"><span class="up-cm-num">2</span><span class="up-cm-flag" aria-label="Includes flagship program">★</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span><span class="up-cm-flag" aria-label="Includes flagship program">★</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-empty" aria-label="No program"></td></tr><tr><th scope="row" class="up-cm-rowhead">Versant Power</th><td class="up-cm-cell is-2"><span class="up-cm-num">2</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span><span class="up-cm-flag" aria-label="Includes flagship program">★</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-empty" aria-label="No program"></td></tr>
+        </tbody>
+      </table></div></div>
+</section>
+
+
+
+<!-- ═══════════════════════════ CENTRAL MAINE POWER ═══════════════════════════ -->
+<section class="up-utility">
+  <div class="container">
+    <div class="up-utility-head">
+      <div class="up-utility-tag">Utility · 1 of 2</div>
+      <h2>Central Maine Power <em>(CMP)</em></h2>
+      <p class="up-utility-blurb">CMP is the larger of Maine's two investor-owned utilities, serving roughly 650,000 customers across southern and central Maine, including Portland, Augusta, and Lewiston. CMP's retail rate runs around $0.27/kWh, lower than Versant's, which means lower operating cost on heat pumps but slightly less net-metering value per exported kWh.</p></div>
+
+    <div class="up-categories">
+
+      <!-- Heat pumps -->
+      <details class="up-cat" open>
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span>
+            <span>
+              <span class="up-cat-title">Heat pumps</span>
+              <span class="up-cat-count">· 2 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Efficiency Maine Heat Pump Rebate<span class="up-program-tag is-flagship">Flagship</span></div>
+              <div class="up-program-value">$1,000–$3,000/unit · up to 3</div></div>
+            <div class="up-program-desc">Tiered by income: $1,000/unit standard, $2,000/unit moderate income (80-150% AMI), $3,000/unit low income (under 80% AMI). Stacks up to three units per home, for a total of $3,000, $6,000, or $9,000. Whole-home ducted systems pay $3,000 to $9,000 per system on the same income tiers. Available identically in CMP and Versant territories.</div>
+            <div class="up-program-source"><a href="https://www.efficiencymaine.com/at-home/residential-heat-pump-rebates/" target="_blank" rel="noopener">Efficiency Maine residential heat pump rebates →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">CMP-specific heat pump rate</div>
+              <div class="up-program-value">Not yet offered</div></div>
+            <div class="up-program-desc">CMP does not currently offer a heat-pump-specific seasonal tariff. Standard residential rate (around $0.27/kWh) applies. CMP customers should monitor the rate-tariff page for any future heat pump rate filing similar to Eversource MA's R-1HP.</div>
+            <div class="up-program-source"><a href="https://www.cmpco.com/" target="_blank" rel="noopener">CMP rates page →</a></div></div></div>
+      </details>
+
+      <!-- Solar -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
+            <span>
+              <span class="up-cat-title">Solar</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Net Energy Billing (NEB)<span class="up-program-tag is-flagship">Flagship</span></div>
+              <div class="up-program-value">~$0.27/kWh · 1:1 retail</div></div>
+            <div class="up-program-desc">Full retail-rate credit for residential rooftop solar at approximately $0.27/kWh. Excess credits roll over month-to-month with a 12-month rollover window; true-up at avoided cost. Rooftop NEB was unaffected by 2026 LD 1777, which only modified community solar rules.</div>
+            <div class="up-program-source"><a href="https://www.cmpco.com/suppliersandpartners/servicesandresources/interconnection/net-energy-billing" target="_blank" rel="noopener">CMP Net Energy Billing →</a></div></div></div>
+      </details>
+
+      <!-- Energy storage -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span>
+            <span>
+              <span class="up-cat-title">Energy storage</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">ConnectedSolutions in Maine</div>
+              <div class="up-program-value">~$225/kW summer · ~$50/kW winter</div></div>
+            <div class="up-program-desc">Operated by Efficiency Maine, available across both CMP and Versant territories. Approximately $225/kW for the summer season (June through September) plus around $50/kW for the winter season (December through March) for a typical residential battery. [NEEDS RESEARCH, Efficiency Maine is the program operator, not CMP directly; current 2026 per-kW rates and event caps are not consistently published in public-facing utility-side docs.]</div>
+            <div class="up-program-source"><a href="https://www.efficiencymaine.com/" target="_blank" rel="noopener">Efficiency Maine ConnectedSolutions →</a></div></div></div>
+      </details>
+
+      <!-- Insulation -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Insulation &amp; weatherization</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Efficiency Maine Home Energy Savings Program</div>
+              <div class="up-program-value">Up to $5,000–$7,500</div></div>
+            <div class="up-program-desc">Efficiency Maine pays up to roughly $5,000 to $7,500 per home for insulation and air-sealing work, with the upper end available to income-eligible households. Available statewide, identical terms in CMP and Versant territory.</div>
+            <div class="up-program-source"><a href="https://www.efficiencymaine.com/" target="_blank" rel="noopener">Efficiency Maine weatherization →</a></div></div></div>
+      </details>
+
+      <!-- Windows & doors -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Windows &amp; doors</span>
+              <span class="up-cat-count">· no utility rebate</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">No utility rebate available</div>
+              <div class="up-program-value"></div></div>
+            <div class="up-program-desc">CMP does not offer a windows/doors rebate, and Efficiency Maine does not run one either. The federal 25C credit (up to $600/year for windows) expired Dec 31, 2025 with no replacement. Inherent ROI (utility savings, comfort, resale value) is the case for the upgrade.</div></div></div>
+      </details></div></div>
+</section>
+
+<!-- ═══════════════════════════ VERSANT POWER ═══════════════════════════ -->
+<section class="up-utility">
+  <div class="container">
+    <div class="up-utility-head">
+      <div class="up-utility-tag">Utility · 2 of 2</div>
+      <h2>Versant <em>Power</em></h2>
+      <p class="up-utility-blurb">Versant Power serves roughly 159,000 customers across northern and eastern Maine, including Bangor, Presque Isle, and most of Aroostook, Hancock, and Washington counties. Versant's retail rate runs around $0.32/kWh, the highest in Maine, which means net-metering credits are worth more per kWh and solar payback is meaningfully faster than in CMP territory.</p></div>
+
+    <div class="up-categories">
+
+      <!-- Heat pumps -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span>
+            <span>
+              <span class="up-cat-title">Heat pumps</span>
+              <span class="up-cat-count">· 2 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Efficiency Maine Heat Pump Rebate</div>
+              <div class="up-program-value">$1,000–$3,000/unit · up to 3</div></div>
+            <div class="up-program-desc">Identical schedule to CMP territory: $1,000/unit standard, $2,000/unit moderate income, $3,000/unit low income; stacks up to three units. Versant's higher retail rate (~$0.32/kWh) means the heat pump operating cost runs higher than in CMP territory, but the rebate side is the same.</div>
+            <div class="up-program-source"><a href="https://www.efficiencymaine.com/at-home/residential-heat-pump-rebates/" target="_blank" rel="noopener">Efficiency Maine residential heat pump rebates →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Versant-specific heat pump rate</div>
+              <div class="up-program-value">Not yet offered</div></div>
+            <div class="up-program-desc">Versant does not currently offer a heat-pump-specific discounted tariff. [NEEDS RESEARCH, no Versant-specific HP tariff filing identified.] Standard residential rate applies.</div>
+            <div class="up-program-source"><a href="https://www.versantpower.com/" target="_blank" rel="noopener">Versant Power rates →</a></div></div></div>
+      </details>
+
+      <!-- Solar -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
+            <span>
+              <span class="up-cat-title">Solar</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Net Energy Billing (NEB)<span class="up-program-tag is-flagship">Best in ME</span></div>
+              <div class="up-program-value">~$0.32/kWh · 1:1 retail</div></div>
+            <div class="up-program-desc">Full retail-rate credit at approximately $0.32/kWh, the highest in Maine. Same rules as CMP: month-to-month rollover, 12-month window, true-up at avoided cost. Solar payback runs faster in Versant territory because each exported kWh is worth more.</div>
+            <div class="up-program-source"><a href="https://www.versantpower.com/energy-solutions/connecting-renewable-resources/net-energy-billing/" target="_blank" rel="noopener">Versant Power Net Energy Billing →</a></div></div></div>
+      </details>
+
+      <!-- Energy storage -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span>
+            <span>
+              <span class="up-cat-title">Energy storage</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">ConnectedSolutions in Maine</div>
+              <div class="up-program-value">~$225/kW summer · ~$50/kW winter</div></div>
+            <div class="up-program-desc">Statewide via Efficiency Maine. Same rates and structure as in CMP territory. [NEEDS RESEARCH, same gap as CMP; per-kW rates and event caps not consistently published in 2026 utility-side docs.]</div>
+            <div class="up-program-source"><a href="https://www.efficiencymaine.com/" target="_blank" rel="noopener">Efficiency Maine ConnectedSolutions →</a></div></div></div>
+      </details>
+
+      <!-- Insulation -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Insulation &amp; weatherization</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Efficiency Maine Home Energy Savings Program</div>
+              <div class="up-program-value">Up to $5,000–$7,500</div></div>
+            <div class="up-program-desc">Same statewide Efficiency Maine program as CMP.</div>
+            <div class="up-program-source"><a href="https://www.efficiencymaine.com/" target="_blank" rel="noopener">Efficiency Maine weatherization →</a></div></div></div>
+      </details>
+
+      <!-- Windows & doors -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Windows &amp; doors</span>
+              <span class="up-cat-count">· no utility rebate</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">No utility rebate available</div>
+              <div class="up-program-value"></div></div>
+            <div class="up-program-desc">Versant does not offer a windows/doors rebate. Federal 25C credit expired Dec 31, 2025; no utility replacement.</div></div></div>
+      </details></div></div>
+</section>
+
+<!-- ═══════════════════════════ CLOSING IMAGE BAND ═══════════════════════════ -->
+<section class="up-imgband">
+  <div class="container">
+    <div class="up-imgband-frame">
+      <img src="../images/up-imgband-maine.png" alt="Wide horizontal Maine landscape: a small cluster of clapboard houses set against rolling tree-line, distribution poles marching along a country road in the middle ground" loading="lazy" decoding="async"></div>
+    <p class="up-imgband-cap">CMP and Versant split the state by geography, <em>CMP south, Versant north;</em> Efficiency Maine Trust runs the rebate stack for both.</p></div>
+</section>
+
+<!-- ═══════════════════════════ CTA STRIP ═══════════════════════════ -->
+<section class="cta-strip">
+  <div class="container-narrow">
+    <h3>Want the math run for <em>your specific ME address</em>?</h3>
+    <p>Your Home Efficiency Score figures out which utility you're on (CMP or Versant), which Efficiency Maine income tier you qualify for, and what the full stack looks like for your zip code, your roof, and your bill.</p>
+    <a href="../get-my-score.html" class="btn btn-white">Get my report
+      <svg width="16" height="14" viewBox="0 0 16 14" fill="none"><path d="M1 7h13M9 1l5 6-5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a></div>
+</section>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-offices">
+      <h4 class="footer-offices-head">Visit us</h4>
+      <div class="footer-offices-row is-single">
+        <article class="footer-office">
+          <div class="footer-office-map">
+            <iframe
+              src="https://maps.google.com/maps?q=24+Spice+Street+Boston+MA+02129&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="Map of ProFusion Boston office, 24 Spice Street, Boston, MA"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="footer-office-meta">
+            <div class="footer-office-tag">New England</div>
+            <div class="footer-office-name">Boston, MA</div>
+            <div class="footer-office-addr">24 Spice Street<br>Boston, MA 02129</div>
+            <div class="footer-office-phone"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+13393304289">+1 (339) 330-4289</a></div>
+            <a class="footer-office-link" href="https://maps.google.com/?q=24+Spice+Street+Boston+MA+02129" target="_blank" rel="noopener">
+              Open in Maps
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a></div>
+        </article></div></div>
+
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img src="../logo.png" alt="ProFusion Home Solutions">
+        <p style="font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--green-400); margin-bottom: 14px;">Built for the <em style="font-family: var(--serif); font-style: italic;">house</em>. Felt in the <em style="font-family: var(--serif); font-style: italic;">home</em>.</p>
+        <p>The Home Efficiency Score, mapped to your zip, <em>every state, every rebate</em>. Now serving 11 states. <em>Going nationwide</em>.</p></div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="../categories/solar.html">Solar</a></li>
+          <li><a href="../categories/heating-cooling.html">Heating &amp; Cooling</a></li>
+          <li><a href="../categories/insulation.html">Insulation</a></li>
+          <li><a href="../categories/windows-doors.html">Windows &amp; Doors</a></li>
+          <li><a href="../categories/energy-storage.html">Energy Storage</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="../how-our-score-guides-you.html">How our Score guides you</a></li>
+          <li><a href="../sample-report.html">See a sample report</a></li>
+          <li><a href="../our-installers.html">Who we match you with</a></li>
+          <li><a href="../2026-changes.html">What changed in 2026</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../contact.html">Contact us</a></li>
+          <li><a href="../get-my-score.html">Get my report</a></li>
+          <li><a href="../for-installers.html">For Installers</a></li>
+        </ul></div></div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 ProFusion Home Solutions LLC</div>
+      <div>Now serving 11 states &middot; A+ BBB &middot; Fully Insured</div></div></div>
+</footer>
+<script>
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+}
+</script>
+<script defer src="../mobile-nav.js"></script>
+</body>
+</html>

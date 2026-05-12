@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Report · ProFusion Home Efficiency Score</title>
+<meta name="description" content="A walkthrough of what your Home Efficiency Score report contains. Sample from a Worcester, MA homeowner, personal details blurred for privacy.">
+<link rel="icon" type="image/png" href="images/Favicon.png">
+<link rel="apple-touch-icon" href="images/Favicon.png">
+<link rel="canonical" href="https://profusion.solutions/sample-report.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ProFusion Home Solutions">
+<meta property="og:title" content="Sample Report · ProFusion Home Efficiency Score">
+<meta property="og:description" content="A walkthrough of what your Home Efficiency Score report contains. Sample from a Worcester, MA homeowner, personal details blurred for privacy.">
+<meta property="og:url" content="https://profusion.solutions/sample-report.html">
+<meta property="og:image" content="https://profusion.solutions/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sample Report · ProFusion Home Efficiency Score">
+<meta name="twitter:description" content="A walkthrough of what your Home Efficiency Score report contains. Sample from a Worcester, MA homeowner, personal details blurred for privacy.">
+<meta name="twitter:image" content="https://profusion.solutions/images/social-card.png">
+<meta name="twitter:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="theme-color" content="#0A1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* Sample report scoped styles */
+.sr-hero { padding: 40px 0 60px; position: relative; overflow: hidden; }
+.sr-hero-inner { max-width: 820px; }
+.sr-chip { display: inline-flex; align-items: center; gap: 10px; background: white; border: 1px solid var(--gray-100); padding: 8px 16px 8px 8px; border-radius: 100px; font-size: 13px; font-weight: 500; color: var(--gray-800); margin-bottom: 32px; box-shadow: var(--shadow-sm); }
+.sr-chip-badge { background: var(--blue-700); color: white; padding: 3px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; font-family: var(--mono); letter-spacing: 0.04em; }
+.sr-chip-ts { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--gray-600); font-weight: 500; }
+.sr-h1 { font-family: var(--display); font-weight: 500; font-size: clamp(44px, 6vw, 76px); line-height: 1.02; letter-spacing: -0.04em; color: var(--ink); margin-bottom: 24px; }
+.sr-h1 em { font-style: normal; font-weight: 500; color: var(--blue-700); letter-spacing: -0.02em; }
+.sr-lede { font-size: 19px; line-height: 1.6; color: var(--gray-600); margin-bottom: 32px; max-width: 720px; }
+
+/* The report "pages" container */
+.sr-stage { background: var(--gray-50); padding: 60px 0 120px; }
+.sr-page {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 20px;
+  padding: 56px 64px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+.sr-page-label {
+  position: absolute;
+  top: -14px;
+  left: 36px;
+  background: var(--ink);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.sr-page-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 32px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--gray-100);
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.sr-page-brand { display: flex; align-items: center; gap: 12px; }
+.sr-page-brand img { height: 28px; width: auto; }
+.sr-page-meta { text-align: right; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--gray-400); line-height: 1.6; }
+.sr-page-meta strong { display: block; color: var(--ink); font-family: var(--display); font-size: 14px; letter-spacing: -0.01em; font-weight: 600; text-transform: none; margin-top: 2px; }
+.sr-blur { filter: blur(5px); user-select: none; }
+.sr-page h2 { font-family: var(--display); font-weight: 600; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em; color: var(--blue-700); margin-bottom: 24px; text-transform: uppercase; font-size: 22px; letter-spacing: 0.02em; }
+
+/* Page 1 — overall grade + costs */
+.sr-grade-row { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 56px; }
+.sr-grade-wrap { text-align: center; }
+.sr-grade-label { font-family: var(--display); font-weight: 600; font-size: 22px; color: var(--blue-700); letter-spacing: 0.02em; text-transform: uppercase; margin-bottom: 6px; }
+.sr-grade-sub { font-size: 14px; color: var(--gray-600); margin-bottom: 28px; }
+.sr-gauge { position: relative; width: 220px; height: 130px; margin: 0 auto; }
+.sr-gauge svg { width: 100%; height: 100%; }
+.sr-gauge-letter {
+  position: absolute;
+  /* The green badge in the gauge SVG sits at cy=95 of a 130-unit viewBox
+     (≈73% from top). Anchoring there with a -50% translate centers the
+     letter exactly inside that badge regardless of gauge dimensions. */
+  top: 73%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 54px;
+  color: var(--green-500);
+  line-height: 1;
+}
+.sr-cost-card {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+}
+.sr-cost-title { font-family: var(--display); font-weight: 600; font-size: 16px; color: var(--blue-700); margin-bottom: 22px; }
+.sr-cost-big {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 48px;
+  letter-spacing: -0.035em;
+  color: var(--blue-700);
+  line-height: 1;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.sr-cost-big.unit { font-size: 18px; color: var(--gray-600); font-weight: 400; font-family: var(--display); }
+.sr-cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-top: 24px; border-top: 1px dashed var(--gray-100); }
+.sr-cost-grid-item { text-align: center; }
+.sr-cost-grid-label { font-size: 13px; color: var(--gray-600); margin-bottom: 6px; }
+.sr-cost-grid-val { font-family: var(--display); font-weight: 500; font-size: 22px; color: var(--blue-700); letter-spacing: -0.02em; }
+.sr-longterm-head { margin-bottom: 24px; }
+.sr-longterm-head h3 { font-family: var(--display); font-weight: 600; font-size: 22px; color: var(--blue-700); margin-bottom: 8px; }
+.sr-longterm-head p { font-size: 14px; color: var(--gray-600); }
+.sr-longterm-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 28px; }
+.sr-longterm-tile { border-radius: 12px; padding: 18px 20px; text-align: center; }
+.sr-longterm-tile.today { background: var(--gray-50); border: 1px solid var(--gray-100); }
+.sr-longterm-tile.mid { background: #FFF4E8; border: 1px solid #FFD7B0; }
+.sr-longterm-tile.full { background: #FEE8E8; border: 1px solid #F8B9B9; }
+.sr-longterm-tile-label { font-size: 11px; color: var(--gray-600); font-family: var(--mono); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+.sr-longterm-tile-val { font-family: var(--display); font-weight: 600; font-size: 26px; letter-spacing: -0.03em; color: var(--ink); line-height: 1; }
+.sr-longterm-tile.mid .sr-longterm-tile-val { color: #B45309; }
+.sr-longterm-tile.full .sr-longterm-tile-val { color: #B91C1C; }
+.sr-longterm-tile-foot { font-size: 11px; color: var(--gray-600); margin-top: 6px; }
+.sr-growth { background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 16px; padding: 28px 32px; }
+.sr-growth h4 { font-family: var(--display); font-weight: 600; font-size: 15px; color: var(--ink); margin-bottom: 18px; }
+.sr-growth-row { display: grid; grid-template-columns: 56px 1fr 70px; gap: 14px; align-items: center; margin-bottom: 10px; }
+.sr-growth-row:last-child { margin-bottom: 0; }
+.sr-growth-year { font-family: var(--mono); font-size: 11px; color: var(--gray-600); letter-spacing: 0.06em; }
+.sr-growth-bar { height: 28px; background: var(--gray-100); border-radius: 8px; position: relative; overflow: hidden; }
+.sr-growth-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FB923C, #EF4444);
+  border-radius: 8px;
+  transition: width 1s ease;
+}
+.sr-growth-val { font-family: var(--display); font-weight: 600; font-size: 13px; color: var(--ink); text-align: right; font-feature-settings: "tnum"; }
+.sr-growth-foot { font-size: 11px; color: var(--gray-400); margin-top: 14px; font-family: var(--mono); letter-spacing: 0.04em; }
+
+/* Page 2 — roadmap */
+.sr-why { font-size: 15px; line-height: 1.7; color: var(--gray-800); margin-bottom: 48px; }
+.sr-why em { font-family: var(--serif); font-style: italic; color: var(--blue-700); }
+.sr-roadmap-card {
+  background: linear-gradient(135deg, var(--blue-50), rgba(234, 243, 252, 0.3));
+  border: 1px solid var(--blue-50);
+  border-radius: 20px;
+  padding: 36px;
+}
+.sr-roadmap-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green-500);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0 auto 28px;
+  justify-self: center;
+}
+.sr-roadmap-badge-wrap { display: flex; justify-content: center; margin-bottom: 28px; }
+.sr-roadmap-bridge { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; margin-bottom: 32px; }
+.sr-roadmap-grade { text-align: center; }
+.sr-roadmap-grade.label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); font-weight: 600; margin-bottom: 6px; }
+.sr-roadmap-grade.val { font-family: var(--display); font-weight: 600; font-size: 26px; color: var(--ink); letter-spacing: -0.02em; }
+.sr-roadmap-grade.right.val { color: var(--green-700); }
+.sr-roadmap-grade.val.sub { font-family: var(--display); color: var(--gray-400); font-weight: 400; font-size: 14px; margin-left: 4px; }
+.sr-roadmap-arrow { color: var(--green-500); }
+.sr-scale { position: relative; background: white; border-radius: 100px; padding: 18px 28px; box-shadow: inset 0 0 0 1px var(--gray-100); }
+.sr-scale-track { height: 6px; background: var(--gray-100); border-radius: 100px; position: relative; margin: 14px 0; }
+.sr-scale-fill { position: absolute; top: 0; left: 0; height: 100%; border-radius: 100px; background: linear-gradient(90deg, #B45309, #F59E0B, #3AB44A); }
+.sr-scale-dots { display: grid; grid-template-columns: repeat(5, 1fr); position: relative; }
+.sr-scale-dot {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  font-family: var(--display); font-weight: 600; font-size: 14px; color: var(--gray-400);
+  position: relative;
+}
+.sr-scale-dot::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  width: 12px; height: 12px;
+  background: var(--gray-100); border-radius: 50%;
+  border: 2px solid white;
+}
+.sr-scale-dot.here { color: var(--green-700); }
+.sr-scale-dot.here::after { background: var(--green-500); box-shadow: 0 0 0 3px rgba(58, 180, 74, 0.2); }
+.sr-scale-caption { text-align: center; margin-top: 16px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--green-700); text-transform: uppercase; font-weight: 600; }
+
+/* Page 3 — recommended actions */
+.sr-rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px; }
+.sr-rec-card { border-radius: 16px; padding: 28px 32px; }
+.sr-rec-card.savings { background: var(--green-50); border: 1px solid rgba(58, 180, 74, 0.25); }
+.sr-rec-card.incentives { background: var(--blue-50); border: 1px solid rgba(26, 79, 144, 0.15); }
+.sr-rec-head { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.sr-rec-head svg { width: 20px; height: 20px; }
+.sr-rec-card.savings .sr-rec-head { color: var(--green-700); }
+.sr-rec-card.incentives .sr-rec-head { color: var(--blue-700); }
+.sr-rec-head span { font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: -0.01em; }
+.sr-rec-big {
+  font-family: var(--display); font-weight: 500; font-size: 40px; letter-spacing: -0.035em;
+  line-height: 1; margin-bottom: 6px;
+}
+.sr-rec-card.savings .sr-rec-big { color: var(--green-700); }
+.sr-rec-card.incentives .sr-rec-big { color: var(--blue-700); }
+.sr-rec-big.unit { font-size: 16px; color: var(--gray-600); font-weight: 400; margin-left: 6px; }
+.sr-rec-sub { font-size: 13px; color: var(--gray-600); margin-bottom: 16px; }
+.sr-rec-divider { border-top: 1px dashed rgba(0,0,0,0.08); padding-top: 14px; margin-top: 14px; }
+.sr-rec-divider strong { font-family: var(--display); font-weight: 600; font-size: 13px; color: var(--ink); display: block; margin-bottom: 4px; }
+.sr-rec-divider.val { font-family: var(--display); font-weight: 600; font-size: 22px; letter-spacing: -0.02em; }
+.sr-rec-card.savings.sr-rec-divider.val { color: var(--green-700); }
+.sr-rec-divider.foot { font-size: 11px; color: var(--gray-600); margin-top: 4px; }
+.sr-rec-link { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-700); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; }
+.sr-rec-link:hover { color: var(--blue-900); }
+.sr-why-matters { padding-top: 40px; border-top: 1px solid var(--gray-100); }
+.sr-why-matters h3 { font-family: var(--display); font-weight: 600; font-size: 20px; color: var(--blue-700); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.02em; }
+.sr-wm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--gray-200); padding-top: 32px; }
+.sr-wm-card {
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--gray-200);
+  border-radius: 0;
+  padding: 0 24px;
+  text-align: left;
+}
+.sr-wm-card:last-child { border-right: none; padding-right: 0; }
+.sr-wm-card:first-child { padding-left: 0; }
+.sr-wm-icon {
+  width: 32px; height: 32px;
+  background: transparent; color: var(--green-500);
+  border-radius: 0;
+  display: flex; align-items: center; justify-content: flex-start;
+  margin: 0 0 12px;
+}
+.sr-wm-icon svg { width: 22px; height: 22px; }
+.sr-wm-card p { font-size: 14px; line-height: 1.55; color: var(--gray-700); margin: 0; }
+.sr-wm-card strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 720px) {
+  .sr-wm-grid { grid-template-columns: 1fr; padding-top: 0; }
+  .sr-wm-card { padding: 22px 0; border-right: none; border-bottom: 1px solid var(--gray-100); }
+  .sr-wm-card:last-child { border-bottom: none; }
+}
+
+/* Page 4 — commitment */
+.sr-commit { text-align: center; margin-bottom: 40px; }
+.sr-commit-icon { margin-bottom: 20px; display: inline-flex; }
+.sr-commit-icon svg { width: 96px; height: 96px; }
+.sr-commit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-bottom: 40px; border-top: 1px solid var(--gray-200); padding-top: 36px; }
+.sr-commit-card { background: transparent; border: none; border-right: 1px solid var(--gray-200); border-radius: 0; padding: 0 28px; }
+.sr-commit-card:last-child { border-right: none; }
+.sr-commit-card:first-child { padding-left: 0; }
+.sr-commit-card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.sr-commit-card-head-icon {
+  width: 28px; height: 28px;
+  background: transparent; color: var(--green-500);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+}
+.sr-commit-card-head-icon svg { width: 20px; height: 20px; }
+.sr-commit-card-head span { font-family: var(--display); font-weight: 600; font-size: 16px; color: var(--ink); letter-spacing: -0.005em; }
+.sr-commit-card p { font-size: 14px; line-height: 1.55; color: var(--gray-700); margin: 0; }
+@media (max-width: 720px) {
+  .sr-commit-grid { grid-template-columns: 1fr; border-top: 1px solid var(--gray-200); }
+  .sr-commit-card { padding: 22px 0; border-right: none; border-bottom: 1px solid var(--gray-100); }
+  .sr-commit-card:last-child { border-bottom: none; }
+}
+.sr-trust { background: var(--gray-50); border-radius: 16px; padding: 32px; }
+.sr-trust-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px dashed var(--gray-200); }
+.sr-trust-stat { text-align: center; }
+.sr-trust-stat-val { font-family: var(--display); font-weight: 500; font-size: 36px; color: var(--green-500); letter-spacing: -0.03em; line-height: 1; margin-bottom: 4px; }
+.sr-trust-stat-label { font-size: 12px; color: var(--gray-600); }
+.sr-trust-flow { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
+.sr-trust-flow-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.sr-trust-flow-item svg { color: var(--green-700); }
+.sr-trust-flow-item span { font-family: var(--display); font-weight: 500; font-size: 13px; color: var(--ink); }
+.sr-trust-flow-sep { color: var(--gray-400); }
+.sr-disclaimer {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 12px;
+  color: var(--gray-400);
+  line-height: 1.6;
+  text-align: center;
+  padding: 28px 20px 0;
+  border-top: 1px solid var(--gray-100);
+  margin-top: 40px;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sr-disclaimer strong { font-family: var(--display); font-style: normal; font-weight: 600; color: var(--gray-800); }
+
+/* Note about sample */
+.sr-note {
+  background: linear-gradient(135deg, rgba(26, 79, 144, 0.04), rgba(58, 180, 74, 0.04));
+  border: 1px solid rgba(26, 79, 144, 0.12);
+  border-radius: 16px;
+  padding: 24px 28px;
+  max-width: 820px;
+  margin: 0 auto 40px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.sr-note svg { flex-shrink: 0; color: var(--blue-700); margin-top: 2px; }
+.sr-note-text { font-size: 14px; line-height: 1.6; color: var(--gray-800); }
+.sr-note-text strong { font-weight: 600; color: var(--ink); }
+.sr-note-text em { font-family: var(--serif); font-style: italic; color: var(--blue-700); }
+
+@media (max-width: 900px) {.sr-page { padding: 40px 32px; }
+.sr-grade-row { grid-template-columns: 1fr; gap: 32px; }
+.sr-longterm-tiles { grid-template-columns: 1fr; }
+.sr-roadmap-bridge { grid-template-columns: 1fr; gap: 12px; }
+.sr-roadmap-arrow { transform: rotate(90deg); justify-self: center; }
+.sr-rec-grid { grid-template-columns: 1fr; }
+.sr-wm-grid { grid-template-columns: 1fr; }
+.sr-commit-grid { grid-template-columns: 1fr; }
+.sr-trust-stats { grid-template-columns: 1fr; }
+.sr-growth-row { grid-template-columns: 48px 1fr 64px; gap: 10px; }
+}
+@media (max-width: 480px) {
+  .sr-stage { padding: 40px 0 80px; }
+  .sr-page { padding: 32px 20px; border-radius: 14px; }
+  .sr-page-label { left: 20px; }
+  .sr-page-head { padding-bottom: 22px; margin-bottom: 28px; }
+  .sr-page-meta { text-align: left; }
+  .sr-cost-card, .sr-note { padding: 22px; }
+  .sr-gauge { width: 180px; height: 108px; }
+  .sr-gauge-letter { font-size: 44px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="nav">
+  <a href="index.html" class="brand"><img src="logo.png" alt="ProFusion Home Solutions"></a>
+  <ul class="nav-links">
+<li class="has-dropdown">
+      <a href="#">About <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="about-us.html">About Us</a>
+        <a href="our-customers.html">Our Customers</a>
+        <a href="for-installers.html">For Installers</a>
+        <a href="contact.html">Contact Us</a></div>
+    </li>
+    <li><a href="index.html#map">Service Area</a></li>
+    <li class="has-dropdown">
+      <a href="#">Programs <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="categories/solar.html">Solar</a>
+        <a href="categories/heating-cooling.html">Heating &amp; Cooling</a>
+        <a href="categories/insulation.html">Insulation</a>
+        <a href="categories/windows-doors.html">Windows &amp; Doors</a>
+        <a href="categories/energy-storage.html">Energy Storage</a></div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Learn <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="index.html#idx2Score"><span class="simple-dropdown-eyebrow">On homepage</span>The Score</a>
+        <a href="index.html#how"><span class="simple-dropdown-eyebrow">On homepage</span>How it works</a>
+        <div class="simple-dropdown-divider" aria-hidden="true"></div>
+        <a href="how-our-score-guides-you.html">How our Score guides you</a>
+        <a href="sample-report.html">See a sample report</a>
+        <a href="our-installers.html">Who we match you with</a>
+        <a href="2026-changes.html">What changed in 2026</a></div>
+    </li>
+    <li><a href="get-my-score.html" class="nav-cta">Get my report</a></li>
+  </ul>
+</nav>
+
+<div class="container breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="sep">/</span>
+  <span class="current">Sample report</span></div>
+
+<!-- Hero -->
+<section class="sr-hero">
+  <div class="container">
+    <div class="sr-hero-inner">
+      <span class="idx2-eyebrow">Walkthrough &middot; A real Worcester, MA homeowner</span>
+      <h1 class="sr-h1">This is what <em>yours</em> will look like.</h1>
+      <p class="sr-lede">
+        Every Home Efficiency Score arrives as a four-section report, your grade, the reasoning behind it, a prioritized upgrade plan, and our commitment to you. Here's a representative example. Personal details are blurred for privacy; everything else is exactly what you'd receive.
+      </p>
+      <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: center; margin-top: 8px;">
+        <a href="get-my-score.html" class="idx2-cta">Get my report
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+            <path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="how-our-score-guides-you.html" class="idx2-link">How the Score guides you
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+            <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a></div></div></div>
+</section>
+<!-- Sample report homeowner photo -->
+<section style="padding: 0 0 40px;">
+  <div class="container-narrow">
+    <figure class="aspect-wide" style="border-radius: 24px; overflow: hidden; border: 1px solid var(--gray-100); margin: 0;">
+      <img src="images/sample-report-homeowner.png" alt="A homeowner sitting at their kitchen table with the printed Home Efficiency Score report in front of them, pointing to a section, mug of coffee and natural light" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;"></figure></div>
+</section>
+
+
+<!-- Stage with the 4 report pages -->
+<section class="sr-stage">
+  <div class="container-narrow">
+
+    <div class="sr-note">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      <div class="sr-note-text">
+        <strong>About this sample.</strong> The structure and presentation below mirror the report every ProFusion homeowner receives. Homeowner <em>name and address are blurred</em>. Specific grade bands, point weights, and dollar figures have been generalized, your real report is customized to your home, your utility, and your state's 2026 rebate stack.</div></div>
+
+    <!-- ═══════════ PAGE 1: OVERALL GRADE + COSTS ═══════════ -->
+    <div class="sr-page">
+      <div class="sr-page-label">Page 1 of 4</div>
+      <div class="sr-page-head">
+        <div class="sr-page-brand">
+          <img src="logo.png" alt="ProFusion Home Solutions"></div>
+        <div class="sr-page-meta">
+          <div>Published</div>
+          <strong>March 12, 2026</strong>
+          <div style="margin-top: 10px;">Report for</div>
+          <strong class="sr-blur">Karen W Havener</strong>
+          <div class="sr-blur" style="margin-top: 4px;">97 Puritan Ave, Worcester, MA 01604</div></div></div>
+
+      <h2>Your Custom Home Energy Report</h2>
+
+      <div class="sr-grade-row">
+        <div class="sr-grade-wrap">
+          <div class="sr-grade-label">Your Overall Grade</div>
+          <div class="sr-grade-sub">Based on your home energy assessment</div>
+          <div class="sr-gauge">
+            <svg viewBox="0 0 220 130">
+              <path d="M 20 120 A 90 90 0 0 1 65 42" fill="none" stroke="#EF4444" stroke-width="16" stroke-linecap="round"/>
+              <path d="M 65 42 A 90 90 0 0 1 110 30" fill="none" stroke="#FB923C" stroke-width="16" stroke-linecap="round"/>
+              <path d="M 110 30 A 90 90 0 0 1 155 42" fill="none" stroke="#FACC15" stroke-width="16" stroke-linecap="round"/>
+              <path d="M 155 42 A 90 90 0 0 1 200 120" fill="none" stroke="#3AB44A" stroke-width="16" stroke-linecap="round"/>
+              <circle cx="110" cy="95" r="36" fill="#3AB44A"/>
+            </svg>
+            <div class="sr-gauge-letter" style="color: white;">B</div></div></div>
+        <div class="sr-cost-card">
+          <div class="sr-cost-title">Your Current Annual Energy Costs</div>
+          <div class="sr-cost-big"><span class="sr-blur">$4,500</span> <span class="unit">per year</span></div>
+          <div class="sr-cost-grid">
+            <div class="sr-cost-grid-item">
+              <div class="sr-cost-grid-label">Electricity</div>
+              <div class="sr-cost-grid-val sr-blur">$2,100</div></div>
+            <div class="sr-cost-grid-item">
+              <div class="sr-cost-grid-label">Heating</div>
+              <div class="sr-cost-grid-val sr-blur">$2,400</div></div></div></div></div>
+
+      <div class="sr-longterm-head">
+        <h3>Understanding Long-Term Costs</h3>
+        <p>Energy costs increase over time. Here's what you could expect over the next 25 years.</p></div>
+
+      <div class="sr-longterm-tiles">
+        <div class="sr-longterm-tile today">
+          <div class="sr-longterm-tile-label">Today</div>
+          <div class="sr-longterm-tile-val sr-blur">$4,500</div>
+          <div class="sr-longterm-tile-foot">per year</div></div>
+        <div class="sr-longterm-tile mid">
+          <div class="sr-longterm-tile-label">Year 25</div>
+          <div class="sr-longterm-tile-val">$15K+</div>
+          <div class="sr-longterm-tile-foot">per year</div></div>
+        <div class="sr-longterm-tile full">
+          <div class="sr-longterm-tile-label">25-Year Total</div>
+          <div class="sr-longterm-tile-val">$220K+</div>
+          <div class="sr-longterm-tile-foot">without upgrades</div></div></div>
+
+      <div class="sr-growth">
+        <h4>Cost Growth Over Time</h4>
+        <div class="sr-growth-row"><div class="sr-growth-year">Year 1</div><div class="sr-growth-bar"><div class="sr-growth-bar-fill" style="width: 30%;"></div></div><div class="sr-growth-val">$4.5K</div></div>
+        <div class="sr-growth-row"><div class="sr-growth-year">Year 6</div><div class="sr-growth-bar"><div class="sr-growth-bar-fill" style="width: 39%;"></div></div><div class="sr-growth-val">$5.8K</div></div>
+        <div class="sr-growth-row"><div class="sr-growth-year">Year 11</div><div class="sr-growth-bar"><div class="sr-growth-bar-fill" style="width: 50%;"></div></div><div class="sr-growth-val">$7.5K</div></div>
+        <div class="sr-growth-row"><div class="sr-growth-year">Year 16</div><div class="sr-growth-bar"><div class="sr-growth-bar-fill" style="width: 64%;"></div></div><div class="sr-growth-val">$9.6K</div></div>
+        <div class="sr-growth-row"><div class="sr-growth-year">Year 21</div><div class="sr-growth-bar"><div class="sr-growth-bar-fill" style="width: 83%;"></div></div><div class="sr-growth-val">$12.4K</div></div>
+        <div class="sr-growth-row"><div class="sr-growth-year">Year 25</div><div class="sr-growth-bar"><div class="sr-growth-bar-fill" style="width: 100%;"></div></div><div class="sr-growth-val">$15.2K</div></div>
+        <div class="sr-growth-foot">Based on average annual rate increase · Massachusetts</div></div></div>
+
+    <!-- ═══════════ PAGE 2: WHY THIS SCORE + ROADMAP ═══════════ -->
+    <div class="sr-page">
+      <div class="sr-page-label">Page 2 of 4</div>
+      <div class="sr-page-head">
+        <div class="sr-page-brand">
+          <img src="logo.png" alt="ProFusion Home Solutions"></div>
+        <div class="sr-page-meta">
+          <div>Section</div>
+          <strong>Why This Score · Upgrade Roadmap</strong></div></div>
+
+      <h2>Why This Score</h2>
+      <p class="sr-why">
+        Your home scores the way it does because of a combination of envelope performance, mechanical systems, and on-site generation capacity, weighted against your climate zone and utility mix. <em>We don't publish the exact weights</em> (to keep the score honest and tamper-resistant), but your full report breaks down which areas are dragging the grade down and which are already doing well. Below: where you are today, and where a realistic set of upgrades can take you.
+      </p>
+
+      <h2>Your Upgrade Roadmap</h2>
+
+      <div class="sr-roadmap-card">
+        <div class="sr-roadmap-badge-wrap">
+          <div class="sr-roadmap-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            Points available to gain</div></div>
+
+        <div class="sr-roadmap-bridge">
+          <div class="sr-roadmap-grade">
+            <div class="label">Current</div>
+            <div class="val">Grade B <span class="sub">(current pts)</span></div></div>
+          <div class="sr-roadmap-arrow">
+            <svg width="36" height="24" viewBox="0 0 36 24" fill="none"><path d="M2 12h30M24 4l8 8-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="sr-roadmap-grade right">
+            <div class="label">Target</div>
+            <div class="val">Grade A <span class="sub">(target pts)</span></div></div></div>
+
+        <div class="sr-scale">
+          <div class="sr-scale-dots">
+            <div class="sr-scale-dot">D</div>
+            <div class="sr-scale-dot">C</div>
+            <div class="sr-scale-dot here">B</div>
+            <div class="sr-scale-dot">A</div></div>
+          <div class="sr-scale-track"><div class="sr-scale-fill" style="width: 72%;"></div></div>
+          <div class="sr-scale-caption">You are here</div></div></div></div>
+
+    <!-- ═══════════ PAGE 3: RECOMMENDED ACTIONS ═══════════ -->
+    <div class="sr-page">
+      <div class="sr-page-label">Page 3 of 4</div>
+      <div class="sr-page-head">
+        <div class="sr-page-brand">
+          <img src="logo.png" alt="ProFusion Home Solutions"></div>
+        <div class="sr-page-meta">
+          <div>Section</div>
+          <strong>Recommended Actions · Incentives · Why It Matters</strong></div></div>
+
+      <h2>Recommended Actions</h2>
+
+      <div class="sr-rec-grid">
+        <div class="sr-rec-card savings">
+          <div class="sr-rec-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round"/></svg>
+            <span>Potential Savings</span></div>
+          <div class="sr-rec-big sr-blur">$2,400 <span class="unit">/ year</span></div>
+          <div class="sr-rec-sub">Annual savings after upgrades</div>
+          <div class="sr-rec-divider">
+            <strong>Lifetime Savings (25 years)</strong>
+            <div class="val sr-blur">$70K+</div>
+            <div class="foot">Accounts for annual rate increase</div></div></div>
+
+        <div class="sr-rec-card incentives">
+          <div class="sr-rec-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>State Incentives Available</span></div>
+          <p style="font-size: 14px; color: var(--gray-800); line-height: 1.55; margin-bottom: 10px;">
+            Massachusetts (2025-2026): multiple rebate programs available for heat pumps, weatherization, solar, and energy storage, stacked together by program and layered with your utility's offering.
+          </p>
+          <p style="font-size: 12px; color: var(--gray-600); margin-bottom: 10px;">State: MA</p>
+          <a href="states/massachusetts.html" class="sr-rec-link">
+            See your Massachusetts stack
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5h7M6 1l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </a></div></div>
+
+      <div class="sr-why-matters">
+        <h3>Why This Matters</h3>
+        <div class="sr-wm-grid">
+          <div class="sr-wm-card">
+            <div class="sr-wm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round"/></svg></div>
+            <p>Save on your <strong>utility bills</strong> every month, year over year, inflation-protected.</p></div>
+          <div class="sr-wm-card">
+            <div class="sr-wm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8M13 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <p>Increase your <strong>home value</strong>, efficient homes sell faster and for more.</p></div>
+          <div class="sr-wm-card">
+            <div class="sr-wm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <p>Reduce your <strong>environmental footprint</strong>, every upgrade counts toward net-zero.</p></div></div></div></div>
+
+    <!-- ═══════════ PAGE 4: COMMITMENT + TRUST ═══════════ -->
+    <div class="sr-page">
+      <div class="sr-page-label">Page 4 of 4</div>
+      <div class="sr-page-head">
+        <div class="sr-page-brand">
+          <img src="logo.png" alt="ProFusion Home Solutions"></div>
+        <div class="sr-page-meta">
+          <div>Section</div>
+          <strong>Our Commitment · About ProFusion</strong></div></div>
+
+      <div class="sr-commit">
+        <div class="sr-commit-icon">
+          <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="32" r="14" fill="#3AB44A"/>
+            <rect x="22" y="46" width="36" height="38" rx="4" fill="#3AB44A"/>
+            <circle cx="80" cy="32" r="14" fill="#1A4F90"/>
+            <rect x="62" y="46" width="36" height="38" rx="4" fill="#1A4F90"/>
+            <path d="M45 70 L75 70" stroke="white" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="80" cy="22" r="6" fill="#FACC15"/>
+          </svg></div>
+        <h2>Our Commitment to You</h2></div>
+
+      <div class="sr-commit-grid">
+        <div class="sr-commit-card">
+          <div class="sr-commit-card-head">
+            <div class="sr-commit-card-head-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+            <span>Screening</span></div>
+          <p>We connect you only with licensed, insured, and highly rated local contractors specializing in solar, HVAC, insulation, and windows.</p></div>
+        <div class="sr-commit-card">
+          <div class="sr-commit-card-head">
+            <div class="sr-commit-card-head-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5 3.5 9 9 11 5.5-2 9-6 9-11V7l-9-5z"/></svg></div>
+            <span>Quality Assurance</span></div>
+          <p>Installers follow ENERGY STAR&reg; and state rebate program standards, ensuring your upgrades qualify for maximum savings.</p></div>
+        <div class="sr-commit-card">
+          <div class="sr-commit-card-head">
+            <div class="sr-commit-card-head-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span>Performance Tracking</span></div>
+          <p>We provide follow-up support to help track your energy savings, rebate claims, and long-term performance.</p></div></div>
+
+      <div class="sr-trust">
+        <div style="font-family: var(--display); font-weight: 600; color: var(--blue-700); text-align: center; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.02em;">ProFusion Home Solutions</div>
+        <div class="sr-trust-stats">
+          <div class="sr-trust-stat">
+            <div class="sr-trust-stat-val">8+</div>
+            <div class="sr-trust-stat-label">years of experience</div></div>
+          <div class="sr-trust-stat">
+            <div class="sr-trust-stat-val">7,500+</div>
+            <div class="sr-trust-stat-label">completed projects</div></div>
+          <div class="sr-trust-stat">
+            <div class="sr-trust-stat-val">4.8</div>
+            <div class="sr-trust-stat-label">average rating</div></div></div>
+        <div class="sr-trust-flow">
+          <div class="sr-trust-flow-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+            <span>Home Assessment</span></div>
+          <div class="sr-trust-flow-sep"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M1 6h16M13 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div class="sr-trust-flow-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span>Match with Installer</span></div>
+          <div class="sr-trust-flow-sep"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M1 6h16M13 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div class="sr-trust-flow-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Track Savings</span></div></div></div>
+
+</div></div>
+</section>
+
+<!-- CTA strip -->
+<section class="cta-strip">
+  <div class="container-narrow">
+    <h3>Your report. Your <em>rebate stack</em>. Your next step.</h3>
+    <p>Sixty seconds to generate. Free forever. No obligation, whether you move forward with upgrades or not, the report is yours.</p>
+    <a href="index.html#cta" class="btn btn-white">
+      Get my report
+      <svg width="16" height="14" viewBox="0 0 16 14" fill="none">
+        <path d="M1 7h13M9 1l5 6-5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a></div>
+</section>
+
+<!-- MINIMAL STATES STRIP -->
+<div class="footer-states-strip" style="background: white; border-top: 1px solid var(--gray-100); padding: 28px 0;">
+  <div class="container">
+    <div class="footer-states-inner" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+      <div class="footer-states-label" style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); font-weight: 500;">Now serving</div>
+      <div class="footer-states-list" style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <a href="states/massachusetts.html" class="footer-state-pill" style="--state-mini-accent: #1A4F90;"><span class="abbr">MA</span> Massachusetts</a>
+        <a href="states/rhode-island.html" class="footer-state-pill" style="--state-mini-accent: #0A4A7E;"><span class="abbr">RI</span> Rhode Island</a>
+        <a href="states/maine.html" class="footer-state-pill" style="--state-mini-accent: #2E9A3D;"><span class="abbr">ME</span> Maine</a>
+        <a href="states/new-hampshire.html" class="footer-state-pill" style="--state-mini-accent: #2E6DB8;"><span class="abbr">NH</span> New Hampshire</a>
+        <a href="states/vermont.html" class="footer-state-pill" style="--state-mini-accent: #3AB44A;"><span class="abbr">VT</span> Vermont</a>
+        <a href="states/connecticut.html" class="footer-state-pill" style="--state-mini-accent: #0A2E5C;"><span class="abbr">CT</span> Connecticut</a></div></div></div></div>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-offices">
+      <h4 class="footer-offices-head">Visit us</h4>
+      <div class="footer-offices-row is-pair">
+        <article class="footer-office">
+          <div class="footer-office-map">
+            <iframe
+              src="https://maps.google.com/maps?q=24+Spice+Street+Boston+MA+02129&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="Map of ProFusion Boston office, 24 Spice Street, Boston, MA"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="footer-office-meta">
+            <div class="footer-office-tag">New England</div>
+            <div class="footer-office-name">Boston, MA</div>
+            <div class="footer-office-addr">24 Spice Street<br>Boston, MA 02129</div>
+            <div class="footer-office-phone"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+13393304289">+1 (339) 330-4289</a></div>
+            <a class="footer-office-link" href="https://maps.google.com/?q=24+Spice+Street+Boston+MA+02129" target="_blank" rel="noopener">
+              Open in Maps
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a></div>
+        </article>
+        <article class="footer-office">
+          <div class="footer-office-map">
+            <iframe
+              src="https://maps.google.com/maps?q=505+S+Broadway+Hicksville+NY+11801&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="Map of ProFusion Hicksville office, 505 S Broadway, Hicksville, NY"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="footer-office-meta">
+            <div class="footer-office-tag">Head Office</div>
+            <div class="footer-office-name">Hicksville, NY</div>
+            <div class="footer-office-addr">505 S Broadway<br>Hicksville, NY 11801</div>
+            <div class="footer-office-phone"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+15166133990">+1 (516) 613-3990</a></div>
+            <a class="footer-office-link" href="https://maps.google.com/?q=505+S+Broadway+Hicksville+NY+11801" target="_blank" rel="noopener">
+              Open in Maps
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a></div>
+        </article></div></div>
+
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img src="logo.png" alt="ProFusion Home Solutions">
+        <p style="font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--green-400); margin-bottom: 14px;">Built for the <em style="font-family: var(--serif); font-style: italic;">house</em>. Felt in the <em style="font-family: var(--serif); font-style: italic;">home</em>.</p>
+        <p>The Home Efficiency Score, mapped to your zip, <em>every state, every rebate</em>. Now serving 11 states. <em>Going nationwide</em>.</p></div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="categories/solar.html">Solar</a></li>
+          <li><a href="categories/heating-cooling.html">Heating &amp; Cooling</a></li>
+          <li><a href="categories/insulation.html">Insulation</a></li>
+          <li><a href="categories/windows-doors.html">Windows &amp; Doors</a></li>
+          <li><a href="categories/energy-storage.html">Energy Storage</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="how-our-score-guides-you.html">How our Score guides you</a></li>
+          <li><a href="sample-report.html">See a sample report</a></li>
+          <li><a href="our-installers.html">Who we match you with</a></li>
+          <li><a href="2026-changes.html">What changed in 2026</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="get-my-score.html">Get my report</a></li>
+          <li><a href="for-installers.html">For Installers</a></li>
+        </ul></div></div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 ProFusion Home Solutions LLC</div>
+      <div>Now serving 11 states &middot; A+ BBB &middot; Fully Insured</div></div></div>
+</footer>
+<script>
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+}
+</script>
+<script defer src="mobile-nav.js"></script>
+</body>
+</html>

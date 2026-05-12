@@ -1,0 +1,17 @@
+# ProFusion Home Solutions · robots.txt
+# Built for the house. Felt in the home.
+
+User-agent: *
+Allow: /
+
+# Hidden from navigation — only reachable via direct URL
+Disallow: /careers.html
+
+# Internal / archived work
+Disallow: /archive/
+Disallow: /.impeccable/
+
+# AI scrapers · allow for index but rate-limit common abuse paths
+Crawl-delay: 1
+
+Sitemap: https://profusion.solutions/sitemap.xml

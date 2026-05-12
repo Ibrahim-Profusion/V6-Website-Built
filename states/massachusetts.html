@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Massachusetts Rebates · ProFusion Home Efficiency</title>
+<meta name="description" content="Massachusetts is one of the most rebate-friendly states in the country. MassSave, Mass CEC, and the $25,000 HEAT Loan combine to make electrification surprisingly affordable: heat pump rebates up to $8,500 and 75-100% coverage of insulation work.">
+<link rel="icon" type="image/png" href="../images/Favicon.png">
+<link rel="apple-touch-icon" href="../images/Favicon.png">
+<link rel="canonical" href="https://profusion.solutions/states/massachusetts.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ProFusion Home Solutions">
+<meta property="og:title" content="Massachusetts Rebates · ProFusion Home Efficiency">
+<meta property="og:description" content="Massachusetts is one of the most rebate-friendly states in the country. MassSave, Mass CEC, and the $25,000 HEAT Loan combine to make electrification surprisingly affordable: heat pump rebates up to $8,500 and 75-100% coverage of insulation work.">
+<meta property="og:url" content="https://profusion.solutions/states/massachusetts.html">
+<meta property="og:image" content="https://profusion.solutions/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Massachusetts Rebates · ProFusion Home Efficiency">
+<meta name="twitter:description" content="Massachusetts is one of the most rebate-friendly states in the country. MassSave, Mass CEC, and the $25,000 HEAT Loan combine to make electrification surprisingly affordable: heat pump rebates up to $8,500 and 75-100% coverage of insulation work.">
+<meta name="twitter:image" content="https://profusion.solutions/images/social-card.png">
+<meta name="twitter:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="theme-color" content="#0A1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>.program-card-link { text-decoration: none; color: var(--ink); display: block; margin-bottom: 32px; }
+.program-card-link:hover .program-block { transform: translateY(-3px); box-shadow: var(--shadow-lg); transition: transform 0.3s, box-shadow 0.3s; }
+.program-card-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px dashed var(--gray-100); }
+.program-arrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--display); font-size: 14px; font-weight: 500; letter-spacing: 0; color: var(--state-accent, var(--blue-700)); }
+.program-card-link:hover .program-arrow { gap: 12px; transition: gap 0.2s; }
+.program-card-link:hover .program-arrow svg { transform: translateX(4px); transition: transform 0.2s; }
+.program-card-stats { display: flex; gap: 8px; font-family: var(--mono); font-size: 11px; font-feature-settings: "tnum"; letter-spacing: 0.04em; color: var(--gray-400); font-weight: 500; }
+.program-category-badge { display: inline-block; padding: 5px 12px; border-radius: 100px; font-family: var(--display); font-size: 12px; letter-spacing: 0; font-weight: 500; margin-bottom: 12px; background: var(--blue-50); color: var(--blue-700); }
+.program-category-badge.green { background: var(--green-50); color: var(--green-700); }
+
+/* Per-card category illustration — top-left of card, hairline-stroke SVG.
+   Quiet at rest, deepens on hover to give each card its own micro-moment. */
+.program-card-icon {
+  width: 64px; height: 64px;
+  color: var(--state-accent, var(--blue-700));
+  opacity: 0.32;
+  margin-bottom: 24px;
+  display: block;
+  transition: opacity 0.3s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1));
+}
+.program-card-link:hover .program-card-icon { opacity: 0.85; }
+@media (prefers-reduced-motion: reduce) {
+  .program-card-icon { transition: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PROGRAM LIST — VERTICAL FLOW (story-driven cards)
+   - Flagship stays as a full card up top (earned weight, only one on the page).
+   - The other 4 are horizontal "row cards" stacked vertically below.
+   - No more 2-up bento grid. Eye flows top-to-bottom in one column.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.state-programs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Flagship card — keeps the existing full-card treatment */
+.state-programs-list .program-card-link.is-flagship .program-block { padding: 56px; }
+.state-programs-list .program-card-link.is-flagship .program-card-icon { width: 80px; height: 80px; }
+.state-programs-list .program-card-link.is-flagship .program-title { font-size: clamp(28px, 3.6vw, 38px); }
+.flagship-tag {
+  display: inline-block;
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--state-accent, var(--blue-700));
+  background: var(--state-tint, rgba(26, 79, 144, 0.08));
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+/* Adds a slight bottom margin between flagship and the row-card stack below */
+.state-programs-list .program-card-link.is-flagship { margin-bottom: 16px; }
+
+/* Row cards — horizontal layout for the four non-flagship programs.
+   Layout: icon | content (badge + title + tagline) | max amount | arrow
+   Replaces the previous 2-up grid card body entirely. */
+.program-block-row {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 16px;
+  padding: 22px 28px;
+  display: grid;
+  grid-template-columns: 56px 1fr auto 24px;
+  gap: 24px;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(10, 16, 32, 0.04);
+  transition: transform 0.25s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1)),
+              box-shadow 0.25s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1)),
+              border-color 0.25s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1));
+}
+.program-card-link:hover .program-block-row {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px -8px rgba(10, 16, 32, 0.10), 0 1px 2px rgba(10, 16, 32, 0.04);
+  border-color: var(--gray-200);
+}
+
+/* (Row cards skip the gradient top-bar inherited from .program-block —
+   they get a category-colored left edge instead, defined further below.) */
+
+.program-block-row .program-card-icon {
+  width: 44px; height: 44px;
+  margin-bottom: 0;
+  opacity: 0.6;
+  transition: opacity 0.25s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1));
+}
+.program-card-link:hover .program-block-row .program-card-icon { opacity: 0.95; }
+
+.program-row-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;             /* allow text truncation if needed */
+}
+.program-row-content .program-category-badge {
+  align-self: flex-start;
+  margin-bottom: 2px;
+}
+.program-row-content .program-title {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.018em;
+  color: var(--ink);
+  margin-bottom: 0;
+}
+.program-row-content .program-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14.5px;
+  line-height: 1.4;
+  color: var(--gray-600);
+}
+
+.program-block-row .program-max {
+  text-align: right;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  align-self: center;
+}
+.program-block-row .program-max-amount {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--green-700);
+}
+.program-block-row .program-max-label {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-top: 4px;
+}
+
+.program-row-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; height: 24px;
+  color: var(--gray-400);
+  transition: transform 0.25s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1)),
+              color 0.25s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1));
+}
+.program-card-link:hover .program-row-arrow {
+  transform: translateX(3px);
+  color: var(--state-accent, var(--blue-700));
+}
+
+@media (max-width: 720px) {
+  .program-block-row {
+    grid-template-columns: 44px 1fr;
+    gap: 18px;
+    padding: 20px 22px;
+  }
+  .program-block-row .program-max,
+  .program-block-row .program-row-arrow {
+    grid-column: 2;
+    text-align: left;
+    align-self: flex-start;
+    margin-top: 4px;
+  }
+  .program-block-row .program-max-amount { font-size: 18px; }
+  .program-block-row .program-row-arrow { display: none; }
+
+  /* Flagship card · tighter padding so it doesn't feel cramped on phones.
+     Default is 56px; phones get 28-32px so content has room to breathe. */
+  .state-programs-list .program-card-link.is-flagship .program-block {
+    padding: 32px 24px;
+  }
+  .state-programs-list .program-card-link.is-flagship .program-card-icon {
+    width: 56px; height: 56px;
+  }
+}
+
+/* Rate-hedge chart · boost SVG text on narrow viewports so axis labels and
+   line callouts don't shrink into illegibility when the SVG scales down.
+   The viewBox is 800 units wide; at 380px viewport, every viewBox unit
+   renders at 0.475px, so default 10-11px fonts become ~5px. We scale up. */
+@media (max-width: 720px) {
+  .rate-hedge-svg .axis-label {
+    font-size: 16px;
+    letter-spacing: 0.04em;
+  }
+  .rate-hedge-svg .util-label {
+    font-size: 16px;
+  }
+  .rate-hedge-svg .solar-label {
+    font-size: 17px;
+  }
+  .rate-hedge-svg .solar-label-credit {
+    font-size: 14px;
+  }
+  .rate-hedge-svg .hedge-wedge-label {
+    font-size: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .rate-hedge-svg .axis-label,
+  .rate-hedge-svg .util-label {
+    font-size: 19px;
+  }
+  .rate-hedge-svg .solar-label {
+    font-size: 20px;
+  }
+  .rate-hedge-svg .solar-label-credit {
+    font-size: 17px;
+  }
+  .rate-hedge-svg .hedge-wedge-label {
+    font-size: 18px;
+  }
+}
+.state-hero-visual { position: relative; aspect-ratio: 4/5; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 48px -16px rgba(10, 16, 32, 0.18), 0 1px 2px rgba(10, 16, 32, 0.06); background: var(--gray-50); }
+.state-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.state-float-pill { position: absolute; top: 20px; right: 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); padding: 10px 16px; border-radius: 100px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--state-accent); box-shadow: var(--shadow-sm); z-index: 2; }
+:root { --state-accent: #1A4F90; --state-tint: rgba(26, 79, 144, 0.08); }
+
+/* State programs section — head + cards living together */
+.state-programs-head { max-width: 760px; }
+
+/* State worked-example — a 2-column set piece. The right-side white card
+   carries the visual weight via hairline border and earned shadow.
+   (The page's tonal break lives on the rate-hedge section above.) */
+.state-example {
+  background: white;
+  padding: var(--idx2-section) 0;
+}
+
+/* State-page rate-hedge override — compact 2-column layout. The shared.rate-hedge
+   styles (gray-50 BG, axes, lines) carry over; this tightens vertical real estate
+   and adds a slim "hedge" mono tag inside the header. */
+.rate-hedge.is-state-slim { padding: 56px 0; }
+.rate-hedge.is-state-slim .rate-hedge-2col {
+  max-width: var(--idx2-container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
+  gap: 56px;
+  align-items: center;
+}
+.rate-hedge.is-state-slim .rate-hedge-header { max-width: none; margin-bottom: 0; }
+.rate-hedge.is-state-slim .rate-hedge-chart-card { padding: 24px 28px; }
+.rate-hedge.is-state-slim .rate-hedge-source { font-size: 11px; line-height: 1.5; margin-top: 14px; }
+
+/* Slim hedge tag — the "8¢ flat" insight, mono pill inside the header column.
+   Adds the editorial pull-quote without taking extra vertical real estate. */
+.rate-hedge-tag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 8px 14px;
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 100px;
+  box-shadow: 0 1px 2px rgba(10, 16, 32, 0.04);
+}
+.rate-hedge-tag-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+.rate-hedge-tag-value {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--green-700);
+  font-feature-settings: 'tnum';
+}
+.rate-hedge-tag-value strong { color: var(--green-700); font-weight: 700; }
+/* Override shared italic-serif H2 emphasis with idx2 color-only emphasis */
+.rate-hedge.is-state-slim h2.idx2-h2 em {
+  font-family: var(--display);
+  font-style: normal;
+  font-weight: 600;
+  color: var(--blue-700);
+}
+
+/* Choreographed motion: utility lines draw on as the section enters viewport.
+   This is the page's One Motion Moment, mirroring the homepage's score dial.
+   Solar baselines come in first (0.6s), then utility lines climb on top
+   (0.8s with stagger), then the rate-hedge wedge fades up. */
+.rate-hedge.is-state-slim .util-line,.rate-hedge.is-state-slim .solar-line,.rate-hedge.is-state-slim .solar-line-credit {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.6s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1));
+}
+.rate-hedge.is-state-slim .solar-line { transition-delay: 0.1s; }
+.rate-hedge.is-state-slim .solar-line-credit { transition-delay: 0.1s; }
+.rate-hedge.is-state-slim .util-line:nth-of-type(1) { transition-delay: 0.45s; }
+.rate-hedge.is-state-slim .util-line:nth-of-type(2) { transition-delay: 0.6s; }
+.rate-hedge.is-state-slim .hedge-wedge {
+  opacity: 0;
+  transition: opacity 0.7s ease 1.6s;
+}
+.rate-hedge.is-state-slim .hedge-wedge-label,.rate-hedge.is-state-slim .util-label,.rate-hedge.is-state-slim .solar-label,.rate-hedge.is-state-slim text.solar-label-credit {
+  opacity: 0;
+  transition: opacity 0.5s ease 1.9s;
+}
+.rate-hedge.is-state-slim.is-in-view .util-line,.rate-hedge.is-state-slim.is-in-view .solar-line,.rate-hedge.is-state-slim.is-in-view .solar-line-credit {
+  stroke-dashoffset: 0;
+}
+.rate-hedge.is-state-slim.is-in-view .hedge-wedge,.rate-hedge.is-state-slim.is-in-view .hedge-wedge-label,.rate-hedge.is-state-slim.is-in-view .util-label,.rate-hedge.is-state-slim.is-in-view .solar-label,.rate-hedge.is-state-slim.is-in-view text.solar-label-credit {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rate-hedge.is-state-slim .util-line,.rate-hedge.is-state-slim .solar-line,.rate-hedge.is-state-slim .solar-line-credit { stroke-dashoffset: 0; transition: none; }
+.rate-hedge.is-state-slim .hedge-wedge,.rate-hedge.is-state-slim .hedge-wedge-label,.rate-hedge.is-state-slim .util-label,.rate-hedge.is-state-slim .solar-label,.rate-hedge.is-state-slim text.solar-label-credit { opacity: 1; transition: none; }
+}
+@media (max-width: 1024px) {
+  .rate-hedge.is-state-slim .rate-hedge-2col { grid-template-columns: 1fr; gap: 36px; }
+}
+.state-example-inner {
+  max-width: var(--idx2-container); margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 80px;
+  align-items: center;
+}
+.state-example-prose { max-width: 56ch; }
+.state-example-inline-num {
+  font-family: var(--mono);
+  font-feature-settings: 'tnum';
+  color: var(--gray-800);
+  font-weight: 500;
+}
+
+/* The summary card — white-on-gray-50 contrast, hairline border, one of the
+   two anchored elevations on this page (the other is the hero image). */
+.state-example-card {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 20px;
+  padding: 36px 40px;
+  box-shadow: 0 1px 2px rgba(10, 16, 32, 0.04), 0 1px 3px rgba(10, 16, 32, 0.05);
+}
+.state-example-card-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gray-400);
+  margin-bottom: 22px;
+}
+.state-example-card-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 12px 0;
+  font-family: var(--display); font-size: 15px;
+  color: var(--gray-800);
+}
+.state-example-card-row.is-deduct { color: var(--green-700); }
+.state-example-card-label {
+  font-family: var(--display); font-weight: 400;
+  color: var(--gray-600);
+}
+.state-example-card-row.is-deduct .state-example-card-label {
+  color: var(--green-700);
+  font-weight: 500;
+}
+.state-example-card-num {
+  font-family: var(--mono);
+  font-feature-settings: 'tnum';
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--gray-800);
+}
+.state-example-card-row.is-deduct .state-example-card-num {
+  color: var(--green-700);
+}
+.state-example-card-divider {
+  height: 1px; background: var(--gray-100);
+  margin: 12px 0;
+}
+.state-example-card-final {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 14px 0 18px;
+}
+.state-example-card-final .state-example-card-label {
+  font-family: var(--display); font-weight: 500;
+  font-size: 14px;
+  color: var(--gray-800);
+}
+.state-example-card-num.is-final {
+  font-family: var(--mono);
+  font-feature-settings: 'tnum';
+  font-size: 28px; font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--green-700);     /* this is the "win" — total rebates earned, not a cost */
+}
+
+/* Red counter-stat — "cost of doing nothing", a single tight line for clean
+   contrast with the green net total above. Same red as the rate-hedge chart's
+   utility lines, so color carries the same meaning across the page. */
+.state-example-card-vs {
+  padding: 8px 0 4px;
+  margin-top: -2px;
+  font-family: var(--display); font-weight: 500;
+  font-size: 13.5px; line-height: 1.4;
+  color: #DC2626;
+  text-align: left;
+}
+.state-example-card-vs strong {
+  font-family: var(--mono);
+  font-feature-settings: 'tnum';
+  font-size: 16px; font-weight: 600;
+  letter-spacing: -0.015em;
+  color: #DC2626;
+  margin: 0 2px;
+}
+.state-example-card-foot {
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-family: var(--display); font-size: 13px;
+  line-height: 1.55;
+  color: var(--gray-600);
+  max-width: 36ch;
+}
+.state-example-card-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 18px;
+  font-family: var(--display); font-weight: 500; font-size: 14px;
+  color: var(--state-accent, var(--blue-700));
+  text-decoration: none;
+  padding: 8px 0;
+  transition: gap var(--idx2-quick, 0.22s);
+}
+.state-example-card-cta:hover { gap: 10px; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SCROLLYTELLING REVEAL — the rebate stack builds line-by-line as the
+   section enters the viewport. One choreographed motion moment, mirroring
+   the rate-hedge chart above.
+   - Rows 1-4 fade up sequentially (~0.4s stagger)
+   - Divider draws in
+   - Final number lands with a brief scale pulse
+   - Foot/CTA fade in last
+   - prefers-reduced-motion: respected (everything just shows)
+   ═══════════════════════════════════════════════════════════════════════════ */
+.state-example-card [data-reveal] {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.55s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1)),
+    transform 0.55s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1));
+}
+.state-example-card [data-reveal="1"] { transition-delay: 0.10s; }       /* MassSave rebate */
+.state-example-card [data-reveal="2"] { transition-delay: 0.50s; }       /* Manual J */
+.state-example-card [data-reveal="3"] { transition-delay: 0.90s; }       /* NE Heat Pump */
+.state-example-card [data-reveal="4"] { transition-delay: 1.30s; transform: scaleX(0.4); transform-origin: left; }  /* divider */
+.state-example-card [data-reveal="5"] { transition-delay: 1.60s; }       /* total stacked (green pulse) */
+.state-example-card [data-reveal="6"] { transition-delay: 2.20s; }       /* red counter-stat */
+.state-example-card [data-reveal="7"] { transition-delay: 2.70s; }       /* foot text + CTA */
+
+.state-example.is-revealed .state-example-card [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+/* The final number gets a brief scale pulse as it lands */
+.state-example.is-revealed .state-example-card-num.is-final {
+  animation: state-example-final-pulse 0.7s var(--idx2-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1)) 1.70s both;
+}
+@keyframes state-example-final-pulse {
+  0%   { transform: scale(1); }
+  45%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .state-example-card [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .state-example-card-num.is-final { animation: none !important; }
+}
+
+/* Related-states cross-link — editorial-split layout, no cards.
+   Heading on the left, hairline-separated state list on the right.
+   Pure type, no backgrounds, no rounded corners; the type carries the
+   weight. Bento-grid anti-pattern explicitly avoided. */
+.state-related {
+  padding: var(--idx2-section-tight) 0;
+  border-top: 1px solid var(--gray-100);
+}
+.state-related-inner {
+  max-width: var(--idx2-container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 80px;
+  align-items: start;
+}
+.state-related-head { max-width: none; }
+.state-related-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 48px;
+  border-top: 1px solid var(--gray-100);
+}
+.state-related-link {
+  display: grid;
+  grid-template-columns: 30px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--gray-100);
+  text-decoration: none;
+  color: var(--ink);
+  transition: color 0.2s, transform 0.2s;
+}
+.state-related-link:hover { color: var(--state-accent, var(--blue-700)); transform: translateX(6px); }
+.state-related-abbr {
+  font-family: var(--mono);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--state-accent, var(--blue-700));
+}
+.state-related-name {
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 500;
+}
+.state-related-arrow {
+  width: 14px; height: 14px;
+  color: var(--gray-400);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.state-related-link:hover .state-related-arrow {
+  opacity: 1; transform: translateX(0);
+  color: var(--state-accent, var(--blue-700));
+}
+@media (max-width: 960px) {
+  .state-related-inner { grid-template-columns: 1fr; gap: 32px; }
+.state-related-list { grid-template-columns: 1fr; gap: 0; }
+}
+
+@media (max-width: 960px) {
+  .state-example-inner { grid-template-columns: 1fr; gap: 48px; }
+.state-example-card { padding: 28px 24px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PER-SECTION CHARACTER — fights monochrome flatness below the rate-hedge.
+   Three layered moves:
+   1) Tonal variation by section role (subtle warm/cool tints)
+   2) Worked-example earns an amber "money moment" eyebrow
+   3) Row cards get category-colored left edges (4 distinct accents)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* (1) Tonal variation — each scene gets its own faint tint.
+   The rate-hedge above (gray-50) stays the strongest tonal anchor; these
+   tints are softer so the hierarchy holds. */
+.state-programs { background: #FAF9F6; }   /* warm cream — paper-like menu */
+.state-related  { background: #F8FAFB; }   /* cool blue-gray — directory feel */
+
+/* (2) "Money moment" — the worked-example's eyebrow shifts to amber.
+   The final stacked-total's green pulse pops harder against amber framing. */
+.state-example .idx2-eyebrow { color: #B45309; }
+.state-example .idx2-eyebrow::before { background: #F59E0B; }
+
+/* (3) Category color stripes on row cards.
+   Adds four distinct accents to the otherwise white-on-white program list. */
+.program-block-row {
+  position: relative;
+  overflow: hidden;
+}
+.program-block-row::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: var(--row-accent, transparent);
+}
+.program-block-row.is-cat-insulation { --row-accent: var(--green-500); }
+.program-block-row.is-cat-solar      { --row-accent: #F59E0B; }   /* amber */
+.program-block-row.is-cat-windows    { --row-accent: #14B8A6; }   /* teal */
+.program-block-row.is-cat-storage    { --row-accent: #8B5CF6; }   /* purple */
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="idx2-skip-link">Skip to main content</a>
+
+<nav class="site-nav" id="nav">
+  <a href="../index.html" class="brand"><img src="../logo.png" alt="ProFusion Home Solutions"></a>
+  <ul class="nav-links">
+<li class="has-dropdown">
+      <a href="#">About <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../about-us.html">About Us</a>
+        <a href="../our-customers.html">Our Customers</a>
+        <a href="../for-installers.html">For Installers</a>
+        <a href="../contact.html">Contact Us</a></div>
+    </li>
+    <li><a href="../index.html#map">Service Area</a></li>
+    <li class="has-dropdown">
+      <a href="#">Programs <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../categories/solar.html">Solar</a>
+        <a href="../categories/heating-cooling.html">Heating &amp; Cooling</a>
+        <a href="../categories/insulation.html">Insulation</a>
+        <a href="../categories/windows-doors.html">Windows &amp; Doors</a>
+        <a href="../categories/energy-storage.html">Energy Storage</a></div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Learn <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../index.html#idx2Score"><span class="simple-dropdown-eyebrow">On homepage</span>The Score</a>
+        <a href="../index.html#how"><span class="simple-dropdown-eyebrow">On homepage</span>How it works</a>
+        <div class="simple-dropdown-divider" aria-hidden="true"></div>
+        <a href="../how-our-score-guides-you.html">How our Score guides you</a>
+        <a href="../sample-report.html">See a sample report</a>
+        <a href="../our-installers.html">Who we match you with</a>
+        <a href="../2026-changes.html">What changed in 2026</a></div>
+    </li>
+    <li><a href="../get-my-score.html" class="nav-cta">Get my report</a></li>
+  </ul>
+</nav>
+
+<div class="container breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">/</span>
+  <a href="../index.html#states">States</a>
+  <span class="sep">/</span>
+  <span class="current">Massachusetts</span></div>
+
+<section class="state-hero" id="main-content">
+  <div class="container">
+    <div class="state-hero-inner">
+      <div>
+        <span class="idx2-meta">Massachusetts</span>
+        <h1 class="idx2-h1">The Commonwealth's <em>rebate stack,</em> updated.</h1>
+        <p class="idx2-prose" style="margin-bottom: 36px;">Massachusetts is one of the most rebate-friendly states in the country. MassSave, Mass CEC, and the $25,000 HEAT Loan combine to make electrification projects surprisingly affordable: whole-home heat pump rebates up to $8,500 and 75-100% coverage of insulation work.</p>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: center; margin-bottom: 48px;">
+          <a href="../get-my-score.html" class="idx2-cta">Get my report
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <a href="#programs" class="idx2-link">See Massachusetts programs
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+              <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a></div>
+        <div class="state-facts"><div><div class="state-fact-val"><span class="prefix">$</span>8,500</div><div class="state-fact-label">Max MassSave heat pump rebate</div></div>
+<div><div class="state-fact-val">75<span class="suffix">%</span></div><div class="state-fact-label">Insulation covered · 100% if income-qualified</div></div>
+<div><div class="state-fact-val">0<span class="suffix">%</span></div><div class="state-fact-label">HEAT Loan interest · 7-year term</div></div></div></div>
+      <div class="state-hero-visual">
+        <div class="state-float-pill">MA · Massachusetts</div>
+        <img class="state-hero-img" src="../images/state-hero-massachusetts.png" alt="A warm-lit Massachusetts neighborhood, colonial homes in the early evening" loading="eager" decoding="async"></div></div></div>
+</section>
+
+<!-- ═══════════════════ Why (the historical force): the rate-hedge chart ═══════════════════ -->
+<section class="rate-hedge is-state-slim" id="rate-hedge" aria-label="Why now: Massachusetts utility rate history">
+  <div class="container">
+    <div class="rate-hedge-2col">
+      <div class="rate-hedge-header">
+        <span class="idx2-eyebrow">Why now &middot; Massachusetts</span>
+        <h2 class="idx2-h2">Your rate <em>more than doubled</em> in 15 years.</h2>
+        <p class="idx2-prose" style="margin-top: 18px;">You paid 14.5&cent; per kilowatt-hour in 2010. Today you pay 33&cent;. The rebates on this page exist because nobody, including your utility, expects that line to flatten out.</p>
+        <div class="rate-hedge-tag" aria-label="The hedge: solar's flat baseline">
+          <span class="rate-hedge-tag-label">The hedge</span>
+          <span class="rate-hedge-tag-value">Solar locked at 8&cent;/kWh, flat 25 yrs</span></div>
+        <a href="../programs/mass-smart-solar.html#rate-hedge" class="idx2-link" style="margin-top: 20px;">See how solar locks you in
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+            <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a></div>
+
+      <div class="rate-hedge-chart-card">
+        <div class="rate-hedge-chart-title">Residential rate &middot; Massachusetts</div>
+        <div class="rate-hedge-chart-sub">2010&ndash;2025 &middot; cents per kWh</div>
+        <svg class="rate-hedge-svg" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Massachusetts residential electric rate history, 2010 to 2025; Eversource and National Grid both more than doubled, while solar LCOE held flat near 8 cents per kilowatt-hour">
+<path class="hedge-wedge" d="M 48.0,229.3 L 87.5,218.8 L 126.9,212.7 L 166.4,202.2 L 205.9,207.5 L 245.3,195.2 L 284.8,185.6 L 324.3,159.4 L 363.7,159.4 L 403.2,155.1 L 442.7,150.7 L 482.1,137.6 L 521.6,63.3 L 561.1,50.2 L 600.5,63.3 L 640.0,67.7 L 640.0,282.0 L 48.0,282.0 Z"/>
+<line class="grid" x1="48" y1="356.0" x2="640" y2="356.0"/>
+<text class="axis-label" x="40" y="359.0" text-anchor="end">0¢</text>
+<line class="grid" x1="48" y1="268.6" x2="640" y2="268.6"/>
+<text class="axis-label" x="40" y="271.6" text-anchor="end">10¢</text>
+<line class="grid" x1="48" y1="181.3" x2="640" y2="181.3"/>
+<text class="axis-label" x="40" y="184.3" text-anchor="end">20¢</text>
+<line class="grid" x1="48" y1="93.9" x2="640" y2="93.9"/>
+<text class="axis-label" x="40" y="96.9" text-anchor="end">30¢</text>
+<line class="axis" x1="48" y1="356" x2="640" y2="356"/>
+<text class="axis-label" x="48.0" y="372" text-anchor="middle">2010</text>
+<text class="axis-label" x="245.3" y="372" text-anchor="middle">2015</text>
+<text class="axis-label" x="442.7" y="372" text-anchor="middle">2020</text>
+<text class="axis-label" x="640.0" y="372" text-anchor="middle">2025</text>
+<line class="solar-line-credit" x1="48" y1="304.2" x2="640" y2="304.2" pathLength="1"/>
+<line class="solar-line" x1="48" y1="282.0" x2="640" y2="282.0" pathLength="1"/>
+<path class="natl-avg-line" pathLength="1" d="M 48.0,261.4 L 87.5,259.9 L 126.9,258.6 L 166.4,256.5 L 205.9,253.5 L 245.3,252.3 L 284.8,253.1 L 324.3,250.3 L 363.7,250.5 L 403.2,249.3 L 442.7,247.8 L 482.1,243.5 L 521.6,232.0 L 561.1,225.0 L 600.5,222.7 L 640.0,217.8"/>
+<text class="natl-avg-label" x="648.0" y="221.5">US avg $0.169/kWh</text>
+<path class="util-line" pathLength="1" d="M 48.0,229.3 L 87.5,218.8 L 126.9,212.7 L 166.4,202.2 L 205.9,207.5 L 245.3,195.2 L 284.8,185.6 L 324.3,159.4 L 363.7,159.4 L 403.2,155.1 L 442.7,150.7 L 482.1,137.6 L 521.6,63.3 L 561.1,50.2 L 600.5,63.3 L 640.0,67.7" stroke="#DC2626"/>
+<text class="util-label" x="648.0" y="71.7" fill="#DC2626">Eversource MA 33.0¢</text>
+
+
+<path class="util-line" pathLength="1" d="M 48.0,233.7 L 87.5,224.9 L 126.9,216.2 L 166.4,207.5 L 205.9,207.5 L 245.3,194.4 L 284.8,194.4 L 324.3,163.8 L 363.7,163.8 L 403.2,159.4 L 442.7,155.1 L 482.1,141.9 L 521.6,76.4 L 561.1,63.3 L 600.5,76.4 L 640.0,80.8" stroke="#F59E0B"/>
+<text class="util-label" x="648.0" y="57.7" fill="#F59E0B">National Grid 31.5¢</text>
+<text class="solar-label" x="648" y="286.0">Solar 8.5¢ <tspan class="solar-label-credit" dy="0">(2026+)</tspan></text>
+<text class="solar-label-credit" x="648" y="308.2">Solar 5.9¢ (pre-2026, w/credit)</text>
+<text class="hedge-wedge-label" x="363.7" y="220.7" text-anchor="middle">your rate hedge</text>
+<text class="axis-label" x="12" y="190.0" text-anchor="middle" transform="rotate(-90 12 190.0)">¢/kWh, residential</text>
+</svg>
+        <div class="rate-hedge-legend">
+          <span class="rate-hedge-legend-item"><span class="rate-hedge-legend-swatch" style="background: #DC2626;"></span>Eversource MA</span>
+          <span class="rate-hedge-legend-item"><span class="rate-hedge-legend-swatch" style="background: #F59E0B;"></span>National Grid MA</span>
+          <span class="rate-hedge-legend-item"><span class="rate-hedge-legend-swatch" style="background: var(--green-500);"></span>Solar LCOE (2026+, no federal credit)</span>
+          <span class="rate-hedge-legend-item"><span class="rate-hedge-legend-swatch dashed"></span>Solar LCOE (pre-2026, with 30% credit)</span>
+          <span class="rate-hedge-legend-item"><span class="rate-hedge-legend-swatch natl"></span>US national average</span></div>
+        <div class="rate-hedge-source">Source &middot; EIA Form 861, residential class, 2010&ndash;2025. State averages and the US national line both pulled from the same dataset for an apples-to-apples comparison.</div><div class="rate-hedge-utilities"><span class="rate-hedge-utilities-label">Major utilities covered</span><span class="rate-hedge-utilities-list">Eversource, National Grid, Unitil</span></div></div></div></div>
+</section>
+
+<!-- ═══════════════════ How (the proof): real example, 2-column set piece ═══════════════════ -->
+<section class="state-example" aria-label="A real Massachusetts heat pump project">
+  <div class="container">
+    <div class="state-example-inner">
+      <div class="state-example-prose">
+        <span class="idx2-eyebrow">A real example · Natick, MA</span>
+        <h2 class="idx2-h2">What a <em>gas-to-heat-pump</em> rebate stack actually looks like.</h2>
+        <p class="idx2-prose" style="margin-top: 24px;">A 3-ton ducted heat pump (R-32, cold-climate certified) qualifies for the MassSave whole-home rebate at $2,650 per ton: <span class="state-example-inline-num">$7,950</span> stacked toward your project. The Manual J sizing bonus adds <span class="state-example-inline-num">$500</span> when the installer sizes to 90-120% of design heat load, and the new New England Heat Pump Accelerator contributes <span class="state-example-inline-num">$650</span> more in 2026. The 0% APR HEAT Loan finances the install over seven years, so most MassSave projects move forward with no money down on day one.</p>
+        <a href="#programs" class="idx2-link" style="margin-top: 28px;">See the programs that make this stack
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+            <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a></div>
+      <aside class="state-example-card" aria-label="What you get back">
+        <div class="state-example-card-eyebrow">Rebate stack · Natick, MA</div>
+        <div class="state-example-card-row is-deduct" data-reveal="1">
+          <span class="state-example-card-label">MassSave whole-home rebate</span>
+          <span class="state-example-card-num">+$7,950</span></div>
+        <div class="state-example-card-row is-deduct" data-reveal="2">
+          <span class="state-example-card-label">Manual J sizing bonus</span>
+          <span class="state-example-card-num">+$500</span></div>
+        <div class="state-example-card-row is-deduct" data-reveal="3">
+          <span class="state-example-card-label">NE Heat Pump Accelerator</span>
+          <span class="state-example-card-num">+$650</span></div>
+        <div class="state-example-card-divider" data-reveal="4"></div>
+        <div class="state-example-card-final" data-reveal="5">
+          <span class="state-example-card-label">Total rebates stacked</span>
+          <span class="state-example-card-num is-final">$9,100</span></div>
+        <div class="state-example-card-vs" data-reveal="6" aria-label="Cost of doing nothing">
+          Cost of doing nothing &middot; <strong>~$47,000</strong> over 15 years</div>
+        <div class="state-example-card-foot" data-reveal="7">
+          Cumulative gas heat + central AC bills at 5%/yr. The historical New England aggregate, including commodity, delivery, and service charges. 0% APR HEAT Loan finances the install over seven years. No money down on day one.</div>
+        <a href="../get-my-score.html" class="state-example-card-cta" data-reveal="7">Match this to my home
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+            <path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </aside></div></div>
+</section>
+
+<!-- ═══════════════════ How (the components): every program, every rebate ═══════════════════ -->
+<section class="state-programs" id="programs" style="padding: var(--idx2-section) 0;">
+  <div class="container">
+    <div class="state-programs-head">
+      <span class="idx2-eyebrow">Massachusetts · Programs</span>
+      <h2 class="idx2-h2">Every program, <em>every rebate.</em></h2>
+      <p class="idx2-lede">Each one has its own deep-dive page with eligibility rules, rebate amounts, worked examples, timelines, and FAQs.</p></div>
+    <div class="state-programs-list" style="margin-top: 64px;">
+    <a href="../programs/masssave-heat-pump.html" class="program-card-link is-flagship">
+  <div class="program-block">
+    <div class="program-header">
+      <div>
+        <svg class="program-card-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="14" y="14" width="36" height="36" rx="3"/>
+          <circle cx="32" cy="32" r="10"/>
+          <circle cx="32" cy="32" r="2.5" fill="currentColor"/>
+          <path d="M14 22h36M14 28h36M14 36h6M44 36h6"/>
+          <path d="M19 50v3M45 50v3"/>
+        </svg>
+        <span class="program-category-badge ">Heating & Cooling</span><span class="flagship-tag">Flagship</span>
+        <div class="program-title">MassSave Heat Pump Rebates</div>
+        <div class="program-tagline">The flagship program for electrifying your heating system.</div></div>
+      <div class="program-max">
+        <div class="program-max-amount">$8,500</div>
+        <div class="program-max-label">Max whole-home rebate (2026)</div></div></div>
+    <p style="font-size:15px; line-height:1.65; color:var(--gray-600); margin-bottom:24px;">MassSave is the Commonwealth's umbrella energy-efficiency program, administered jointly by the state's utilities, Eversource, National Grid, Berkshire Gas, Cape Light Compact, Liberty, and Unitil. For 2026, the heat pump rebate structure was adjusted: whole-home rebates are now …</p>
+    <div class="program-card-footer">
+      <span class="program-arrow">Read full details <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+      <div class="program-card-stats"><span>7 rebates</span><span>·</span><span>5 FAQs</span></div></div></div>
+</a>
+<a href="../programs/masssave-insulation.html" class="program-card-link">
+  <div class="program-block-row is-cat-insulation">
+    <svg class="program-card-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M14 10v44M50 10v44"/>
+      <path d="M18 18c4 2 8-2 14 0s10-2 14 0"/>
+      <path d="M18 28c4 2 8-2 14 0s10-2 14 0"/>
+      <path d="M18 38c4 2 8-2 14 0s10-2 14 0"/>
+      <path d="M18 48c4 2 8-2 14 0s10-2 14 0"/>
+    </svg>
+    <div class="program-row-content">
+      <span class="program-category-badge green">Insulation</span>
+      <div class="program-title">MassSave Weatherization</div>
+      <div class="program-tagline">75-100% coverage on insulation + air sealing.</div></div>
+    <div class="program-max">
+      <div class="program-max-amount">75-100%</div>
+      <div class="program-max-label">Coverage</div></div>
+    <span class="program-row-arrow" aria-hidden="true">
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></div>
+</a>
+<a href="../programs/mass-smart-solar.html" class="program-card-link">
+  <div class="program-block-row is-cat-solar">
+    <svg class="program-card-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="46" cy="14" r="4"/>
+      <path d="M46 4v3M46 22v3M55 14h3M37 14h3M40 8l1.5 1.5M52 8l-1.5 1.5M40 20l1.5-1.5M52 20l-1.5-1.5"/>
+      <rect x="8" y="28" width="48" height="26" rx="2"/>
+      <path d="M24 28v26M40 28v26M8 36h48M8 45h48"/>
+    </svg>
+    <div class="program-row-content">
+      <span class="program-category-badge green">Solar</span>
+      <div class="program-title">Massachusetts SMART Solar</div>
+      <div class="program-tagline">The Commonwealth's production-based solar incentive.</div></div>
+    <div class="program-max">
+      <div class="program-max-amount">3-6&cent;</div>
+      <div class="program-max-label">Per kWh · 10-yr term</div></div>
+    <span class="program-row-arrow" aria-hidden="true">
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></div>
+</a>
+<a href="../programs/masssave-windows.html" class="program-card-link">
+  <div class="program-block-row is-cat-windows">
+    <svg class="program-card-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="10" y="8" width="44" height="48" rx="2"/>
+      <path d="M10 32h44M32 8v48"/>
+      <path d="M20 14v14M20 36v14M44 14v14M44 36v14"/>
+    </svg>
+    <div class="program-row-content">
+      <span class="program-category-badge green">Windows &amp; Doors</span>
+      <div class="program-title">MassSave ENERGY STAR Windows</div>
+      <div class="program-tagline">$75 back per qualifying window. No annual cap.</div></div>
+    <div class="program-max">
+      <div class="program-max-amount">$75<span style="font-size:0.55em; color: var(--gray-500); margin-left: 2px;">/win</span></div>
+      <div class="program-max-label">ENERGY STAR rated</div></div>
+    <span class="program-row-arrow" aria-hidden="true">
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></div>
+</a>
+<a href="../programs/energy-storage-massachusetts.html" class="program-card-link">
+  <div class="program-block-row is-cat-storage">
+    <svg class="program-card-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="14" y="14" width="36" height="42" rx="3"/>
+      <path d="M22 8h6v6h-6zM36 8h6v6h-6z"/>
+      <path d="M22 24h20M22 32h20M22 40h20M22 48h12"/>
+    </svg>
+    <div class="program-row-content">
+      <span class="program-category-badge green">Energy Storage</span>
+      <div class="program-title">Energy Storage Overview</div>
+      <div class="program-tagline">Backup, bill-shaping, and resilience that pays back.</div></div>
+    <div class="program-max">
+      <div class="program-max-amount">$1-3K</div>
+      <div class="program-max-label">Per major outage</div></div>
+    <span class="program-row-arrow" aria-hidden="true">
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></div>
+</a></div><!-- /.state-programs-list --></div>
+</section>
+
+<section class="utility-callout-section">
+  <div class="container">
+    <a href="../utility-programs/massachusetts.html" class="utility-callout">
+      <div class="utility-callout-inner">
+        <div>
+          <div class="utility-callout-eyebrow">Beyond MassSave</div>
+          <h2>Your utility offers <em>extras</em> on top.</h2>
+          <p>Eversource, National Grid, and Unitil each layer programs on top of MassSave: discounted heat-pump rates, battery dispatch payments, and demand-response cash.</p>
+          <span class="utility-callout-arrow">See all utility programs in Massachusetts <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="utility-callout-icon"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M40 8v64"/><path d="M16 28h48"/><path d="M22 44h36"/><path d="M40 8L16 28M40 8l24 20"/><path d="M40 24L22 44M40 24l18 20"/><circle cx="16" cy="28" r="2" fill="currentColor"/><circle cx="64" cy="28" r="2" fill="currentColor"/><circle cx="22" cy="44" r="2" fill="currentColor"/><circle cx="58" cy="44" r="2" fill="currentColor"/><circle cx="40" cy="72" r="2.5" fill="currentColor"/></svg></div></div>
+    </a></div>
+</section>
+
+<!-- ═══════════════════ Related states cross-link · editorial-split, no bento ═══════════════════ -->
+<section class="state-related" aria-label="Other states we serve">
+  <div class="container">
+    <div class="state-related-inner">
+      <div class="state-related-head">
+        <span class="idx2-eyebrow">Other states we serve</span>
+        <h2 class="idx2-h2">The rebate stack <em>varies by state.</em></h2>
+        <p class="idx2-lede">We track every program in 11 states. Pick yours to see the full picture.</p></div>
+      <div class="state-related-list">
+        <a href="maine.html" class="state-related-link" style="--state-accent: #2E9A3D;">
+          <span class="state-related-abbr">ME</span>
+          <span class="state-related-name">Maine</span>
+          <svg class="state-related-arrow" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+        <a href="new-york.html" class="state-related-link" style="--state-accent: #2E6DB8;">
+          <span class="state-related-abbr">NY</span>
+          <span class="state-related-name">New York</span>
+          <svg class="state-related-arrow" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+        <a href="new-hampshire.html" class="state-related-link" style="--state-accent: #2E6DB8;">
+          <span class="state-related-abbr">NH</span>
+          <span class="state-related-name">New Hampshire</span>
+          <svg class="state-related-arrow" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+        <a href="new-jersey.html" class="state-related-link" style="--state-accent: #1A4F90;">
+          <span class="state-related-abbr">NJ</span>
+          <span class="state-related-name">New Jersey</span>
+          <svg class="state-related-arrow" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+        <a href="vermont.html" class="state-related-link" style="--state-accent: #3AB44A;">
+          <span class="state-related-abbr">VT</span>
+          <span class="state-related-name">Vermont</span>
+          <svg class="state-related-arrow" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+        <a href="maryland.html" class="state-related-link" style="--state-accent: #2E9A3D;">
+          <span class="state-related-abbr">MD</span>
+          <span class="state-related-name">Maryland</span>
+          <svg class="state-related-arrow" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+        <a href="rhode-island.html" class="state-related-link" style="--state-accent: #0A4A7E;">
+          <span class="state-related-abbr">RI</span>
+          <span class="state-related-name">Rhode Island</span>
+          <svg class="state-related-arrow" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+        <a href="michigan.html" class="state-related-link" style="--state-accent: #3AB44A;">
+          <span class="state-related-abbr">MI</span>
+          <span class="state-related-name">Michigan</span>
+          <svg class="state-related-arrow" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+        <a href="connecticut.html" class="state-related-link" style="--state-accent: #0A2E5C;">
+          <span class="state-related-abbr">CT</span>
+          <span class="state-related-name">Connecticut</span>
+          <svg class="state-related-arrow" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+        <a href="florida.html" class="state-related-link" style="--state-accent: #0A4A7E;">
+          <span class="state-related-abbr">FL</span>
+          <span class="state-related-name">Florida</span>
+          <svg class="state-related-arrow" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a></div></div></div>
+</section>
+
+<section class="cta-strip">
+  <div class="container-narrow">
+    <h3>Your <em>Massachusetts</em> Home Efficiency Score is waiting.</h3>
+    <p>See every rebate you qualify for, stacked for your exact address. Free, no obligation, sixty seconds.</p>
+    <a href="../get-my-score.html" class="btn btn-white">Get my report
+      <svg width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M1 7h13M9 1l5 6-5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a></div>
+</section>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-offices">
+      <h4 class="footer-offices-head">Visit us</h4>
+      <div class="footer-offices-row is-single">
+        <article class="footer-office">
+          <div class="footer-office-map">
+            <iframe
+              src="https://maps.google.com/maps?q=24+Spice+Street+Boston+MA+02129&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="Map of ProFusion Boston office, 24 Spice Street, Boston, MA"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="footer-office-meta">
+            <div class="footer-office-tag">New England</div>
+            <div class="footer-office-name">Boston, MA</div>
+            <div class="footer-office-addr">24 Spice Street<br>Boston, MA 02129</div>
+            <div class="footer-office-phone"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+13393304289">+1 (339) 330-4289</a></div>
+            <a class="footer-office-link" href="https://maps.google.com/?q=24+Spice+Street+Boston+MA+02129" target="_blank" rel="noopener">
+              Open in Maps
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a></div>
+        </article></div></div>
+
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img src="../logo.png" alt="ProFusion Home Solutions">
+        <p style="font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--green-400); margin-bottom: 14px;">Built for the <em style="font-family: var(--serif); font-style: italic;">house</em>. Felt in the <em style="font-family: var(--serif); font-style: italic;">home</em>.</p>
+        <p>The Home Efficiency Score, mapped to your zip, <em>every state, every rebate</em>. Now serving 11 states. <em>Going nationwide</em>.</p></div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="../categories/solar.html">Solar</a></li>
+          <li><a href="../categories/heating-cooling.html">Heating &amp; Cooling</a></li>
+          <li><a href="../categories/insulation.html">Insulation</a></li>
+          <li><a href="../categories/windows-doors.html">Windows &amp; Doors</a></li>
+          <li><a href="../categories/energy-storage.html">Energy Storage</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="../how-our-score-guides-you.html">How our Score guides you</a></li>
+          <li><a href="../sample-report.html">See a sample report</a></li>
+          <li><a href="../our-installers.html">Who we match you with</a></li>
+          <li><a href="../2026-changes.html">What changed in 2026</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../contact.html">Contact us</a></li>
+          <li><a href="../get-my-score.html">Get my report</a></li>
+          <li><a href="../for-installers.html">For Installers</a></li>
+        </ul></div></div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 ProFusion Home Solutions LLC</div>
+      <div>Now serving 11 states &middot; A+ BBB &middot; Fully Insured</div></div></div>
+</footer>
+<script>
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+}
+
+// Rate-hedge chart — draw lines on as the section enters viewport.
+// One of two choreographed motion moments. Single fire, IntersectionObserver.
+(function() {
+  const section = document.getElementById('rate-hedge');
+  if (!section) return;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion) { section.classList.add('is-in-view'); return; }
+  if (!('IntersectionObserver' in window)) { section.classList.add('is-in-view'); return; }
+  const obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        section.classList.add('is-in-view');
+        obs.unobserve(section);
+      }
+    });
+  }, { threshold: 0.3 });
+  obs.observe(section);
+})();
+
+// Worked-example scrollytelling — rebate stack builds line-by-line.
+// The page's second motion moment, the emotional payoff after the chart's "why".
+(function() {
+  const section = document.querySelector('.state-example');
+  if (!section) return;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion) { section.classList.add('is-revealed'); return; }
+  if (!('IntersectionObserver' in window)) { section.classList.add('is-revealed'); return; }
+  const obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        section.classList.add('is-revealed');
+        obs.unobserve(section);
+      }
+    });
+  }, { threshold: 0.35 });
+  obs.observe(section);
+})();
+</script>
+<script defer src="../mobile-nav.js"></script>
+</body>
+</html>

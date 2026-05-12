@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Massachusetts Utility Programs · Eversource, National Grid, Unitil · ProFusion</title>
+<meta name="description" content="Every Massachusetts utility-side benefit in one place: Eversource R-1HP heat pump rate, ConnectedSolutions battery dispatch, SMART 3.0 production payments, HEAT Loan financing. Verified May 2026.">
+<link rel="icon" type="image/png" href="../images/Favicon.png">
+<link rel="apple-touch-icon" href="../images/Favicon.png">
+<link rel="canonical" href="https://profusion.solutions/utility-programs/massachusetts.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ProFusion Home Solutions">
+<meta property="og:title" content="Massachusetts Utility Programs · Eversource, National Grid, Unitil · ProFusion">
+<meta property="og:description" content="Every Massachusetts utility-side benefit in one place: Eversource R-1HP heat pump rate, ConnectedSolutions battery dispatch, SMART 3.0 production payments, HEAT Loan financing. Verified May 2026.">
+<meta property="og:url" content="https://profusion.solutions/utility-programs/massachusetts.html">
+<meta property="og:image" content="https://profusion.solutions/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Massachusetts Utility Programs · Eversource, National Grid, Unitil · ProFusion">
+<meta name="twitter:description" content="Every Massachusetts utility-side benefit in one place: Eversource R-1HP heat pump rate, ConnectedSolutions battery dispatch, SMART 3.0 production payments, HEAT Loan financing. Verified May 2026.">
+<meta name="twitter:image" content="https://profusion.solutions/images/social-card.png">
+<meta name="twitter:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="theme-color" content="#0A1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+
+:root { --state-accent: #1A4F90; --state-tint: rgba(26, 79, 144, 0.08); }
+
+/* ════════════════════════════════════════════════════════════════════
+   UTILITY-PROGRAMS PAGE STYLES
+   The pattern: a state-level hero, a "headline finding" callout, then
+   a stack of utility sections. Each utility has 5 collapsible category
+   blocks. Open by default on desktop, collapsed on mobile.
+   ════════════════════════════════════════════════════════════════════ */
+.up-hero { padding: 56px 0 40px; }
+.up-hero-inner { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; margin-bottom: 56px; }
+.up-hero-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+.up-hero-pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: var(--state-tint); border: 1px solid var(--state-accent); border-radius: 100px; color: var(--state-accent); font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+.up-hero-pill-dot { width: 6px; height: 6px; background: var(--state-accent); border-radius: 50%; }
+.up-hero-meta-label { font-family: var(--mono); font-size: 11px; color: var(--gray-400); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
+.up-meta { display: inline-block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500); font-weight: 600; margin-bottom: 4px; }
+.up-hero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(36px, 4.8vw, 56px); line-height: 1.05; letter-spacing: -0.035em; color: var(--ink); margin-bottom: 24px; }
+.up-hero h1 em { font-style: normal; font-weight: 500; color: var(--state-accent); letter-spacing: -0.02em; }
+.up-hero-lede { font-family: var(--serif-body); font-size: 18px; line-height: 1.65; color: var(--gray-700); margin-bottom: 0; }
+.up-hero-visual { position: relative; aspect-ratio: 4/5; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 48px -16px rgba(10, 16, 32, 0.18), 0 1px 2px rgba(10, 16, 32, 0.06); background: var(--gray-50); }
+.up-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.up-hero-float-pill { position: absolute; top: 20px; right: 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); padding: 10px 16px; border-radius: 100px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--state-accent); box-shadow: var(--shadow-sm); z-index: 2; }
+.up-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 28px 0; border-top: 1px solid var(--gray-100); border-bottom: 1px solid var(--gray-100); margin-bottom: 56px; }
+
+/* Closing image band — visual breath before the CTA */
+.up-imgband { padding: 24px 0 8px; }
+.up-imgband-frame { aspect-ratio: 16 / 6; border-radius: 24px; overflow: hidden; position: relative; border: 1px solid var(--gray-100); }
+.up-imgband-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.up-imgband-cap { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-400); margin-top: 16px; text-align: center; font-weight: 500; }
+.up-imgband-cap em { font-family: var(--serif); font-style: italic; font-size: 13px; letter-spacing: 0; text-transform: none; color: var(--gray-600); font-weight: 400; }
+.up-stat-num { font-family: var(--display); font-weight: 500; font-size: 36px; line-height: 1; letter-spacing: -0.025em; color: var(--state-accent); margin-bottom: 6px; display: flex; align-items: baseline; gap: 4px; }
+.up-stat-num em { font-family: var(--mono); font-style: normal; font-size: 0.45em; color: var(--gray-400); font-weight: 500; letter-spacing: 0.02em; }
+.up-stat-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-500); font-weight: 500; }
+
+/* Headline-finding callout — the "wow" find for the state */
+.up-headline { background: var(--state-tint); border: 1px solid rgba(26, 79, 144, 0.2); border-radius: 24px; padding: 36px 40px; margin-bottom: 64px; max-width: 920px; }
+.up-headline-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--state-accent); font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.up-headline-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--state-accent); }
+.up-headline h2 { font-family: var(--display); font-weight: 500; font-size: 28px; letter-spacing: -0.02em; line-height: 1.2; color: var(--ink); margin-bottom: 16px; }
+.up-headline h2 em { font-style: normal; color: var(--state-accent); font-weight: 500; letter-spacing: -0.01em; }
+.up-headline p { font-family: var(--serif-body); font-size: 17px; line-height: 1.65; color: var(--gray-700); margin: 0; }
+
+/* Utility section — one per IOU */
+.up-utility { padding: 56px 0 24px; border-top: 1px solid var(--gray-100); }
+.up-utility:first-of-type { border-top: none; padding-top: 8px; }
+.up-utility-head { max-width: 880px; margin-bottom: 36px; }
+.up-utility-tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-500); font-weight: 700; margin-bottom: 10px; }
+.up-utility h2 { font-family: var(--display); font-weight: 500; font-size: 38px; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 12px; line-height: 1.05; }
+.up-utility h2 em { font-style: normal; color: var(--state-accent); font-weight: 500; letter-spacing: -0.02em; }
+.up-utility-blurb { font-family: var(--serif-body); font-size: 16px; line-height: 1.65; color: var(--gray-700); }
+.up-categories { display: grid; grid-template-columns: 1fr; gap: 16px; }
+
+/* Category block — collapsible <details> with all programs inside */
+.up-cat { background: white; border: 1px solid var(--gray-100); border-radius: 16px; overflow: hidden; transition: box-shadow 0.2s; }
+.up-cat:hover { box-shadow: var(--shadow-sm); }
+.up-cat[open] { box-shadow: var(--shadow-sm); }
+.up-cat summary { list-style: none; padding: 22px 28px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; gap: 16px; }
+.up-cat summary::-webkit-details-marker { display: none; }
+.up-cat-label { display: flex; align-items: center; gap: 14px; }
+.up-cat-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--gray-50); color: var(--state-accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.up-cat-icon svg { width: 18px; height: 18px; }
+.up-cat-title { font-family: var(--display); font-weight: 500; font-size: 18px; color: var(--ink); letter-spacing: -0.01em; }
+.up-cat-count { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-400); font-weight: 600; }
+.up-cat-chevron { color: var(--gray-400); transition: transform 0.2s; flex-shrink: 0; }
+.up-cat[open].up-cat-chevron { transform: rotate(180deg); color: var(--state-accent); }
+.up-cat-body { padding: 0 28px 28px; border-top: 1px solid var(--gray-100); padding-top: 22px; }
+
+/* Individual program — name, value, eligibility, source */
+.up-program { padding: 18px 0; border-bottom: 1px dashed var(--gray-100); }
+.up-program:last-child { border-bottom: none; padding-bottom: 4px; }
+.up-program-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }
+.up-program-name { font-family: var(--display); font-weight: 600; font-size: 15px; color: var(--ink); letter-spacing: -0.005em; flex: 1; min-width: 240px; }
+.up-program-value { font-family: var(--mono); font-size: 13px; font-weight: 600; color: var(--state-accent); white-space: nowrap; }
+.up-program-desc { font-family: var(--serif-body); font-size: 15px; line-height: 1.6; color: var(--gray-700); margin-bottom: 8px; }
+.up-program-source { font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; color: var(--gray-500); }
+.up-program-source a { color: var(--gray-500); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; }
+.up-program-source a:hover { color: var(--state-accent); }
+.up-program-tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-500); padding: 2px 8px; border: 1px solid var(--gray-200); border-radius: 4px; margin-left: 6px; vertical-align: middle; }
+.up-program-tag.is-flagship { color: var(--state-accent); border-color: var(--state-accent); background: var(--state-tint); font-weight: 600; }
+
+@media (max-width: 960px) {.up-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+.up-hero-visual { max-width: 520px; margin: 0 auto; aspect-ratio: 4/5; }
+.up-imgband-frame { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 760px) {.up-stats { grid-template-columns: 1fr; gap: 16px; }
+.up-headline { padding: 28px 24px; }
+.up-utility h2 { font-size: 30px; }
+.up-cat summary { padding: 18px 20px; }
+.up-cat-body { padding-left: 20px; padding-right: 20px; }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="nav">
+  <a href="../index.html" class="brand"><img src="../logo.png" alt="ProFusion Home Solutions"></a>
+  <ul class="nav-links">
+<li class="has-dropdown">
+      <a href="#">About <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../about-us.html">About Us</a>
+        <a href="../our-customers.html">Our Customers</a>
+        <a href="../for-installers.html">For Installers</a>
+        <a href="../contact.html">Contact Us</a></div>
+    </li>
+    <li><a href="../index.html#map">Service Area</a></li>
+    <li class="has-dropdown">
+      <a href="#">Programs <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../categories/solar.html">Solar</a>
+        <a href="../categories/heating-cooling.html">Heating &amp; Cooling</a>
+        <a href="../categories/insulation.html">Insulation</a>
+        <a href="../categories/windows-doors.html">Windows &amp; Doors</a>
+        <a href="../categories/energy-storage.html">Energy Storage</a></div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Learn <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="../index.html#idx2Score"><span class="simple-dropdown-eyebrow">On homepage</span>The Score</a>
+        <a href="../index.html#how"><span class="simple-dropdown-eyebrow">On homepage</span>How it works</a>
+        <div class="simple-dropdown-divider" aria-hidden="true"></div>
+        <a href="../how-our-score-guides-you.html">How our Score guides you</a>
+        <a href="../sample-report.html">See a sample report</a>
+        <a href="../our-installers.html">Who we match you with</a>
+        <a href="../2026-changes.html">What changed in 2026</a></div>
+    </li>
+    <li><a href="../get-my-score.html" class="nav-cta">Get my report</a></li>
+  </ul>
+</nav>
+
+<div class="container breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">/</span>
+  <a href="../states/massachusetts.html">Massachusetts</a>
+  <span class="sep">/</span>
+  <span class="current">Utility programs</span></div>
+
+<section class="up-hero">
+  <div class="container">
+    <div class="up-hero-inner">
+      <div>
+        <div class="up-hero-meta">
+          <span class="up-meta">MA · Massachusetts</span></div>
+        <h1>Your utility offers <em>extras</em> on top of MassSave.</h1>
+        <p class="up-hero-lede">MassSave covers the state-side stack, heat pump rebates, weatherization, the HEAT Loan. But the three Massachusetts investor-owned utilities, Eversource, National Grid, and Unitil, each layer their own programs on top: discounted electric rates, battery dispatch payments, net-metering credits, and demand-response cash. Most homeowners never hear about these from anyone except their installer. Here's what each one offers, in 2026.</p></div>
+      <div class="up-hero-visual">
+        <div class="up-hero-float-pill">MA · Utilities</div>
+        <img src="../images/up-hero-massachusetts.png" alt="A late-day Massachusetts neighborhood with utility lines visible against the sky: colonial or triple-decker homes in soft amber light, transmission and distribution wires running between poles" class="up-hero-img" loading="eager" decoding="async"></div></div>
+
+    <div class="up-stats">
+      <div>
+        <div class="up-stat-num">~$0.28<em>/kWh</em></div>
+        <div class="up-stat-label">Avg residential electric rate</div></div>
+      <div>
+        <div class="up-stat-num">$1,200<em>–$3,750</em></div>
+        <div class="up-stat-label">5-yr ConnectedSolutions cash, single Powerwall</div></div>
+      <div>
+        <div class="up-stat-num">$25,000<em> @ 0%</em></div>
+        <div class="up-stat-label">HEAT Loan cap · 7-year term</div></div></div>
+
+    <div class="up-headline">
+      <div class="up-headline-eyebrow">The one most homeowners miss</div>
+      <h2>Eversource's <em>seasonal heat pump rate</em> discounts every kWh you use, Nov through April, not just heating load.</h2>
+      <p>Launched November 2025, the optional R-1HP and R-2HP rates apply the discounted winter price to <strong>all household electricity</strong> for heat pump customers: lights, fridge, dishwasher, EV charging, the whole bill. Enrollment is opt-in through the Eversource customer portal after install. National Grid does not yet have an equivalent; Unitil's tariff schedule is published but lower-volume.</p></div></div>
+</section>
+
+<section class="up-coverage" aria-label="Utility coverage at a glance">
+  <div class="container">
+    <div class="up-coverage-head">
+      <span class="idx2-eyebrow">Coverage at a glance</span>
+      <h2 class="up-coverage-h2">Who offers <em>what</em>.</h2>
+      <p class="up-coverage-lede">A read across the state. Each cell shows the program count by category. The <span class="up-cm-flag-inline">&#9733;</span> marks utilities with a flagship or unique program in that category, the ones worth a closer look.</p></div>
+    <div class="up-coverage-frame">
+      <table class="up-coverage-table">
+        <thead>
+          <tr>
+            <th scope="col" class="up-cm-corner">Utility</th>
+            <th scope="col" class="up-cm-colhead"><span class="up-cm-colicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span><span class="up-cm-collabel">Heat pumps</span></th><th scope="col" class="up-cm-colhead"><span class="up-cm-colicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span><span class="up-cm-collabel">Solar</span></th><th scope="col" class="up-cm-colhead"><span class="up-cm-colicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span><span class="up-cm-collabel">Storage</span></th><th scope="col" class="up-cm-colhead"><span class="up-cm-colicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span><span class="up-cm-collabel">Insulation</span></th><th scope="col" class="up-cm-colhead"><span class="up-cm-colicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></span><span class="up-cm-collabel">Windows</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row" class="up-cm-rowhead">Eversource Massachusetts</th><td class="up-cm-cell is-3plus"><span class="up-cm-num">3</span><span class="up-cm-flag" aria-label="Includes flagship program">★</span></td><td class="up-cm-cell is-3plus"><span class="up-cm-num">3</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span><span class="up-cm-flag" aria-label="Includes flagship program">★</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-empty" aria-label="No program"></td></tr><tr><th scope="row" class="up-cm-rowhead">National Grid Massachusetts</th><td class="up-cm-cell is-3plus"><span class="up-cm-num">3</span></td><td class="up-cm-cell is-2"><span class="up-cm-num">2</span><span class="up-cm-flag" aria-label="Includes flagship program">★</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-empty" aria-label="No program"></td></tr><tr><th scope="row" class="up-cm-rowhead">Unitil</th><td class="up-cm-cell is-2"><span class="up-cm-num">2</span></td><td class="up-cm-cell is-2"><span class="up-cm-num">2</span></td><td class="up-cm-cell is-2"><span class="up-cm-num">2</span></td><td class="up-cm-cell is-1"><span class="up-cm-num">1</span></td><td class="up-cm-cell is-empty" aria-label="No program"></td></tr>
+        </tbody>
+      </table></div></div>
+</section>
+
+<!-- ═══════════════════════════ EVERSOURCE ═══════════════════════════ -->
+<section class="up-utility">
+  <div class="container">
+    <div class="up-utility-head">
+      <div class="up-utility-tag">Utility · 1 of 3</div>
+      <h2>Eversource <em>Massachusetts</em></h2>
+      <p class="up-utility-blurb">Eversource is the largest electric IOU in Massachusetts, serving roughly 1.4 million customers across central and eastern MA, including Boston suburbs and the South Shore. As of November 2025, Eversource is also the only MA utility with a heat-pump-specific seasonal tariff.</p></div>
+
+    <div class="up-categories">
+
+      <!-- Heat pumps -->
+      <details class="up-cat" open>
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span>
+            <span>
+              <span class="up-cat-title">Heat pumps</span>
+              <span class="up-cat-count">· 3 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Optional Heat Pump Seasonal Rates (R-1HP, R-2HP)<span class="up-program-tag is-flagship">Flagship</span></div>
+              <div class="up-program-value">~10–25% off winter kWh</div></div>
+            <div class="up-program-desc">Effective Nov 1, 2025. The lower (winter) rate applies to <strong>all household electricity</strong> Nov 1 – Apr 30 for heat pump customers. R-2HP is the low-income variant. Existing R-3 (electric resistance) and R-4 (low-income electric resistance) tariffs remain unchanged for non-heat-pump electric heat. Enroll via Eversource customer portal after heat pump install.</div>
+            <div class="up-program-source"><a href="https://www.eversource.com/residential/account-billing/manage-bill/about-your-bill/rates-tariffs/heat-pump-rate" target="_blank" rel="noopener">Official tariff page →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Mass Save Whole-Home Heat Pump Rebate</div>
+              <div class="up-program-value">$2,650/ton · max $8,500</div></div>
+            <div class="up-program-desc">Statewide MassSave program; Eversource is one of three administering utilities. Requires weatherized home (built post-2000 OR weatherization completed OR less than $1,000 in work remaining). Equipment must be ENERGY STAR Cold Climate certified, on the Mass Save QPL, and use R-32 or R-454B refrigerant (R-410A no longer eligible Jan 1, 2026). Available to Eversource, National Grid, and Unitil customers.</div>
+            <div class="up-program-source"><a href="https://www.masssave.com/residential/rebates-offers-services/heating-and-cooling/heat-pumps/air-source-heat-pumps" target="_blank" rel="noopener">MassSave program page →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">HEAT Loan</div>
+              <div class="up-program-value">0% APR · $25,000 cap</div></div>
+            <div class="up-program-desc">Zero-interest financing up to $25,000 over a 7-year (84-month) term. No fees, no prepayment penalty. Available to all MassSave participating utility customers. Common pairing: finance whatever remains on a heat pump install after rebates, with no money down on day one.</div>
+            <div class="up-program-source"><a href="https://nuwattenergy.com/en/massachusetts/mass-save-heat-loan-guide" target="_blank" rel="noopener">HEAT Loan guide →</a></div></div></div>
+      </details>
+
+      <!-- Solar -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
+            <span>
+              <span class="up-cat-title">Solar</span>
+              <span class="up-cat-count">· 3 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Net Metering, Class I (≤25 kW)</div>
+              <div class="up-program-value">~$0.2836/kWh · 1:1 retail</div></div>
+            <div class="up-program-desc">Full retail-rate credit for excess solar exported to the grid. Excess credits roll month-to-month indefinitely; no annual true-up cash-out for residential. The credit value tracks Eversource's retail rate, currently around $0.2836/kWh.</div>
+            <div class="up-program-source"><a href="https://www.eversource.com/residential/about/doing-business-with-us/interconnections/massachusetts/net-metering" target="_blank" rel="noopener">Eversource net-metering page →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">SMART 3.0 Production Payments</div>
+              <div class="up-program-value">$0.03/kWh base · 20-yr lock</div></div>
+            <div class="up-program-desc">Flat $0.03/kWh production payment for residential systems ≤25 kW, locked for 20 years from enrollment. Adders stack on top: storage +$0.04/kWh, low-income +$0.05/kWh, canopy +$0.08/kWh. Payments arrive monthly as a bill credit or check.</div>
+            <div class="up-program-source"><a href="https://www.mass.gov/info-details/smart-30-program-details" target="_blank" rel="noopener">Mass.gov SMART 3.0 program details →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Time-of-Use (TOU) Rate</div>
+              <div class="up-program-value">Optional · enroll any time</div></div>
+            <div class="up-program-desc">Optional residential TOU rate with off-peak hours overnight. Useful for solar-plus-storage homes that can shift consumption to off-peak windows. Detailed schedule on Eversource's rate-tariff page.</div>
+            <div class="up-program-source"><a href="https://www.eversource.com/residential/account-billing/manage-bill/about-your-bill/rates-tariffs" target="_blank" rel="noopener">Eversource rate tariffs →</a></div></div></div>
+      </details>
+
+      <!-- Energy storage -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span>
+            <span>
+              <span class="up-cat-title">Energy storage</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">ConnectedSolutions Battery Demand Response<span class="up-program-tag is-flagship">Flagship</span></div>
+              <div class="up-program-value">~$275/kW · 5-yr lock</div></div>
+            <div class="up-program-desc">Summer event payment of approximately $275/kW (some recent docs cite $225/kW; verify with utility at enrollment). 5-year incentive lock. Up to ~60 events/season, June 1 – Sept 30, 3-hour events. Annual payout typical: $900-$1,375 for a single Powerwall (~5 kW avg discharge). Payout in November.</div>
+            <div class="up-program-source"><a href="https://www.eversource.com/content/residential/save-money-energy/energy-efficiency-programs/demand-response/battery-storage-demand-response/egma" target="_blank" rel="noopener">Eversource battery DR program →</a></div></div></div>
+      </details>
+
+      <!-- Insulation -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Insulation &amp; weatherization</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Mass Save Insulation &amp; Air Sealing</div>
+              <div class="up-program-value">75–100% covered</div></div>
+            <div class="up-program-desc">MassSave covers up to 75–100% of insulation and air-sealing costs depending on income tier (no-cost for income-eligible households). Pre-weatherization barrier removal (knob-and-tube wiring, mold remediation) is often covered separately. Required prerequisite for the Whole-Home heat pump rebate.</div>
+            <div class="up-program-source"><a href="https://www.masssave.com/residential/rebates-offers-services/insulation-and-air-sealing" target="_blank" rel="noopener">MassSave insulation page →</a></div></div></div>
+      </details>
+
+      <!-- Windows & doors -->
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Windows &amp; doors</span>
+              <span class="up-cat-count">· no utility rebate</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">No utility rebate available</div>
+              <div class="up-program-value"></div></div>
+            <div class="up-program-desc">Eversource does not offer a windows/doors rebate. The federal 25C credit (up to $600/year for windows) expired Dec 31, 2025 with no utility replacement program. MassSave offers free programmable thermostats only; windows and doors fall outside the program. Inherent ROI (utility savings, comfort, resale value) is the case for the upgrade.</div></div></div>
+      </details></div></div>
+</section>
+
+<!-- ═══════════════════════════ NATIONAL GRID ═══════════════════════════ -->
+<section class="up-utility">
+  <div class="container">
+    <div class="up-utility-head">
+      <div class="up-utility-tag">Utility · 2 of 3</div>
+      <h2>National Grid <em>Massachusetts</em></h2>
+      <p class="up-utility-blurb">National Grid serves roughly 1.3 million electric customers across central and western Massachusetts, including Worcester, Springfield, and the South Coast. National Grid's MA retail rate generally runs higher than Eversource, which makes solar net metering more lucrative on this side of the state.</p></div>
+
+    <div class="up-categories">
+
+      <details class="up-cat" open>
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span>
+            <span>
+              <span class="up-cat-title">Heat pumps</span>
+              <span class="up-cat-count">· 2 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Mass Save Whole-Home Heat Pump Rebate</div>
+              <div class="up-program-value">$2,650/ton · max $8,500</div></div>
+            <div class="up-program-desc">Same statewide program &middot; identical to Eversource's offering.</div>
+            <div class="up-program-source"><a href="https://www.masssave.com" target="_blank" rel="noopener">MassSave program page →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">HEAT Loan</div>
+              <div class="up-program-value">0% APR · $25,000 cap</div></div>
+            <div class="up-program-desc">Same statewide MassSave HEAT Loan.</div>
+            <div class="up-program-source"><a href="https://nuwattenergy.com/en/massachusetts/mass-save-heat-loan-guide" target="_blank" rel="noopener">HEAT Loan guide →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Heat pump seasonal rate</div>
+              <div class="up-program-value">Not yet offered</div></div>
+            <div class="up-program-desc">National Grid MA does not yet have an equivalent to Eversource's R-1HP/R-2HP seasonal tariff (as of May 2026). NGrid customers should check the NGrid MA rate page periodically; equivalent tariffs are often filed within 12-18 months of a peer utility's launch.</div>
+            <div class="up-program-source"><a href="https://www.nationalgridus.com/MA-Home/Bills-Meters/Rates-and-Tariffs" target="_blank" rel="noopener">NGrid MA rate tariffs →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
+            <span>
+              <span class="up-cat-title">Solar</span>
+              <span class="up-cat-count">· 2 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Net Metering, Class I (≤25 kW)<span class="up-program-tag is-flagship">Best in MA</span></div>
+              <div class="up-program-value">~$0.32/kWh · 1:1 retail</div></div>
+            <div class="up-program-desc">Full retail-rate credit. NGrid's MA retail rate runs roughly $0.32/kWh, meaningfully higher than Eversource, which means each kWh of net-metering credit is worth more on this side of the state. Annual true-up in March; remaining credits paid out at the avoided-cost wholesale rate.</div>
+            <div class="up-program-source"><a href="https://www.nationalgridus.com/solar-hub/Solar-for-Your-Home/MA-Home/MA-Solar-Net-Metering-Bill-p1" target="_blank" rel="noopener">NGrid MA net metering →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">SMART 3.0 Production Payments</div>
+              <div class="up-program-value">$0.03/kWh base · 20-yr lock</div></div>
+            <div class="up-program-desc">Same statewide schedule &middot; administered by National Grid in this territory.</div>
+            <div class="up-program-source"><a href="https://www.mass.gov/info-details/smart-30-program-details" target="_blank" rel="noopener">SMART 3.0 program details →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span>
+            <span>
+              <span class="up-cat-title">Energy storage</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">ConnectedSolutions Battery Demand Response</div>
+              <div class="up-program-value">~$275/kW · 5-yr lock</div></div>
+            <div class="up-program-desc">Same statewide MA program: ~$275/kW summer performance, 5-year lock, $1,200-$3,750 cumulative over 5 years for a single Powerwall. Enroll through NGrid's customer portal after battery commissioning.</div>
+            <div class="up-program-source"><a href="https://www.nationalgridus.com/MA-Home/Connected-Solutions/BatteryProgram" target="_blank" rel="noopener">NGrid ConnectedSolutions battery →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Insulation &amp; weatherization</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Mass Save Insulation &amp; Air Sealing</div>
+              <div class="up-program-value">75–100% covered</div></div>
+            <div class="up-program-desc">Same statewide MassSave program.</div>
+            <div class="up-program-source"><a href="https://www.masssave.com/residential/rebates-offers-services/insulation-and-air-sealing" target="_blank" rel="noopener">MassSave insulation page →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Windows &amp; doors</span>
+              <span class="up-cat-count">· no utility rebate</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">No utility rebate available</div>
+              <div class="up-program-value"></div></div>
+            <div class="up-program-desc">National Grid does not offer a windows/doors rebate. Federal 25C credit expired Dec 31, 2025; no utility replacement.</div></div></div>
+      </details></div></div>
+</section>
+
+<!-- ═══════════════════════════ UNITIL ═══════════════════════════ -->
+<section class="up-utility">
+  <div class="container">
+    <div class="up-utility-head">
+      <div class="up-utility-tag">Utility · 3 of 3</div>
+      <h2>Unitil <em>(Fitchburg area)</em></h2>
+      <p class="up-utility-blurb">Unitil serves a smaller territory in north-central Massachusetts including Fitchburg, Lunenburg, Townsend, and Ashby, about 30,000 customers. Most state-side rebates flow through MassSave at the same terms as the larger IOUs, with one important exception: heat pump rebate amounts are slightly lower per ton.</p></div>
+
+    <div class="up-categories">
+
+      <details class="up-cat" open>
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span>
+            <span>
+              <span class="up-cat-title">Heat pumps</span>
+              <span class="up-cat-count">· 2 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Mass Save Air Source Heat Pump Rebate (Unitil)</div>
+              <div class="up-program-value">$2,000/ton</div></div>
+            <div class="up-program-desc">Unitil's MassSave heat pump rebate runs $2,000 per ton, meaningfully lower than the $2,650/ton offered to Eversource and NGrid customers. Always verify current Unitil-specific schedule before quoting.</div>
+            <div class="up-program-source"><a href="https://unitil.com/rebates/air-source-heat-pump-rebate-ma" target="_blank" rel="noopener">Unitil ASHP rebate page →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">HEAT Loan</div>
+              <div class="up-program-value">0% APR · $25,000 cap</div></div>
+            <div class="up-program-desc">Same statewide MassSave HEAT Loan available to Unitil customers.</div>
+            <div class="up-program-source"><a href="https://nuwattenergy.com/en/massachusetts/mass-save-heat-loan-guide" target="_blank" rel="noopener">HEAT Loan guide →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
+            <span>
+              <span class="up-cat-title">Solar</span>
+              <span class="up-cat-count">· 2 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Net Metering, Class I (≤25 kW)</div>
+              <div class="up-program-value">1:1 retail · MA framework</div></div>
+            <div class="up-program-desc">Same statewide MA Class I 1:1 retail framework.</div>
+            <div class="up-program-source"><a href="https://www.mass.gov/info-details/smart-30-program-details" target="_blank" rel="noopener">SMART 3.0 program details →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">SMART 3.0 Production Payments</div>
+              <div class="up-program-value">$0.03/kWh base · 20-yr lock</div></div>
+            <div class="up-program-desc">Same statewide schedule &middot; administered by Unitil in this territory.</div>
+            <div class="up-program-source"><a href="https://www.mass.gov/info-details/smart-30-program-details" target="_blank" rel="noopener">SMART 3.0 program details →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span>
+            <span>
+              <span class="up-cat-title">Energy storage</span>
+              <span class="up-cat-count">· 2 programs</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">ConnectedSolutions Wi-Fi Thermostat Program</div>
+              <div class="up-program-value">$50 enroll + $20/yr</div></div>
+            <div class="up-program-desc">Confirmed Unitil-specific program: $50 enrollment incentive + $20/year per enrolled smart thermostat. Different from the battery program but worth flagging for sales agents.</div>
+            <div class="up-program-source"><a href="https://unitil.com/rebates/connectedsolutions-wi-fi-thermostat-program-ma" target="_blank" rel="noopener">Unitil ConnectedSolutions thermostat →</a></div></div>
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">ConnectedSolutions Battery Program</div>
+              <div class="up-program-value">~$275/kW summer (verify)</div></div>
+            <div class="up-program-desc">Available statewide via MassSave at approximately $275/kW summer; Unitil-specific enrollment portal not publicly indexed; confirm enrollment path with Unitil customer service before quoting.</div>
+            <div class="up-program-source">[NEEDS RESEARCH, Unitil-specific battery enrollment URL not found in public-facing docs]</div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Insulation &amp; weatherization</span>
+              <span class="up-cat-count">· 1 program</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">Mass Save Insulation &amp; Air Sealing</div>
+              <div class="up-program-value">75–100% covered</div></div>
+            <div class="up-program-desc">Same statewide MassSave program as Eversource and NGrid territory.</div>
+            <div class="up-program-source"><a href="https://www.masssave.com/residential/rebates-offers-services/insulation-and-air-sealing" target="_blank" rel="noopener">MassSave insulation page →</a></div></div></div>
+      </details>
+
+      <details class="up-cat">
+        <summary>
+          <span class="up-cat-label">
+            <span class="up-cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></span>
+            <span>
+              <span class="up-cat-title">Windows &amp; doors</span>
+              <span class="up-cat-count">· no utility rebate</span>
+            </span>
+          </span>
+          <svg class="up-cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="up-cat-body">
+
+          <div class="up-program">
+            <div class="up-program-head">
+              <div class="up-program-name">No utility rebate available</div>
+              <div class="up-program-value"></div></div>
+            <div class="up-program-desc">Unitil does not offer a windows/doors rebate. Federal 25C credit expired Dec 31, 2025; no utility replacement.</div></div></div>
+      </details></div></div>
+</section>
+
+<!-- ═══════════════════════════ CLOSING IMAGE BAND ═══════════════════════════ -->
+<section class="up-imgband">
+  <div class="container">
+    <div class="up-imgband-frame">
+      <img src="../images/up-imgband-massachusetts.png" alt="A wide horizontal shot of a Massachusetts neighborhood at the time of day when utility load peaks: late afternoon to early evening, lights just coming on inside houses, multiple homes visible with subtle utility infrastructure" loading="lazy" decoding="async"></div>
+    <p class="up-imgband-cap">Eversource and National Grid serve roughly <em>99% of Massachusetts homes;</em> Unitil covers the Fitchburg–Leominster pocket.</p></div>
+</section>
+
+<!-- ═══════════════════════════ CTA STRIP ═══════════════════════════ -->
+<section class="cta-strip">
+  <div class="container-narrow">
+    <h3>Want the math run for <em>your specific MA address</em>?</h3>
+    <p>Your Home Efficiency Score figures out which utility you're on, which programs you qualify for, and what your full stack looks like, state programs plus utility extras, for your zip code, your roof, your bill.</p>
+    <a href="../get-my-score.html" class="btn btn-white">Get my report
+      <svg width="16" height="14" viewBox="0 0 16 14" fill="none"><path d="M1 7h13M9 1l5 6-5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a></div>
+</section>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-offices">
+      <h4 class="footer-offices-head">Visit us</h4>
+      <div class="footer-offices-row is-single">
+        <article class="footer-office">
+          <div class="footer-office-map">
+            <iframe
+              src="https://maps.google.com/maps?q=24+Spice+Street+Boston+MA+02129&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="Map of ProFusion Boston office, 24 Spice Street, Boston, MA"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="footer-office-meta">
+            <div class="footer-office-tag">New England</div>
+            <div class="footer-office-name">Boston, MA</div>
+            <div class="footer-office-addr">24 Spice Street<br>Boston, MA 02129</div>
+            <div class="footer-office-phone"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+13393304289">+1 (339) 330-4289</a></div>
+            <a class="footer-office-link" href="https://maps.google.com/?q=24+Spice+Street+Boston+MA+02129" target="_blank" rel="noopener">
+              Open in Maps
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a></div>
+        </article></div></div>
+
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img src="../logo.png" alt="ProFusion Home Solutions">
+        <p style="font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--green-400); margin-bottom: 14px;">Built for the <em style="font-family: var(--serif); font-style: italic;">house</em>. Felt in the <em style="font-family: var(--serif); font-style: italic;">home</em>.</p>
+        <p>The Home Efficiency Score, mapped to your zip, <em>every state, every rebate</em>. Now serving 11 states. <em>Going nationwide</em>.</p></div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="../categories/solar.html">Solar</a></li>
+          <li><a href="../categories/heating-cooling.html">Heating &amp; Cooling</a></li>
+          <li><a href="../categories/insulation.html">Insulation</a></li>
+          <li><a href="../categories/windows-doors.html">Windows &amp; Doors</a></li>
+          <li><a href="../categories/energy-storage.html">Energy Storage</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="../how-our-score-guides-you.html">How our Score guides you</a></li>
+          <li><a href="../sample-report.html">See a sample report</a></li>
+          <li><a href="../our-installers.html">Who we match you with</a></li>
+          <li><a href="../2026-changes.html">What changed in 2026</a></li>
+        </ul></div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../contact.html">Contact us</a></li>
+          <li><a href="../get-my-score.html">Get my report</a></li>
+          <li><a href="../for-installers.html">For Installers</a></li>
+        </ul></div></div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 ProFusion Home Solutions LLC</div>
+      <div>Now serving 11 states &middot; A+ BBB &middot; Fully Insured</div></div></div>
+</footer>
+<script>
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+}
+</script>
+<script defer src="../mobile-nav.js"></script>
+</body>
+</html>

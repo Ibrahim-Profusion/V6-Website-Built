@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-04T21:00:00Z",
+  "title": "Design System: ProFusion Home Solutions",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#0A1020",
+        "tonalRamp": ["#0A1020", "#1E2434", "#2A3147", "#4A5266", "#6B7286", "#8891A5", "#B7BCCB", "#D6DCE7", "#E8ECF3", "#F5F7FB"]
+      },
+      "public-trust-blue": {
+        "role": "primary",
+        "displayName": "Public Trust Blue",
+        "canonical": "#1A4F90",
+        "tonalRamp": ["#0A2E5C", "#0F3B73", "#154688", "#1A4F90", "#2E6DB8", "#5489C9", "#7BA5DA", "#A5C2E9", "#CBDAF2", "#EAF3FC"]
+      },
+      "savings-green": {
+        "role": "secondary",
+        "displayName": "Savings Green",
+        "canonical": "#3AB44A",
+        "tonalRamp": ["#1F6E2A", "#258436", "#2E9A3D", "#3AB44A", "#5EC66B", "#7DD089", "#9DDDA8", "#B2E5BA", "#D4F0D8", "#EEFAF0"]
+      },
+      "warm-peach-hero": {
+        "role": "tertiary",
+        "displayName": "Warm Peach (Hero)",
+        "canonical": "#FFE7CC",
+        "tonalRamp": ["#A16A3F", "#BD8654", "#D6A36E", "#E8B98A", "#F4C9A1", "#FFD4A8", "#FFE0BC", "#FFE7CC", "#FFEFD8", "#FFF6E6"]
+      },
+      "alert-red": {
+        "role": "alert",
+        "displayName": "Alert Red",
+        "canonical": "#B91C1C",
+        "tonalRamp": ["#5C0E0E", "#7E1414", "#9A1717", "#B91C1C", "#D44545", "#E27272", "#EE9999", "#F4BCBC", "#FAE0E0", "#FEE8E8"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero h1 only. The headline that owns the page."
+      },
+      "headline": {
+        "displayName": "Headline (Section h2)",
+        "purpose": "Sets the cadence of each section."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card headings, stage titles, How-It-Works step titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Subheads and lead paragraphs. Max-width 640px (~65 to 75 ch)."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Card body, narrator italics, footer copy."
+      },
+      "emphasis-italic": {
+        "displayName": "Emphasis Italic (Instrument Serif)",
+        "purpose": "Sparing emphasis on phrases worth slowing down. Hand on the shoulder, not decoration."
+      },
+      "label": {
+        "displayName": "Label (Geist Mono)",
+        "purpose": "Eyebrows, step markers, status meta. Numbers and code-like data only."
+      },
+      "numeric": {
+        "displayName": "Numeric (Geist Mono, tabular figures)",
+        "purpose": "Bill counters, percentages, year markers. Tabular figures via font-feature-settings: tnum."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow-sm",
+        "value": "0 1px 2px rgba(10, 16, 32, 0.04), 0 1px 3px rgba(10, 16, 32, 0.05)",
+        "purpose": "Hairline lift on hover. Almost imperceptible at rest, deliberate as a response."
+      },
+      {
+        "name": "shadow-md",
+        "value": "0 6px 20px -6px rgba(10, 16, 32, 0.10), 0 2px 6px rgba(10, 16, 32, 0.06)",
+        "purpose": "Card hover end-state, primary CTA elevated focus."
+      },
+      {
+        "name": "shadow-lg",
+        "value": "0 28px 56px -16px rgba(10, 16, 32, 0.16), 0 10px 20px -6px rgba(10, 16, 32, 0.08)",
+        "purpose": "Structural anchor only. Reserved for hero cartoon container and Transformation report card. Two moments per page."
+      },
+      {
+        "name": "shadow-xl",
+        "value": "0 48px 96px -24px rgba(10, 16, 32, 0.22), 0 18px 36px -10px rgba(10, 16, 32, 0.12)",
+        "purpose": "Currently unused. Held in reserve for future signature moments."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.2, 0.9, 0.3, 1)",
+        "purpose": "Default ease-out exponential for state transitions, hover lifts, scrolled-nav transitions."
+      },
+      {
+        "name": "ease-scrub",
+        "value": "none",
+        "purpose": "Linear easing inside scrubbed ScrollTrigger timelines so user-scroll directly drives the animation."
+      },
+      {
+        "name": "duration-quick",
+        "value": "200ms",
+        "purpose": "Hover transitions, button background swaps, link gap shifts."
+      },
+      {
+        "name": "duration-state",
+        "value": "600ms",
+        "purpose": "Score-letter cross-fade from Alert Red to Savings Green at the Transformation payoff."
+      }
+    ],
+    "breakpoints": [
+      { "name": "phone", "value": "320px" },
+      { "name": "phone-wide", "value": "480px" },
+      { "name": "tablet", "value": "760px" },
+      { "name": "desktop", "value": "1024px" },
+      { "name": "wide", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The page's call to action. Ink-on-white pill with a single intentional shadow exception to the flat-by-default rule.",
+      "html": "<a href=\"#cta\" class=\"ds-btn-primary\">Get your Score<svg width=\"14\" height=\"12\" viewBox=\"0 0 14 12\" fill=\"none\" aria-hidden=\"true\"><path d=\"M1 6h11M8 1l4 5-4 5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 10px; background: #0A1020; color: #ffffff; padding: 18px 32px; border-radius: 100px; font-family: 'Geist', -apple-system, sans-serif; font-weight: 500; font-size: 16px; letter-spacing: -0.01em; text-decoration: none; box-shadow: 0 4px 16px -4px rgba(10, 16, 32, 0.25); transition: transform 0.2s cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 0.2s, background 0.2s; } .ds-btn-primary svg { transition: transform 0.2s; } .ds-btn-primary:hover { transform: translateY(-2px); background: linear-gradient(135deg, #1A4F90, #2E9A3D); box-shadow: 0 8px 24px -4px rgba(26, 79, 144, 0.35); } .ds-btn-primary:hover svg { transform: translateX(4px); } .ds-btn-primary:focus-visible { outline: 2px solid #1A4F90; outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Button",
+      "kind": "button",
+      "refersTo": "button-text",
+      "description": "Secondary affordance. Reads as a quiet text link with a chevron that grows its gap on hover.",
+      "html": "<a href=\"#trans\" class=\"ds-btn-text\">See a sample report<svg width=\"11\" height=\"11\" viewBox=\"0 0 11 11\" fill=\"none\" aria-hidden=\"true\"><path d=\"M1 5.5h8M6 1.5l3 4-3 4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg></a>",
+      "css": ".ds-btn-text { display: inline-flex; align-items: center; gap: 6px; color: #1A4F90; font-family: 'Geist', -apple-system, sans-serif; font-weight: 500; font-size: 15px; text-decoration: none; transition: gap 0.2s, color 0.2s; } .ds-btn-text:hover { gap: 10px; color: #0A2E5C; } .ds-btn-text:focus-visible { outline: 2px solid #1A4F90; outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "Eyebrow",
+      "kind": "custom",
+      "refersTo": "eyebrow",
+      "description": "Mono uppercase label with a single Savings Green dot prefix. One per section, 24px above the section h2. Numbers and code-like data only.",
+      "html": "<div class=\"ds-eyebrow\">The transformation</div>",
+      "css": ".ds-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: #2E9A3D; font-family: 'Geist Mono', ui-monospace, monospace; font-weight: 600; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; } .ds-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #3AB44A; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "White surface, 1px Neutral 100 hairline border, 20px corner radius. Flat at rest. Shadow appears only on hover.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-quote\">\"You need a new <em>furnace</em>.\"</div><div class=\"ds-card-narrator\">The HVAC tech knows HVAC. That's why they're good at their trade.</div><div class=\"ds-card-scope\">Their scope: Heating &amp; cooling</div></article>",
+      "css": ".ds-card { background: #ffffff; border: 1px solid #E8ECF3; border-radius: 20px; padding: 32px 28px 28px; transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 0.3s, border-color 0.3s; max-width: 320px; } .ds-card:hover { transform: translateY(-4px); border-color: #D6DCE7; box-shadow: 0 6px 20px -6px rgba(10, 16, 32, 0.10), 0 2px 6px rgba(10, 16, 32, 0.06); } .ds-card-quote { font-family: 'Geist', -apple-system, sans-serif; font-weight: 500; font-size: 19px; color: #0A1020; letter-spacing: -0.015em; line-height: 1.3; margin-bottom: 12px; } .ds-card-quote em { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; color: #1A4F90; } .ds-card-narrator { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 14px; color: #4A5266; line-height: 1.55; margin-bottom: 20px; } .ds-card-scope { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #8891A5; font-weight: 600; padding-top: 14px; border-top: 1px dashed #E8ECF3; }"
+    },
+    {
+      "name": "Score Letter Badge (Pre-upgrade)",
+      "kind": "custom",
+      "refersTo": "badge-grade",
+      "description": "The page's most concentrated brand signal. Today's grade. Instrument Serif italic, Alert Red on tinted background. The pre-upgrade state.",
+      "html": "<div class=\"ds-grade ds-grade-bad\">D</div>",
+      "css": ".ds-grade { display: inline-block; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 600; font-size: 80px; line-height: 0.88; letter-spacing: -0.04em; padding: 6px 24px; border-radius: 12px; transition: background 0.6s cubic-bezier(0.2, 0.9, 0.3, 1), color 0.6s cubic-bezier(0.2, 0.9, 0.3, 1); } .ds-grade-bad { color: #B91C1C; background: #FEE8E8; } .ds-grade-good { color: #2E9A3D; background: #EEFAF0; }"
+    },
+    {
+      "name": "Score Letter Badge (Post-upgrade)",
+      "kind": "custom",
+      "refersTo": "badge-grade-good",
+      "description": "After the Transformation. Same letter slot, same type treatment, color and background cross-fade to Savings Green.",
+      "html": "<div class=\"ds-grade ds-grade-good\">A</div>",
+      "css": ".ds-grade { display: inline-block; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 600; font-size: 80px; line-height: 0.88; letter-spacing: -0.04em; padding: 6px 24px; border-radius: 12px; transition: background 0.6s cubic-bezier(0.2, 0.9, 0.3, 1), color 0.6s cubic-bezier(0.2, 0.9, 0.3, 1); } .ds-grade-bad { color: #B91C1C; background: #FEE8E8; } .ds-grade-good { color: #2E9A3D; background: #EEFAF0; }"
+    },
+    {
+      "name": "Slim Pill Nav",
+      "kind": "nav",
+      "refersTo": "nav-pill",
+      "description": "Fixed at top, frosted-glass blur, pill radius. Sits 16px from viewport top, max-width 1280px, centered. Hairline border deepens on scroll.",
+      "html": "<nav class=\"ds-nav\"><a href=\"/\" class=\"ds-nav-brand\">ProFusion</a><ul class=\"ds-nav-links\"><li><a href=\"#trans\">The Score</a></li><li><a href=\"#tile-map\">Programs</a></li><li><a href=\"/learn\">Learn</a></li><li><a href=\"#cta\" class=\"ds-nav-cta\">Get my Score</a></li></ul></nav>",
+      "css": ".ds-nav { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 100; width: calc(100% - 32px); max-width: 1280px; background: rgba(255, 255, 255, 0.78); backdrop-filter: blur(24px) saturate(1.8); -webkit-backdrop-filter: blur(24px) saturate(1.8); border: 1px solid #E8ECF3; box-shadow: 0 1px 2px rgba(10, 16, 32, 0.04), 0 1px 3px rgba(10, 16, 32, 0.05); border-radius: 100px; padding: 10px 12px 10px 24px; display: flex; align-items: center; justify-content: space-between; transition: box-shadow 0.3s, border-color 0.3s; } .ds-nav-brand { font-family: 'Geist', -apple-system, sans-serif; font-weight: 600; color: #0A1020; text-decoration: none; font-size: 16px; letter-spacing: -0.02em; } .ds-nav-links { display: flex; gap: 4px; list-style: none; align-items: center; padding: 0; margin: 0; } .ds-nav-links a { color: #1E2434; text-decoration: none; font-family: 'Geist', -apple-system, sans-serif; font-size: 14px; font-weight: 500; padding: 8px 14px; border-radius: 999px; transition: background 0.2s, color 0.2s; } .ds-nav-links a:hover { background: #E8ECF3; } .ds-nav-cta { background: #0A1020 !important; color: #ffffff !important; padding: 10px 20px !important; transition: background 0.2s, transform 0.2s !important; } .ds-nav-cta:hover { background: #1A4F90 !important; transform: translateY(-1px); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Engineer Next Door",
+    "overview": "The system reads like a knowledgeable neighbor walking through your house with a clipboard. Skilled enough to do the math; warm enough to come over on a Saturday and explain it. The visual language treats the homeowner the way that neighbor would: as a smart adult who deserves real information, not a pitch. Every choice supports the credibility of the underlying calculation. Numbers carry the weight, words stay quiet, and accents appear only where they have something to say. This is editorial pacing in the Apple lane (massive type, generous whitespace, one cinematic moment per page) tempered by neighborly warmth (warm peach in the hero, soft sage and dust-cream in illustrations, italic serif used like a hand on the shoulder rather than a marketing flourish).",
+    "keyCharacteristics": [
+      "One moment of motion per page (the Transformation tile). Everything else holds still.",
+      "Restrained palette: tinted neutrals, two committed accents (Public Trust Blue, Savings Green), one warm peach reserved for hero and Transformation glow.",
+      "Type sets the rhythm. Geist for display and body, Geist Mono for numeric data only, Instrument Serif italic for sparing emphasis.",
+      "Phone-first composition. The primary surface is a phone screen at 22:00 in dim ambient light.",
+      "No urgency, no scarcity, no testimonial spotlights, no social-proof manipulation."
+    ],
+    "rules": [
+      { "name": "The Earned Accent Rule", "body": "Public Trust Blue, Savings Green, and the blue-to-green gradient italic each appear in three places or fewer per page. A treatment used everywhere has zero gravity.", "section": "colors" },
+      { "name": "The One Tonal Break Rule", "body": "The page alternates white and Neutral 50 grey once or twice per page, not eight times. Hero through Transformation through Three Slices stays on white as one editorial movement.", "section": "colors" },
+      { "name": "The Warm Peach Reservation", "body": "Warm Peach Hero and Warm Peach Deeper appear only on the hero cartoon background and the Transformation final-state radial glow. Nowhere else, ever.", "section": "colors" },
+      { "name": "The Mono-for-Numbers Rule", "body": "Geist Mono is reserved for numeric data and code-like labels. Use it on bill counters, year markers, percentages, eyebrow labels, and step tags. Do not use it on body copy or section titles.", "section": "typography" },
+      { "name": "The Earned Italic Rule", "body": "Instrument Serif italic appears at most three times in a single section, and at most a dozen times on the entire page. A hand on the shoulder, not a recurring decoration.", "section": "typography" },
+      { "name": "The Body Line Length Rule", "body": "Body and lead paragraph max-width is 640px (roughly 65 to 75 ch). The column never expands to fill.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Cards, callouts, eyebrows, badges, nav, the stat strip, the service map, and the final CTA are flat at rest. A 1px hairline border does the visual work that a shadow would do in a weaker system.", "section": "elevation" },
+      { "name": "The Two-Anchor Rule", "body": "Only two elements on the entire page carry resting elevation: the hero cartoon (shadow-lg) and the Transformation report card (shadow-lg). Elevating a third element steals weight from the two that earn it.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do earn every accent. Gradient italic, Public Trust Blue emphasis, Savings Green emphasis: each appears three times per page or fewer.",
+      "Do reserve Geist Mono for numbers and code-like labels. Never on body copy or section titles.",
+      "Do keep cards flat at rest. Shadow appears only on hover, focus, or as a state-change response.",
+      "Do size phone-first. Test every layout at 320px and at 22:00 dim-light contrast.",
+      "Do anchor the Transformation tile as the single moment of motion on the page.",
+      "Do use commas, colons, semicolons, periods, and parentheses for prose. Em dashes are out of voice.",
+      "Do use tabular figures on every counter, bill amount, and score number.",
+      "Do treat alt text as part of the design. Counters use aria-live='polite'."
+    ],
+    "donts": [
+      "Don't mesh-gradient, blob, or pastel-glow anything. The system rejects typical solar-installer marketing.",
+      "Don't stack neon-on-black, glitch effects, terminal aesthetics, or 3D blob shaders. The system rejects crypto and AI-startup neon-on-black.",
+      "Don't build a bento grid with rounded-square icon tiles. The system rejects SaaS bento-grid with pastel mesh.",
+      "Don't flatten the page into a civic-trust portal. Right values, wrong execution.",
+      "Don't use #000 or #fff directly outside the canvas. Tint every neutral toward the brand.",
+      "Don't alternate white and grey-band sections more than twice per page.",
+      "Don't apply gradient italic outside the three earned slots (hero h1, Transformation result, final CTA).",
+      "Don't use side-stripe borders greater than 1px as colored accents.",
+      "Don't put gradient backgrounds behind text using background-clip: text outside the three earned slots.",
+      "Don't wrap How-It-Works steps in cards. Three numbered paragraphs on white.",
+      "Don't use modal dialogs as a first thought.",
+      "Don't use bounce or elastic easing curves. Use ease-out exponential.",
+      "Don't animate CSS layout properties. Animate transforms, opacity, stroke-dashoffset only.",
+      "Don't put em dashes in copy.",
+      "Don't expose the Score's underlying numeric range (400 to 800). Always present as a letter grade plus arc position."
+    ]
+  }
+}

@@ -1,0 +1,660 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Eye-level streetview of a residential neighborhood with five homes, each showing a Home Efficiency Score yard sign">
+  <defs>
+    <!-- ────── ATMOSPHERE ────── -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#FFE7CC"/>
+      <stop offset="0.45" stop-color="#FFD4A8"/>
+      <stop offset="0.85" stop-color="#F8C4A6"/>
+      <stop offset="1"   stop-color="#E8C4A8"/>
+    </linearGradient>
+    <radialGradient id="sun-glow" cx="0.80" cy="0.45" r="0.55">
+      <stop offset="0"    stop-color="#FFF6D4" stop-opacity="0.95"/>
+      <stop offset="0.30" stop-color="#FFE2A8" stop-opacity="0.55"/>
+      <stop offset="0.70" stop-color="#FFD898" stop-opacity="0.15"/>
+      <stop offset="1"    stop-color="#FFD898" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9FBA80"/>
+      <stop offset="1" stop-color="#7E9D67"/>
+    </linearGradient>
+    <linearGradient id="sidewalk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EEDFC4"/>
+      <stop offset="1" stop-color="#D9C7A6"/>
+    </linearGradient>
+
+    <!-- ────── HOUSE GRADIENTS ────── -->
+    <linearGradient id="h1-wall" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#C2D6AB"/>
+      <stop offset="1" stop-color="#A1BB8C"/>
+    </linearGradient>
+    <linearGradient id="h1-roof" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#586E4F"/>
+      <stop offset="1" stop-color="#3F5238"/>
+    </linearGradient>
+
+    <linearGradient id="h2-wall" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#F4E1B8"/>
+      <stop offset="1" stop-color="#E5CC97"/>
+    </linearGradient>
+    <linearGradient id="h2-roof" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#5C3D27"/>
+      <stop offset="1" stop-color="#402A1A"/>
+    </linearGradient>
+
+    <linearGradient id="h3-wall" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#A6BFD3"/>
+      <stop offset="1" stop-color="#88A7C2"/>
+    </linearGradient>
+    <linearGradient id="h3-roof" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#444A52"/>
+      <stop offset="1" stop-color="#2C3138"/>
+    </linearGradient>
+
+    <linearGradient id="h4-wall" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#D3A697"/>
+      <stop offset="1" stop-color="#B8856F"/>
+    </linearGradient>
+    <linearGradient id="h4-roof" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#9C5238"/>
+      <stop offset="1" stop-color="#7A3D27"/>
+    </linearGradient>
+
+    <linearGradient id="h5-wall" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#F8F2E5"/>
+      <stop offset="1" stop-color="#E8DEC9"/>
+    </linearGradient>
+    <linearGradient id="h5-roof" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#3A4048"/>
+      <stop offset="1" stop-color="#262B33"/>
+    </linearGradient>
+
+    <linearGradient id="window-glow" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#FFE9A8"/>
+      <stop offset="1" stop-color="#F4C878"/>
+    </linearGradient>
+    <linearGradient id="sign" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F0EBE0"/>
+    </linearGradient>
+
+    <!-- ────── FILTERS ────── -->
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.5"/>
+      <feOffset dx="2" dy="8"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="house-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="10"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- A reusable foliage mass (rounded blob, used for tree crowns) -->
+    <symbol id="foliage" viewBox="0 0 100 100" overflow="visible">
+      <path d="M50,8 C66,8 78,18 82,30 C92,32 98,42 96,52 C100,62 92,76 80,78 C74,90 56,94 46,86 C34,94 16,86 14,72 C4,68 0,54 8,44 C2,34 12,18 26,18 C34,8 42,8 50,8 Z" />
+    </symbol>
+    <symbol id="cloud" viewBox="0 0 200 80" overflow="visible">
+      <path d="M20,52 C12,52 6,46 6,38 C6,28 16,22 24,26 C28,16 42,12 52,18 C60,8 80,10 84,22 C100,18 116,28 114,42 C124,42 130,50 128,58 C124,66 114,68 108,64 C100,72 84,72 78,64 C68,72 50,72 44,62 C36,68 24,64 20,52 Z" />
+    </symbol>
+  </defs>
+
+  <!-- ════════════ SKY ════════════ -->
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="900" fill="url(#sun-glow)"/>
+
+  <!-- ════════════ CLOUDS (organic) ════════════ -->
+  <g opacity="0.7">
+    <use href="#cloud" x="120"  y="120" width="280" height="100" fill="#FFFFFF"/>
+    <use href="#cloud" x="660"  y="80"  width="220" height="80"  fill="#FFFFFF"/>
+    <use href="#cloud" x="1100" y="150" width="320" height="110" fill="#FFFFFF"/>
+  </g>
+
+  <!-- ════════════ DISTANT HILLS ════════════ -->
+  <path d="M0,500
+           C 140,460 220,475 320,470
+           C 460,460 540,490 660,475
+           C 780,460 880,490 1000,470
+           C 1140,455 1260,485 1400,470
+           C 1500,460 1560,475 1600,470
+           L 1600,560 L 0,560 Z"
+        fill="#A1B0B6" opacity="0.55"/>
+
+  <!-- ════════════ DISTANT TREELINE ════════════ -->
+  <path d="M0,548
+           C 30,520 60,535 90,520
+           C 130,500 160,520 200,510
+           C 240,495 280,515 320,510
+           C 360,490 400,520 450,508
+           C 500,498 540,520 590,508
+           C 640,490 680,520 720,510
+           C 760,495 800,518 850,508
+           C 900,498 940,520 990,510
+           C 1040,495 1080,518 1130,508
+           C 1180,495 1220,520 1270,510
+           C 1320,495 1360,518 1410,508
+           C 1460,498 1510,520 1560,510
+           C 1580,505 1600,512 1600,512
+           L 1600,580 L 0,580 Z"
+        fill="#7A9080" opacity="0.75"/>
+
+  <!-- ════════════ MID TREELINE — softer green ════════════ -->
+  <path d="M0,580
+           C 40,558 80,572 120,560
+           C 160,545 200,570 250,560
+           C 300,545 350,572 400,560
+           C 450,548 500,572 550,560
+           C 600,548 650,572 700,560
+           C 750,548 800,572 850,560
+           C 900,548 950,572 1000,560
+           C 1050,548 1100,572 1150,560
+           C 1200,548 1250,572 1300,560
+           C 1350,548 1400,572 1450,560
+           C 1500,548 1560,572 1600,560
+           L 1600,620 L 0,620 Z"
+        fill="#6B8870" opacity="0.85"/>
+
+  <!-- ════════════ GROUND / FAR LAWN ════════════ -->
+  <rect x="0" y="600" width="1600" height="300" fill="url(#ground)"/>
+
+  <!-- subtle ground depth shadow band -->
+  <rect x="0" y="600" width="1600" height="40" fill="#000" opacity="0.04"/>
+
+  <!-- ════════════ HOUSE 1 — Ranch (sage green, far-left, mid-distance) ════════════ -->
+  <g filter="url(#house-shadow)" transform="translate(80, 0)">
+    <!-- back yard tree behind house -->
+    <use href="#foliage" x="-40" y="430" width="160" height="160" fill="#5F7A55"/>
+    <rect x="20" y="555" width="14" height="60" fill="#4A3826" rx="3"/>
+
+    <!-- House body — slight curve via path -->
+    <path d="M 30,555
+             C 30,553 32,550 36,550
+             L 280,550
+             C 284,550 286,553 286,555
+             L 286,680
+             C 286,684 284,686 280,686
+             L 36,686
+             C 32,686 30,684 30,680 Z"
+          fill="url(#h1-wall)"/>
+
+    <!-- Roof — wide low gable, rounded peak -->
+    <path d="M 14,555
+             C 14,552 16,548 22,545
+             L 156,510
+             Q 158,509 160,510
+             L 294,545
+             C 300,548 302,552 302,555
+             L 286,555
+             L 30,555 Z"
+          fill="url(#h1-roof)"/>
+
+    <!-- Roof underside line (subtle) -->
+    <path d="M 14,555 L 302,555" stroke="#2D3D28" stroke-width="2" opacity="0.4"/>
+
+    <!-- Chimney with curve -->
+    <path d="M 230,520
+             L 230,498
+             C 230,495 233,493 236,493
+             L 252,493
+             C 255,493 258,495 258,498
+             L 258,532 Z"
+          fill="#4A3D33"/>
+
+    <!-- Door, arched -->
+    <path d="M 132,686
+             L 132,620
+             C 132,608 142,600 156,600
+             C 170,600 180,608 180,620
+             L 180,686 Z"
+          fill="#3F5238"/>
+    <circle cx="172" cy="650" r="3" fill="#D4B570"/>
+
+    <!-- Windows -->
+    <g transform="translate(60,610)">
+      <rect width="48" height="48" rx="4" fill="url(#window-glow)"/>
+      <path d="M24,2 L24,46 M2,24 L46,24" stroke="#7A6240" stroke-width="2"/>
+    </g>
+    <g transform="translate(208,610)">
+      <rect width="48" height="48" rx="4" fill="url(#window-glow)"/>
+      <path d="M24,2 L24,46 M2,24 L46,24" stroke="#7A6240" stroke-width="2"/>
+    </g>
+
+    <!-- Porch line/step -->
+    <path d="M 116,686 L 196,686 L 200,696 L 112,696 Z" fill="#5C7553" opacity="0.6"/>
+  </g>
+
+  <!-- ════════════ HOUSE 2 — Cape Cod (cream + dark roof, classic New England) ════════════ -->
+  <g filter="url(#house-shadow)" transform="translate(380, 0)">
+    <!-- Tree behind -->
+    <use href="#foliage" x="290" y="395" width="170" height="170" fill="#6B8E5A"/>
+    <rect x="358" y="535" width="14" height="65" fill="#4A3826" rx="3"/>
+
+    <!-- House body -->
+    <path d="M 30,560
+             C 30,557 33,553 38,553
+             L 240,553
+             C 245,553 248,557 248,560
+             L 248,690
+             C 248,694 245,696 240,696
+             L 38,696
+             C 33,696 30,694 30,690 Z"
+          fill="url(#h2-wall)"/>
+
+    <!-- Steep gable roof -->
+    <path d="M 14,560
+             C 14,556 18,552 24,549
+             L 137,440
+             Q 139,438 141,440
+             L 254,549
+             C 260,552 264,556 264,560
+             L 248,560
+             L 30,560 Z"
+          fill="url(#h2-roof)"/>
+
+    <!-- Dormer window mid-roof -->
+    <path d="M 110,508
+             L 110,485
+             C 110,483 112,481 114,481
+             L 164,481
+             C 166,481 168,483 168,485
+             L 168,508
+             L 174,508
+             L 174,512
+             L 104,512
+             L 104,508 Z"
+          fill="url(#h2-wall)"/>
+    <rect x="120" y="487" width="38" height="20" rx="2" fill="url(#window-glow)"/>
+    <path d="M 110,508 L 168,485 M 168,508 L 110,485"
+          stroke="#5C3D27" stroke-width="0" opacity="0"/>
+    <path d="M 102,485
+             L 139,461
+             L 176,485 Z"
+          fill="url(#h2-roof)"/>
+
+    <!-- Chimney -->
+    <path d="M 200,525
+             L 200,490
+             C 200,487 203,484 207,484
+             L 222,484
+             C 226,484 228,487 228,490
+             L 228,538 Z"
+          fill="#5C4733"/>
+
+    <!-- Front door -->
+    <path d="M 122,696
+             L 122,628
+             C 122,617 132,610 142,610
+             C 152,610 162,617 162,628
+             L 162,696 Z"
+          fill="#2C5F2C"/>
+    <circle cx="155" cy="660" r="3" fill="#D4B570"/>
+
+    <!-- Front windows w/ shutters -->
+    <g transform="translate(60,615)">
+      <rect x="-8" y="-2" width="6" height="50" fill="#2C5F2C"/>
+      <rect x="44" y="-2" width="6" height="50" fill="#2C5F2C"/>
+      <rect width="42" height="46" rx="3" fill="url(#window-glow)"/>
+      <path d="M21,2 L21,44 M2,23 L40,23" stroke="#7A5A30" stroke-width="2"/>
+    </g>
+    <g transform="translate(178,615)">
+      <rect x="-8" y="-2" width="6" height="50" fill="#2C5F2C"/>
+      <rect x="44" y="-2" width="6" height="50" fill="#2C5F2C"/>
+      <rect width="42" height="46" rx="3" fill="url(#window-glow)"/>
+      <path d="M21,2 L21,44 M2,23 L40,23" stroke="#7A5A30" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- ════════════ HOUSE 3 — 2-story Colonial (dusty blue, center) ════════════ -->
+  <g filter="url(#house-shadow)" transform="translate(720, 0)">
+    <!-- Tall tree behind on right -->
+    <use href="#foliage" x="320" y="320" width="200" height="200" fill="#5A7A4D"/>
+    <rect x="402" y="490" width="16" height="80" fill="#3F2F1F" rx="3"/>
+
+    <!-- House body — taller -->
+    <path d="M 30,565
+             C 30,562 33,558 38,558
+             L 290,558
+             C 295,558 298,562 298,565
+             L 298,720
+             C 298,724 295,726 290,726
+             L 38,726
+             C 33,726 30,724 30,720 Z"
+          fill="url(#h3-wall)"/>
+
+    <!-- Roof — symmetrical low gable -->
+    <path d="M 12,565
+             C 12,561 16,557 22,554
+             L 162,498
+             Q 164,497 166,498
+             L 306,554
+             C 312,557 316,561 316,565
+             L 298,565
+             L 30,565 Z"
+          fill="url(#h3-roof)"/>
+
+    <!-- Twin chimneys -->
+    <path d="M 70,538
+             L 70,512
+             C 70,509 73,506 77,506
+             L 92,506
+             C 96,506 99,509 99,512
+             L 99,548 Z"
+          fill="#3A3D42"/>
+    <path d="M 240,538
+             L 240,512
+             C 240,509 243,506 247,506
+             L 262,506
+             C 266,506 269,509 269,512
+             L 269,548 Z"
+          fill="#3A3D42"/>
+
+    <!-- 2 rows of windows -->
+    <g transform="translate(56,580)">
+      <rect width="48" height="56" rx="3" fill="url(#window-glow)"/>
+      <path d="M24,3 L24,53 M3,28 L45,28" stroke="#5A6878" stroke-width="2"/>
+    </g>
+    <g transform="translate(140,580)">
+      <rect width="48" height="56" rx="3" fill="url(#window-glow)"/>
+      <path d="M24,3 L24,53 M3,28 L45,28" stroke="#5A6878" stroke-width="2"/>
+    </g>
+    <g transform="translate(224,580)">
+      <rect width="48" height="56" rx="3" fill="url(#window-glow)"/>
+      <path d="M24,3 L24,53 M3,28 L45,28" stroke="#5A6878" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(56,650)">
+      <rect width="48" height="56" rx="3" fill="url(#window-glow)"/>
+      <path d="M24,3 L24,53 M3,28 L45,28" stroke="#5A6878" stroke-width="2"/>
+    </g>
+    <g transform="translate(224,650)">
+      <rect width="48" height="56" rx="3" fill="url(#window-glow)"/>
+      <path d="M24,3 L24,53 M3,28 L45,28" stroke="#5A6878" stroke-width="2"/>
+    </g>
+
+    <!-- Center door -->
+    <path d="M 144,726
+             L 144,646
+             C 144,632 154,624 164,624
+             C 174,624 184,632 184,646
+             L 184,726 Z"
+          fill="#7A2E2E"/>
+    <circle cx="178" cy="685" r="3" fill="#D4B570"/>
+
+    <!-- Pediment over door -->
+    <path d="M 138,648
+             Q 164,635 190,648
+             L 190,652
+             Q 164,640 138,652 Z"
+          fill="#FFFFFF" opacity="0.85"/>
+
+    <!-- Entry steps -->
+    <path d="M 132,726 L 196,726 L 200,738 L 128,738 Z" fill="#4A4F58" opacity="0.7"/>
+  </g>
+
+  <!-- ════════════ HOUSE 4 — Victorian with rounded turret (brick rose) ════════════ -->
+  <g filter="url(#house-shadow)" transform="translate(1080, 0)">
+    <!-- Tree behind right -->
+    <use href="#foliage" x="290" y="380" width="170" height="170" fill="#5F7A55"/>
+    <rect x="358" y="525" width="14" height="65" fill="#4A3826" rx="3"/>
+
+    <!-- House main body -->
+    <path d="M 60,572
+             C 60,569 63,565 68,565
+             L 250,565
+             C 255,565 258,569 258,572
+             L 258,705
+             C 258,709 255,711 250,711
+             L 68,711
+             C 63,711 60,709 60,705 Z"
+          fill="url(#h4-wall)"/>
+
+    <!-- Asymmetric gable -->
+    <path d="M 50,572
+             C 50,568 54,564 60,560
+             L 144,490
+             Q 146,488 148,490
+             L 264,560
+             C 270,563 272,567 272,572
+             L 258,572
+             L 60,572 Z"
+          fill="url(#h4-roof)"/>
+
+    <!-- Rounded turret on left side -->
+    <path d="M 22,711
+             L 22,538
+             C 22,500 50,478 76,486
+             C 80,488 80,490 80,492
+             L 80,711 Z"
+          fill="url(#h4-wall)"/>
+    <!-- Conical turret roof -->
+    <path d="M 16,540
+             C 16,500 42,468 56,470
+             C 70,468 88,500 88,540
+             C 78,544 32,544 16,540 Z"
+          fill="url(#h4-roof)"/>
+    <!-- Turret tip -->
+    <path d="M 50,470
+             C 50,460 54,452 56,450
+             C 58,452 62,460 62,470 Z"
+          fill="#7A3D27"/>
+
+    <!-- Decorative trim under main eaves -->
+    <path d="M 60,572
+             L 76,580
+             L 92,572
+             L 108,580
+             L 124,572
+             L 140,580
+             L 156,572
+             L 172,580
+             L 188,572
+             L 204,580
+             L 220,572
+             L 236,580
+             L 254,572"
+          fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.5"/>
+
+    <!-- Turret window (small round) -->
+    <ellipse cx="50" cy="565" rx="22" ry="18" fill="url(#window-glow)"/>
+    <path d="M 28,565 L 72,565 M 50,547 L 50,583" stroke="#7A3D27" stroke-width="2"/>
+
+    <!-- Main windows -->
+    <g transform="translate(96,602)">
+      <rect width="44" height="58" rx="4" fill="url(#window-glow)"/>
+      <path d="M22,3 L22,55 M3,29 L41,29" stroke="#7A3D27" stroke-width="2"/>
+    </g>
+    <g transform="translate(176,602)">
+      <rect width="44" height="58" rx="4" fill="url(#window-glow)"/>
+      <path d="M22,3 L22,55 M3,29 L41,29" stroke="#7A3D27" stroke-width="2"/>
+    </g>
+
+    <!-- Door — arched -->
+    <path d="M 134,711
+             L 134,632
+             C 134,618 144,608 158,608
+             C 172,608 182,618 182,632
+             L 182,711 Z"
+          fill="#5C2B1A"/>
+    <circle cx="174" cy="668" r="3" fill="#D4B570"/>
+  </g>
+
+  <!-- ════════════ HOUSE 5 — Modern minimalist (cream + dark, far-right) ════════════ -->
+  <g filter="url(#house-shadow)" transform="translate(1380, 0)">
+    <!-- House body — wide horizontal -->
+    <path d="M 14,580
+             C 14,577 17,573 22,573
+             L 198,573
+             C 203,573 206,577 206,580
+             L 206,712
+             C 206,716 203,718 198,718
+             L 22,718
+             C 17,718 14,716 14,712 Z"
+          fill="url(#h5-wall)"/>
+
+    <!-- Flat slightly slanted roof — overhang -->
+    <path d="M 4,584
+             L 4,575
+             C 4,570 8,566 12,566
+             L 208,566
+             C 212,566 216,570 216,575
+             L 216,584
+             L 206,584
+             L 14,584 Z"
+          fill="url(#h5-roof)"/>
+
+    <!-- Big horizontal windows (modern style) -->
+    <rect x="32" y="600" width="80" height="46" rx="3" fill="url(#window-glow)"/>
+    <path d="M72,602 L72,644" stroke="#3A4048" stroke-width="2"/>
+
+    <rect x="130" y="600" width="58" height="46" rx="3" fill="url(#window-glow)"/>
+    <path d="M159,602 L159,644" stroke="#3A4048" stroke-width="2"/>
+
+    <!-- Long horizontal lower window -->
+    <rect x="32" y="668" width="56" height="32" rx="3" fill="url(#window-glow)" opacity="0.7"/>
+
+    <!-- Door — minimal -->
+    <path d="M 110,718
+             L 110,665
+             C 110,660 114,656 120,656
+             L 154,656
+             C 160,656 164,660 164,665
+             L 164,718 Z"
+          fill="#3A4048"/>
+    <circle cx="158" cy="688" r="2.5" fill="#D4B570"/>
+
+    <!-- Accent vertical wood slat on right side -->
+    <rect x="180" y="566" width="20" height="152" fill="#7A5A3A" opacity="0.85"/>
+  </g>
+
+  <!-- ════════════ FOREGROUND TREE LEFT (between H1 and H2) ════════════ -->
+  <g>
+    <rect x="378" y="640" width="22" height="100" fill="#3F2F1F" rx="4"/>
+    <use href="#foliage" x="328" y="540" width="170" height="170" fill="#7A9A6A"/>
+    <use href="#foliage" x="350" y="510" width="120" height="120" fill="#94B284" opacity="0.8"/>
+  </g>
+
+  <!-- ════════════ FOREGROUND TREE RIGHT (between H4 and H5) ════════════ -->
+  <g>
+    <rect x="1370" y="650" width="20" height="90" fill="#3F2F1F" rx="4"/>
+    <use href="#foliage" x="1322" y="555" width="160" height="160" fill="#7A9A6A"/>
+    <use href="#foliage" x="1340" y="528" width="110" height="110" fill="#94B284" opacity="0.8"/>
+  </g>
+
+  <!-- ════════════ NEAR LAWN — slightly darker green ════════════ -->
+  <path d="M 0,720
+           C 200,712 400,725 600,718
+           C 800,710 1000,725 1200,720
+           C 1380,715 1500,728 1600,720
+           L 1600,900 L 0,900 Z"
+        fill="#7C9A65"/>
+
+  <!-- ════════════ SIDEWALK / FRONT PATH ════════════ -->
+  <path d="M 0,810
+           C 200,800 400,815 800,808
+           C 1100,802 1400,818 1600,810
+           L 1600,860 L 0,860 Z"
+        fill="url(#sidewalk)"/>
+
+  <!-- Subtle sidewalk shadow at top edge -->
+  <path d="M 0,808
+           C 200,798 400,813 800,806
+           C 1100,800 1400,816 1600,808
+           L 1600,818 L 0,820 Z"
+        fill="#000" opacity="0.06"/>
+
+  <!-- ════════════ YARD SIGNS ════════════ -->
+  <!-- Sign generator: post + sign + grade letter + 'YOUR SCORE' label -->
+
+  <!-- H1 sign — Grade B+ -->
+  <g transform="translate(155, 730)">
+    <rect x="-3" y="0" width="6" height="58" fill="#5C4733" rx="2"/>
+    <path d="M -54,-46
+             C -54,-48 -52,-50 -50,-50
+             L 50,-50
+             C 52,-50 54,-48 54,-46
+             L 54,-2
+             C 54,0 52,2 50,2
+             L -50,2
+             C -52,2 -54,0 -54,-2 Z"
+          fill="url(#sign)" stroke="#A88B6A" stroke-width="1.5"/>
+    <text x="0" y="-34" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="8" letter-spacing="1.4" fill="#7A6240" font-weight="700">YOUR SCORE</text>
+    <circle cx="0" cy="-15" r="16" fill="#3AB44A"/>
+    <text x="0" y="-9" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="22" fill="#FFFFFF" font-weight="600">B+</text>
+  </g>
+
+  <!-- H2 sign — Grade A -->
+  <g transform="translate(490, 730)">
+    <rect x="-3" y="0" width="6" height="58" fill="#5C4733" rx="2"/>
+    <path d="M -54,-46
+             C -54,-48 -52,-50 -50,-50
+             L 50,-50
+             C 52,-50 54,-48 54,-46
+             L 54,-2
+             C 54,0 52,2 50,2
+             L -50,2
+             C -52,2 -54,0 -54,-2 Z"
+          fill="url(#sign)" stroke="#A88B6A" stroke-width="1.5"/>
+    <text x="0" y="-34" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="8" letter-spacing="1.4" fill="#7A6240" font-weight="700">YOUR SCORE</text>
+    <circle cx="0" cy="-15" r="16" fill="#2E9A3D"/>
+    <text x="0" y="-9" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="24" fill="#FFFFFF" font-weight="600">A</text>
+  </g>
+
+  <!-- H3 sign — Grade D (the underperformer) -->
+  <g transform="translate(880, 740)">
+    <rect x="-3" y="0" width="6" height="58" fill="#5C4733" rx="2"/>
+    <path d="M -54,-46
+             C -54,-48 -52,-50 -50,-50
+             L 50,-50
+             C 52,-50 54,-48 54,-46
+             L 54,-2
+             C 54,0 52,2 50,2
+             L -50,2
+             C -52,2 -54,0 -54,-2 Z"
+          fill="url(#sign)" stroke="#A88B6A" stroke-width="1.5"/>
+    <text x="0" y="-34" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="8" letter-spacing="1.4" fill="#7A6240" font-weight="700">YOUR SCORE</text>
+    <circle cx="0" cy="-15" r="16" fill="#DC2626"/>
+    <text x="0" y="-9" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="24" fill="#FFFFFF" font-weight="600">D</text>
+  </g>
+
+  <!-- H4 sign — Grade C -->
+  <g transform="translate(1240, 730)">
+    <rect x="-3" y="0" width="6" height="58" fill="#5C4733" rx="2"/>
+    <path d="M -54,-46
+             C -54,-48 -52,-50 -50,-50
+             L 50,-50
+             C 52,-50 54,-48 54,-46
+             L 54,-2
+             C 54,0 52,2 50,2
+             L -50,2
+             C -52,2 -54,0 -54,-2 Z"
+          fill="url(#sign)" stroke="#A88B6A" stroke-width="1.5"/>
+    <text x="0" y="-34" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="8" letter-spacing="1.4" fill="#7A6240" font-weight="700">YOUR SCORE</text>
+    <circle cx="0" cy="-15" r="16" fill="#F59E0B"/>
+    <text x="0" y="-9" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="24" fill="#FFFFFF" font-weight="600">C</text>
+  </g>
+
+  <!-- H5 sign — Grade A- -->
+  <g transform="translate(1490, 740)">
+    <rect x="-3" y="0" width="6" height="58" fill="#5C4733" rx="2"/>
+    <path d="M -54,-46
+             C -54,-48 -52,-50 -50,-50
+             L 50,-50
+             C 52,-50 54,-48 54,-46
+             L 54,-2
+             C 54,0 52,2 50,2
+             L -50,2
+             C -52,2 -54,0 -54,-2 Z"
+          fill="url(#sign)" stroke="#A88B6A" stroke-width="1.5"/>
+    <text x="0" y="-34" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="8" letter-spacing="1.4" fill="#7A6240" font-weight="700">YOUR SCORE</text>
+    <circle cx="0" cy="-15" r="16" fill="#3AB44A"/>
+    <text x="0" y="-9" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="22" fill="#FFFFFF" font-weight="600">A-</text>
+  </g>
+
+  <!-- ════════════ FOREGROUND VIGNETTE ════════════ -->
+  <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.7">
+    <stop offset="0.6" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1"   stop-color="#000" stop-opacity="0.18"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)"/>
+</svg>
