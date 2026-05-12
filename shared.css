@@ -3268,3 +3268,60 @@ a.state-coverage-rate-hedge:hover .rh-arrow { transform: translateX(3px); }
   font-feature-settings: "tnum"; letter-spacing: 0.01em;
 }
 .footer-office-phone:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.22); }
+
+/* ════════════════════════════════════════════════════════════════════
+   CROSS-NAV BLOCK · added to all 58 program pages.
+   Gives mobile (and desktop) users an easy way to jump sideways to
+   another state's version of the program, or to a different category
+   altogether. Two columns of pills, collapses to one on narrow screens.
+   ════════════════════════════════════════════════════════════════════ */
+.cross-nav-block {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 56px;
+  margin-top: 32px;
+  padding-top: 36px;
+  border-top: 1px solid var(--gray-200);
+}
+.cross-nav-col { min-width: 0; }
+.cross-nav-label {
+  font-family: var(--mono); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--green-700);
+  margin-bottom: 14px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.cross-nav-label::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green-500);
+}
+.cross-nav-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.cross-nav-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px 8px 12px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: 100px;
+  font-family: var(--display); font-size: 13.5px; font-weight: 500;
+  color: var(--gray-800);
+  text-decoration: none;
+  transition: background 0.18s, border-color 0.18s, color 0.18s, transform 0.18s, box-shadow 0.18s;
+  letter-spacing: -0.005em;
+}
+.cross-nav-pill:hover {
+  background: white;
+  border-color: var(--blue-700);
+  color: var(--blue-700);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px -3px rgba(26, 79, 144, 0.18);
+}
+.cross-nav-pill .abbr {
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.06em; color: var(--blue-700);
+}
+.cross-nav-pill:hover .abbr { color: var(--blue-900); }
+.cross-nav-pill svg { width: 14px; height: 14px; color: var(--blue-700); flex-shrink: 0; }
+.cross-nav-pill:hover svg { color: var(--blue-900); }
+@media (max-width: 720px) {
+  .cross-nav-block { grid-template-columns: 1fr; gap: 32px; }
+}
