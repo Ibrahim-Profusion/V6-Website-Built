@@ -1,0 +1,38 @@
+# ─── ProFusion Home Solutions · .gitignore ───────────────────────
+# macOS clutter
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Editor / IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local backups (zip files, dated snapshots)
+*.zip
+V6-Build-Backup-*/
+_backup-*/
+backup-*/
+
+# Internal critique scratchwork (kept local, not for production)
+.impeccable/
+
+# Old experimental builds — kept local but not deployed
+archive/
+
+# Node / build artifacts (not used today, but here in case)
+node_modules/
+dist/
+.next/
+.cache/
+
+# Logs and lockfiles you don't need on GitHub
+*.log
+.env
+.env.local
