@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service &middot; ProFusion Home Solutions</title>
+<meta name="description" content="The Terms of Service for ProFusion Home Solutions. Plain English, no fine print games. Eligibility, appointments, partner services, SMS, liability, and how to contact us.">
+<link rel="icon" type="image/png" href="images/Favicon.png">
+<link rel="apple-touch-icon" href="images/Favicon.png">
+<link rel="canonical" href="https://profusion.solutions/terms.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ProFusion Home Solutions">
+<meta property="og:title" content="Terms of Service &middot; ProFusion Home Solutions">
+<meta property="og:description" content="The Terms of Service for ProFusion Home Solutions. Plain English, no fine print games.">
+<meta property="og:url" content="https://profusion.solutions/terms.html">
+<meta property="og:image" content="https://profusion.solutions/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Terms of Service &middot; ProFusion Home Solutions">
+<meta name="twitter:description" content="The Terms of Service for ProFusion Home Solutions.">
+<meta name="twitter:image" content="https://profusion.solutions/images/social-card.png">
+<meta name="twitter:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="theme-color" content="#0A1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* Page-specific styles · terms.html
+   Mirrors privacy.html exactly. Reuses canonical idx2-* + program-section
+   chrome from shared.css. Adds the same TOC sidebar, document layout,
+   callouts, and contact block as the privacy page. */
+
+.terms-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+
+/* Sticky TOC */
+.terms-toc {
+  position: sticky;
+  top: 96px;
+  padding: 24px 0;
+  border-top: 1px solid var(--gray-200);
+}
+.terms-toc-head {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.terms-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: section;
+}
+.terms-toc li {
+  counter-increment: section;
+  margin: 0;
+}
+.terms-toc a {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--gray-700);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gray-100);
+  transition: color 0.15s;
+}
+.terms-toc li:last-child a { border-bottom: none; }
+.terms-toc a::before {
+  content: counter(section, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--gray-400);
+  font-weight: 600;
+  min-width: 24px;
+  padding-top: 2px;
+}
+.terms-toc a:hover { color: var(--blue-700); }
+.terms-toc a:hover::before { color: var(--blue-700); }
+
+/* Document body */
+.terms-content { max-width: 760px; }
+.terms-intro {
+  font-family: var(--serif);
+  font-size: clamp(18px, 1.8vw, 21px);
+  line-height: 1.6;
+  color: var(--gray-800);
+  margin: 0 0 56px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--gray-200);
+}
+.terms-intro p { margin: 0 0 14px; }
+.terms-intro p:last-child { margin-bottom: 0; }
+.terms-content h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 56px 0 6px;
+  scroll-margin-top: 96px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.terms-content h2:first-of-type { margin-top: 0; }
+.terms-content h2 .num {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--green-700);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-top: 8px;
+}
+.terms-content p {
+  font-family: var(--serif-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--gray-800);
+  margin: 0 0 18px;
+}
+.terms-content ul {
+  font-family: var(--serif-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--gray-800);
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+.terms-content ul li {
+  padding: 8px 0 8px 28px;
+  position: relative;
+  border-bottom: 1px solid var(--gray-100);
+}
+.terms-content ul li:last-child { border-bottom: none; }
+.terms-content ul li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 18px;
+  width: 12px;
+  height: 1px;
+  background: var(--green-700);
+}
+.terms-content strong { color: var(--ink); font-weight: 600; }
+
+/* AS-IS / Liability callout — pulled out for emphasis */
+.terms-callout {
+  margin: 28px 0;
+  padding: 24px 28px;
+  background: var(--gray-50);
+  border-left: 3px solid var(--green-700);
+  border-radius: 4px;
+}
+.terms-callout-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green-700);
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.terms-callout-eyebrow::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--green-700);
+}
+.terms-callout p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Action-required (amber) callout for the State/County placeholders */
+.terms-todo {
+  margin: 0 0 28px;
+  padding: 20px 24px;
+  background: #FFF8E1;
+  border-left: 3px solid #C7891B;
+  border-radius: 4px;
+}
+.terms-todo-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8A5A00;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.terms-todo-eyebrow svg { display: block; }
+.terms-todo p {
+  font-family: var(--serif-body);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #5A3D00;
+  margin: 0;
+}
+.terms-todo strong { color: #3D2900; }
+
+/* Placeholder pill — visually obvious unfilled value */
+.terms-placeholder {
+  display: inline-block;
+  padding: 2px 10px;
+  background: #FFF8E1;
+  border: 1px dashed #C7891B;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: #8A5A00;
+  letter-spacing: 0.02em;
+}
+
+/* Contact block */
+.terms-contact {
+  margin: 24px 0 0;
+  padding: 28px 32px;
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+}
+.terms-contact-name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ink);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.terms-contact dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  row-gap: 6px;
+  column-gap: 16px;
+  font-family: var(--sans);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+.terms-contact dt {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 600;
+  padding-top: 3px;
+}
+.terms-contact dd { margin: 0; color: var(--gray-800); }
+.terms-contact dd a { color: var(--blue-700); text-decoration: none; font-weight: 500; }
+.terms-contact dd a:hover { text-decoration: underline; }
+
+/* Hero "last updated" pill */
+.terms-updated {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 6px 14px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--gray-700);
+  font-weight: 500;
+}
+.terms-updated .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green-700);
+}
+
+/* Hero logo lockup */
+.terms-hero-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4/5;
+  background: linear-gradient(160deg, var(--gray-50) 0%, white 100%);
+  border: 1px solid var(--gray-100);
+  border-radius: 24px;
+  padding: 48px;
+  text-align: center;
+}
+.terms-hero-mark img {
+  width: 64%;
+  max-width: 240px;
+  height: auto;
+  margin-bottom: 32px;
+  opacity: 0.92;
+}
+.terms-hero-mark-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--gray-700);
+  margin: 0;
+}
+.terms-hero-mark-tagline em {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--green-700);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .terms-layout { grid-template-columns: 1fr; gap: 32px; }
+  .terms-toc { position: static; padding: 20px 24px; background: var(--gray-50); border-top: none; border: 1px solid var(--gray-100); border-radius: 14px; }
+  .terms-toc ol { columns: 2; column-gap: 24px; }
+  .terms-toc li { break-inside: avoid; }
+}
+@media (max-width: 620px) {
+  .terms-toc ol { columns: 1; }
+  .terms-content h2 { gap: 10px; flex-wrap: wrap; }
+  .terms-contact dl { grid-template-columns: 1fr; row-gap: 0; }
+  .terms-contact dt { padding-top: 12px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="nav">
+  <a href="index.html" class="brand"><img src="logo.png" alt="ProFusion Home Solutions"></a>
+  <ul class="nav-links">
+    <li class="has-dropdown">
+      <a href="#">About <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="about-us.html">About Us</a>
+        <a href="our-customers.html">Our Customers</a>
+        <a href="for-installers.html">For Installers</a>
+        <a href="contact.html">Contact Us</a></div>
+    </li>
+    <li><a href="index.html#map">Service Area</a></li>
+    <li class="has-dropdown">
+      <a href="#">Programs <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="categories/solar.html">Solar</a>
+        <a href="categories/heating-cooling.html">Heating &amp; Cooling</a>
+        <a href="categories/insulation.html">Insulation</a>
+        <a href="categories/windows-doors.html">Windows &amp; Doors</a>
+        <a href="categories/energy-storage.html">Energy Storage</a></div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Learn <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="index.html#idx2Score"><span class="simple-dropdown-eyebrow">On homepage</span>The Score</a>
+        <a href="index.html#how"><span class="simple-dropdown-eyebrow">On homepage</span>How it works</a>
+        <div class="simple-dropdown-divider" aria-hidden="true"></div>
+        <a href="how-our-score-guides-you.html">How our Score guides you</a>
+        <a href="sample-report.html">See a sample report</a>
+        <a href="our-installers.html">Who we match you with</a>
+        <a href="2026-changes.html">What changed in 2026</a></div>
+    </li>
+    <li><a href="get-my-score.html" class="nav-cta">Get my report</a></li>
+  </ul>
+</nav>
+
+<div class="container breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="sep">/</span>
+  <span class="current">Terms of Service</span></div>
+
+<section class="program-hero">
+  <div class="container">
+    <div class="program-hero-inner">
+      <div>
+        <span class="idx2-eyebrow">Legal &middot; Terms of Service</span>
+        <h1 class="idx2-h1">The terms, <em>in plain English</em>.</h1>
+        <p class="idx2-prose" style="margin-bottom: 24px;">What we do, what's on you, what's on us, and what happens when something goes sideways. Same handyman tone as the rest of the site.</p>
+        <div class="terms-updated"><span class="dot" aria-hidden="true"></span> Last updated &middot; June 8, 2026</div>
+      </div>
+      <div class="terms-hero-mark">
+        <img src="logo.png" alt="ProFusion Home Solutions">
+        <p class="terms-hero-mark-tagline">Built for the <em>house</em>.<br>Felt in the <em>home</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="program-section">
+  <div class="container">
+    <div class="terms-layout">
+
+      <aside class="terms-toc" aria-label="Sections">
+        <div class="terms-toc-head">On this page</div>
+        <ol>
+          <li><a href="#our-services">Our services</a></li>
+          <li><a href="#eligibility">Eligibility</a></li>
+          <li><a href="#responsibilities">User responsibilities</a></li>
+          <li><a href="#sms">SMS and text messaging</a></li>
+          <li><a href="#appointments">Appointments and consultations</a></li>
+          <li><a href="#partners">Partner services</a></li>
+          <li><a href="#warranties">Disclaimer of warranties</a></li>
+          <li><a href="#liability">Limitation of liability</a></li>
+          <li><a href="#termination">Termination</a></li>
+          <li><a href="#law">Governing law</a></li>
+          <li><a href="#changes">Changes to these Terms</a></li>
+          <li><a href="#contact">Contact us</a></li>
+        </ol>
+      </aside>
+
+      <article class="terms-content">
+
+        <div class="terms-intro">
+          <p>These Terms of Service (&ldquo;Terms&rdquo;) govern your use of services provided by Profusion Home Solutions (&ldquo;Profusion,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), including our website at <a href="https://profusion.solutions" style="color: var(--blue-700); font-weight: 500; text-decoration: none;">https://profusion.solutions</a> and any communication or service relationship between you and Profusion.</p>
+          <p>Please read these Terms carefully. By using our website, contacting our team, scheduling a consultation, or providing your information to us in any form, you agree to be bound by these Terms and by our <a href="privacy.html" style="color: var(--blue-700); font-weight: 500; text-decoration: none;">Privacy Policy</a>.</p>
+        </div>
+
+        <h2 id="our-services"><span class="num">01</span> Our Services</h2>
+        <p>Profusion Home Solutions connects homeowners with vetted installation and service partners for home improvement programs, including (but not limited to) solar, HVAC, windows, insulation, and related services. We coordinate consultations and appointments between homeowners and our partner network. The actual installation and service work is performed by our independent partners.</p>
+
+        <h2 id="eligibility"><span class="num">02</span> Eligibility</h2>
+        <p>You must be at least 18 years old and a legal resident of the United States to use our services or provide your information to us.</p>
+
+        <h2 id="responsibilities"><span class="num">03</span> User Responsibilities</h2>
+        <p>By engaging with our services, you agree to:</p>
+        <ul>
+          <li>Provide accurate, current, and truthful information.</li>
+          <li>Use our services for lawful purposes only.</li>
+          <li>Honor scheduled appointments and notify us of changes in a timely manner.</li>
+          <li>Treat our team members and partners with respect.</li>
+        </ul>
+
+        <h2 id="sms"><span class="num">04</span> SMS / Text Messaging</h2>
+        <p>If you provide your mobile number and consent to receive SMS messages from Profusion Home Solutions, the following applies:</p>
+        <ul>
+          <li>We may send SMS messages regarding appointment scheduling, appointment reminders, billing, customer service, and account updates.</li>
+          <li><strong>Message frequency</strong> varies based on your account activity and appointment schedule.</li>
+          <li><strong>Message and data rates</strong> may apply, depending on your wireless carrier and plan.</li>
+          <li>You may opt out at any time by replying <strong>STOP</strong> to any message. Reply <strong>HELP</strong> for assistance.</li>
+        </ul>
+        <div class="terms-callout">
+          <div class="terms-callout-eyebrow">Our promise on mobile data</div>
+          <p>We do not share mobile phone numbers or SMS consent data with third parties or affiliates for marketing purposes.</p>
+        </div>
+        <p>See our <a href="privacy.html" style="color: var(--blue-700); font-weight: 500; text-decoration: none;">Privacy Policy</a> for full details.</p>
+
+        <h2 id="appointments"><span class="num">05</span> Appointments and Consultations</h2>
+        <p>Appointments scheduled through our team are subject to availability of our partners. We make every effort to confirm and remind customers of upcoming appointments, but we are not responsible for missed appointments due to factors outside our control. Rescheduling or cancellation should be communicated to our team as early as possible.</p>
+
+        <h2 id="partners"><span class="num">06</span> Partner Services</h2>
+        <p>Installation, service, financing, and warranty work is provided by our independent installation and service partners. Profusion Home Solutions does not directly perform such work and is not a party to any contract you enter into with a partner. Any disputes regarding the partner's work or services should be addressed directly with the partner.</p>
+
+        <h2 id="warranties"><span class="num">07</span> Disclaimer of Warranties</h2>
+        <p>Our services and website are provided <strong>&ldquo;AS IS&rdquo;</strong> and <strong>&ldquo;AS AVAILABLE,&rdquo;</strong> without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not warrant the work, products, or representations of our installation and service partners.</p>
+
+        <h2 id="liability"><span class="num">08</span> Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, Profusion Home Solutions and its affiliates, officers, employees, and agents will not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, arising from your use of our services, our website, or any service provided by a partner, even if we have been advised of the possibility of such damages.</p>
+        <p>Our aggregate liability for any claim arising out of these Terms will not exceed the amount you paid us, if any, for the service in question during the twelve (12) months prior to the claim.</p>
+
+        <h2 id="termination"><span class="num">09</span> Termination</h2>
+        <p>We reserve the right to terminate or refuse service at our discretion, including in cases of abusive behavior, fraud, misrepresentation, or violation of these Terms.</p>
+
+        <h2 id="law"><span class="num">10</span> Governing Law</h2>
+        <p>These Terms are governed by the laws of the State of New York, without regard to its conflict-of-laws principles. Any disputes arising from these Terms or our services will be resolved in the state or federal courts located in Nassau County, New York.</p>
+
+        <h2 id="changes"><span class="num">11</span> Changes to These Terms</h2>
+        <p>We may update these Terms from time to time. Updates will be posted on this page with an updated &ldquo;Last Updated&rdquo; date. Continued use of our services after updates constitutes acceptance of the revised Terms.</p>
+
+        <h2 id="contact"><span class="num">12</span> Contact Us</h2>
+        <p>For any questions about these Terms, contact us:</p>
+        <div class="terms-contact">
+          <div class="terms-contact-name">Profusion Home Solutions</div>
+          <dl>
+            <dt>Website</dt>
+            <dd><a href="https://profusion.solutions">https://profusion.solutions</a></dd>
+            <dt>Email</dt>
+            <dd><a href="mailto:info@profusion.solutions">info@profusion.solutions</a></dd>
+            <dt>Phone</dt>
+            <dd><a href="tel:+13393304289">+1 (339) 330-4289</a></dd>
+          </dl>
+        </div>
+
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container-narrow">
+    <h3>Questions about these terms? <em>Just ask</em>.</h3>
+    <p>Email, call, or write us. We'll get back to you in plain English, same as everything else around here.</p>
+    <a href="contact.html" class="btn btn-white">Contact us
+      <svg width="16" height="14" viewBox="0 0 16 14" fill="none"><path d="M1 7h13M9 1l5 6-5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a></div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-offices">
+      <h4 class="footer-offices-head">Visit us</h4>
+      <div class="footer-offices-row is-pair">
+        <article class="footer-office">
+          <div class="footer-office-map">
+            <iframe src="https://maps.google.com/maps?q=24+Spice+Street+Boston+MA+02129&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Map of ProFusion Boston office" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="footer-office-meta">
+            <div class="footer-office-tag">New England</div>
+            <div class="footer-office-name">Boston, MA</div>
+            <div class="footer-office-addr">24 Spice Street<br>Boston, MA 02129</div>
+            <div class="footer-office-phone"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+13393304289">+1 (339) 330-4289</a></div>
+            <a class="footer-office-link" href="https://maps.google.com/?q=24+Spice+Street+Boston+MA+02129" target="_blank" rel="noopener">Open in Maps <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a></div>
+        </article>
+        <article class="footer-office">
+          <div class="footer-office-map">
+            <iframe src="https://maps.google.com/maps?q=505+S+Broadway+Hicksville+NY+11801&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Map of ProFusion Hicksville office" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="footer-office-meta">
+            <div class="footer-office-tag">Head Office</div>
+            <div class="footer-office-name">Hicksville, NY</div>
+            <div class="footer-office-addr">505 S Broadway<br>Hicksville, NY 11801</div>
+            <div class="footer-office-phone"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+15166133990">+1 (516) 613-3990</a></div>
+            <a class="footer-office-link" href="https://maps.google.com/?q=505+S+Broadway+Hicksville+NY+11801" target="_blank" rel="noopener">Open in Maps <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a></div>
+        </article></div></div>
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img src="logo.png" alt="ProFusion Home Solutions">
+        <p style="font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--green-400); margin-bottom: 14px;">Built for the <em style="font-family: var(--serif); font-style: italic;">house</em>. Felt in the <em style="font-family: var(--serif); font-style: italic;">home</em>.</p>
+        <p>The Home Efficiency Score, mapped to your zip, <em>every state, every rebate</em>. Now serving 11 states. <em>Going nationwide</em>.</p></div>
+      <div class="footer-col"><h4>Programs</h4><ul>
+        <li><a href="categories/solar.html">Solar</a></li>
+        <li><a href="categories/heating-cooling.html">Heating &amp; Cooling</a></li>
+        <li><a href="categories/insulation.html">Insulation</a></li>
+        <li><a href="categories/windows-doors.html">Windows &amp; Doors</a></li>
+        <li><a href="categories/energy-storage.html">Energy Storage</a></li></ul></div>
+      <div class="footer-col"><h4>Learn</h4><ul>
+        <li><a href="how-our-score-guides-you.html">How our Score guides you</a></li>
+        <li><a href="sample-report.html">See a sample report</a></li>
+        <li><a href="our-installers.html">Who we match you with</a></li>
+        <li><a href="2026-changes.html">What changed in 2026</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="about-us.html">About us</a></li>
+        <li><a href="our-customers.html">Our Customers</a></li>
+        <li><a href="for-installers.html">For Installers</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="get-my-score.html">Get my report</a></li></ul></div></div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 ProFusion Home Solutions LLC &middot; <a href="privacy.html" style="color: inherit;">Privacy</a> &middot; <a href="terms.html" style="color: inherit;">Terms</a></div>
+      <div>Now serving 11 states &middot; A+ BBB &middot; Fully Insured</div></div></div>
+</footer>
+<script>
+const nav = document.getElementById('nav');
+if (nav) { window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); }); }
+</script>
+<script defer src="mobile-nav.js"></script>
+</body>
+</html>
