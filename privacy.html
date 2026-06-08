@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy &middot; ProFusion Home Solutions</title>
+<meta name="description" content="How ProFusion Home Solutions handles your personal information. Plain English, no fine print games. What we collect, how we use it, who sees it, and the choices you have.">
+<link rel="icon" type="image/png" href="images/Favicon.png">
+<link rel="apple-touch-icon" href="images/Favicon.png">
+<link rel="canonical" href="https://profusion.solutions/privacy.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ProFusion Home Solutions">
+<meta property="og:title" content="Privacy Policy &middot; ProFusion Home Solutions">
+<meta property="og:description" content="How ProFusion Home Solutions handles your personal information. Plain English, no fine print games.">
+<meta property="og:url" content="https://profusion.solutions/privacy.html">
+<meta property="og:image" content="https://profusion.solutions/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy Policy &middot; ProFusion Home Solutions">
+<meta name="twitter:description" content="How ProFusion Home Solutions handles your personal information.">
+<meta name="twitter:image" content="https://profusion.solutions/images/social-card.png">
+<meta name="twitter:image:alt" content="ProFusion Home Solutions — Built for the house. Felt in the home.">
+<meta name="theme-color" content="#0A1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* Page-specific styles · privacy.html
+   Reuses canonical idx2-* + program-section chrome from shared.css.
+   Adds only what's unique: the TOC sidebar, the document layout,
+   the SMS-consent callout, and the section ids/anchors. */
+
+.privacy-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+
+/* Sticky TOC */
+.privacy-toc {
+  position: sticky;
+  top: 96px;
+  padding: 24px 0;
+  border-top: 1px solid var(--gray-200);
+}
+.privacy-toc-head {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.privacy-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: section;
+}
+.privacy-toc li {
+  counter-increment: section;
+  margin: 0;
+}
+.privacy-toc a {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--gray-700);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gray-100);
+  transition: color 0.15s;
+}
+.privacy-toc li:last-child a { border-bottom: none; }
+.privacy-toc a::before {
+  content: counter(section, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--gray-400);
+  font-weight: 600;
+  min-width: 24px;
+  padding-top: 2px;
+}
+.privacy-toc a:hover {
+  color: var(--blue-700);
+}
+.privacy-toc a:hover::before {
+  color: var(--blue-700);
+}
+
+/* Document body */
+.privacy-content {
+  max-width: 760px;
+}
+.privacy-intro {
+  font-family: var(--serif);
+  font-size: clamp(18px, 1.8vw, 21px);
+  line-height: 1.6;
+  color: var(--gray-800);
+  margin: 0 0 56px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--gray-200);
+}
+.privacy-content h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 56px 0 6px;
+  scroll-margin-top: 96px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.privacy-content h2:first-of-type { margin-top: 0; }
+.privacy-content h2 .num {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--green-700);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-top: 8px;
+}
+.privacy-content p {
+  font-family: var(--serif-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--gray-800);
+  margin: 0 0 18px;
+}
+.privacy-content ul {
+  font-family: var(--serif-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--gray-800);
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+.privacy-content ul li {
+  padding: 8px 0 8px 28px;
+  position: relative;
+  border-bottom: 1px solid var(--gray-100);
+}
+.privacy-content ul li:last-child { border-bottom: none; }
+.privacy-content ul li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 18px;
+  width: 12px;
+  height: 1px;
+  background: var(--green-700);
+}
+.privacy-content strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Twilio / SMS consent callout — required prominence */
+.privacy-callout {
+  margin: 28px 0 28px;
+  padding: 24px 28px;
+  background: var(--gray-50);
+  border-left: 3px solid var(--green-700);
+  border-radius: 4px;
+}
+.privacy-callout-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green-700);
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.privacy-callout-eyebrow::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--green-700);
+}
+.privacy-callout p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Contact block */
+.privacy-contact {
+  margin: 24px 0 0;
+  padding: 28px 32px;
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+}
+.privacy-contact-name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ink);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.privacy-contact dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  row-gap: 6px;
+  column-gap: 16px;
+  font-family: var(--sans);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+.privacy-contact dt {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 600;
+  padding-top: 3px;
+}
+.privacy-contact dd {
+  margin: 0;
+  color: var(--gray-800);
+}
+.privacy-contact dd a {
+  color: var(--blue-700);
+  text-decoration: none;
+  font-weight: 500;
+}
+.privacy-contact dd a:hover {
+  text-decoration: underline;
+}
+
+/* Hero "last updated" pill */
+.privacy-updated {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 6px 14px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--gray-700);
+  font-weight: 500;
+}
+.privacy-updated .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green-700);
+}
+
+/* Hero visual on this page is a soft logo lockup, not a photo */
+.privacy-hero-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4/5;
+  background: linear-gradient(160deg, var(--gray-50) 0%, white 100%);
+  border: 1px solid var(--gray-100);
+  border-radius: 24px;
+  padding: 48px;
+  text-align: center;
+}
+.privacy-hero-mark img {
+  width: 64%;
+  max-width: 240px;
+  height: auto;
+  margin-bottom: 32px;
+  opacity: 0.92;
+}
+.privacy-hero-mark-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--gray-700);
+  margin: 0;
+}
+.privacy-hero-mark-tagline em {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--green-700);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .privacy-layout { grid-template-columns: 1fr; gap: 32px; }
+  .privacy-toc { position: static; padding: 20px 24px; background: var(--gray-50); border-top: none; border: 1px solid var(--gray-100); border-radius: 14px; }
+  .privacy-toc ol { columns: 2; column-gap: 24px; }
+  .privacy-toc li { break-inside: avoid; }
+}
+@media (max-width: 620px) {
+  .privacy-toc ol { columns: 1; }
+  .privacy-content h2 { gap: 10px; flex-wrap: wrap; }
+  .privacy-contact dl { grid-template-columns: 1fr; row-gap: 0; }
+  .privacy-contact dt { padding-top: 12px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="nav">
+  <a href="index.html" class="brand"><img src="logo.png" alt="ProFusion Home Solutions"></a>
+  <ul class="nav-links">
+    <li class="has-dropdown">
+      <a href="#">About <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="about-us.html">About Us</a>
+        <a href="our-customers.html">Our Customers</a>
+        <a href="for-installers.html">For Installers</a>
+        <a href="contact.html">Contact Us</a></div>
+    </li>
+    <li><a href="index.html#map">Service Area</a></li>
+    <li class="has-dropdown">
+      <a href="#">Programs <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="categories/solar.html">Solar</a>
+        <a href="categories/heating-cooling.html">Heating &amp; Cooling</a>
+        <a href="categories/insulation.html">Insulation</a>
+        <a href="categories/windows-doors.html">Windows &amp; Doors</a>
+        <a href="categories/energy-storage.html">Energy Storage</a></div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Learn <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="simple-dropdown">
+        <a href="index.html#idx2Score"><span class="simple-dropdown-eyebrow">On homepage</span>The Score</a>
+        <a href="index.html#how"><span class="simple-dropdown-eyebrow">On homepage</span>How it works</a>
+        <div class="simple-dropdown-divider" aria-hidden="true"></div>
+        <a href="how-our-score-guides-you.html">How our Score guides you</a>
+        <a href="sample-report.html">See a sample report</a>
+        <a href="our-installers.html">Who we match you with</a>
+        <a href="2026-changes.html">What changed in 2026</a></div>
+    </li>
+    <li><a href="get-my-score.html" class="nav-cta">Get my report</a></li>
+  </ul>
+</nav>
+
+<div class="container breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="sep">/</span>
+  <span class="current">Privacy Policy</span></div>
+
+<section class="program-hero">
+  <div class="container">
+    <div class="program-hero-inner">
+      <div>
+        <span class="idx2-eyebrow">Legal &middot; Privacy Policy</span>
+        <h1 class="idx2-h1">Your privacy, <em>in plain English</em>.</h1>
+        <p class="idx2-prose" style="margin-bottom: 24px;">What we collect, how we use it, who sees it, and the choices you have. No fine print games. Same handyman tone as the rest of the site.</p>
+        <div class="privacy-updated"><span class="dot" aria-hidden="true"></span> Last updated &middot; June 8, 2026</div>
+      </div>
+      <div class="privacy-hero-mark">
+        <img src="logo.png" alt="ProFusion Home Solutions">
+        <p class="privacy-hero-mark-tagline">Built for the <em>house</em>.<br>Felt in the <em>home</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="program-section">
+  <div class="container">
+    <div class="privacy-layout">
+
+      <aside class="privacy-toc" aria-label="Sections">
+        <div class="privacy-toc-head">On this page</div>
+        <ol>
+          <li><a href="#info-we-collect">Information we collect</a></li>
+          <li><a href="#how-we-use">How we use your information</a></li>
+          <li><a href="#sms">SMS and text messaging</a></li>
+          <li><a href="#sharing">How we share your information</a></li>
+          <li><a href="#cookies">Cookies and analytics</a></li>
+          <li><a href="#retention">Data retention</a></li>
+          <li><a href="#rights">Your rights</a></li>
+          <li><a href="#children">Children's privacy</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#changes">Changes to this policy</a></li>
+          <li><a href="#contact">Contact us</a></li>
+        </ol>
+      </aside>
+
+      <article class="privacy-content">
+
+        <p class="privacy-intro">
+          Profusion Home Solutions (&ldquo;Profusion,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) respects your privacy and is committed to protecting the personal information you share with us. This Privacy Policy explains what information we collect, how we use it, and the choices you have. By using our website at <a href="https://profusion.solutions" style="color: var(--blue-700); font-weight: 500; text-decoration: none;">https://profusion.solutions</a>, speaking with our team, or otherwise providing your information to us, you agree to the practices described in this Privacy Policy.
+        </p>
+
+        <h2 id="info-we-collect"><span class="num">01</span> Information We Collect</h2>
+        <p>We collect the following types of information:</p>
+        <ul>
+          <li><strong>Contact information:</strong> name, mobile phone number, email address, mailing address.</li>
+          <li><strong>Property information:</strong> address and details about your home relevant to the services you inquired about (for example, utility usage, roof type, HVAC system).</li>
+          <li><strong>Communication records:</strong> notes, call recordings, and message history between you and our team.</li>
+          <li><strong>Account and billing information</strong> for customers who engage our services.</li>
+          <li><strong>Website usage data</strong> (cookies, IP address, browser type, pages visited) when you visit our website.</li>
+        </ul>
+        <p>We collect this information when you speak with one of our representatives by phone, complete a form on our website, sign a service agreement, or otherwise interact with our business.</p>
+
+        <h2 id="how-we-use"><span class="num">02</span> How We Use Your Information</h2>
+        <p>We use your information to:</p>
+        <ul>
+          <li>Discuss and coordinate home improvement services you have inquired about.</li>
+          <li>Schedule and confirm appointments and consultations.</li>
+          <li>Send appointment confirmations, reminders, and follow-ups.</li>
+          <li>Send billing notifications and invoice reminders.</li>
+          <li>Respond to customer service inquiries.</li>
+          <li>Improve our services and customer experience.</li>
+          <li>Comply with legal and regulatory obligations.</li>
+        </ul>
+
+        <h2 id="sms"><span class="num">03</span> SMS / Text Messaging</h2>
+        <p>By providing your mobile number and consenting (verbally during a phone call, in writing on a service agreement, or through our website) to receive text messages from Profusion Home Solutions, you agree to receive SMS messages related to appointment reminders, billing, customer care, and service updates.</p>
+        <ul>
+          <li><strong>Message frequency</strong> varies based on appointment scheduling and account activity.</li>
+          <li><strong>Message and data rates</strong> may apply depending on your wireless carrier and plan.</li>
+          <li>Reply <strong>STOP</strong> to any message at any time to opt out of further SMS communications.</li>
+          <li>Reply <strong>HELP</strong> to any message for assistance, or contact us using the information at the bottom of this policy.</li>
+        </ul>
+        <div class="privacy-callout">
+          <div class="privacy-callout-eyebrow">Our promise on mobile data</div>
+          <p>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. All categories of personal data exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties under any circumstances.</p>
+        </div>
+
+        <h2 id="sharing"><span class="num">04</span> How We Share Your Information</h2>
+        <p>We do not sell your personal information. We may share your information only with:</p>
+        <ul>
+          <li><strong>Service providers</strong> who help us operate our business (for example, CRM platforms, payment processors, communication tools, scheduling software) and who are bound by confidentiality and data-handling obligations.</li>
+          <li><strong>Installation and service partners</strong> in our network, solely to fulfill the services you have requested or expressed interest in.</li>
+          <li><strong>Authorities</strong>, if required by law, court order, or to protect our legal rights and the safety of others.</li>
+        </ul>
+        <p><strong>Mobile phone numbers and SMS consent data are NEVER shared with third parties or affiliates for marketing purposes.</strong></p>
+
+        <h2 id="cookies"><span class="num">05</span> Cookies and Website Analytics</h2>
+        <p>Our website may use cookies and similar technologies to understand how visitors use our site and to improve the user experience. You can control or disable cookies through your browser settings; doing so may affect certain features of our website.</p>
+
+        <h2 id="retention"><span class="num">06</span> Data Retention</h2>
+        <p>We retain your personal information for as long as necessary to provide services to you, comply with our legal obligations, resolve disputes, and enforce our agreements. When information is no longer needed, we securely delete or de-identify it.</p>
+
+        <h2 id="rights"><span class="num">07</span> Your Rights</h2>
+        <p>You may:</p>
+        <ul>
+          <li>Request access to the personal information we hold about you.</li>
+          <li>Request correction of inaccurate or incomplete information.</li>
+          <li>Request deletion of your information (subject to legal exceptions).</li>
+          <li>Opt out of SMS communications at any time by replying <strong>STOP</strong> to any message.</li>
+          <li>Opt out of email communications using the unsubscribe link in any email we send.</li>
+        </ul>
+        <p>To exercise any of these rights, contact us using the information below.</p>
+
+        <h2 id="children"><span class="num">08</span> Children's Privacy</h2>
+        <p>Our services are not directed to individuals under the age of 18, and we do not knowingly collect personal information from children. If we become aware that we have collected information from a child, we will delete it promptly.</p>
+
+        <h2 id="security"><span class="num">09</span> Security</h2>
+        <p>We use reasonable administrative, technical, and physical safeguards to protect your information against unauthorized access, loss, or misuse. No method of transmission over the internet is 100% secure, however, and we cannot guarantee absolute security.</p>
+
+        <h2 id="changes"><span class="num">10</span> Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Updates will be posted on this page with an updated &ldquo;Last Updated&rdquo; date. Material changes will be communicated through reasonable means.</p>
+
+        <h2 id="contact"><span class="num">11</span> Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or our data practices, contact us:</p>
+        <div class="privacy-contact">
+          <div class="privacy-contact-name">Profusion Home Solutions</div>
+          <dl>
+            <dt>Website</dt>
+            <dd><a href="https://profusion.solutions">https://profusion.solutions</a></dd>
+            <dt>Email</dt>
+            <dd><a href="mailto:info@profusion.solutions">info@profusion.solutions</a></dd>
+            <dt>Phone</dt>
+            <dd><a href="tel:+13393304289">+1 (339) 330-4289</a></dd>
+          </dl>
+        </div>
+
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container-narrow">
+    <h3>Questions about your data? <em>Just ask</em>.</h3>
+    <p>Email, call, or write us. We'll get back to you in plain English, same as everything else around here.</p>
+    <a href="contact.html" class="btn btn-white">Contact us
+      <svg width="16" height="14" viewBox="0 0 16 14" fill="none"><path d="M1 7h13M9 1l5 6-5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a></div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-offices">
+      <h4 class="footer-offices-head">Visit us</h4>
+      <div class="footer-offices-row is-pair">
+        <article class="footer-office">
+          <div class="footer-office-map">
+            <iframe src="https://maps.google.com/maps?q=24+Spice+Street+Boston+MA+02129&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Map of ProFusion Boston office" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="footer-office-meta">
+            <div class="footer-office-tag">New England</div>
+            <div class="footer-office-name">Boston, MA</div>
+            <div class="footer-office-addr">24 Spice Street<br>Boston, MA 02129</div>
+            <div class="footer-office-phone"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+13393304289">+1 (339) 330-4289</a></div>
+            <a class="footer-office-link" href="https://maps.google.com/?q=24+Spice+Street+Boston+MA+02129" target="_blank" rel="noopener">Open in Maps <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a></div>
+        </article>
+        <article class="footer-office">
+          <div class="footer-office-map">
+            <iframe src="https://maps.google.com/maps?q=505+S+Broadway+Hicksville+NY+11801&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Map of ProFusion Hicksville office" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="footer-office-meta">
+            <div class="footer-office-tag">Head Office</div>
+            <div class="footer-office-name">Hicksville, NY</div>
+            <div class="footer-office-addr">505 S Broadway<br>Hicksville, NY 11801</div>
+            <div class="footer-office-phone"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+15166133990">+1 (516) 613-3990</a></div>
+            <a class="footer-office-link" href="https://maps.google.com/?q=505+S+Broadway+Hicksville+NY+11801" target="_blank" rel="noopener">Open in Maps <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h8M6 1.5l3 4-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a></div>
+        </article></div></div>
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img src="logo.png" alt="ProFusion Home Solutions">
+        <p style="font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--green-400); margin-bottom: 14px;">Built for the <em style="font-family: var(--serif); font-style: italic;">house</em>. Felt in the <em style="font-family: var(--serif); font-style: italic;">home</em>.</p>
+        <p>The Home Efficiency Score, mapped to your zip, <em>every state, every rebate</em>. Now serving 11 states. <em>Going nationwide</em>.</p></div>
+      <div class="footer-col"><h4>Programs</h4><ul>
+        <li><a href="categories/solar.html">Solar</a></li>
+        <li><a href="categories/heating-cooling.html">Heating &amp; Cooling</a></li>
+        <li><a href="categories/insulation.html">Insulation</a></li>
+        <li><a href="categories/windows-doors.html">Windows &amp; Doors</a></li>
+        <li><a href="categories/energy-storage.html">Energy Storage</a></li></ul></div>
+      <div class="footer-col"><h4>Learn</h4><ul>
+        <li><a href="how-our-score-guides-you.html">How our Score guides you</a></li>
+        <li><a href="sample-report.html">See a sample report</a></li>
+        <li><a href="our-installers.html">Who we match you with</a></li>
+        <li><a href="2026-changes.html">What changed in 2026</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="about-us.html">About us</a></li>
+        <li><a href="our-customers.html">Our Customers</a></li>
+        <li><a href="for-installers.html">For Installers</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="get-my-score.html">Get my report</a></li></ul></div></div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 ProFusion Home Solutions LLC &middot; <a href="privacy.html" style="color: inherit;">Privacy Policy</a></div>
+      <div>Now serving 11 states &middot; A+ BBB &middot; Fully Insured</div></div></div>
+</footer>
+<script>
+const nav = document.getElementById('nav');
+if (nav) { window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); }); }
+</script>
+<script defer src="mobile-nav.js"></script>
+</body>
+</html>
