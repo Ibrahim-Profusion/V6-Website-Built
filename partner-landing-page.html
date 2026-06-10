@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner with ProFusion &middot; Pre-qualified leads. No retainers.</title>
+<meta name="description" content="Stop chasing cold leads. ProFusion sends pre-qualified, intent-rich homeowners to vetted installation partners. No retainers, no long-term contracts. Apply or book a call.">
+<link rel="icon" type="image/png" href="images/Favicon.png">
+<link rel="apple-touch-icon" href="images/Favicon.png">
+<link rel="canonical" href="https://profusion.solutions/partner-landing-page.html">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ProFusion Home Solutions">
+<meta property="og:title" content="Partner with ProFusion &middot; Pre-qualified leads, no retainers">
+<meta property="og:description" content="ProFusion sends pre-qualified, intent-rich homeowners to vetted installers. Apply or book an intro call.">
+<meta property="og:url" content="https://profusion.solutions/partner-landing-page.html">
+<meta property="og:image" content="https://profusion.solutions/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Partner with ProFusion">
+<meta name="twitter:description" content="Pre-qualified installer leads. Apply or book a call.">
+<meta name="twitter:image" content="https://profusion.solutions/images/social-card.png">
+<meta name="theme-color" content="#0A1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ──────────────────────────────────────────────────────────────────
+   partner-landing-page.html · scoped styles
+   Standalone campaign LP — minimal nav, single-purpose flow.
+   Reuses idx2-* + design tokens from shared.css.
+   ────────────────────────────────────────────────────────────────── */
+
+/* Slim campaign nav — logo left, phone right, no menu */
+.lp-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--gray-100);
+}
+.lp-nav .brand img { height: 30px; width: auto; display: block; }
+.lp-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.lp-nav-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.lp-nav-phone svg { color: var(--green-700); }
+.lp-nav-apply {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--ink);
+  color: white;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: opacity 0.18s, transform 0.18s;
+}
+.lp-nav-apply:hover { opacity: 0.88; transform: translateY(-1px); }
+
+@media (max-width: 640px) {
+  .lp-nav { padding: 14px 20px; }
+  .lp-nav-phone { display: none; }
+}
+
+/* Hero */
+.lp-hero {
+  padding: 80px 0 96px;
+  background: linear-gradient(180deg, white 0%, var(--gray-50) 100%);
+}
+.lp-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+.lp-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green-700);
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.lp-hero-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--green-700);
+}
+.lp-hero h1 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(38px, 5.4vw, 64px);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  margin: 0 0 24px;
+}
+.lp-hero h1 em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--green-700);
+}
+.lp-hero p.lead {
+  font-family: var(--serif-body);
+  font-size: clamp(18px, 1.6vw, 21px);
+  line-height: 1.5;
+  color: var(--gray-700);
+  margin: 0 0 36px;
+  max-width: 540px;
+}
+.lp-hero-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.lp-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px 30px;
+  background: var(--ink);
+  color: white;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: opacity 0.18s, transform 0.18s, box-shadow 0.18s;
+  box-shadow: 0 8px 24px rgba(10,16,32,0.12);
+}
+.lp-cta-primary:hover { opacity: 0.92; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(10,16,32,0.18); }
+.lp-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 26px;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 100px;
+  border: 1.5px solid var(--gray-200);
+  transition: border-color 0.18s, background 0.18s;
+}
+.lp-cta-secondary:hover { border-color: var(--ink); background: white; }
+
+/* Hero right side — photo */
+.lp-hero-photo {
+  margin: 0;
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(10,16,32,0.14);
+  background: var(--gray-100);
+}
+.lp-hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.lp-hero-photo-cap {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Stats band — full-width strip below hero */
+.lp-stats-band {
+  padding: 36px 0;
+  background: white;
+  border-top: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--gray-100);
+}
+.lp-stats-band-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.lp-stat-pill {
+  padding: 8px 24px;
+  border-right: 1px solid var(--gray-100);
+}
+.lp-stat-pill:last-child { border-right: none; }
+.lp-stat-pill:first-child { padding-left: 0; }
+.lp-stat-pill-val {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 8px;
+  font-feature-settings: "tnum";
+}
+.lp-stat-pill-val em {
+  font-family: var(--display);
+  font-style: normal;
+  font-size: 0.5em;
+  color: var(--green-700);
+  margin-left: 1px;
+}
+.lp-stat-pill-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 600;
+  line-height: 1.4;
+}
+@media (max-width: 760px) {
+  .lp-stats-band-grid { grid-template-columns: repeat(2, 1fr); gap: 18px 0; }
+  .lp-stat-pill:nth-child(2) { border-right: none; }
+  .lp-stat-pill:nth-child(3) { border-right: 1px solid var(--gray-100); padding-left: 0; }
+}
+@media (max-width: 440px) {
+  .lp-stats-band-grid { grid-template-columns: 1fr; }
+  .lp-stat-pill { border-right: none !important; padding-left: 0 !important; border-bottom: 1px solid var(--gray-100); padding-bottom: 18px; }
+  .lp-stat-pill:last-child { border-bottom: none; padding-bottom: 0; }
+}
+
+/* (Legacy unused card styles — kept for backwards safety, no-op without markup) */
+.lp-hero-card {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 28px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(10,16,32,0.06);
+}
+.lp-hero-card-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.lp-hero-card-h {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0 0 24px;
+}
+.lp-hero-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: 24px;
+  border-top: 1px solid var(--gray-100);
+  padding-top: 24px;
+}
+.lp-hero-stat {
+  padding: 0 16px 0 0;
+  border-right: 1px solid var(--gray-100);
+}
+.lp-hero-stat:last-child { border-right: none; padding: 0 0 0 16px; }
+.lp-hero-stat-val {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 8px;
+  font-feature-settings: "tnum";
+}
+.lp-hero-stat-val em {
+  font-family: var(--display);
+  font-style: normal;
+  font-size: 0.52em;
+  color: var(--green-700);
+  margin-left: 2px;
+}
+.lp-hero-stat-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .lp-hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .lp-hero { padding: 60px 0 72px; }
+  .lp-hero-card { padding: 32px 28px; }
+}
+
+/* Value props strip */
+.lp-values {
+  padding: 80px 0;
+  background: white;
+}
+.lp-values-head {
+  text-align: center;
+  margin-bottom: 56px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.lp-values-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green-700);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.lp-values-h {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0;
+}
+.lp-values-h em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--green-700);
+}
+.lp-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+}
+.lp-value {
+  padding: 40px 32px;
+  border-right: 1px solid var(--gray-200);
+}
+.lp-value:last-child { border-right: none; }
+.lp-value-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green-700);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.lp-value-title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.lp-value-body {
+  font-family: var(--serif-body);
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--gray-700);
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .lp-values-grid { grid-template-columns: 1fr; border-bottom: none; }
+  .lp-value { border-right: none; border-bottom: 1px solid var(--gray-200); padding: 32px 0; }
+  .lp-value:last-child { border-bottom: 1px solid var(--gray-200); }
+}
+
+/* Cinematic image band between value props and six gates */
+.lp-band {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 520px;
+  background: var(--gray-100);
+  overflow: hidden;
+}
+.lp-band img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.lp-band-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10,16,32,0.55) 0%, rgba(10,16,32,0.18) 45%, rgba(10,16,32,0) 70%);
+  display: flex;
+  align-items: center;
+}
+.lp-band-overlay .container { width: 100%; }
+.lp-band-quote {
+  max-width: 540px;
+  color: white;
+}
+.lp-band-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green-400);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.lp-band-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--green-400);
+}
+.lp-band-quote h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(24px, 3.2vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: white;
+  margin: 0;
+}
+.lp-band-quote h3 em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--green-400);
+}
+@media (max-width: 760px) {
+  .lp-band { aspect-ratio: 4 / 3; max-height: 480px; }
+  .lp-band-overlay { background: linear-gradient(180deg, rgba(10,16,32,0.15) 0%, rgba(10,16,32,0.7) 100%); align-items: flex-end; padding-bottom: 32px; }
+  .lp-band-quote { max-width: 100%; }
+}
+
+/* Six gates trust band */
+.lp-gates {
+  padding: 88px 0;
+  background: var(--ink);
+  color: white;
+}
+.lp-gates-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.lp-gates-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green-400);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.lp-gates-h {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: white;
+  margin: 0 0 14px;
+}
+.lp-gates-h em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--green-400);
+}
+.lp-gates-sub {
+  font-family: var(--serif-body);
+  font-size: 17px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.7);
+  margin: 0 auto;
+  max-width: 620px;
+}
+.lp-gates-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+.lp-gate {
+  text-align: center;
+  padding: 24px 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+}
+.lp-gate-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto 14px;
+  color: var(--green-400);
+}
+.lp-gate-label {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  line-height: 1.3;
+}
+@media (max-width: 900px) {
+  .lp-gates-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 480px) {
+  .lp-gates-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Calendly booking section */
+.lp-book {
+  padding: 96px 0;
+  background: linear-gradient(180deg, var(--gray-50) 0%, white 100%);
+}
+.lp-book-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+.lp-book-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green-700);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.lp-book-h {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(28px, 3.4vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+.lp-book-h em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--green-700);
+}
+.lp-book-sub {
+  font-family: var(--serif-body);
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--gray-700);
+  margin: 0;
+}
+
+/* Calendly inline embed wrapper */
+.lp-calendly-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(10,16,32,0.06);
+}
+.calendly-inline-widget { min-width: 320px; height: 720px; }
+
+/* TODO callout — Calendly URL placeholder */
+.lp-todo {
+  margin: 0 auto 32px;
+  max-width: 720px;
+  padding: 18px 22px;
+  background: #FFF8E1;
+  border-left: 3px solid #C7891B;
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.lp-todo svg { color: #8A5A00; flex-shrink: 0; margin-top: 2px; }
+.lp-todo-content { flex: 1; }
+.lp-todo-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8A5A00;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.lp-todo-body {
+  font-family: var(--serif-body);
+  font-size: 14px;
+  line-height: 1.5;
+  color: #5A3D00;
+  margin: 0;
+}
+.lp-todo-body code {
+  background: rgba(199,137,27,0.15);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: #5A3D00;
+}
+
+/* Apply form section */
+.lp-apply {
+  padding: 96px 0;
+  background: var(--gray-50);
+  scroll-margin-top: 80px;
+}
+.lp-apply-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1.4fr;
+  gap: 56px;
+  max-width: 1080px;
+  margin: 0 auto;
+  align-items: start;
+}
+.lp-apply-side h2 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(28px, 3.4vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0 0 20px;
+}
+.lp-apply-side h2 em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--green-700);
+}
+.lp-apply-side p {
+  font-family: var(--serif-body);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--gray-700);
+  margin: 0 0 24px;
+}
+.lp-apply-trust {
+  margin-top: 32px;
+  padding: 22px 24px;
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 16px;
+}
+.lp-apply-trust-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green-700);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.lp-apply-trust p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0;
+}
+
+.lp-form {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: 0 12px 40px rgba(10,16,32,0.06);
+}
+.lp-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.lp-form-row.single { grid-template-columns: 1fr; }
+.lp-form-field { display: block; }
+.lp-form-field label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray-600);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.lp-form-field input[type="text"],
+.lp-form-field input[type="email"],
+.lp-form-field input[type="tel"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink);
+  background: white;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 10px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.lp-form-field input:focus {
+  outline: none;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(10,16,32,0.08);
+}
+
+/* Checkbox grids — service area + trades */
+.lp-form-group { margin-bottom: 20px; }
+.lp-form-group > label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray-600);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.lp-checks {
+  display: grid;
+  gap: 8px;
+}
+.lp-checks.states { grid-template-columns: repeat(3, 1fr); }
+.lp-checks.trades { grid-template-columns: repeat(3, 1fr); }
+.lp-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--gray-50);
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  color: var(--gray-800);
+  font-weight: 500;
+  user-select: none;
+}
+.lp-check:hover { background: white; border-color: var(--gray-200); }
+.lp-check input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--ink);
+  flex-shrink: 0;
+}
+.lp-check input[type="checkbox"]:checked + span {
+  font-weight: 600;
+  color: var(--ink);
+}
+.lp-check:has(input:checked) {
+  background: white;
+  border-color: var(--ink);
+}
+
+@media (max-width: 760px) {
+  .lp-form-row { grid-template-columns: 1fr; }
+  .lp-checks.states, .lp-checks.trades { grid-template-columns: repeat(2, 1fr); }
+}
+
+.lp-form-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: var(--ink);
+  color: white;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity 0.18s, transform 0.18s;
+  box-shadow: 0 8px 24px rgba(10,16,32,0.12);
+}
+.lp-form-submit:hover { opacity: 0.92; transform: translateY(-2px); }
+.lp-form-submit:disabled { opacity: 0.5; cursor: wait; transform: none; }
+.lp-form-note {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--gray-500);
+  margin: 14px 0 0;
+  line-height: 1.45;
+}
+.lp-form-note a { color: var(--blue-700); text-decoration: none; }
+
+/* Form success state */
+.lp-form-success {
+  display: none;
+  padding: 40px;
+  text-align: center;
+}
+.lp-form-success.is-visible { display: block; }
+.lp-form-success-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  color: var(--green-700);
+}
+.lp-form-success-h {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+.lp-form-success-p {
+  font-family: var(--serif-body);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--gray-700);
+  margin: 0;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 900px) {
+  .lp-apply-grid { grid-template-columns: 1fr; gap: 36px; }
+  .lp-form { padding: 28px 24px; }
+}
+
+/* Minimal footer */
+.lp-footer {
+  padding: 40px 0;
+  background: white;
+  border-top: 1px solid var(--gray-100);
+}
+.lp-footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.lp-footer img { height: 24px; width: auto; }
+.lp-footer-meta {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--gray-500);
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.lp-footer-meta a {
+  color: var(--gray-700);
+  text-decoration: none;
+}
+.lp-footer-meta a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+
+<nav class="lp-nav">
+  <a href="index.html" class="brand"><img src="logo.png" alt="ProFusion Home Solutions"></a>
+  <div class="lp-nav-right">
+    <a href="tel:+15166133990" class="lp-nav-phone">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      +1 (516) 613-3990
+    </a>
+    <a href="#apply" class="lp-nav-apply">Apply</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────────────── -->
+<section class="lp-hero">
+  <div class="container">
+    <div class="lp-hero-grid">
+      <div>
+        <div class="lp-hero-eyebrow">For installation partners</div>
+        <h1>Stop chasing leads. <em>Start closing them.</em></h1>
+        <p class="lead">ProFusion sends you pre-qualified homeowners who already have a Score, a ranked upgrade plan, and the rebate math done. No retainers, no long-term contracts, and no leads that ghost the appointment.</p>
+        <div class="lp-hero-ctas">
+          <a href="#book" class="lp-cta-primary">
+            Book a 20-min intro call
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </a>
+          <a href="#apply" class="lp-cta-secondary">
+            Or apply in 2 minutes
+          </a>
+        </div>
+      </div>
+      <figure class="lp-hero-photo">
+        <img src="images/lp/hero-installer.jpg" alt="A ProFusion installation partner on a residential rooftop, reviewing a homeowner's energy readings on a tablet at golden hour" width="1200" height="1490" loading="eager" fetchpriority="high">
+        <figcaption class="lp-hero-photo-cap">A ProFusion partner on a residential roof &middot; golden hour</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS BAND ───────────────────────────────────────────── -->
+<section class="lp-stats-band">
+  <div class="container">
+    <div class="lp-stats-band-grid">
+      <div class="lp-stat-pill">
+        <div class="lp-stat-pill-val">90<em>%+</em></div>
+        <div class="lp-stat-pill-label">Appointment show rate</div>
+      </div>
+      <div class="lp-stat-pill">
+        <div class="lp-stat-pill-val">~70<em>%</em></div>
+        <div class="lp-stat-pill-label">Close rate on referrals</div>
+      </div>
+      <div class="lp-stat-pill">
+        <div class="lp-stat-pill-val">11</div>
+        <div class="lp-stat-pill-label">States active</div>
+      </div>
+      <div class="lp-stat-pill">
+        <div class="lp-stat-pill-val">1,000<em>+</em></div>
+        <div class="lp-stat-pill-label">Homeowners scored monthly</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── VALUE PROPS ──────────────────────────────────────────── -->
+<section class="lp-values">
+  <div class="container">
+    <div class="lp-values-head">
+      <div class="lp-values-eyebrow">Why partner with us</div>
+      <h2 class="lp-values-h">Three things <em>every installer</em> we work with told us they wanted.</h2>
+    </div>
+    <div class="lp-values-grid">
+      <div class="lp-value">
+        <div class="lp-value-num">01</div>
+        <h3 class="lp-value-title">Real homeowners. Real intent.</h3>
+        <p class="lp-value-body">Every lead has already filled out their home profile, seen their Score, and reviewed a ranked upgrade plan with the rebate math built in. They know what they want before you knock.</p>
+      </div>
+      <div class="lp-value">
+        <div class="lp-value-num">02</div>
+        <h3 class="lp-value-title">Pay only for what closes.</h3>
+        <p class="lp-value-body">No retainers, no monthly minimums, no long-term contracts. We get paid when you do. The math is honest, simple, and the same for every partner in the network.</p>
+      </div>
+      <div class="lp-value">
+        <div class="lp-value-num">03</div>
+        <h3 class="lp-value-title">Exclusive territory by program.</h3>
+        <p class="lp-value-body">We don't stack four installers on the same zip and watch you fight. One partner per program per market. When demand grows, the territory grows with you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CINEMATIC BAND ───────────────────────────────────────── -->
+<section class="lp-band" aria-label="Craft moment">
+  <img src="images/lp/installer-craft.jpg" alt="A ProFusion HVAC partner resting a hand on a freshly installed mini-split heat pump head, soft natural light" width="1800" height="1005" loading="lazy">
+  <div class="lp-band-overlay">
+    <div class="container">
+      <div class="lp-band-quote">
+        <div class="lp-band-eyebrow">Craft, not chaos</div>
+        <h3>Every install gets the same care. <em>That's why our homeowners stay.</em></h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SIX GATES ────────────────────────────────────────────── -->
+<section class="lp-gates">
+  <div class="container">
+    <div class="lp-gates-head">
+      <div class="lp-gates-eyebrow">The standard</div>
+      <h2 class="lp-gates-h">Six gates. <em>Re-earned</em> every year.</h2>
+      <p class="lp-gates-sub">Fewer than one in four applicants make it through. Our homeowners know that, and that's why they show up to the appointment.</p>
+    </div>
+    <div class="lp-gates-grid">
+      <div class="lp-gate">
+        <svg class="lp-gate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        <div class="lp-gate-label">Active license</div>
+      </div>
+      <div class="lp-gate">
+        <svg class="lp-gate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="lp-gate-label">Full insurance</div>
+      </div>
+      <div class="lp-gate">
+        <svg class="lp-gate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div class="lp-gate-label">Time in market</div>
+      </div>
+      <div class="lp-gate">
+        <svg class="lp-gate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div class="lp-gate-label">Real reviews</div>
+      </div>
+      <div class="lp-gate">
+        <svg class="lp-gate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        <div class="lp-gate-label">Manufacturer cert</div>
+      </div>
+      <div class="lp-gate">
+        <svg class="lp-gate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg>
+        <div class="lp-gate-label">Written warranty</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CALENDLY BOOKING ─────────────────────────────────────── -->
+<section class="lp-book" id="book">
+  <div class="container">
+    <div class="lp-book-head">
+      <div class="lp-book-eyebrow">Fastest path</div>
+      <h2 class="lp-book-h">Book a <em>20-minute intro call</em>.</h2>
+      <p class="lp-book-sub">We'll walk you through our process, current installer demand by state, and answer anything you want to know about how the network works.</p>
+    </div>
+
+    <div class="lp-calendly-wrap">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/ibrahim-profusion/30min"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── APPLY FORM ───────────────────────────────────────────── -->
+<section class="lp-apply" id="apply">
+  <div class="container">
+    <div class="lp-apply-grid">
+
+      <div class="lp-apply-side">
+        <div class="lp-hero-eyebrow">Or apply by form</div>
+        <h2>Apply in <em>two minutes</em>. We'll reach out within one business day.</h2>
+        <p>Send the basics and we'll come back with current demand in your service area, the categories we're hiring partners for, and what a first month with ProFusion looks like.</p>
+        <div class="lp-apply-trust">
+          <div class="lp-apply-trust-eyebrow">No spam, no list rental</div>
+          <p>Your application goes straight to our partnerships team. We don't sell or share it with anyone else, ever.</p>
+        </div>
+      </div>
+
+      <form class="lp-form" id="lpForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY">
+        <input type="hidden" name="subject" value="New installer application — partner-landing-page">
+        <input type="hidden" name="from_name" value="ProFusion Partner LP">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="lp-form-row">
+          <div class="lp-form-field">
+            <label for="company">Company name</label>
+            <input type="text" id="company" name="Company" required>
+          </div>
+          <div class="lp-form-field">
+            <label for="contact">Contact name</label>
+            <input type="text" id="contact" name="Contact Name" required>
+          </div>
+        </div>
+
+        <div class="lp-form-row">
+          <div class="lp-form-field">
+            <label for="email">Work email</label>
+            <input type="email" id="email" name="Email" required>
+          </div>
+          <div class="lp-form-field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="Phone" required>
+          </div>
+        </div>
+
+        <div class="lp-form-group">
+          <label>Trades you install</label>
+          <div class="lp-checks trades">
+            <label class="lp-check"><input type="checkbox" name="Trades" value="Solar"><span>Solar</span></label>
+            <label class="lp-check"><input type="checkbox" name="Trades" value="HVAC"><span>HVAC</span></label>
+            <label class="lp-check"><input type="checkbox" name="Trades" value="Insulation"><span>Insulation</span></label>
+            <label class="lp-check"><input type="checkbox" name="Trades" value="Windows &amp; Doors"><span>Windows &amp; Doors</span></label>
+            <label class="lp-check"><input type="checkbox" name="Trades" value="Energy Storage"><span>Energy Storage</span></label>
+          </div>
+        </div>
+
+        <div class="lp-form-group">
+          <label>Service area (check all that apply)</label>
+          <div class="lp-checks states">
+            <label class="lp-check"><input type="checkbox" name="States" value="MA"><span>Massachusetts</span></label>
+            <label class="lp-check"><input type="checkbox" name="States" value="RI"><span>Rhode Island</span></label>
+            <label class="lp-check"><input type="checkbox" name="States" value="CT"><span>Connecticut</span></label>
+            <label class="lp-check"><input type="checkbox" name="States" value="ME"><span>Maine</span></label>
+            <label class="lp-check"><input type="checkbox" name="States" value="NH"><span>New Hampshire</span></label>
+            <label class="lp-check"><input type="checkbox" name="States" value="VT"><span>Vermont</span></label>
+            <label class="lp-check"><input type="checkbox" name="States" value="NY"><span>New York</span></label>
+            <label class="lp-check"><input type="checkbox" name="States" value="NJ"><span>New Jersey</span></label>
+            <label class="lp-check"><input type="checkbox" name="States" value="MD"><span>Maryland</span></label>
+            <label class="lp-check"><input type="checkbox" name="States" value="MI"><span>Michigan</span></label>
+            <label class="lp-check"><input type="checkbox" name="States" value="FL"><span>Florida</span></label>
+          </div>
+        </div>
+
+        <button type="submit" class="lp-form-submit" id="lpFormSubmit">
+          Send application
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <p class="lp-form-note">By submitting you agree to our <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.</p>
+
+        <div class="lp-form-success" id="lpFormSuccess">
+          <svg class="lp-form-success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <div class="lp-form-success-h">Application received.</div>
+          <p class="lp-form-success-p">Thanks for applying. Our partnerships team will be in touch within one business day. In the meantime, you can also book an intro call above.</p>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ───────────────────────────────────────────────── -->
+<footer class="lp-footer">
+  <div class="container">
+    <div class="lp-footer-inner">
+      <img src="logo.png" alt="ProFusion Home Solutions">
+      <div class="lp-footer-meta">
+        <span>&copy; 2026 ProFusion Home Solutions LLC</span>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="index.html">Main site</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Calendly inline widget script -->
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<!-- Form submit handler — submits to Web3Forms, shows in-page success -->
+<script>
+(function(){
+  const form = document.getElementById('lpForm');
+  const submitBtn = document.getElementById('lpFormSubmit');
+  const successPanel = document.getElementById('lpFormSuccess');
+  if (!form) return;
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: data });
+      const json = await res.json();
+      if (json.success) {
+        // Hide form fields, show success
+        Array.from(form.children).forEach(el => { if (el.id !== 'lpFormSuccess') el.style.display = 'none'; });
+        successPanel.classList.add('is-visible');
+        successPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        throw new Error(json.message || 'submission failed');
+      }
+    } catch(err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send application';
+      alert('Sorry, something went wrong sending your application. Please call us at +1 (516) 613-3990 or email info@profusion.solutions.');
+      console.error('form submit error', err);
+    }
+  });
+})();
+</script>
+</body>
+</html>

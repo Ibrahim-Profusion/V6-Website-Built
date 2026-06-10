@@ -25,6 +25,12 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://profusion.solutions/partner-landing-page.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://profusion.solutions/categories/energy-storage.html</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
