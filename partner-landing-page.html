@@ -64,7 +64,7 @@
   text-decoration: none;
   letter-spacing: 0.02em;
 }
-.lp-nav-phone svg { color: var(--green-700); }
+.lp-nav-phone svg { color: var(--blue-700); }
 .lp-nav-apply {
   display: inline-flex;
   align-items: center;
@@ -105,7 +105,7 @@
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--green-700);
+  color: var(--blue-700);
   font-weight: 700;
   margin-bottom: 24px;
 }
@@ -113,7 +113,7 @@
   content: '';
   width: 28px;
   height: 1px;
-  background: var(--green-700);
+  background: var(--blue-700);
 }
 .lp-hero h1 {
   font-family: var(--display);
@@ -241,7 +241,7 @@
   font-family: var(--display);
   font-style: normal;
   font-size: 0.5em;
-  color: var(--green-700);
+  color: var(--blue-700);
   margin-left: 1px;
 }
 .lp-stat-pill-label {
@@ -353,7 +353,7 @@
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--green-700);
+  color: var(--blue-700);
   font-weight: 700;
   margin-bottom: 16px;
 }
@@ -370,7 +370,7 @@
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
-  color: var(--green-700);
+  color: var(--blue-700);
 }
 .lp-values-grid {
   display: grid;
@@ -389,7 +389,7 @@
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--green-700);
+  color: var(--blue-700);
   font-weight: 700;
   margin-bottom: 14px;
 }
@@ -450,7 +450,7 @@
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--green-400);
+  color: var(--blue-300);
   font-weight: 700;
   margin-bottom: 18px;
 }
@@ -458,7 +458,7 @@
   content: '';
   width: 28px;
   height: 1px;
-  background: var(--green-400);
+  background: var(--blue-300);
 }
 .lp-band-quote h3 {
   font-family: var(--display);
@@ -570,7 +570,7 @@
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--green-700);
+  color: var(--blue-700);
   font-weight: 700;
   margin-bottom: 16px;
 }
@@ -587,7 +587,7 @@
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
-  color: var(--green-700);
+  color: var(--blue-700);
 }
 .lp-book-sub {
   font-family: var(--serif-body);
@@ -675,7 +675,7 @@
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
-  color: var(--green-700);
+  color: var(--blue-700);
 }
 .lp-apply-side p {
   font-family: var(--serif-body);
@@ -696,7 +696,7 @@
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--green-700);
+  color: var(--blue-700);
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -755,9 +755,10 @@
 }
 
 /* Checkbox grids — service area + trades */
-.lp-form-group { margin-bottom: 20px; }
-.lp-form-group > label {
+.lp-form-group { margin-bottom: 20px; border: 0; padding: 0; min-inline-size: 0; }
+.lp-form-group > legend {
   display: block;
+  padding: 0;
   font-family: var(--mono);
   font-size: 10.5px;
   letter-spacing: 0.14em;
@@ -836,6 +837,21 @@
   line-height: 1.45;
 }
 .lp-form-note a { color: var(--blue-700); text-decoration: none; }
+
+/* Inline form error (replaces alert) */
+.lp-form-error {
+  margin: 14px 0 0;
+  padding: 12px 16px;
+  background: #FEE8E8;
+  border: 1px solid #F3C0C0;
+  border-radius: 10px;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #8A1A1A;
+}
+.lp-form-error a { color: #8A1A1A; font-weight: 600; text-decoration: underline; }
+.lp-form-error[hidden] { display: none; }
 
 /* Form success state */
 .lp-form-success {
@@ -927,17 +943,13 @@
         <p class="lead">ProFusion sends you pre-qualified homeowners who already have a Score, a ranked upgrade plan, and the rebate math done. No retainers, no long-term contracts, and no leads that ghost the appointment.</p>
         <div class="lp-hero-ctas">
           <a href="#book" class="lp-cta-primary">
-            Book a 20-min intro call
+            Book a call
             <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </a>
-          <a href="#apply" class="lp-cta-secondary">
-            Or apply in 2 minutes
           </a>
         </div>
       </div>
       <figure class="lp-hero-photo">
         <img src="images/lp/hero-installer.jpg" alt="A ProFusion installation partner on a residential rooftop, reviewing a homeowner's energy readings on a tablet at golden hour" width="1200" height="1490" loading="eager" fetchpriority="high">
-        <figcaption class="lp-hero-photo-cap">A ProFusion partner on a residential roof &middot; golden hour</figcaption>
       </figure>
     </div>
   </div>
@@ -1007,43 +1019,6 @@
   </div>
 </section>
 
-<!-- ─── SIX GATES ────────────────────────────────────────────── -->
-<section class="lp-gates">
-  <div class="container">
-    <div class="lp-gates-head">
-      <div class="lp-gates-eyebrow">The standard</div>
-      <h2 class="lp-gates-h">Six gates. <em>Re-earned</em> every year.</h2>
-      <p class="lp-gates-sub">Fewer than one in four applicants make it through. Our homeowners know that, and that's why they show up to the appointment.</p>
-    </div>
-    <div class="lp-gates-grid">
-      <div class="lp-gate">
-        <svg class="lp-gate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        <div class="lp-gate-label">Active license</div>
-      </div>
-      <div class="lp-gate">
-        <svg class="lp-gate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <div class="lp-gate-label">Full insurance</div>
-      </div>
-      <div class="lp-gate">
-        <svg class="lp-gate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <div class="lp-gate-label">Time in market</div>
-      </div>
-      <div class="lp-gate">
-        <svg class="lp-gate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <div class="lp-gate-label">Real reviews</div>
-      </div>
-      <div class="lp-gate">
-        <svg class="lp-gate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-        <div class="lp-gate-label">Manufacturer cert</div>
-      </div>
-      <div class="lp-gate">
-        <svg class="lp-gate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg>
-        <div class="lp-gate-label">Written warranty</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ─── CALENDLY BOOKING ─────────────────────────────────────── -->
 <section class="lp-book" id="book">
   <div class="container">
@@ -1102,8 +1077,8 @@
           </div>
         </div>
 
-        <div class="lp-form-group">
-          <label>Trades you install</label>
+        <fieldset class="lp-form-group">
+          <legend>Trades you install</legend>
           <div class="lp-checks trades">
             <label class="lp-check"><input type="checkbox" name="Trades" value="Solar"><span>Solar</span></label>
             <label class="lp-check"><input type="checkbox" name="Trades" value="HVAC"><span>HVAC</span></label>
@@ -1111,10 +1086,10 @@
             <label class="lp-check"><input type="checkbox" name="Trades" value="Windows &amp; Doors"><span>Windows &amp; Doors</span></label>
             <label class="lp-check"><input type="checkbox" name="Trades" value="Energy Storage"><span>Energy Storage</span></label>
           </div>
-        </div>
+        </fieldset>
 
-        <div class="lp-form-group">
-          <label>Service area (check all that apply)</label>
+        <fieldset class="lp-form-group">
+          <legend>Service area (check all that apply)</legend>
           <div class="lp-checks states">
             <label class="lp-check"><input type="checkbox" name="States" value="MA"><span>Massachusetts</span></label>
             <label class="lp-check"><input type="checkbox" name="States" value="RI"><span>Rhode Island</span></label>
@@ -1128,7 +1103,7 @@
             <label class="lp-check"><input type="checkbox" name="States" value="MI"><span>Michigan</span></label>
             <label class="lp-check"><input type="checkbox" name="States" value="FL"><span>Florida</span></label>
           </div>
-        </div>
+        </fieldset>
 
         <button type="submit" class="lp-form-submit" id="lpFormSubmit">
           Send application
@@ -1136,7 +1111,9 @@
         </button>
         <p class="lp-form-note">By submitting you agree to our <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.</p>
 
-        <div class="lp-form-success" id="lpFormSuccess">
+        <p class="lp-form-error" id="lpFormError" role="alert" hidden>Something went wrong sending your application. Please call <a href="tel:+15166133990">+1 (516) 613-3990</a> or email <a href="mailto:info@profusion.solutions">info@profusion.solutions</a>.</p>
+
+        <div class="lp-form-success" id="lpFormSuccess" role="status" aria-live="polite" tabindex="-1">
           <svg class="lp-form-success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           <div class="lp-form-success-h">Application received.</div>
           <p class="lp-form-success-p">Thanks for applying. Our partnerships team will be in touch within one business day. In the meantime, you can also book an intro call above.</p>
@@ -1173,27 +1150,35 @@
   const successPanel = document.getElementById('lpFormSuccess');
   if (!form) return;
 
+  const errorPanel = document.getElementById('lpFormError');
+  const submitLabel = submitBtn.innerHTML;
+
   form.addEventListener('submit', async function(e){
     e.preventDefault();
+    if (errorPanel) errorPanel.hidden = true;
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
+    submitBtn.textContent = 'Sending…';
 
     const data = new FormData(form);
     try {
       const res = await fetch(form.action, { method: 'POST', body: data });
       const json = await res.json();
       if (json.success) {
-        // Hide form fields, show success
+        // Hide form fields, reveal success, and move focus so screen readers announce it
         Array.from(form.children).forEach(el => { if (el.id !== 'lpFormSuccess') el.style.display = 'none'; });
         successPanel.classList.add('is-visible');
+        successPanel.focus();
         successPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
         throw new Error(json.message || 'submission failed');
       }
     } catch(err) {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Send application';
-      alert('Sorry, something went wrong sending your application. Please call us at +1 (516) 613-3990 or email info@profusion.solutions.');
+      submitBtn.innerHTML = submitLabel;
+      if (errorPanel) {
+        errorPanel.hidden = false;
+        errorPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
       console.error('form submit error', err);
     }
   });
