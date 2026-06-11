@@ -4,6 +4,8 @@
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/partner-landing-page", "destination": "/partner-landing-page.html" },
-    { "source": "/partner", "destination": "/partner-landing-page.html" }
+    { "source": "/partner", "destination": "/partner-landing-page.html" },
+    { "source": "/partners-lp", "destination": "/partners-lp.html" },
+    { "source": "/partners", "destination": "/partners-lp.html" }
   ]
 }
