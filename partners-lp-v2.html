@@ -1315,6 +1315,137 @@ a { color: inherit; text-decoration: none; }
   .form { padding: 28px 24px; }
 }
 
+/* ──────────────────────────────────────────────────────────
+   MOBILE POLISH · overrides for ≤640px (post-tablet)
+   Tightens oversized headlines, reduces section vertical
+   padding, prevents typography from blowing out at iPhone widths
+   ────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  /* Nav — slimmer */
+  .nav { padding: 16px 20px; }
+  .nav-brand img { height: 22px; }
+  .nav-cta { padding: 9px 18px; font-size: 13px; }
+
+  /* Hero — tighter type, less padding, smaller collage gap */
+  .hero { padding: 36px 0 56px; }
+  .hero-eyebrow { font-size: 11px; letter-spacing: 0.14em; margin-bottom: 18px; }
+  .hero h1 { font-size: 42px; line-height: 1.02; margin: 0 0 20px; letter-spacing: -0.025em; }
+  .hero-sub { font-size: 16px; line-height: 1.5; margin: 0 0 28px; }
+  .hero-grid { gap: 32px; }
+  .hero-photo { gap: 10px; }
+  .hero-tile { border-radius: 14px; box-shadow: 0 10px 24px rgba(15,24,48,0.10); }
+  .hero-tile-tag { font-size: 9px; letter-spacing: 0.12em; padding: 4px 9px; left: 8px; bottom: 8px; }
+  .btn-primary { padding: 15px 28px; font-size: 15px; }
+
+  /* Trades band — tighter wrap */
+  .trades-band { padding: 16px 0; }
+  .trades-row { gap: 6px; }
+  .trades-list { gap: 8px; }
+  .trades-list .trade { font-size: 13px; }
+  .trades-label { font-size: 10px; letter-spacing: 0.14em; margin-bottom: 4px; }
+
+  /* Trust strip — vertical stack, BBB logo a touch smaller */
+  .trust { padding: 18px 0; }
+  .trust-logo-bbb { height: 36px; }
+  .trust-item { padding: 6px 8px; }
+  .trust-num { font-size: 14px; }
+  .trust-label { font-size: 9.5px; }
+
+  /* Pain section — tame the giant "30 to 1" headline */
+  .pain { padding: 64px 0; }
+  .pain-eyebrow { font-size: 10.5px; letter-spacing: 0.14em; margin-bottom: 20px; }
+  .pain-h { font-size: 88px; line-height: 0.95; margin: 0 0 20px; }
+  .pain-sub { font-size: 15.5px; margin: 0 auto 36px; }
+  .pain-funnel { gap: 10px; }
+  .pain-step { padding: 11px 16px; font-size: 12.5px; }
+  .pain-step-num { font-size: 18px; }
+  .pain-step-label { font-size: 9.5px; }
+
+  /* Promise — smaller headline, tighter stats spacing */
+  .promise { padding: 72px 0; }
+  .promise-eyebrow { font-size: 10.5px; letter-spacing: 0.14em; margin-bottom: 20px; }
+  .promise-h { font-size: 36px; line-height: 1.02; margin: 0 0 18px; }
+  .promise-sub { font-size: 15.5px; }
+  .stats { margin-top: 56px; padding-top: 28px; }
+  .stat-val { font-size: 32px; margin-bottom: 8px; }
+  .stat-label { font-size: 11.5px; }
+
+  /* Intel spread */
+  .intel { padding: 64px 0; }
+  .intel-grid { gap: 28px; }
+  .intel-photo { aspect-ratio: 4/5; max-width: 360px; border-radius: 18px; }
+  .intel-h { font-size: 32px; line-height: 1.04; margin: 0 0 18px; }
+  .intel-body { font-size: 15.5px; margin: 0 0 18px; }
+  .intel-list li { padding: 10px 0; font-size: 14.5px; gap: 12px; }
+  .intel-list-icon { width: 20px; height: 20px; font-size: 11px; }
+
+  /* Difference */
+  .difference { padding: 64px 0; }
+  .difference-head { margin-bottom: 36px; }
+  .difference-h { font-size: 28px; line-height: 1.06; }
+  .diff-col { padding: 28px 24px 32px; border-radius: 18px; }
+  .diff-col-label { font-size: 10.5px; margin-bottom: 20px; }
+  .diff-col-list li { font-size: 15px; padding: 11px 0; gap: 12px; }
+
+  /* Scarcity — pill grid */
+  .scarcity { padding: 64px 0; }
+  .scarcity-head { margin-bottom: 36px; }
+  .scarcity-h { font-size: 32px; line-height: 1.02; margin: 0 0 18px; }
+  .scarcity-sub { font-size: 15.5px; margin: 0 auto 36px; }
+  .territory { min-width: 130px; padding: 12px 16px; font-size: 13px; }
+  .territories { gap: 10px; }
+
+  /* Cinematic bands — slightly shallower aspect to save scroll */
+  .band { aspect-ratio: 3/4; max-height: 600px; }
+  .band-overlay.left, .band-overlay.bottom { padding: 28px 22px; }
+  .band-h { font-size: 26px; line-height: 1.1; }
+  .band-eyebrow { font-size: 10.5px; letter-spacing: 0.14em; margin-bottom: 14px; }
+
+  /* Voices */
+  .voices { padding: 64px 0; }
+  .voices-head { margin-bottom: 36px; }
+  .voices-h { font-size: 28px; line-height: 1.06; }
+  .voice-card { padding: 28px 22px; border-radius: 18px; }
+  .voice-quote-mark { font-size: 48px; }
+  .voice-quote { font-size: 17px; line-height: 1.4; margin: 0 0 24px; }
+  .voice-attr-name { font-size: 14px; }
+  .voice-attr-tag { font-size: 10.5px; }
+
+  /* Riskwall — three $0 lines, tame the size */
+  .riskwall { padding: 72px 0; }
+  .riskwall-eyebrow { font-size: 10.5px; letter-spacing: 0.14em; margin-bottom: 28px; }
+  .riskwall-zeros { gap: 10px; margin-bottom: 36px; }
+  .riskwall-zero { font-size: 44px; line-height: 0.98; }
+  .riskwall-sub { font-size: 15.5px; }
+
+  /* Book / Calendly — shorter card so the iframe doesn't dominate */
+  .book { padding: 64px 0 56px; }
+  .book-head { margin-bottom: 32px; }
+  .book-eyebrow { font-size: 10.5px; letter-spacing: 0.14em; margin-bottom: 16px; }
+  .book-h { font-size: 42px; line-height: 1; margin: 0 0 12px; }
+  .book-sub { font-size: 15.5px; }
+  .calendly-card { border-radius: 18px; box-shadow: 0 16px 40px rgba(0,0,0,0.30); }
+  .calendly-inline-widget { height: 620px; }
+  .book-note { margin: 28px auto 0; font-size: 13px; }
+
+  /* Footer — stack cleanly */
+  .footer { padding: 28px 0; }
+  .footer-inner { gap: 14px; justify-content: center; text-align: center; }
+  .footer a { margin-left: 0; margin-right: 16px; }
+}
+
+/* Very narrow safety net — iPhone SE / small Androids */
+@media (max-width: 380px) {
+  .container, .container-narrow { padding: 0 20px; }
+  .hero h1 { font-size: 38px; }
+  .pain-h { font-size: 76px; }
+  .promise-h { font-size: 32px; }
+  .book-h { font-size: 38px; }
+  .riskwall-zero { font-size: 40px; }
+  .difference-h, .scarcity-h, .voices-h { font-size: 26px; }
+  .intel-photo { max-width: 100%; }
+}
+
 /* ─── FOOTER ──────────────────────────────────────────────── */
 .footer {
   padding: 40px 0;
