@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Partner with ProFusion &middot; Pre-qualified appointments, no retainers</title>
-<meta name="description" content="ProFusion delivers confirmed, pre-qualified homeowner appointments to installation partners. No retainers, no long-term contracts. Book an intro call or apply by form.">
+<title>Partner with ProFusion &middot; Stop paying for bad leads</title>
+<meta name="description" content="You went into business to install. Not to chase. ProFusion delivers confirmed homeowner appointments to your calendar. No retainers, no setup fees, pay only when they show.">
 <link rel="icon" type="image/png" href="images/Favicon.png">
 <link rel="apple-touch-icon" href="images/Favicon.png">
-<link rel="canonical" href="https://profusion.solutions/partners-lp.html">
+<link rel="canonical" href="https://profusion.solutions/partners-lp-v2.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ProFusion Home Solutions">
 <meta property="og:title" content="Partner with ProFusion &middot; Pre-qualified appointments, no retainers">
 <meta property="og:description" content="Confirmed homeowner appointments delivered to your calendar. No retainers, no long-term contracts.">
-<meta property="og:url" content="https://profusion.solutions/partners-lp.html">
+<meta property="og:url" content="https://profusion.solutions/partners-lp-v2.html">
 <meta property="og:image" content="https://profusion.solutions/images/social-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -210,20 +210,96 @@ a { color: inherit; text-decoration: none; }
 }
 .hero-photo {
   margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.hero-tile {
+  margin: 0;
   aspect-ratio: 4 / 5;
-  border-radius: 28px;
+  border-radius: 18px;
   overflow: hidden;
   background: var(--gray-100);
-  box-shadow: 0 24px 64px rgba(15,24,48,0.10);
+  box-shadow: 0 16px 40px rgba(15,24,48,0.10);
+  position: relative;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
-.hero-photo img {
-  width: 100%; height: 100%;
+.hero-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 56px rgba(15,24,48,0.14);
+}
+.hero-tile img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s ease;
+}
+.hero-tile:hover img { transform: scale(1.04); }
+.hero-tile-tag {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 5px 11px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 700;
 }
 @media (max-width: 920px) {
   .hero { padding: 64px 0 88px; }
   .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* ─── TRADES BAND — signals service breadth right under hero */
+.trades-band {
+  background: var(--white);
+  border-top: 1px solid var(--gray-100);
+  padding: 22px 0;
+}
+.trades-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.trades-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 600;
+}
+.trades-list {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.trades-list .trade {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: -0.005em;
+}
+.trades-list .trade-sep {
+  color: var(--green);
+  font-weight: 700;
+}
+@media (max-width: 640px) {
+  .trades-label { display: block; width: 100%; margin-bottom: 6px; }
+  .trades-row { gap: 10px; }
 }
 
 /* ─── TRUST STRIP ─────────────────────────────────────────── */
@@ -249,7 +325,9 @@ a { color: inherit; text-decoration: none; }
   color: var(--navy);
 }
 .trust-item:last-child { border-right: none; }
+.trust-item-img { gap: 0; }
 .trust-logo { flex-shrink: 0; display: block; }
+.trust-logo-bbb { height: 42px; width: auto; display: block; }
 .trust-text { display: flex; flex-direction: column; line-height: 1.1; }
 .trust-num {
   font-family: var(--sans);
@@ -403,7 +481,39 @@ a { color: inherit; text-decoration: none; }
   font-size: 17px;
   line-height: 1.6;
   color: var(--gray-700);
-  margin: 0 0 14px;
+  margin: 0 0 24px;
+}
+.intel-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.intel-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 11px 0;
+  font-family: var(--sans);
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: var(--navy);
+  font-weight: 500;
+  border-bottom: 1px solid var(--gray-100);
+}
+.intel-list li:last-child { border-bottom: none; }
+.intel-list-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 1px;
 }
 @media (max-width: 920px) {
   .intel { padding: 96px 0; }
@@ -550,6 +660,276 @@ a { color: inherit; text-decoration: none; }
   .difference-grid { grid-template-columns: 1fr; }
   .diff-col { padding: 36px 28px 40px; }
 }
+
+/* ─── PAIN — cost of inaction (Hormozi) ───────────────────── */
+.pain {
+  padding: 120px 0;
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.pain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(255,100,100,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.pain-inner { position: relative; z-index: 1; }
+.pain-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #F59A4E;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+.pain-eyebrow::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #F59A4E; }
+.pain-h {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(56px, 9vw, 132px);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  color: var(--white);
+  margin: 0 0 28px;
+}
+.pain-h .hl-warm { color: #F59A4E; }
+.pain-sub {
+  font-family: var(--sans);
+  font-size: clamp(17px, 1.4vw, 21px);
+  line-height: 1.55;
+  color: rgba(255,255,255,0.7);
+  max-width: 680px;
+  margin: 0 auto 56px;
+  font-weight: 400;
+}
+.pain-funnel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-family: var(--mono);
+}
+.pain-step {
+  padding: 14px 22px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 100px;
+  font-size: 14px;
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.pain-step-num {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+.pain-step-label { color: rgba(255,255,255,0.55); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+.pain-arrow { color: rgba(255,255,255,0.3); font-size: 18px; }
+@media (max-width: 920px) {
+  .pain { padding: 88px 0; }
+  .pain-funnel { gap: 12px; }
+  .pain-arrow { display: none; }
+}
+
+/* ─── SCARCITY (Hormozi) ──────────────────────────────────── */
+.scarcity {
+  padding: 140px 0;
+  background: var(--white);
+  text-align: center;
+}
+.scarcity-head { margin-bottom: 56px; }
+.scarcity-head .eyebrow { margin-bottom: 24px; }
+.scarcity-h {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(40px, 6vw, 80px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  margin: 0 0 24px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.scarcity-h .hl-green { color: var(--green); }
+.scarcity-sub {
+  font-family: var(--sans);
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.55;
+  color: var(--gray-700);
+  max-width: 620px;
+  margin: 0 auto 56px;
+  font-weight: 400;
+}
+.territories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.territory { flex: 0 1 auto; min-width: 168px; }
+.territory {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: 100px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy);
+}
+.territory-state {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.territory-state strong {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--green);
+  font-weight: 700;
+}
+.territory-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+@media (max-width: 760px) { .scarcity { padding: 96px 0; } }
+
+/* ─── RISKWALL — big full-bleed risk reversal band ────────── */
+.riskwall {
+  padding: 160px 0;
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.riskwall::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(46,114,210,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(31,164,82,0.14) 0%, transparent 50%);
+  pointer-events: none;
+}
+.riskwall-inner { position: relative; z-index: 1; }
+.riskwall-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+.riskwall-eyebrow::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+.riskwall-zeros {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 56px;
+}
+.riskwall-zero {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(48px, 8.5vw, 112px);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  color: var(--white);
+}
+.riskwall-zero .zero {
+  color: var(--green);
+  font-feature-settings: "tnum";
+}
+.riskwall-sub {
+  font-family: var(--sans);
+  font-size: clamp(17px, 1.4vw, 21px);
+  line-height: 1.55;
+  color: rgba(255,255,255,0.65);
+  max-width: 640px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+.riskwall-sub strong { color: var(--white); font-weight: 500; }
+@media (max-width: 920px) { .riskwall { padding: 96px 0; } }
+
+/* ─── SINEK CLOSING — belief reinforcement ────────────────── */
+.closing {
+  padding: 140px 0;
+  background: var(--cream);
+  text-align: center;
+}
+.closing-eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+.closing-h {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(36px, 5.2vw, 64px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  margin: 0 auto 40px;
+  max-width: 920px;
+}
+.closing-h .hl-green { color: var(--green); }
+.closing-body {
+  font-family: var(--sans);
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.6;
+  color: var(--gray-700);
+  max-width: 620px;
+  margin: 0 auto 48px;
+}
+.closing-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px 36px;
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 100px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.closing-cta:hover { opacity: 0.92; transform: translateY(-1px); }
+@media (max-width: 760px) { .closing { padding: 96px 0; } }
 
 /* ─── VOICES — partner testimonials ──────────────────────── */
 .voices {
@@ -969,16 +1349,53 @@ a { color: inherit; text-decoration: none; }
     <div class="hero-grid">
       <div>
         <div class="hero-eyebrow eyebrow">For installation partners</div>
-        <h1>Qualified homeowners. <span class="hl-green">Delivered confirmed.</span></h1>
-        <p class="hero-sub">We engage homeowners, profile their homes, score their intent, and put confirmed appointments on your calendar. You do what you do best.</p>
+        <h1>You went into business to install. <span class="hl-green">Not to chase.</span></h1>
+        <p class="hero-sub">A tradesperson's time belongs in the home, not in a phone queue. That's why we built ProFusion. We engage homeowners, qualify their intent, and put confirmed appointments on your calendar. You do the work you signed up for.</p>
         <a href="#book" class="btn-primary">
           Book a call
           <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
         </a>
       </div>
-      <figure class="hero-photo">
-        <img src="images/lp/hero-installer.jpg" alt="A ProFusion installation partner on a residential rooftop" width="1200" height="1490" loading="eager" fetchpriority="high">
-      </figure>
+      <div class="hero-photo">
+        <figure class="hero-tile">
+          <img src="images/lp/trade-solar.jpg" alt="A ProFusion solar installation partner on a residential rooftop" width="900" height="1118" loading="eager" fetchpriority="high">
+          <span class="hero-tile-tag">Solar</span>
+        </figure>
+        <figure class="hero-tile">
+          <img src="images/lp/trade-hvac.jpg" alt="A ProFusion HVAC technician beside a residential heat pump condenser" width="900" height="1125" loading="eager">
+          <span class="hero-tile-tag">HVAC</span>
+        </figure>
+        <figure class="hero-tile">
+          <img src="images/lp/trade-insulation.jpg" alt="A ProFusion insulation installer in a residential attic" width="900" height="1125" loading="eager">
+          <span class="hero-tile-tag">Insulation</span>
+        </figure>
+        <figure class="hero-tile">
+          <img src="images/lp/trade-windows.jpg" alt="A ProFusion windows installation specialist beside a newly installed residential window" width="900" height="1125" loading="lazy">
+          <span class="hero-tile-tag">Windows</span>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRADES BAND — signals breadth across all trades ────── -->
+<section class="trades-band" aria-label="Trades we work across">
+  <div class="container">
+    <div class="trades-row">
+      <span class="trades-label">Built for installers across</span>
+      <span class="trades-list">
+        <span class="trade">Solar</span>
+        <span class="trade-sep">&middot;</span>
+        <span class="trade">HVAC</span>
+        <span class="trade-sep">&middot;</span>
+        <span class="trade">Insulation</span>
+        <span class="trade-sep">&middot;</span>
+        <span class="trade">Windows</span>
+        <span class="trade-sep">&middot;</span>
+        <span class="trade">Roofing</span>
+        <span class="trade-sep">&middot;</span>
+        <span class="trade">Electrical</span>
+      </span>
     </div>
   </div>
 </section>
@@ -1006,21 +1423,14 @@ a { color: inherit; text-decoration: none; }
           <span class="trust-label">Google Reviews</span>
         </span>
       </div>
-      <div class="trust-item">
-        <svg class="trust-logo" width="26" height="26" viewBox="0 0 48 48" aria-hidden="true">
-          <path fill="#0E2C5C" d="M24 2L6 8v15c0 11.6 7.7 22.4 18 23 10.3-.6 18-11.4 18-23V8L24 2z"/>
-          <text x="24" y="30" font-family="Geist, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="-0.5">A+</text>
-        </svg>
-        <span class="trust-text">
-          <span class="trust-num">BBB</span>
-          <span class="trust-label">Accredited Business</span>
-        </span>
+      <div class="trust-item trust-item-img">
+        <img class="trust-logo-bbb" src="images/lp/bbb-logo.png" alt="BBB Accredited Business" width="365" height="138">
       </div>
       <div class="trust-item">
-        <svg class="trust-logo" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.5-4 7-7 4 4-7 7L4 21z"/><path d="M14 7l3-3 4 4-3 3"/><circle cx="6" cy="18" r="0.5" fill="currentColor"/></svg>
+        <svg class="trust-logo" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14l3 3 5-6"/></svg>
         <span class="trust-text">
-          <span class="trust-num">150<span class="trust-plus">+</span></span>
-          <span class="trust-label">Reports / day</span>
+          <span class="trust-num">200<span class="trust-plus">+</span></span>
+          <span class="trust-label">Appointments / day</span>
         </span>
       </div>
       <div class="trust-item">
@@ -1030,6 +1440,24 @@ a { color: inherit; text-decoration: none; }
           <span class="trust-label">States active</span>
         </span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PAIN — cost of inaction (Hormozi) ───────────────────── -->
+<section class="pain">
+  <div class="container pain-inner">
+    <div class="pain-eyebrow">The math you already know</div>
+    <h2 class="pain-h">30 to <span class="hl-warm">1</span>.</h2>
+    <p class="pain-sub">Industry average: 30 purchased leads to close one deal. Most installers spend $1,750 in marketing per closed appointment, before labor. The other 29 leads? Already called by three other contractors and gone cold by the time you dial.</p>
+    <div class="pain-funnel">
+      <div class="pain-step"><span class="pain-step-num">30</span><span class="pain-step-label">leads</span></div>
+      <span class="pain-arrow">&rarr;</span>
+      <div class="pain-step"><span class="pain-step-num">12</span><span class="pain-step-label">answer</span></div>
+      <span class="pain-arrow">&rarr;</span>
+      <div class="pain-step"><span class="pain-step-num">4</span><span class="pain-step-label">book</span></div>
+      <span class="pain-arrow">&rarr;</span>
+      <div class="pain-step"><span class="pain-step-num">1</span><span class="pain-step-label">closes</span></div>
     </div>
   </div>
 </section>
@@ -1045,7 +1473,7 @@ a { color: inherit; text-decoration: none; }
       <div class="stat"><div class="stat-val">~70<span class="plus">%</span></div><div class="stat-label">Close rate</div></div>
       <div class="stat"><div class="stat-val">80<span class="plus">%+</span></div><div class="stat-label">Min intent score</div></div>
       <div class="stat"><div class="stat-val">1,000<span class="plus">+</span></div><div class="stat-label">Daily interactions</div></div>
-      <div class="stat"><div class="stat-val">150<span class="plus">+</span></div><div class="stat-label">Reports per day</div></div>
+      <div class="stat"><div class="stat-val">200<span class="plus">+</span></div><div class="stat-label">Appointments delivered daily</div></div>
       <div class="stat"><div class="stat-val">11</div><div class="stat-label">States active</div></div>
     </div>
   </div>
@@ -1059,10 +1487,18 @@ a { color: inherit; text-decoration: none; }
         <img src="images/lp/intel-package.jpg" alt="An installer's phone showing the ProFusion Intel Package with homeowner details, intent score, and route" width="1200" height="1800" loading="lazy">
       </figure>
       <div class="intel-copy">
-        <div class="eyebrow">Inside the appointment</div>
+        <div class="eyebrow">Inside the Intel Package</div>
         <h3 class="intel-h">Every detail, <span class="hl-green">before you knock</span>.</h3>
-        <p class="intel-body">The homeowner's name, address, and mapped route. Their intent score. The exact equipment they're running and the upgrade they want. The strongest quote from our conversation with them.</p>
         <p class="intel-body">You don't walk into a sales pitch. You walk into a continuation of a conversation already in progress.</p>
+        <ul class="intel-list">
+          <li><span class="intel-list-icon" aria-hidden="true">&check;</span><span>Full homeowner contact info &amp; verified address</span></li>
+          <li><span class="intel-list-icon" aria-hidden="true">&check;</span><span>Mapped route from your office or last job</span></li>
+          <li><span class="intel-list-icon" aria-hidden="true">&check;</span><span>Intent score &mdash; only 80%+ reach your calendar</span></li>
+          <li><span class="intel-list-icon" aria-hidden="true">&check;</span><span>Credit qualification signal &mdash; pre-screened</span></li>
+          <li><span class="intel-list-icon" aria-hidden="true">&check;</span><span>Specific upgrade recommendation for their home</span></li>
+          <li><span class="intel-list-icon" aria-hidden="true">&check;</span><span>Strongest homeowner quote from our call, verbatim</span></li>
+          <li><span class="intel-list-icon" aria-hidden="true">&check;</span><span>Photos of their existing equipment, forwarded</span></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1094,6 +1530,30 @@ a { color: inherit; text-decoration: none; }
           <li>You walk in. They're ready.</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SCARCITY (Hormozi) ──────────────────────────────────── -->
+<section class="scarcity">
+  <div class="container">
+    <div class="scarcity-head">
+      <div class="eyebrow">Availability</div>
+      <h2 class="scarcity-h">One installer per trade. <span class="hl-green">Per service area.</span></h2>
+      <p class="scarcity-sub">When a service area fills, we don't open it again for two years. That's the promise to the partners we already chose, and the constraint that decides who we say yes to. Currently onboarding partners in:</p>
+    </div>
+    <div class="territories">
+      <div class="territory"><span class="territory-state"><strong>MA</strong> Massachusetts</span><span class="territory-dot" aria-label="Open"></span></div>
+      <div class="territory"><span class="territory-state"><strong>RI</strong> Rhode Island</span><span class="territory-dot" aria-label="Open"></span></div>
+      <div class="territory"><span class="territory-state"><strong>CT</strong> Connecticut</span><span class="territory-dot" aria-label="Open"></span></div>
+      <div class="territory"><span class="territory-state"><strong>NH</strong> New Hampshire</span><span class="territory-dot" aria-label="Open"></span></div>
+      <div class="territory"><span class="territory-state"><strong>ME</strong> Maine</span><span class="territory-dot" aria-label="Open"></span></div>
+      <div class="territory"><span class="territory-state"><strong>VT</strong> Vermont</span><span class="territory-dot" aria-label="Open"></span></div>
+      <div class="territory"><span class="territory-state"><strong>NY</strong> New York</span><span class="territory-dot" aria-label="Open"></span></div>
+      <div class="territory"><span class="territory-state"><strong>NJ</strong> New Jersey</span><span class="territory-dot" aria-label="Open"></span></div>
+      <div class="territory"><span class="territory-state"><strong>MD</strong> Maryland</span><span class="territory-dot" aria-label="Open"></span></div>
+      <div class="territory"><span class="territory-state"><strong>MI</strong> Michigan</span><span class="territory-dot" aria-label="Open"></span></div>
+      <div class="territory"><span class="territory-state"><strong>FL</strong> Florida</span><span class="territory-dot" aria-label="Open"></span></div>
     </div>
   </div>
 </section>
@@ -1139,14 +1599,16 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
-<!-- ─── GUARANTEE — risk-free, no close-rate promise ───────── -->
-<section class="guarantee">
-  <div class="container-narrow">
-    <div class="guarantee-card">
-      <span class="guarantee-eyebrow">How it works</span>
-      <h2 class="guarantee-h">Pay for appointments that happen. <span class="hl-green">Nothing more.</span></h2>
-      <p class="guarantee-detail">No retainers, no setup fees, no long-term contracts. If a confirmed homeowner doesn't show despite our reminders and same-day follow-ups, <strong>you're not billed for that appointment.</strong></p>
+<!-- ─── RISKWALL — full-bleed risk reversal band (Hormozi) ──── -->
+<section class="riskwall">
+  <div class="container riskwall-inner">
+    <div class="riskwall-eyebrow">How it works</div>
+    <div class="riskwall-zeros">
+      <div class="riskwall-zero"><span class="zero">$0</span> retainers</div>
+      <div class="riskwall-zero"><span class="zero">$0</span> setup fees</div>
+      <div class="riskwall-zero"><span class="zero">$0</span> long-term contracts</div>
     </div>
+    <p class="riskwall-sub">Pay only for appointments that happen. If a confirmed homeowner doesn't show despite our reminders and same-day follow-ups, <strong>you're not billed for that appointment.</strong></p>
   </div>
 </section>
 
@@ -1174,90 +1636,7 @@ a { color: inherit; text-decoration: none; }
     <div class="calendly-card">
       <div class="calendly-inline-widget" data-url="https://calendly.com/ibrahim-profusion/30min?hide_event_type_details=1&hide_gdpr_banner=1"></div>
     </div>
-    <p class="book-note">We onboard one installer per trade, per territory. If yours isn't taken yet, this is when to talk. Prefer to send the basics first? <a href="#apply">Apply by form</a>.</p>
-  </div>
-</section>
-
-<!-- ─── APPLY — installer signup form ───────────────────────── -->
-<section class="apply" id="apply">
-  <div class="container">
-    <div class="apply-grid">
-      <div class="apply-side">
-        <div class="eyebrow">Or by form</div>
-        <h3 class="apply-h">Send the basics. <span class="hl-green">We'll reach out.</span></h3>
-        <p class="apply-body">Two minutes. We'll come back with current demand in your service area, the categories we're hiring partners for, and what a first month with ProFusion actually looks like.</p>
-        <p class="apply-body" style="font-size: 14px; color: var(--gray-500);">Your application goes straight to our partnerships team. We don't sell or share it with anyone, ever.</p>
-      </div>
-
-      <form class="form" id="applyForm" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY">
-        <input type="hidden" name="subject" value="New installer application — partner-landing-mockup">
-        <input type="hidden" name="from_name" value="ProFusion Partner LP">
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
-
-        <div class="form-row">
-          <div class="form-field">
-            <label for="f-company">Company name</label>
-            <input type="text" id="f-company" name="Company" required>
-          </div>
-          <div class="form-field">
-            <label for="f-contact">Contact name</label>
-            <input type="text" id="f-contact" name="Contact Name" required>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-field">
-            <label for="f-email">Work email</label>
-            <input type="email" id="f-email" name="Email" required>
-          </div>
-          <div class="form-field">
-            <label for="f-phone">Phone</label>
-            <input type="tel" id="f-phone" name="Phone" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-group-label">Trades you install</label>
-          <div class="checks trades">
-            <label class="check"><input type="checkbox" name="Trades" value="Solar"><span>Solar</span></label>
-            <label class="check"><input type="checkbox" name="Trades" value="HVAC"><span>HVAC</span></label>
-            <label class="check"><input type="checkbox" name="Trades" value="Insulation"><span>Insulation</span></label>
-            <label class="check"><input type="checkbox" name="Trades" value="Windows &amp; Doors"><span>Windows &amp; Doors</span></label>
-            <label class="check"><input type="checkbox" name="Trades" value="Energy Storage"><span>Energy Storage</span></label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-group-label">Service area</label>
-          <div class="checks states">
-            <label class="check"><input type="checkbox" name="States" value="MA"><span>Massachusetts</span></label>
-            <label class="check"><input type="checkbox" name="States" value="RI"><span>Rhode Island</span></label>
-            <label class="check"><input type="checkbox" name="States" value="CT"><span>Connecticut</span></label>
-            <label class="check"><input type="checkbox" name="States" value="ME"><span>Maine</span></label>
-            <label class="check"><input type="checkbox" name="States" value="NH"><span>New Hampshire</span></label>
-            <label class="check"><input type="checkbox" name="States" value="VT"><span>Vermont</span></label>
-            <label class="check"><input type="checkbox" name="States" value="NY"><span>New York</span></label>
-            <label class="check"><input type="checkbox" name="States" value="NJ"><span>New Jersey</span></label>
-            <label class="check"><input type="checkbox" name="States" value="MD"><span>Maryland</span></label>
-            <label class="check"><input type="checkbox" name="States" value="MI"><span>Michigan</span></label>
-            <label class="check"><input type="checkbox" name="States" value="FL"><span>Florida</span></label>
-          </div>
-        </div>
-
-        <button type="submit" class="form-submit" id="applySubmit">
-          Send application
-          <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        </button>
-        <p class="form-note">By submitting you agree to our <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.</p>
-
-        <div class="form-success" id="applySuccess">
-          <svg class="form-success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          <div class="form-success-h">Application received.</div>
-          <p class="form-success-p">Thanks. Our partnerships team will be in touch within one business day. You can also book an intro call above.</p>
-        </div>
-      </form>
-    </div>
+    <p class="book-note">We onboard one installer per trade, per service area. If yours isn't taken yet, this is when to talk.</p>
   </div>
 </section>
 
@@ -1275,40 +1654,6 @@ a { color: inherit; text-decoration: none; }
 
 <!-- Calendly inline widget script -->
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-<!-- Form submit handler — Web3Forms with in-page success state -->
-<script>
-(function(){
-  const form = document.getElementById('applyForm');
-  const submitBtn = document.getElementById('applySubmit');
-  const successPanel = document.getElementById('applySuccess');
-  if (!form) return;
-
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-
-    const data = new FormData(form);
-    try {
-      const res = await fetch(form.action, { method: 'POST', body: data });
-      const json = await res.json();
-      if (json.success) {
-        Array.from(form.children).forEach(el => { if (el.id !== 'applySuccess') el.style.display = 'none'; });
-        successPanel.classList.add('is-visible');
-        successPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        throw new Error(json.message || 'submission failed');
-      }
-    } catch(err) {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = 'Send application <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6h13M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
-      alert('Sorry, something went wrong sending your application. Please email info@profusion.solutions or call +1 (516) 613-3990.');
-      console.error('form submit error', err);
-    }
-  });
-})();
-</script>
 
 </body>
 </html>
