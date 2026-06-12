@@ -21,9 +21,27 @@
 <meta name="twitter:description" content="Pre-qualified homeowner appointments. No retainers.">
 <meta name="twitter:image" content="https://profusion.solutions/images/social-card.png">
 <meta name="theme-color" content="#0F1830">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2004926816821571');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2004926816821571&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet">
 <style>
 /* ──────────────────────────────────────────────────────────────────
    MOCKUP v2 · Apple/Fortune 100 minimal × ProFusion brand
@@ -56,7 +74,8 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 body {
   margin: 0;
   font-family: var(--sans);
@@ -82,7 +101,7 @@ a { color: inherit; text-decoration: none; }
 /* Sticky nav */
 .nav {
   position: sticky;
-  top: 28px;
+  top: 0;
   z-index: 100;
   display: flex;
   justify-content: space-between;
@@ -105,7 +124,7 @@ a { color: inherit; text-decoration: none; }
   transition: background 0.2s, transform 0.2s;
 }
 .nav-cta:hover { background: var(--green-700); transform: translateY(-1px); }
-@media (max-width: 640px) { .nav { top: 0; padding: 18px 24px; } }
+@media (max-width: 640px) { .nav { padding: 18px 24px; } }
 
 /* Buttons */
 .btn-primary {
@@ -257,6 +276,158 @@ a { color: inherit; text-decoration: none; }
   .hero-grid { grid-template-columns: 1fr; gap: 48px; }
 }
 
+/* ─── HERO BADGE — ad-promise echo (3 free appointments) ──── */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 10px 16px;
+  background: var(--green-100);
+  border: 1px solid rgba(31,164,82,0.25);
+  border-radius: 100px;
+  max-width: 540px;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--navy);
+}
+.hero-badge svg { color: var(--green); flex-shrink: 0; }
+.hero-badge strong { font-weight: 600; color: var(--green-700); }
+
+/* ─── CTA ROW — centered button after difference + riskwall ── */
+.ctarow {
+  display: flex;
+  justify-content: center;
+  margin-top: 56px;
+}
+.ctarow .btn-primary { background: var(--green); color: var(--white); }
+.ctarow.dark .btn-primary {
+  background: var(--white);
+  color: var(--navy);
+}
+.ctarow.dark .btn-primary:hover { background: var(--cream); }
+
+/* ─── BOOK STEPS — 3-step strip above Calendly ─────────────── */
+.book-steps {
+  max-width: 980px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.book-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 22px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+}
+.book-step-num {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: 0.06em;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+.book-step-text {
+  font-family: var(--sans);
+  font-size: 14.5px;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+}
+@media (max-width: 760px) {
+  .book-steps { grid-template-columns: 1fr; gap: 10px; margin-bottom: 32px; }
+  .book-step { padding: 14px 18px; }
+}
+
+/* ─── FALLBACK note under Calendly ─────────────────────────── */
+.book-fallback {
+  margin: 28px auto 0;
+  max-width: 720px;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.65);
+}
+.book-fallback a { color: var(--green); border-bottom: 1px solid rgba(31,164,82,0.35); padding-bottom: 1px; }
+.book-fallback a:hover { border-bottom-color: var(--green); }
+
+/* ─── FAQ — bordered rows with details/summary ─────────────── */
+.faq {
+  padding: 120px 0;
+  background: var(--cream);
+}
+.faq-head {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.faq-head .eyebrow { margin-bottom: 20px; }
+.faq-h {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  margin: 0;
+}
+.faq-h .hl-green { color: var(--green); }
+.faq-list {
+  max-width: 880px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 20px;
+  border: 1px solid var(--gray-100);
+  overflow: hidden;
+}
+.faq-item { border-bottom: 1px solid var(--gray-100); }
+.faq-item:last-child { border-bottom: none; }
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: var(--sans);
+  font-size: 16.5px;
+  font-weight: 600;
+  color: var(--navy);
+  transition: background 0.15s;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { background: var(--gray-50); }
+.faq-item summary::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%231FA452' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E") no-repeat center / contain;
+  transition: transform 0.25s ease;
+}
+.faq-item[open] summary::after { transform: rotate(180deg); }
+.faq-answer {
+  padding: 0 28px 26px;
+  font-family: var(--sans);
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--gray-700);
+}
+@media (max-width: 760px) {
+  .faq { padding: 72px 0; }
+  .faq-head { margin-bottom: 36px; }
+  .faq-item summary { padding: 18px 20px; font-size: 15.5px; }
+  .faq-answer { padding: 0 20px 22px; font-size: 14.5px; }
+}
+
 /* ─── TRADES BAND — signals service breadth right under hero */
 .trades-band {
   background: var(--white);
@@ -276,7 +447,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gray-500);
+  color: var(--gray-700);
   font-weight: 600;
 }
 .trades-list {
@@ -354,7 +525,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gray-500);
+  color: var(--gray-700);
   font-weight: 500;
   margin-top: 4px;
 }
@@ -396,7 +567,7 @@ a { color: inherit; text-decoration: none; }
 .stats {
   margin-top: 88px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
   border-top: 1px solid var(--gray-300);
   padding-top: 56px;
@@ -418,24 +589,14 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--sans);
   font-size: 12.5px;
   letter-spacing: 0.04em;
-  color: var(--gray-500);
+  color: var(--gray-700);
   font-weight: 500;
   line-height: 1.3;
 }
-@media (max-width: 1100px) {
-  .stats { grid-template-columns: repeat(3, 1fr); gap: 36px 0; padding-top: 36px; }
-  .stat { border-right: 1px solid var(--gray-300); padding: 0 16px; }
-  .stat:nth-child(3n) { border-right: none; }
-}
 @media (max-width: 640px) {
   .promise { padding: 96px 0; }
-  .stats { grid-template-columns: repeat(2, 1fr); }
-  .stat:nth-child(3n) { border-right: 1px solid var(--gray-300); }
-  .stat:nth-child(2n) { border-right: none; }
-}
-@media (max-width: 420px) {
-  .stats { grid-template-columns: 1fr; }
-  .stat { border-right: none !important; border-bottom: 1px solid var(--gray-300); padding: 18px 0; }
+  .stats { grid-template-columns: 1fr; gap: 0; padding-top: 28px; }
+  .stat { border-right: none; border-bottom: 1px solid var(--gray-300); padding: 22px 0; }
   .stat:last-child { border-bottom: none; }
 }
 
@@ -847,11 +1008,26 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 40px;
 }
 .riskwall-eyebrow::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+.riskwall-headline {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(40px, 6.4vw, 80px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin: 0 0 48px;
+}
+.riskwall-headline .hl-green-light { color: var(--green); }
 .riskwall-zeros {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin-bottom: 56px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  gap: 14px 56px;
+  margin-bottom: 40px;
+}
+@media (max-width: 760px) {
+  .riskwall-zeros { grid-template-columns: 1fr; gap: 10px; margin-bottom: 32px; }
+  .riskwall-headline { font-size: 36px; margin-bottom: 32px; }
 }
 .riskwall-zero {
   font-family: var(--display);
@@ -876,56 +1052,6 @@ a { color: inherit; text-decoration: none; }
 }
 .riskwall-sub strong { color: var(--white); font-weight: 500; }
 @media (max-width: 920px) { .riskwall { padding: 96px 0; } }
-
-/* ─── SINEK CLOSING — belief reinforcement ────────────────── */
-.closing {
-  padding: 140px 0;
-  background: var(--cream);
-  text-align: center;
-}
-.closing-eyebrow {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--green);
-  font-weight: 500;
-  margin-bottom: 32px;
-}
-.closing-h {
-  font-family: var(--display);
-  font-weight: 400;
-  font-size: clamp(36px, 5.2vw, 64px);
-  line-height: 1.04;
-  letter-spacing: -0.025em;
-  color: var(--navy);
-  margin: 0 auto 40px;
-  max-width: 920px;
-}
-.closing-h .hl-green { color: var(--green); }
-.closing-body {
-  font-family: var(--sans);
-  font-size: clamp(17px, 1.4vw, 20px);
-  line-height: 1.6;
-  color: var(--gray-700);
-  max-width: 620px;
-  margin: 0 auto 48px;
-}
-.closing-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 17px 36px;
-  background: var(--navy);
-  color: var(--white);
-  font-family: var(--sans);
-  font-size: 15px;
-  font-weight: 500;
-  border-radius: 100px;
-  transition: opacity 0.2s, transform 0.2s;
-}
-.closing-cta:hover { opacity: 0.92; transform: translateY(-1px); }
-@media (max-width: 760px) { .closing { padding: 96px 0; } }
 
 /* ─── VOICES — partner testimonials ──────────────────────── */
 .voices {
@@ -1421,7 +1547,7 @@ a { color: inherit; text-decoration: none; }
   .book-h { font-size: 42px; line-height: 1; margin: 0 0 12px; }
   .book-sub { font-size: 15.5px; }
   .calendly-card { border-radius: 18px; box-shadow: 0 16px 40px rgba(0,0,0,0.30); }
-  .calendly-inline-widget { height: 620px; }
+  .calendly-inline-widget { height: 740px; }
   .book-note { margin: 28px auto 0; font-size: 13px; }
 
   /* Footer — stack cleanly */
@@ -1464,9 +1590,10 @@ a { color: inherit; text-decoration: none; }
 </style>
 </head>
 <body>
+<a id="top" tabindex="-1" aria-hidden="true"></a>
 
 <nav class="nav">
-  <a href="index.html" class="nav-brand"><img src="logo.png" alt="ProFusion"></a>
+  <a href="#top" class="nav-brand"><img src="logo.png" alt="ProFusion"></a>
   <a href="#book" class="nav-cta">Book a call</a>
 </nav>
 
@@ -1479,25 +1606,41 @@ a { color: inherit; text-decoration: none; }
         <h1>You went into business to install. <span class="hl-green">Not to chase.</span></h1>
         <p class="hero-sub">A tradesperson's time belongs in the home, not in a phone queue. That's why we built ProFusion. We engage homeowners, qualify their intent, and put confirmed appointments on your calendar. You do the work you signed up for.</p>
         <a href="#book" class="btn-primary">
-          Book a call
+          See if your area is still open
           <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
         </a>
+        <div class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span><strong>Your first 3 appointments are on us.</strong> No setup, no retainer, no obligation.</span>
+        </div>
       </div>
       <div class="hero-photo">
         <figure class="hero-tile">
-          <img src="images/lp/trade-solar.jpg" alt="A ProFusion solar installation partner on a residential rooftop" width="900" height="1118" loading="eager" fetchpriority="high">
+          <picture>
+            <source srcset="images/lp/trade-solar.webp" type="image/webp">
+            <img src="images/lp/trade-solar.jpg" alt="A ProFusion solar installation partner on a residential rooftop" width="900" height="1118" loading="eager" fetchpriority="high">
+          </picture>
           <span class="hero-tile-tag">Solar</span>
         </figure>
         <figure class="hero-tile">
-          <img src="images/lp/trade-hvac.jpg" alt="A ProFusion HVAC technician beside a residential heat pump condenser" width="900" height="1125" loading="eager">
+          <picture>
+            <source srcset="images/lp/trade-hvac.webp" type="image/webp">
+            <img src="images/lp/trade-hvac.jpg" alt="A ProFusion HVAC technician beside a residential heat pump condenser" width="900" height="1125" loading="lazy">
+          </picture>
           <span class="hero-tile-tag">HVAC</span>
         </figure>
         <figure class="hero-tile">
-          <img src="images/lp/trade-insulation.jpg" alt="A ProFusion insulation installer in a residential attic" width="900" height="1125" loading="eager">
+          <picture>
+            <source srcset="images/lp/trade-insulation.webp" type="image/webp">
+            <img src="images/lp/trade-insulation.jpg" alt="A ProFusion insulation installer in a residential attic" width="900" height="1125" loading="lazy">
+          </picture>
           <span class="hero-tile-tag">Insulation</span>
         </figure>
         <figure class="hero-tile">
-          <img src="images/lp/trade-windows.jpg" alt="A ProFusion windows installation specialist beside a newly installed residential window" width="900" height="1125" loading="lazy">
+          <picture>
+            <source srcset="images/lp/trade-windows.webp" type="image/webp">
+            <img src="images/lp/trade-windows.jpg" alt="A ProFusion windows installation specialist beside a newly installed residential window" width="900" height="1125" loading="lazy">
+          </picture>
           <span class="hero-tile-tag">Windows</span>
         </figure>
       </div>
@@ -1598,10 +1741,7 @@ a { color: inherit; text-decoration: none; }
     <div class="stats">
       <div class="stat"><div class="stat-val">90<span class="plus">%+</span></div><div class="stat-label">Show rate</div></div>
       <div class="stat"><div class="stat-val">~70<span class="plus">%</span></div><div class="stat-label">Close rate</div></div>
-      <div class="stat"><div class="stat-val">80<span class="plus">%+</span></div><div class="stat-label">Min intent score</div></div>
-      <div class="stat"><div class="stat-val">1,000<span class="plus">+</span></div><div class="stat-label">Daily interactions</div></div>
       <div class="stat"><div class="stat-val">200<span class="plus">+</span></div><div class="stat-label">Appointments delivered daily</div></div>
-      <div class="stat"><div class="stat-val">11</div><div class="stat-label">States active</div></div>
     </div>
   </div>
 </section>
@@ -1611,7 +1751,10 @@ a { color: inherit; text-decoration: none; }
   <div class="container">
     <div class="intel-grid">
       <figure class="intel-photo">
-        <img src="images/lp/intel-package.jpg" alt="An installer's phone showing the ProFusion Intel Package with homeowner details, intent score, and route" width="1200" height="1800" loading="lazy">
+        <picture>
+          <source srcset="images/lp/intel-package.webp" type="image/webp">
+          <img src="images/lp/intel-package.jpg" alt="An installer's phone showing the ProFusion Intel Package with homeowner details, intent score, and route" width="1200" height="1800" loading="lazy">
+        </picture>
       </figure>
       <div class="intel-copy">
         <div class="eyebrow">Inside the Intel Package</div>
@@ -1658,6 +1801,12 @@ a { color: inherit; text-decoration: none; }
         </ul>
       </div>
     </div>
+    <div class="ctarow">
+      <a href="#book" class="btn-primary">
+        See open territories
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1667,27 +1816,30 @@ a { color: inherit; text-decoration: none; }
     <div class="scarcity-head">
       <div class="eyebrow">Availability</div>
       <h2 class="scarcity-h">One installer per trade. <span class="hl-green">Per service area.</span></h2>
-      <p class="scarcity-sub">When a service area fills, we don't open it again for two years. That's the promise to the partners we already chose, and the constraint that decides who we say yes to. Currently onboarding partners in:</p>
+      <p class="scarcity-sub">We're onboarding founding partners across 11 states. Once your trade is taken in your area, it's closed for two years. That's the promise to the partners we already chose, and the constraint that decides who we say yes to.</p>
     </div>
     <div class="territories">
-      <div class="territory"><span class="territory-state"><strong>MA</strong> Massachusetts</span><span class="territory-dot" aria-label="Open"></span></div>
-      <div class="territory"><span class="territory-state"><strong>RI</strong> Rhode Island</span><span class="territory-dot" aria-label="Open"></span></div>
-      <div class="territory"><span class="territory-state"><strong>CT</strong> Connecticut</span><span class="territory-dot" aria-label="Open"></span></div>
-      <div class="territory"><span class="territory-state"><strong>NH</strong> New Hampshire</span><span class="territory-dot" aria-label="Open"></span></div>
-      <div class="territory"><span class="territory-state"><strong>ME</strong> Maine</span><span class="territory-dot" aria-label="Open"></span></div>
-      <div class="territory"><span class="territory-state"><strong>VT</strong> Vermont</span><span class="territory-dot" aria-label="Open"></span></div>
-      <div class="territory"><span class="territory-state"><strong>NY</strong> New York</span><span class="territory-dot" aria-label="Open"></span></div>
-      <div class="territory"><span class="territory-state"><strong>NJ</strong> New Jersey</span><span class="territory-dot" aria-label="Open"></span></div>
-      <div class="territory"><span class="territory-state"><strong>MD</strong> Maryland</span><span class="territory-dot" aria-label="Open"></span></div>
-      <div class="territory"><span class="territory-state"><strong>MI</strong> Michigan</span><span class="territory-dot" aria-label="Open"></span></div>
-      <div class="territory"><span class="territory-state"><strong>FL</strong> Florida</span><span class="territory-dot" aria-label="Open"></span></div>
+      <div class="territory"><span class="territory-state"><strong>MA</strong> Massachusetts</span></div>
+      <div class="territory"><span class="territory-state"><strong>RI</strong> Rhode Island</span></div>
+      <div class="territory"><span class="territory-state"><strong>CT</strong> Connecticut</span></div>
+      <div class="territory"><span class="territory-state"><strong>NH</strong> New Hampshire</span></div>
+      <div class="territory"><span class="territory-state"><strong>ME</strong> Maine</span></div>
+      <div class="territory"><span class="territory-state"><strong>VT</strong> Vermont</span></div>
+      <div class="territory"><span class="territory-state"><strong>NY</strong> New York</span></div>
+      <div class="territory"><span class="territory-state"><strong>NJ</strong> New Jersey</span></div>
+      <div class="territory"><span class="territory-state"><strong>MD</strong> Maryland</span></div>
+      <div class="territory"><span class="territory-state"><strong>MI</strong> Michigan</span></div>
+      <div class="territory"><span class="territory-state"><strong>FL</strong> Florida</span></div>
     </div>
   </div>
 </section>
 
 <!-- ─── CINEMATIC BAND B — handshake at the door ──────────── -->
 <section class="band" aria-label="A handshake at the door">
-  <img src="images/lp/handshake.jpg" alt="A ProFusion installation partner shaking hands with a homeowner at the front door" width="1800" height="1012" loading="lazy">
+  <picture>
+    <source srcset="images/lp/handshake.webp" type="image/webp">
+    <img src="images/lp/handshake.jpg" alt="A ProFusion installation partner shaking hands with a homeowner at the front door" width="1800" height="1012" loading="lazy">
+  </picture>
   <div class="band-overlay left">
     <div class="container">
       <div class="band-text">
@@ -1726,22 +1878,33 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
-<!-- ─── RISKWALL — full-bleed risk reversal band (Hormozi) ──── -->
+<!-- ─── RISKWALL — first-3-free offer (Hormozi + Sinek) ──────── -->
 <section class="riskwall">
   <div class="container riskwall-inner">
-    <div class="riskwall-eyebrow">How it works</div>
+    <div class="riskwall-eyebrow">The offer</div>
+    <h2 class="riskwall-headline">Your first three appointments are <span class="hl-green-light">on us</span>.</h2>
     <div class="riskwall-zeros">
       <div class="riskwall-zero"><span class="zero">$0</span> retainers</div>
-      <div class="riskwall-zero"><span class="zero">$0</span> setup fees</div>
+      <div class="riskwall-zero"><span class="zero">$0</span> setup</div>
       <div class="riskwall-zero"><span class="zero">$0</span> long-term contracts</div>
+      <div class="riskwall-zero"><span class="zero">$0</span> obligation</div>
     </div>
-    <p class="riskwall-sub">Pay only for appointments that happen. If a confirmed homeowner doesn't show despite our reminders and same-day follow-ups, <strong>you're not billed for that appointment.</strong></p>
+    <p class="riskwall-sub">We send you three confirmed homeowners. <strong>If we don't earn your business by then, we don't deserve it.</strong></p>
+    <div class="ctarow dark">
+      <a href="#book" class="btn-primary">
+        Book the call &mdash; pay only for appointments
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- ─── CINEMATIC BAND C — calendar already filling ───────── -->
 <section class="band" aria-label="A calendar already filling">
-  <img src="images/lp/calendar-filling.jpg" alt="An installer reviewing a calendar app showing confirmed appointments for the week ahead" width="1800" height="1012" loading="lazy">
+  <picture>
+    <source srcset="images/lp/calendar-filling.webp" type="image/webp">
+    <img src="images/lp/calendar-filling.jpg" alt="An installer reviewing a calendar app showing confirmed appointments for the week ahead" width="1800" height="1012" loading="lazy">
+  </picture>
   <div class="band-overlay bottom">
     <div class="container">
       <div class="band-text">
@@ -1752,18 +1915,167 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
+<!-- ─── GUARANTEE — no-show protection (before book) ────────── -->
+<section class="guarantee">
+  <div class="container">
+    <div class="guarantee-card">
+      <div class="guarantee-eyebrow">The guarantee</div>
+      <h3 class="guarantee-h">If a confirmed homeowner <span class="hl-green">doesn&rsquo;t show</span>, you don&rsquo;t pay.</h3>
+      <p class="guarantee-detail">Every appointment goes through automated reminders and same-day follow-ups before we put it on your calendar. If the homeowner still doesn&rsquo;t show, <strong>that appointment doesn&rsquo;t bill.</strong></p>
+    </div>
+  </div>
+</section>
+
 <!-- ─── BOOK — Calendly inline embed ────────────────────────── -->
 <section class="book" id="book">
   <div class="container book-inner">
     <div class="book-head">
-      <div class="book-eyebrow">Twenty minutes. One conversation.</div>
-      <h2 class="book-h">Book <span class="hl-green">the</span> call.</h2>
+      <div class="book-eyebrow">Thirty minutes. One conversation.</div>
+      <h2 class="book-h">Book the <span class="hl-green">call</span>.</h2>
       <p class="book-sub">Pick a slot. We'll walk you through the process, current demand in your area, and what your first month looks like.</p>
     </div>
+    <ol class="book-steps" aria-label="What happens next">
+      <li class="book-step">
+        <div class="book-step-num">1</div>
+        <div class="book-step-body">
+          <div class="book-step-h">Book the call</div>
+          <div class="book-step-sub">Thirty minutes. Bring your trade and your service area.</div>
+        </div>
+      </li>
+      <li class="book-step">
+        <div class="book-step-num">2</div>
+        <div class="book-step-body">
+          <div class="book-step-h">We confirm your territory and trade</div>
+          <div class="book-step-sub">One installer per trade, per area. We check if yours is still open.</div>
+        </div>
+      </li>
+      <li class="book-step">
+        <div class="book-step-num">3</div>
+        <div class="book-step-body">
+          <div class="book-step-h">Confirmed appointments hit your calendar</div>
+          <div class="book-step-sub">Two days from signup to your first appointment is typical.</div>
+        </div>
+      </li>
+    </ol>
     <div class="calendly-card">
       <div class="calendly-inline-widget" data-url="https://calendly.com/ibrahim-profusion/30min?hide_event_type_details=1&hide_gdpr_banner=1"></div>
     </div>
-    <p class="book-note">We onboard one installer per trade, per service area. If yours isn't taken yet, this is when to talk.</p>
+    <p class="book-fallback">Calendar not loading? Book directly at <a href="https://calendly.com/ibrahim-profusion/30min" target="_blank" rel="noopener">calendly.com/ibrahim-profusion/30min</a> &middot; Call <a href="tel:+15166133990">+1 (516) 613-3990</a> &middot; <a href="mailto:info@profusion.solutions">info@profusion.solutions</a></p>
+    <p class="book-note">We onboard one installer per trade, per service area. If yours isn&rsquo;t taken yet, this is when to talk.</p>
+  </div>
+</section>
+
+<!-- ─── FAQ — common installer questions ────────────────────── -->
+<section class="faq" id="faq">
+  <div class="container-narrow">
+    <div class="faq-head">
+      <div class="faq-eyebrow">Common questions</div>
+      <h2 class="faq-h">Things every installer <span class="hl-green">asks first</span>.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Do I really only pay for appointments?</summary>
+        <div class="faq-answer"><p>Yes. No retainers, no setup fees, no monthly minimums. You pay one flat per-appointment fee &mdash; and only when the homeowner shows. Your first three appointments are on us.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>How fast will I see appointments on my calendar?</summary>
+        <div class="faq-answer"><p>Two days from signup to your first confirmed appointment is typical, once we&rsquo;ve confirmed your trade and territory are open.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What happens if the homeowner doesn&rsquo;t show?</summary>
+        <div class="faq-answer"><p>Every confirmed appointment goes through automated reminders and same-day follow-ups before it lands on your calendar. If the homeowner still doesn&rsquo;t show, that appointment doesn&rsquo;t bill.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Is my service area really exclusive?</summary>
+        <div class="faq-answer"><p>Yes. One installer per trade, per service area. Once your trade is taken in your area, it&rsquo;s closed for two years. That&rsquo;s the promise we make to the partners we say yes to.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What do I get before the appointment?</summary>
+        <div class="faq-answer"><p>A homeowner intel package: address and home detail, household and motivation context, current system where applicable, and the exact question they came to us with. So you walk in already knowing the job.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ─── APPLY — full application form (backup to Calendly) ──── -->
+<section class="apply" id="apply">
+  <div class="container">
+    <div class="apply-grid">
+      <div class="apply-side">
+        <div class="eyebrow">Prefer to apply in writing?</div>
+        <h2 class="apply-h">Tell us your <span class="hl-green">trade and territory</span>.</h2>
+        <p class="apply-body">We&rsquo;ll confirm whether your area is still open and follow up within one business day.</p>
+        <p class="apply-body">Two days from signup to your first confirmed appointment is typical &mdash; once we&rsquo;ve confirmed your area.</p>
+      </div>
+      <form class="form" id="applyForm" action="FORM_ENDPOINT" method="POST" novalidate>
+        <input type="hidden" name="utm_source" value="">
+        <input type="hidden" name="utm_medium" value="">
+        <input type="hidden" name="utm_campaign" value="">
+        <input type="hidden" name="utm_content" value="">
+        <input type="hidden" name="utm_term" value="">
+        <input type="hidden" name="page" value="partners-lp-v2">
+        <div class="form-fields">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="apply-name">Your name</label>
+              <input type="text" id="apply-name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-field">
+              <label for="apply-company">Company</label>
+              <input type="text" id="apply-company" name="company" required autocomplete="organization">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="apply-phone">Phone</label>
+              <input type="tel" id="apply-phone" name="phone" required autocomplete="tel">
+            </div>
+            <div class="form-field">
+              <label for="apply-email">Email</label>
+              <input type="email" id="apply-email" name="email" required autocomplete="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <span class="form-group-label">Trades you install</span>
+            <div class="checks trades">
+              <label class="check"><input type="checkbox" name="trades" value="Solar"><span>Solar</span></label>
+              <label class="check"><input type="checkbox" name="trades" value="HVAC"><span>HVAC</span></label>
+              <label class="check"><input type="checkbox" name="trades" value="Insulation"><span>Insulation</span></label>
+              <label class="check"><input type="checkbox" name="trades" value="Windows"><span>Windows</span></label>
+              <label class="check"><input type="checkbox" name="trades" value="Roofing"><span>Roofing</span></label>
+              <label class="check"><input type="checkbox" name="trades" value="Electrical"><span>Electrical</span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <span class="form-group-label">States you cover</span>
+            <div class="checks states">
+              <label class="check"><input type="checkbox" name="states" value="Massachusetts"><span>MA</span></label>
+              <label class="check"><input type="checkbox" name="states" value="Maine"><span>ME</span></label>
+              <label class="check"><input type="checkbox" name="states" value="New Hampshire"><span>NH</span></label>
+              <label class="check"><input type="checkbox" name="states" value="Vermont"><span>VT</span></label>
+              <label class="check"><input type="checkbox" name="states" value="Rhode Island"><span>RI</span></label>
+              <label class="check"><input type="checkbox" name="states" value="Connecticut"><span>CT</span></label>
+              <label class="check"><input type="checkbox" name="states" value="New York"><span>NY</span></label>
+              <label class="check"><input type="checkbox" name="states" value="New Jersey"><span>NJ</span></label>
+              <label class="check"><input type="checkbox" name="states" value="Maryland"><span>MD</span></label>
+              <label class="check"><input type="checkbox" name="states" value="Michigan"><span>MI</span></label>
+              <label class="check"><input type="checkbox" name="states" value="Florida"><span>FL</span></label>
+              <label class="check"><input type="checkbox" name="states" value="Other"><span>Other</span></label>
+            </div>
+          </div>
+          <button type="submit" class="form-submit">
+            Send my application
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+          <p class="form-note">By submitting, you agree to be contacted about partner onboarding. We don&rsquo;t share your information. Prefer to call? <a href="tel:+15166133990">+1 (516) 613-3990</a></p>
+        </div>
+        <div class="form-success" role="status" aria-live="polite">
+          <svg class="form-success-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.6"/><path d="M7 12.5l3.5 3.5L17 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="form-success-h">Application received.</div>
+          <p class="form-success-p">We&rsquo;ll review your trade and territory and reach out within one business day.</p>
+        </div>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -1778,6 +2090,94 @@ a { color: inherit; text-decoration: none; }
     </div>
   </div>
 </footer>
+
+<!-- ─── UTM passthrough + Calendly Schedule + Lead tracking ─── -->
+<script>
+(function() {
+  // 1) Read UTMs (and a couple of extras) from current URL
+  var params = new URLSearchParams(window.location.search);
+  var keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'];
+  var utms = {};
+  keys.forEach(function(k){
+    var v = params.get(k);
+    if (v) utms[k] = v;
+  });
+
+  // 2) Append UTMs to Calendly widget data-url BEFORE widget.js initializes
+  var widget = document.querySelector('.calendly-inline-widget');
+  if (widget && Object.keys(utms).length) {
+    var url = widget.getAttribute('data-url') || '';
+    var sep = url.indexOf('?') === -1 ? '?' : '&';
+    var extra = Object.keys(utms).map(function(k){
+      return encodeURIComponent(k) + '=' + encodeURIComponent(utms[k]);
+    }).join('&');
+    widget.setAttribute('data-url', url + sep + extra);
+  }
+
+  // 3) Populate hidden UTM inputs on the apply form
+  var form = document.getElementById('applyForm');
+  if (form) {
+    keys.forEach(function(k){
+      var input = form.querySelector('input[name="' + k + '"]');
+      if (input && utms[k]) input.value = utms[k];
+    });
+  }
+
+  // 4) Listen for Calendly Schedule event → fbq Schedule
+  window.addEventListener('message', function(e) {
+    if (!e.data || typeof e.data !== 'object') return;
+    if (e.data.event && e.data.event.indexOf('calendly') === 0) {
+      if (e.data.event === 'calendly.event_scheduled' && typeof fbq === 'function') {
+        fbq('track', 'Schedule');
+      }
+    }
+  });
+
+  // 5) Form submit handler with fbq Lead + UX states
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var submitBtn = form.querySelector('.form-submit');
+      var fields = form.querySelector('.form-fields');
+      var success = form.querySelector('.form-success');
+      if (submitBtn) submitBtn.disabled = true;
+
+      var action = form.getAttribute('action');
+      var data = new FormData(form);
+
+      // If FORM_ENDPOINT isn't wired yet, just simulate success client-side.
+      if (!action || action === 'FORM_ENDPOINT') {
+        if (typeof fbq === 'function') fbq('track', 'Lead');
+        if (fields) fields.style.display = 'none';
+        if (success) success.classList.add('is-visible');
+        return;
+      }
+
+      fetch(action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(r){
+        if (r.ok) {
+          if (typeof fbq === 'function') fbq('track', 'Lead');
+          if (fields) fields.style.display = 'none';
+          if (success) success.classList.add('is-visible');
+        } else {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Something went wrong — try again';
+          }
+        }
+      }).catch(function(){
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Network error — try again';
+        }
+      });
+    });
+  }
+})();
+</script>
 
 <!-- Calendly inline widget script -->
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
