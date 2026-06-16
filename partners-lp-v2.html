@@ -1234,13 +1234,12 @@ a { color: inherit; text-decoration: none; }
 .hero-form-card.is-pulsing { animation: form-card-pulse 0.9s ease-out; }
 @media (prefers-reduced-motion: reduce) { .hero-form-card.is-pulsing { animation: none; } }
 
-/* ─── RAIL NEXT-STEPS — desktop-only block below form card ── */
-.rail-next { margin-top: 20px; padding: 22px; background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 18px; }
-.rail-next-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-700); font-weight: 600; margin: 0 0 18px; }
-.rail-next-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
-.rail-next-steps li { display: flex; gap: 14px; align-items: flex-start; font-family: var(--sans); font-size: 14px; line-height: 1.45; color: var(--gray-700); }
-.rail-next-num { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--green-100); color: var(--green-700); font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; }
-@media (max-width: 920px) { .rail-next { display: none; } }
+/* ─── WHAT-HAPPENS-NEXT — shown in the form success state ──── */
+.success-next { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--gray-100); text-align: left; }
+.success-next-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-700); font-weight: 600; margin: 0 0 18px; }
+.success-next-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+.success-next-steps li { display: flex; gap: 14px; align-items: flex-start; font-family: var(--sans); font-size: 14px; line-height: 1.45; color: var(--gray-700); }
+.success-next-num { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--green-100); color: var(--green-700); font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; }
 </style>
 </head>
 <body>
@@ -1625,6 +1624,14 @@ a { color: inherit; text-decoration: none; }
         <h3 class="hero-form-success-h">Got it. We'll call you.</h3>
         <p class="hero-form-success-p">A ProFusion partnerships rep will give you a call within one business day to confirm your trade and territory.</p>
         <div class="hero-form-success-meta">Saving your slot &middot; First come, first served</div>
+        <div class="success-next">
+          <p class="success-next-label">What happens next</p>
+          <ol class="success-next-steps">
+            <li><span class="success-next-num">1</span><span>We call to confirm your trade and territory, within one business day.</span></li>
+            <li><span class="success-next-num">2</span><span>We check your area is still open. One partner per trade, per territory.</span></li>
+            <li><span class="success-next-num">3</span><span>Confirmed appointments start hitting your calendar, often within two days.</span></li>
+          </ol>
+        </div>
       </div>
 
       <!-- ── Inline trust strip — built-in social proof ──── -->
@@ -1634,15 +1641,6 @@ a { color: inherit; text-decoration: none; }
         <span class="hero-form-trust-item">BBB Accredited</span>
       </div>
     </div>
-
-    <aside class="rail-next" aria-label="What happens next">
-      <p class="rail-next-label">What happens next</p>
-      <ol class="rail-next-steps">
-        <li><span class="rail-next-num">1</span><span>We call to confirm your trade and territory, within one business day.</span></li>
-        <li><span class="rail-next-num">2</span><span>We check your area is still open. One partner per trade, per territory.</span></li>
-        <li><span class="rail-next-num">3</span><span>Confirmed appointments start hitting your calendar, often within two days.</span></li>
-      </ol>
-    </aside>
   </aside>
 </div>
 
