@@ -663,6 +663,10 @@ a { color: inherit; text-decoration: none; }
 .beat-h { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.06; letter-spacing: -0.02em; color: var(--navy); margin: 0 0 20px; }
 .beat-read { font-family: var(--serif-read); font-size: 19px; line-height: 1.6; color: var(--gray-700); max-width: 62ch; margin: 0; }
 
+.beat-intel .intel-figure { margin: 28px 0 0; max-width: 460px; border-radius: 20px; overflow: hidden; box-shadow: 0 30px 70px rgba(15,24,48,0.18); background: var(--gray-100); }
+.beat-intel .intel-figure img { width: 100%; height: auto; display: block; }
+@media (max-width: 640px) { .beat-intel .intel-figure { max-width: 100%; } }
+
 /* ─── FAQ — bordered rows with details/summary ─────────────── */
 .faq {
   padding: 120px 0;
@@ -1265,7 +1269,7 @@ a { color: inherit; text-decoration: none; }
     <section class="beat beat-why">
       <p class="beat-eyebrow">Before you pay us a dollar</p>
       <h2 class="beat-h">Three free, because we&rsquo;ve run the numbers.</h2>
-      <p class="beat-read">Installers close about 58 of every 100 appointments we send. So your first three are on us. Run that out, and most partners have booked a job before we&rsquo;ve charged a cent. If the work doesn&rsquo;t earn itself in those three, you walk. No retainers, no contracts, no hard feelings.</p>
+      <p class="beat-read">Installers close about 57 of every 100 appointments we send. So your first three are on us. Run that out, and most partners have booked a job before we&rsquo;ve charged a cent. If the work doesn&rsquo;t earn itself in those three, you walk. No retainers, no contracts, no hard feelings.</p>
     </section>
 
     <!-- ─── TRUST STRIP ─────────────────────────────────────────── -->
@@ -1304,7 +1308,7 @@ a { color: inherit; text-decoration: none; }
       <div class="trust-item">
         <svg class="trust-logo" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
         <span class="trust-text">
-          <span class="trust-num">58<span class="trust-plus">%</span></span>
+          <span class="trust-num">57<span class="trust-plus">%</span></span>
           <span class="trust-label">Close rate</span>
         </span>
       </div>
@@ -1358,6 +1362,19 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
+<!-- ─── INSTALLER BRIEF — intel package beat ────────────────── -->
+<section class="beat beat-intel">
+  <p class="beat-eyebrow">Before they knock</p>
+  <h2 class="beat-h">Every appointment comes with a full brief.</h2>
+  <p class="beat-read">The homeowner&rsquo;s system and its age, what they pay to heat the place, a credit-qualified score, photos of the existing equipment, and the one upgrade worth recommending. Your closer reads it in the truck and walks up knowing the house better than the homeowner does.</p>
+  <figure class="intel-figure">
+    <picture>
+      <source srcset="images/lp/intel-package.webp" type="image/webp">
+      <img src="images/lp/intel-package.jpg" alt="An installer in their truck reviewing a ProFusion Installer Brief on a tablet: homeowner and appointment details, why this lead, closer notes, technical specs, and photos of the existing furnace and electrical panel" width="1200" height="1800" loading="lazy">
+    </picture>
+  </figure>
+</section>
+
 <!-- ─── VOICES — partner testimonials ──────────────────────── -->
 <section class="voices">
   <div class="container">
@@ -1405,6 +1422,22 @@ a { color: inherit; text-decoration: none; }
       <details class="faq-item">
         <summary>Is my service area really exclusive?</summary>
         <div class="faq-answer"><p>Yes. One installer per trade, per service area. Once your trade is taken in your area, it&rsquo;s closed for two years. That&rsquo;s the promise we make to the partners we say yes to.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What if the homeowner doesn&rsquo;t show?</summary>
+        <div class="faq-answer"><p>Every appointment goes through automated reminders and a same-day confirmation before it hits your calendar. If a confirmed homeowner still doesn&rsquo;t show, that appointment doesn&rsquo;t bill. You only pay for the ones who sit with you.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>How fast will I start getting appointments?</summary>
+        <div class="faq-answer"><p>Most partners go from signup to their first appointment in about two days. Once we confirm your trade and territory, we start filling your calendar.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What does an appointment cost after the first three?</summary>
+        <div class="faq-answer"><p>One flat per-appointment fee, and only when the homeowner shows. No retainers, no monthly minimums, no setup fees. You see the number before you ever owe it.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What do I actually know before I walk in?</summary>
+        <div class="faq-answer"><p>Every appointment comes with a full Installer Brief: the homeowner&rsquo;s system and its age, their heating costs, a credit-qualified score, photos of the existing equipment, and the upgrade worth recommending. You walk in knowing the house better than they do.</p></div>
       </details>
     </div>
   </div>
