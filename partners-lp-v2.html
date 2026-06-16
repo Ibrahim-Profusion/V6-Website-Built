@@ -565,15 +565,13 @@ a { color: inherit; text-decoration: none; }
 }
 .form-field.has-error .form-field-error { display: block; }
 
-/* Step 2 — Crew picker / Step 3 — Call-time picker (shared segmented radio) */
-.crew-pick,
-.call-time-pick {
+/* Step 2 — Sales team picker (segmented radio) */
+.sales-team-pick {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 8px;
 }
-.crew-pick-btn,
-.call-time-pick-btn {
+.sales-team-pick-btn {
   padding: 12px 8px;
   background: var(--white);
   border: 1.5px solid var(--gray-100);
@@ -586,10 +584,8 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
   transition: border-color 0.18s, background 0.18s;
 }
-.crew-pick-btn:hover,
-.call-time-pick-btn:hover { border-color: var(--green); }
-.crew-pick-btn.is-selected,
-.call-time-pick-btn.is-selected {
+.sales-team-pick-btn:hover { border-color: var(--green); }
+.sales-team-pick-btn.is-selected {
   border-color: var(--green);
   background: rgba(31,164,82,0.08);
 }
@@ -815,8 +811,7 @@ a { color: inherit; text-decoration: none; }
   .hero-photo-strip { display: none; }
   .hero-scarcity { width: 100%; box-sizing: border-box; }
   .trade-pick { grid-template-columns: 1fr 1fr; }
-  .crew-pick,
-  .call-time-pick { grid-template-columns: 1fr 1fr 1fr; }
+  .sales-team-pick { grid-template-columns: 1fr 1fr 1fr; }
   .hero-quick-trades { width: 100%; box-sizing: border-box; padding: 12px 12px; }
   .hero-quick-trades-label { width: 100%; margin: 0 0 4px; }
   .hero-quick-trade { padding: 7px 12px 7px 11px; font-size: 13px; }
@@ -824,7 +819,7 @@ a { color: inherit; text-decoration: none; }
   .hero-form-trust { font-size: 10.5px; gap: 6px; }
 }
 
-/* ─── MATH — the insinuation: 3 free × ~70% close = ? ──────── */
+/* ─── MATH — the insinuation: 3 free × 58% close = ? ──────── */
 .math {
   padding: 96px 0;
   background: var(--cream);
@@ -1668,7 +1663,7 @@ a { color: inherit; text-decoration: none; }
         <form id="lead-form-el" novalidate aria-label="Partner lead form">
           <!-- hidden state -->
           <input type="hidden" name="trade" id="field-trade" value="">
-          <input type="hidden" name="crews" id="field-crews" value="">
+          <input type="hidden" name="sales_team_size" id="field-sales-team" value="">
 
           <!-- ── STEP 1 — Trade ───────────────────────────── -->
           <div class="form-step is-active" data-step="1" id="form-step-1">
@@ -1713,7 +1708,7 @@ a { color: inherit; text-decoration: none; }
             </div>
           </div>
 
-          <!-- ── STEP 2 — Company / area / crews ──────────── -->
+          <!-- ── STEP 2 — Company / area / sales team ───── -->
           <div class="form-step" data-step="2" id="form-step-2">
             <div class="form-field">
               <label class="form-field-label" for="field-company">Company name</label>
@@ -1726,13 +1721,13 @@ a { color: inherit; text-decoration: none; }
               <div class="form-field-error">Tell us the towns or counties you cover.</div>
             </div>
             <div class="form-field">
-              <label class="form-field-label" id="crews-label">How many install crews?</label>
-              <div class="crew-pick" role="group" aria-labelledby="crews-label">
-                <button type="button" class="crew-pick-btn" data-crews="1" aria-pressed="false">1</button>
-                <button type="button" class="crew-pick-btn" data-crews="2-3" aria-pressed="false">2&ndash;3</button>
-                <button type="button" class="crew-pick-btn" data-crews="4+" aria-pressed="false">4+</button>
+              <label class="form-field-label" id="sales-team-label">How big is your sales team?</label>
+              <div class="sales-team-pick" role="group" aria-labelledby="sales-team-label">
+                <button type="button" class="sales-team-pick-btn" data-sales-team="1" aria-pressed="false">1</button>
+                <button type="button" class="sales-team-pick-btn" data-sales-team="2-5" aria-pressed="false">2&ndash;5</button>
+                <button type="button" class="sales-team-pick-btn" data-sales-team="6+" aria-pressed="false">6+</button>
               </div>
-              <div class="form-field-error" id="crews-error">Pick the option that best fits.</div>
+              <div class="form-field-error" id="sales-team-error">Pick the option that best fits.</div>
             </div>
             <div class="form-actions">
               <button type="button" class="form-back-btn" data-action="back">
@@ -1763,16 +1758,6 @@ a { color: inherit; text-decoration: none; }
               <input class="form-input" type="tel" id="field-phone" name="phone" autocomplete="tel" placeholder="(555) 123&ndash;4567" required>
               <div class="form-field-error">We'll call you on this number within one business day.</div>
             </div>
-            <div class="form-field">
-              <label class="form-field-label" id="call-time-label">Best time for us to call you?</label>
-              <div class="call-time-pick" role="radiogroup" aria-labelledby="call-time-label">
-                <button type="button" class="call-time-pick-btn" data-call-time="Morning" role="radio" aria-checked="false">Morning</button>
-                <button type="button" class="call-time-pick-btn" data-call-time="Afternoon" role="radio" aria-checked="false">Afternoon</button>
-                <button type="button" class="call-time-pick-btn" data-call-time="Evening" role="radio" aria-checked="false">Evening</button>
-              </div>
-              <div class="form-field-error" id="call-time-error">Pick when you'd like us to call.</div>
-            </div>
-            <input type="hidden" name="preferred_call_time" id="field-call-time" value="">
             <div class="form-actions">
               <button type="button" class="form-back-btn" data-action="back">
                 <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M5 1L1 5l4 4M1 5h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1796,7 +1781,7 @@ a { color: inherit; text-decoration: none; }
             <svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3 class="hero-form-success-h">Got it. We'll call you.</h3>
-          <p class="hero-form-success-p">A ProFusion partnerships rep will reach out within one business day &mdash; in your preferred window &mdash; to confirm your trade and territory.</p>
+          <p class="hero-form-success-p">A ProFusion partnerships rep will give you a call within one business day to confirm your trade and territory.</p>
           <div class="hero-form-success-meta">Saving your slot &middot; First come, first served</div>
         </div>
 
@@ -1840,14 +1825,14 @@ a { color: inherit; text-decoration: none; }
       <div class="trust-item">
         <svg class="trust-logo" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
         <span class="trust-text">
-          <span class="trust-num">90<span class="trust-plus">%+</span></span>
-          <span class="trust-label">Show rate</span>
+          <span class="trust-num">89<span class="trust-plus">%</span></span>
+          <span class="trust-label">Sit rate</span>
         </span>
       </div>
       <div class="trust-item">
         <svg class="trust-logo" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
         <span class="trust-text">
-          <span class="trust-num">~70<span class="trust-plus">%</span></span>
+          <span class="trust-num">58<span class="trust-plus">%</span></span>
           <span class="trust-label">Close rate</span>
         </span>
       </div>
@@ -1855,19 +1840,19 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
-<!-- ─── MATH — the insinuation: 3 free × ~70% close = ? ───── -->
+<!-- ─── MATH — the insinuation: 3 free × 58% close = ? ───── -->
 <section class="math" id="math">
   <div class="container math-inner">
     <div class="math-eyebrow">Before you pay us a dollar</div>
-    <h2 class="math-h">Three free appointments. <span class="hl-green">~70% close rate.</span></h2>
-    <div class="math-eq" aria-label="Three free appointments times approximately seventy percent close rate equals you do the math">
+    <h2 class="math-h">Three free appointments. <span class="hl-green">58% close rate.</span></h2>
+    <div class="math-eq" aria-label="Three free appointments times fifty-eight percent close rate equals you do the math">
       <div class="math-cell">
         <div class="math-num">3</div>
         <div class="math-label">Free appointments on us</div>
       </div>
       <div class="math-op" aria-hidden="true">&times;</div>
       <div class="math-cell">
-        <div class="math-num">~70<span class="math-num-pct">%</span></div>
+        <div class="math-num">58<span class="math-num-pct">%</span></div>
         <div class="math-label">Avg close on ProFusion appointments</div>
       </div>
       <div class="math-op" aria-hidden="true">=</div>
@@ -2092,7 +2077,7 @@ a { color: inherit; text-decoration: none; }
       setTimeout(function(){
         var active = el.querySelector('.form-step.is-active');
         if (!active) return;
-        var first = active.querySelector('.trade-pick-btn, input.form-input:not([type="hidden"]), .crew-pick-btn');
+        var first = active.querySelector('.trade-pick-btn, input.form-input:not([type="hidden"]), .sales-team-pick-btn');
         if (first) {
           try { first.focus({ preventScroll: true }); } catch (e) {}
           // Add a subtle pulse on the active step so the user sees "this is where to act"
@@ -2145,7 +2130,7 @@ a { color: inherit; text-decoration: none; }
     // Focus first input in the active step for keyboard users
     var active = form.querySelector('.form-step.is-active');
     if (active) {
-      var firstInput = active.querySelector('input:not([type="hidden"]), .crew-pick-btn');
+      var firstInput = active.querySelector('input:not([type="hidden"]), .sales-team-pick-btn');
       if (firstInput && n > 1) {
         setTimeout(function(){ try { firstInput.focus({ preventScroll: true }); } catch(e) {} }, 50);
       }
@@ -2183,34 +2168,18 @@ a { color: inherit; text-decoration: none; }
     });
   });
 
-  // — Step 2: crew picker (single-select) —
-  form.querySelectorAll('.crew-pick-btn').forEach(function(btn){
+  // — Step 2: sales-team picker (single-select) —
+  form.querySelectorAll('.sales-team-pick-btn').forEach(function(btn){
     btn.addEventListener('click', function(){
-      form.querySelectorAll('.crew-pick-btn').forEach(function(b){
+      form.querySelectorAll('.sales-team-pick-btn').forEach(function(b){
         b.classList.remove('is-selected');
         b.setAttribute('aria-pressed','false');
       });
       btn.classList.add('is-selected');
       btn.setAttribute('aria-pressed','true');
-      document.getElementById('field-crews').value = btn.getAttribute('data-crews') || '';
-      // Clear crew error if present
-      var crewsField = btn.closest('.form-field');
-      if (crewsField) crewsField.classList.remove('has-error');
-    });
-  });
-
-  // — Step 3: call-time picker (single-select) —
-  form.querySelectorAll('.call-time-pick-btn').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      form.querySelectorAll('.call-time-pick-btn').forEach(function(b){
-        b.classList.remove('is-selected');
-        b.setAttribute('aria-checked', 'false');
-      });
-      btn.classList.add('is-selected');
-      btn.setAttribute('aria-checked', 'true');
-      document.getElementById('field-call-time').value = btn.getAttribute('data-call-time') || '';
-      var ctField = btn.closest('.form-field');
-      if (ctField) ctField.classList.remove('has-error');
+      document.getElementById('field-sales-team').value = btn.getAttribute('data-sales-team') || '';
+      var stField = btn.closest('.form-field');
+      if (stField) stField.classList.remove('has-error');
     });
   });
 
@@ -2249,15 +2218,15 @@ a { color: inherit; text-decoration: none; }
     if (step === 2) {
       var company = document.getElementById('field-company');
       var area = document.getElementById('field-area');
-      var crews = document.getElementById('field-crews').value;
+      var salesTeam = document.getElementById('field-sales-team').value;
       if (!company.value.trim()) { setFieldError(company, true); ok = false; } else setFieldError(company, false);
       if (!area.value.trim()) { setFieldError(area, true); ok = false; } else setFieldError(area, false);
-      var crewsField = form.querySelector('.crew-pick').closest('.form-field');
-      if (!crews) {
-        if (crewsField) crewsField.classList.add('has-error');
+      var stField = form.querySelector('.sales-team-pick').closest('.form-field');
+      if (!salesTeam) {
+        if (stField) stField.classList.add('has-error');
         ok = false;
-      } else if (crewsField) {
-        crewsField.classList.remove('has-error');
+      } else if (stField) {
+        stField.classList.remove('has-error');
       }
       return ok;
     }
@@ -2265,17 +2234,9 @@ a { color: inherit; text-decoration: none; }
       var name = document.getElementById('field-name');
       var email = document.getElementById('field-email');
       var phone = document.getElementById('field-phone');
-      var callTime = document.getElementById('field-call-time').value;
       if (!name.value.trim()) { setFieldError(name, true); ok = false; } else setFieldError(name, false);
       if (!isEmail(email.value.trim())) { setFieldError(email, true); ok = false; } else setFieldError(email, false);
       if (!isPhone(phone.value.trim())) { setFieldError(phone, true); ok = false; } else setFieldError(phone, false);
-      var ctField = form.querySelector('.call-time-pick').closest('.form-field');
-      if (!callTime) {
-        if (ctField) ctField.classList.add('has-error');
-        ok = false;
-      } else if (ctField) {
-        ctField.classList.remove('has-error');
-      }
       return ok;
     }
     return ok;
@@ -2311,9 +2272,8 @@ a { color: inherit; text-decoration: none; }
       phone: document.getElementById('field-phone').value.trim(),
       trade: document.getElementById('field-trade').value,
       service_area: document.getElementById('field-area').value.trim(),
-      crews: document.getElementById('field-crews').value,
+      sales_team_size: document.getElementById('field-sales-team').value,
       company: document.getElementById('field-company').value.trim(),
-      preferred_call_time: document.getElementById('field-call-time').value,
       fbclid: getFbclid(),
       fbp: getFbp(),
       event_id: eventId,
