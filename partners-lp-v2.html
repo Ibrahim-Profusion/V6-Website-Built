@@ -962,6 +962,13 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   flex-direction: column;
 }
+.voice-stars {
+  display: inline-flex;
+  gap: 3px;
+  color: #F5B400;
+  margin: 0 0 18px;
+}
+.voice-stars svg { width: 17px; height: 17px; }
 .voice-quote-mark {
   font-family: var(--display);
   font-size: 64px;
@@ -1228,8 +1235,8 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) { .hero-form-card.is-pulsing { animation: none; } }
 
 /* ─── RAIL NEXT-STEPS — desktop-only block below form card ── */
-.rail-next { margin-top: 28px; padding: 0 8px; }
-.rail-next-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500); margin: 0 0 18px; }
+.rail-next { margin-top: 20px; padding: 22px; background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 18px; }
+.rail-next-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-700); font-weight: 600; margin: 0 0 18px; }
 .rail-next-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
 .rail-next-steps li { display: flex; gap: 14px; align-items: flex-start; font-family: var(--sans); font-size: 14px; line-height: 1.45; color: var(--gray-700); }
 .rail-next-num { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--green-100); color: var(--green-700); font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; }
@@ -1335,20 +1342,6 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
-<!-- ─── GUARANTEE — no-show protection (the navy moment) ─────── -->
-<section class="guarantee">
-  <div class="container">
-    <div class="guarantee-card">
-      <div class="guarantee-badge" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.4 8.4-8 11-4.6-2.6-8-6-8-11V5l8-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4.5-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="guarantee-eyebrow">The guarantee</div>
-      <h3 class="guarantee-h">If a confirmed homeowner <span class="hl-green">doesn&rsquo;t show</span>, you don&rsquo;t pay.</h3>
-      <p class="guarantee-detail">Every appointment goes through automated reminders and same-day follow-ups before we put it on your calendar. If the homeowner still doesn&rsquo;t show, <strong>that appointment doesn&rsquo;t bill.</strong></p>
-    </div>
-  </div>
-</section>
-
 <!-- ─── DIFFERENCE ──────────────────────────────────────────── -->
 <section class="difference">
   <div class="container">
@@ -1394,6 +1387,20 @@ a { color: inherit; text-decoration: none; }
   </figure>
 </section>
 
+<!-- ─── GUARANTEE — no-show protection (the navy moment) ─────── -->
+<section class="guarantee">
+  <div class="container">
+    <div class="guarantee-card">
+      <div class="guarantee-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.4 8.4-8 11-4.6-2.6-8-6-8-11V5l8-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4.5-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="guarantee-eyebrow">The guarantee</div>
+      <h3 class="guarantee-h">If a confirmed homeowner <span class="hl-green">doesn&rsquo;t show</span>, you don&rsquo;t pay.</h3>
+      <p class="guarantee-detail">Every appointment goes through automated reminders and same-day follow-ups before we put it on your calendar. If the homeowner still doesn&rsquo;t show, <strong>that appointment doesn&rsquo;t bill.</strong></p>
+    </div>
+  </div>
+</section>
+
 <!-- ─── VOICES — partner testimonials ──────────────────────── -->
 <section class="voices">
   <div class="container">
@@ -1403,6 +1410,7 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="voices-grid">
       <article class="voice-card">
+        <div class="voice-stars" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
         <div class="voice-quote-mark" aria-hidden="true">&ldquo;</div>
         <p class="voice-quote">Within the first week we went live, I couldn't believe what I was seeing. The quality of the appointments, the level of preparation, it's unlike anything we've worked with before. ProFusion has genuinely impressed us.</p>
         <div class="voice-attr">
@@ -1411,6 +1419,7 @@ a { color: inherit; text-decoration: none; }
         </div>
       </article>
       <article class="voice-card">
+        <div class="voice-stars" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
         <div class="voice-quote-mark" aria-hidden="true">&ldquo;</div>
         <p class="voice-quote">If an appointment requires a significant drive from home, my team will only take it if it came from ProFusion. That tells you everything about the quality of what they send us.</p>
         <div class="voice-attr">
