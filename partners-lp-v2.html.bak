@@ -714,52 +714,8 @@ a { color: inherit; text-decoration: none; }
   font-size: 15px;
   line-height: 1.5;
   color: var(--gray-700);
-  margin: 0 0 22px;
+  margin: 0 0 18px;
 }
-/* Handoff CTA — scrolls user to Calendly to self-book immediately */
-.hero-form-success-cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin: 0 0 22px;
-  padding: 22px 18px;
-  background: var(--cream);
-  border-radius: 16px;
-  border: 1px dashed var(--gray-300);
-}
-.hero-form-success-or {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gray-700);
-}
-.hero-form-success-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 24px;
-  background: var(--green);
-  color: var(--white);
-  font-family: var(--sans);
-  font-size: 15px;
-  font-weight: 600;
-  border: 0;
-  border-radius: 12px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
-  box-shadow: 0 8px 20px rgba(31,164,82,0.22);
-}
-.hero-form-success-btn:hover {
-  background: var(--green-700);
-  transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(31,164,82,0.30);
-}
-.hero-form-success-btn svg { transition: transform 0.18s; }
-.hero-form-success-btn:hover svg { transform: translateX(3px); }
 .hero-form-success-meta {
   font-family: var(--mono);
   font-size: 11px;
@@ -790,67 +746,35 @@ a { color: inherit; text-decoration: none; }
 .hero-form-trust-star { color: #F5A623; font-size: 13px; line-height: 1; }
 .hero-form-trust-sep { color: var(--gray-300); }
 
-/* Hero quick-pick trade chips — actionable shortcuts that pre-fill Step 1 */
-.hero-quick-trades {
-  display: flex;
+/* Hero form pointer — replaces the redundant primary button on the left column */
+.hero-form-pointer {
+  display: inline-flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 0 0 18px;
-  padding: 14px 16px;
+  gap: 14px;
+  padding: 14px 20px 14px 18px;
   background: var(--cream);
-  border-radius: 16px;
-}
-.hero-quick-trades-label {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gray-700);
-  margin-right: 4px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-.hero-quick-trades-label::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  background: var(--green);
-  border-radius: 50%;
-  animation: pulse-dot 1.8s infinite;
-}
-.hero-quick-trade {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 8px 14px 8px 12px;
-  background: var(--white);
-  border: 1.5px solid var(--gray-100);
-  border-radius: 100px;
+  border: 1px dashed var(--gray-300);
+  border-radius: 14px;
   font-family: var(--sans);
-  font-size: 13.5px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
   color: var(--navy);
-  cursor: pointer;
-  text-decoration: none;
-  transition: border-color 0.18s, background 0.18s, transform 0.18s, box-shadow 0.18s;
+  margin-bottom: 16px;
 }
-.hero-quick-trade:hover {
-  border-color: var(--green);
-  background: rgba(31,164,82,0.06);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(31,164,82,0.10);
-}
-.hero-quick-trade-arrow {
-  color: var(--green);
-  font-weight: 700;
+.hero-form-pointer-arrow {
+  font-family: var(--display);
+  font-size: 22px;
   line-height: 1;
-  transition: transform 0.18s;
+  color: var(--green);
+  animation: pointer-bounce 1.8s ease-in-out infinite;
 }
-.hero-quick-trade:hover .hero-quick-trade-arrow {
-  transform: translateX(3px);
+@keyframes pointer-bounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}
+.hero-form-pointer-text strong {
+  color: var(--green-700);
+  font-weight: 700;
 }
 
 /* Hero photo strip — slimmer collage now that form owns the right column */
@@ -878,11 +802,14 @@ a { color: inherit; text-decoration: none; }
   .hero-secondary-link { margin-left: 0; margin-top: 14px; display: flex; }
   .trade-pick { grid-template-columns: 1fr 1fr; }
   .crew-pick { grid-template-columns: 1fr 1fr 1fr; }
-  .hero-quick-trades { width: 100%; box-sizing: border-box; padding: 12px 12px; }
-  .hero-quick-trades-label { width: 100%; margin: 0 0 4px; }
-  .hero-quick-trade { padding: 7px 12px 7px 11px; font-size: 13px; }
+  .hero-form-pointer { width: 100%; box-sizing: border-box; }
+  .hero-form-pointer-arrow { animation: pointer-bounce-down 1.8s ease-in-out infinite; }
   .hero-form-h { font-size: clamp(26px, 6.5vw, 32px); }
   .hero-form-trust { font-size: 10.5px; gap: 6px; }
+}
+@keyframes pointer-bounce-down {
+  0%, 100% { transform: translateY(0) rotate(90deg); }
+  50% { transform: translateY(4px) rotate(90deg); }
 }
 
 /* ─── MATH — the insinuation: 3 free × ~70% close = ? ──────── */
@@ -1244,6 +1171,214 @@ a { color: inherit; text-decoration: none; }
   .trust-item:nth-child(odd) { border-right: 1px solid var(--gray-100); }
 }
 
+/* ─── PROMISE ──────────────────────────────────────────────── */
+.promise {
+  padding: 140px 0;
+  background: var(--cream);
+  text-align: center;
+}
+.promise-eyebrow { margin-bottom: 28px; }
+.promise-h {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(40px, 6vw, 80px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  margin: 0 0 28px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.promise-h .hl-green { color: var(--green); }
+.promise-sub {
+  font-family: var(--sans);
+  font-size: clamp(17px, 1.3vw, 20px);
+  line-height: 1.55;
+  color: var(--gray-700);
+  max-width: 620px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+.stats {
+  margin-top: 88px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--gray-300);
+  padding-top: 56px;
+}
+.stat { padding: 0 16px; border-right: 1px solid var(--gray-300); }
+.stat:last-child { border-right: none; }
+.stat-val {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(32px, 3.6vw, 52px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  margin-bottom: 14px;
+  font-feature-settings: "tnum";
+}
+.stat-val .plus { color: var(--green); font-size: 0.5em; vertical-align: 0.4em; margin-left: 2px; }
+.stat-label {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  color: var(--gray-700);
+  font-weight: 500;
+  line-height: 1.3;
+}
+@media (max-width: 640px) {
+  .promise { padding: 96px 0; }
+  .stats { grid-template-columns: 1fr; gap: 0; padding-top: 28px; }
+  .stat { border-right: none; border-bottom: 1px solid var(--gray-300); padding: 22px 0; }
+  .stat:last-child { border-bottom: none; }
+}
+
+/* ─── INTEL SPREAD (slot A — 2-column magazine layout) ──── */
+.intel {
+  padding: 140px 0;
+  background: var(--white);
+}
+.intel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 88px;
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.intel-photo {
+  margin: 0;
+  aspect-ratio: 2 / 3;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--gray-100);
+  box-shadow: 0 24px 60px rgba(15,24,48,0.10);
+}
+.intel-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.intel-copy .eyebrow { margin-bottom: 24px; }
+.intel-h {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(36px, 4.8vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  margin: 0 0 24px;
+}
+.intel-h .hl-green { color: var(--green); }
+.intel-body {
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--gray-700);
+  margin: 0 0 24px;
+}
+.intel-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.intel-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 11px 0;
+  font-family: var(--sans);
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: var(--navy);
+  font-weight: 500;
+  border-bottom: 1px solid var(--gray-100);
+}
+.intel-list li:last-child { border-bottom: none; }
+.intel-list-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 1px;
+}
+@media (max-width: 920px) {
+  .intel { padding: 96px 0; }
+  .intel-grid { grid-template-columns: 1fr; gap: 40px; }
+  .intel-photo { aspect-ratio: 4 / 5; max-width: 480px; margin: 0 auto; }
+}
+
+/* ─── CINEMATIC BAND (slots B & C — full-bleed 16:9) ──────── */
+.band {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 600px;
+  background: var(--gray-100);
+  overflow: hidden;
+}
+.band img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.band-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 56px 64px;
+}
+.band-overlay.left {
+  background: linear-gradient(90deg, rgba(15,24,48,0.62) 0%, rgba(15,24,48,0.18) 50%, rgba(15,24,48,0) 75%);
+  align-items: center;
+}
+.band-overlay.bottom {
+  background: linear-gradient(180deg, rgba(15,24,48,0) 35%, rgba(15,24,48,0.55) 100%);
+}
+.band-text {
+  max-width: 480px;
+  color: var(--white);
+}
+.band-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+.band-eyebrow::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+.band-h {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin: 0;
+}
+.band-h .hl-green { color: var(--green); }
+@media (max-width: 760px) {
+  .band { aspect-ratio: 4 / 5; max-height: 720px; }
+  .band-overlay.left, .band-overlay.bottom {
+    background: linear-gradient(180deg, rgba(15,24,48,0) 30%, rgba(15,24,48,0.7) 100%);
+    align-items: flex-end;
+    padding: 40px 28px;
+  }
+  .band-text { max-width: 100%; }
+}
+
 /* ─── DIFFERENCE — clean comparison ───────────────────────── */
 .difference {
   padding: 140px 0;
@@ -1319,6 +1454,91 @@ a { color: inherit; text-decoration: none; }
   .diff-col { padding: 36px 28px 40px; }
 }
 
+/* ─── PAIN — cost of inaction (Hormozi) ───────────────────── */
+.pain {
+  padding: 120px 0;
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.pain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(255,100,100,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.pain-inner { position: relative; z-index: 1; }
+.pain-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #F59A4E;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+.pain-eyebrow::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #F59A4E; }
+.pain-h {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(56px, 9vw, 132px);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  color: var(--white);
+  margin: 0 0 28px;
+}
+.pain-h .hl-warm { color: #F59A4E; }
+.pain-sub {
+  font-family: var(--sans);
+  font-size: clamp(17px, 1.4vw, 21px);
+  line-height: 1.55;
+  color: rgba(255,255,255,0.7);
+  max-width: 680px;
+  margin: 0 auto 56px;
+  font-weight: 400;
+}
+.pain-funnel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-family: var(--mono);
+}
+.pain-step {
+  padding: 14px 22px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 100px;
+  font-size: 14px;
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.pain-step-num {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+.pain-step-label { color: rgba(255,255,255,0.55); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+.pain-arrow { color: rgba(255,255,255,0.3); font-size: 18px; }
+@media (max-width: 920px) {
+  .pain { padding: 88px 0; }
+  .pain-funnel { gap: 12px; }
+  .pain-arrow { display: none; }
+}
+
 /* ─── SCARCITY (Hormozi) ──────────────────────────────────── */
 .scarcity {
   padding: 140px 0;
@@ -1391,6 +1611,92 @@ a { color: inherit; text-decoration: none; }
   flex-shrink: 0;
 }
 @media (max-width: 760px) { .scarcity { padding: 96px 0; } }
+
+/* ─── RISKWALL — big full-bleed risk reversal band ────────── */
+.riskwall {
+  padding: 160px 0;
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.riskwall::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(46,114,210,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(31,164,82,0.14) 0%, transparent 50%);
+  pointer-events: none;
+}
+.riskwall-inner { position: relative; z-index: 1; }
+.riskwall-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+.riskwall-eyebrow::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+.riskwall-headline {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(40px, 6.4vw, 80px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin: 0 0 48px;
+}
+.riskwall-headline .hl-green-light { color: var(--green); }
+.riskwall-zeros {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  gap: 14px 56px;
+  margin-bottom: 40px;
+}
+@media (max-width: 760px) {
+  .riskwall-zeros { grid-template-columns: 1fr; gap: 10px; margin-bottom: 32px; }
+  .riskwall-headline { font-size: 36px; margin-bottom: 32px; }
+}
+.riskwall-zero {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(48px, 8.5vw, 112px);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  color: var(--white);
+}
+.riskwall-zero .zero {
+  color: var(--green);
+  font-feature-settings: "tnum";
+}
+.riskwall-narrative {
+  max-width: 720px;
+  margin: 0 auto 56px;
+  text-align: left;
+}
+.riskwall-narrative p {
+  font-family: var(--sans);
+  font-size: clamp(16px, 1.3vw, 19px);
+  line-height: 1.65;
+  color: rgba(255,255,255,0.72);
+  margin: 0 0 18px;
+  font-weight: 400;
+}
+.riskwall-narrative p:last-child { margin-bottom: 0; }
+.riskwall-narrative strong { color: var(--white); font-weight: 500; }
+@media (max-width: 920px) {
+  .riskwall { padding: 96px 0; }
+  .riskwall-narrative { margin-bottom: 40px; }
+  .riskwall-narrative p { font-size: 15.5px; line-height: 1.6; }
+}
 
 /* ─── VOICES — partner testimonials ──────────────────────── */
 .voices {
@@ -1722,6 +2028,34 @@ a { color: inherit; text-decoration: none; }
   .trust-num { font-size: 14px; }
   .trust-label { font-size: 9.5px; }
 
+  /* Pain section — tame the giant "30 to 1" headline */
+  .pain { padding: 64px 0; }
+  .pain-eyebrow { font-size: 10.5px; letter-spacing: 0.14em; margin-bottom: 20px; }
+  .pain-h { font-size: 88px; line-height: 0.95; margin: 0 0 20px; }
+  .pain-sub { font-size: 15.5px; margin: 0 auto 36px; }
+  .pain-funnel { gap: 10px; }
+  .pain-step { padding: 11px 16px; font-size: 12.5px; }
+  .pain-step-num { font-size: 18px; }
+  .pain-step-label { font-size: 9.5px; }
+
+  /* Promise — smaller headline, tighter stats spacing */
+  .promise { padding: 72px 0; }
+  .promise-eyebrow { font-size: 10.5px; letter-spacing: 0.14em; margin-bottom: 20px; }
+  .promise-h { font-size: 36px; line-height: 1.02; margin: 0 0 18px; }
+  .promise-sub { font-size: 15.5px; }
+  .stats { margin-top: 56px; padding-top: 28px; }
+  .stat-val { font-size: 32px; margin-bottom: 8px; }
+  .stat-label { font-size: 11.5px; }
+
+  /* Intel spread */
+  .intel { padding: 64px 0; }
+  .intel-grid { gap: 28px; }
+  .intel-photo { aspect-ratio: 2/3; max-width: 360px; border-radius: 18px; }
+  .intel-h { font-size: 32px; line-height: 1.04; margin: 0 0 18px; }
+  .intel-body { font-size: 15.5px; margin: 0 0 18px; }
+  .intel-list li { padding: 10px 0; font-size: 14.5px; gap: 12px; }
+  .intel-list-icon { width: 20px; height: 20px; font-size: 11px; }
+
   /* Difference */
   .difference { padding: 64px 0; }
   .difference-head { margin-bottom: 36px; }
@@ -1738,6 +2072,12 @@ a { color: inherit; text-decoration: none; }
   .territory { min-width: 130px; padding: 12px 16px; font-size: 13px; }
   .territories { gap: 10px; }
 
+  /* Cinematic bands — slightly shallower aspect to save scroll */
+  .band { aspect-ratio: 3/4; max-height: 600px; }
+  .band-overlay.left, .band-overlay.bottom { padding: 28px 22px; }
+  .band-h { font-size: 26px; line-height: 1.1; }
+  .band-eyebrow { font-size: 10.5px; letter-spacing: 0.14em; margin-bottom: 14px; }
+
   /* Voices */
   .voices { padding: 64px 0; }
   .voices-head { margin-bottom: 36px; }
@@ -1747,6 +2087,12 @@ a { color: inherit; text-decoration: none; }
   .voice-quote { font-size: 17px; line-height: 1.4; margin: 0 0 24px; }
   .voice-attr-name { font-size: 14px; }
   .voice-attr-tag { font-size: 10.5px; }
+
+  /* Riskwall — three $0 lines, tame the size */
+  .riskwall { padding: 72px 0; }
+  .riskwall-eyebrow { font-size: 10.5px; letter-spacing: 0.14em; margin-bottom: 28px; }
+  .riskwall-zeros { gap: 10px; margin-bottom: 36px; }
+  .riskwall-zero { font-size: 44px; line-height: 0.98; }
 
   /* Book / Calendly — shorter card so the iframe doesn't dominate */
   .book { padding: 64px 0 56px; }
@@ -1768,8 +2114,12 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 380px) {
   .container, .container-narrow { padding: 0 20px; }
   .hero h1 { font-size: 38px; }
+  .pain-h { font-size: 76px; }
+  .promise-h { font-size: 32px; }
   .book-h { font-size: 38px; }
+  .riskwall-zero { font-size: 40px; }
   .difference-h, .scarcity-h, .voices-h { font-size: 26px; }
+  .intel-photo { max-width: 100%; }
 }
 
 /* ─── FOOTER ──────────────────────────────────────────────── */
@@ -1811,15 +2161,11 @@ a { color: inherit; text-decoration: none; }
         <p class="hero-offer-sub"><strong>No retainers. No setup fees. No contracts.</strong> Pay only when the homeowner shows. One partner per trade, per territory.</p>
         <div class="hero-scarcity">
           <span class="hero-scarcity-dot" aria-hidden="true"></span>
-          Limited launch territories. One partner per trade.
+          Limited launch territories &mdash; one partner per trade.
         </div>
-        <div class="hero-quick-trades" aria-label="Quick start by trade">
-          <span class="hero-quick-trades-label">Quick start</span>
-          <button type="button" class="hero-quick-trade" data-quick-trade="HVAC">HVAC <span class="hero-quick-trade-arrow" aria-hidden="true">&rarr;</span></button>
-          <button type="button" class="hero-quick-trade" data-quick-trade="Windows">Windows <span class="hero-quick-trade-arrow" aria-hidden="true">&rarr;</span></button>
-          <button type="button" class="hero-quick-trade" data-quick-trade="Insulation">Insulation <span class="hero-quick-trade-arrow" aria-hidden="true">&rarr;</span></button>
-          <button type="button" class="hero-quick-trade" data-quick-trade="Roofing">Roofing <span class="hero-quick-trade-arrow" aria-hidden="true">&rarr;</span></button>
-          <button type="button" class="hero-quick-trade" data-quick-trade="Solar">Solar <span class="hero-quick-trade-arrow" aria-hidden="true">&rarr;</span></button>
+        <div class="hero-form-pointer" aria-hidden="true">
+          <span class="hero-form-pointer-arrow">&rarr;</span>
+          <span class="hero-form-pointer-text">Start in 60 seconds. <strong>Pick your trade.</strong></span>
         </div>
         <div>
           <a href="#book" class="hero-secondary-link">Prefer to book a time? Pick a slot &darr;</a>
@@ -1878,38 +2224,38 @@ a { color: inherit; text-decoration: none; }
           <!-- ── STEP 1 — Trade ───────────────────────────── -->
           <div class="form-step is-active" data-step="1" id="form-step-1">
             <label class="form-field-label" id="trade-label">What trade is your business?</label>
-            <div class="trade-pick" role="group" aria-labelledby="trade-label">
-              <button type="button" class="trade-pick-btn" data-trade="HVAC" aria-pressed="false">
+            <div class="trade-pick" role="radiogroup" aria-labelledby="trade-label">
+              <button type="button" class="trade-pick-btn" data-trade="HVAC" role="radio" aria-checked="false">
                 <span class="trade-pick-btn-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                 </span>
                 HVAC
               </button>
-              <button type="button" class="trade-pick-btn" data-trade="Windows" aria-pressed="false">
+              <button type="button" class="trade-pick-btn" data-trade="Windows" role="radio" aria-checked="false">
                 <span class="trade-pick-btn-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="1" stroke="currentColor" stroke-width="2"/><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2"/></svg>
                 </span>
                 Windows
               </button>
-              <button type="button" class="trade-pick-btn" data-trade="Insulation" aria-pressed="false">
+              <button type="button" class="trade-pick-btn" data-trade="Insulation" role="radio" aria-checked="false">
                 <span class="trade-pick-btn-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M6 3v18M12 3v18M18 3v18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/></svg>
                 </span>
                 Insulation
               </button>
-              <button type="button" class="trade-pick-btn" data-trade="Roofing" aria-pressed="false">
+              <button type="button" class="trade-pick-btn" data-trade="Roofing" role="radio" aria-checked="false">
                 <span class="trade-pick-btn-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none"><path d="M2 13L12 4l10 9M5 12v8h14v-8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
                 </span>
                 Roofing
               </button>
-              <button type="button" class="trade-pick-btn" data-trade="Solar" aria-pressed="false">
+              <button type="button" class="trade-pick-btn" data-trade="Solar" role="radio" aria-checked="false">
                 <span class="trade-pick-btn-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                 </span>
                 Solar
               </button>
-              <button type="button" class="trade-pick-btn" data-trade="Other" aria-pressed="false">
+              <button type="button" class="trade-pick-btn" data-trade="Other" role="radio" aria-checked="false">
                 <span class="trade-pick-btn-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="18" cy="12" r="1.6" fill="currentColor"/></svg>
                 </span>
@@ -1932,10 +2278,10 @@ a { color: inherit; text-decoration: none; }
             </div>
             <div class="form-field">
               <label class="form-field-label" id="crews-label">How many install crews?</label>
-              <div class="crew-pick" role="group" aria-labelledby="crews-label">
-                <button type="button" class="crew-pick-btn" data-crews="1" aria-pressed="false">1</button>
-                <button type="button" class="crew-pick-btn" data-crews="2-3" aria-pressed="false">2&ndash;3</button>
-                <button type="button" class="crew-pick-btn" data-crews="4+" aria-pressed="false">4+</button>
+              <div class="crew-pick" role="radiogroup" aria-labelledby="crews-label">
+                <button type="button" class="crew-pick-btn" data-crews="1" role="radio" aria-checked="false">1</button>
+                <button type="button" class="crew-pick-btn" data-crews="2-3" role="radio" aria-checked="false">2&ndash;3</button>
+                <button type="button" class="crew-pick-btn" data-crews="4+" role="radio" aria-checked="false">4+</button>
               </div>
               <div class="form-field-error" id="crews-error">Pick the option that best fits.</div>
             </div>
@@ -1990,15 +2336,8 @@ a { color: inherit; text-decoration: none; }
           <div class="hero-form-success-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3 class="hero-form-success-h">Got it. We'll be in touch.</h3>
+          <h3 class="hero-form-success-h">Got it &mdash; we'll be in touch.</h3>
           <p class="hero-form-success-p">A ProFusion partnerships rep will call you within one business day to confirm your trade and territory.</p>
-          <div class="hero-form-success-cta">
-            <div class="hero-form-success-or">Or skip the wait &mdash;</div>
-            <a href="#book" class="hero-form-success-btn">
-              Lock a 30-min slot now
-              <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M9 1l4 4-4 4M1 5h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
           <div class="hero-form-success-meta">Saving your slot &middot; First come, first served</div>
         </div>
 
@@ -2007,6 +2346,8 @@ a { color: inherit; text-decoration: none; }
           <span class="hero-form-trust-item"><span class="hero-form-trust-star">&starf;</span>4.7 Google</span>
           <span class="hero-form-trust-sep">&middot;</span>
           <span class="hero-form-trust-item">BBB Accredited</span>
+          <span class="hero-form-trust-sep">&middot;</span>
+          <span class="hero-form-trust-item">200+ partners onboarded</span>
         </div>
       </div>
     </div>
@@ -2198,7 +2539,7 @@ a { color: inherit; text-decoration: none; }
     <div class="book-head">
       <div class="book-eyebrow">Prefer to book a time directly?</div>
       <h2 class="book-h">Pick a <span class="hl-green">time</span> that works.</h2>
-      <p class="book-sub">Already filled the form above? Skip this. We'll call you. Want to lock a time right now? Pick a slot below and we'll walk you through the process, current demand in your area, and what your first month looks like.</p>
+      <p class="book-sub">Already filled the form above? Skip this &mdash; we'll call you. Want to lock a time right now? Pick a slot below and we'll walk you through the process, current demand in your area, and what your first month looks like.</p>
     </div>
     <ol class="book-steps" aria-label="What happens next">
       <li class="book-step">
@@ -2241,11 +2582,11 @@ a { color: inherit; text-decoration: none; }
     <div class="faq-list">
       <details class="faq-item">
         <summary>Do I really only pay for appointments?</summary>
-        <div class="faq-answer"><p>Yes. No retainers, no setup fees, no monthly minimums. You pay one flat per-appointment fee, and only when the homeowner shows. <strong>Your first three appointments are on us.</strong></p></div>
+        <div class="faq-answer"><p>Yes. No retainers, no setup fees, no monthly minimums. You pay one flat per-appointment fee &mdash; and only when the homeowner shows. <strong>Your first three appointments are on us.</strong></p></div>
       </details>
       <details class="faq-item">
-        <summary>I&rsquo;ve been burned by lead companies before. Why is this different?</summary>
-        <div class="faq-answer"><p>Because we sell appointments, not leads. The homeowner is pre-screened, intent-scored at 80%+, and shows up expecting your trade specifically. You&rsquo;re not racing three other contractors to a cold form fill; you&rsquo;re walking into a conversation already in progress. And if it doesn&rsquo;t earn your business in three free appointments, you walk.</p></div>
+        <summary>I&rsquo;ve been burned by lead companies before &mdash; why is this different?</summary>
+        <div class="faq-answer"><p>Because we sell appointments, not leads. The homeowner is pre-screened, intent-scored at 80%+, and shows up expecting your trade specifically. You&rsquo;re not racing three other contractors to a cold form fill &mdash; you&rsquo;re walking into a conversation already in progress. And if it doesn&rsquo;t earn your business in three free appointments, you walk.</p></div>
       </details>
       <details class="faq-item">
         <summary>Is my service area really exclusive?</summary>
@@ -2358,7 +2699,7 @@ a { color: inherit; text-decoration: none; }
       setTimeout(function(){
         var active = el.querySelector('.form-step.is-active');
         if (!active) return;
-        var first = active.querySelector('.trade-pick-btn, input.form-input:not([type="hidden"]), .crew-pick-btn');
+        var first = active.querySelector('.trade-pick-btn, input.form-input:not([type="hidden"]), button[role="radio"]');
         if (first) {
           try { first.focus({ preventScroll: true }); } catch (e) {}
           // Add a subtle pulse on the active step so the user sees "this is where to act"
@@ -2417,53 +2758,37 @@ a { color: inherit; text-decoration: none; }
     // Focus first input in the active step for keyboard users
     var active = form.querySelector('.form-step.is-active');
     if (active) {
-      var firstInput = active.querySelector('input:not([type="hidden"]), .crew-pick-btn');
+      var firstInput = active.querySelector('input:not([type="hidden"]), button[role="radio"]');
       if (firstInput && n > 1) {
         setTimeout(function(){ try { firstInput.focus({ preventScroll: true }); } catch(e) {} }, 50);
       }
     }
   }
 
-  // — Hero quick-pick chips: pre-fill Step 1 + scroll to form —
-  document.querySelectorAll('.hero-quick-trade').forEach(function(chip){
-    chip.addEventListener('click', function(e){
-      e.preventDefault();
-      var trade = chip.getAttribute('data-quick-trade');
-      if (!trade) return;
-      // Scroll form into view first so the user sees the step transition
-      scrollToTarget('lead-form', false);
-      // Trigger the matching trade-pick-btn's click — its handler will select +
-      // auto-advance to step 2 (with built-in 220ms delay). setStep(2) then
-      // focuses the first input on step 2 (Company name).
-      var btn = form.querySelector('.trade-pick-btn[data-trade="' + trade + '"]');
-      if (btn) btn.click();
-    });
-  });
-
   // — Step 1: trade picker (auto-advance on select) —
   form.querySelectorAll('.trade-pick-btn').forEach(function(btn){
     btn.addEventListener('click', function(){
       form.querySelectorAll('.trade-pick-btn').forEach(function(b){
         b.classList.remove('is-selected');
-        b.setAttribute('aria-pressed','false');
+        b.setAttribute('aria-checked', 'false');
       });
       btn.classList.add('is-selected');
-      btn.setAttribute('aria-pressed','true');
+      btn.setAttribute('aria-checked', 'true');
       document.getElementById('field-trade').value = btn.getAttribute('data-trade') || '';
       // Slight delay so the user sees the selection state confirm
       setTimeout(function(){ setStep(2); }, 220);
     });
   });
 
-  // — Step 2: crew picker (single-select) —
+  // — Step 2: crew picker (radio) —
   form.querySelectorAll('.crew-pick-btn').forEach(function(btn){
     btn.addEventListener('click', function(){
       form.querySelectorAll('.crew-pick-btn').forEach(function(b){
         b.classList.remove('is-selected');
-        b.setAttribute('aria-pressed','false');
+        b.setAttribute('aria-checked', 'false');
       });
       btn.classList.add('is-selected');
-      btn.setAttribute('aria-pressed','true');
+      btn.setAttribute('aria-checked', 'true');
       document.getElementById('field-crews').value = btn.getAttribute('data-crews') || '';
       // Clear crew error if present
       var crewsField = btn.closest('.form-field');
