@@ -794,9 +794,11 @@ a { color: inherit; text-decoration: none; }
 .trust {
   border-top: 1px solid var(--gray-100);
   border-bottom: 1px solid var(--gray-100);
-  background: var(--white);
-  padding: 28px 0;
+  background: none;
+  padding: 22px 0;
+  margin: 8px 0;
 }
+.trust .container { padding: 0; }
 .trust-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -852,19 +854,20 @@ a { color: inherit; text-decoration: none; }
   .trust-item:nth-child(odd) { border-right: 1px solid var(--gray-100); }
 }
 
-/* ─── DIFFERENCE — clean comparison ───────────────────────── */
+/* ─── DIFFERENCE — left-aligned beat, two-column compare ──── */
 .difference {
-  padding: 140px 0;
-  background: var(--white);
+  padding: 64px 0;
+  background: none;
 }
-.difference-head { text-align: center; margin-bottom: 80px; }
-.difference-head .eyebrow { margin-bottom: 28px; }
+.difference .container { padding: 0; }
+.difference-head { text-align: left; margin-bottom: 36px; }
+.difference-head .eyebrow { margin-bottom: 16px; }
 .difference-h {
   font-family: var(--display);
   font-weight: 400;
-  font-size: clamp(36px, 5.2vw, 64px);
-  line-height: 1.04;
-  letter-spacing: -0.025em;
+  font-size: clamp(30px, 3.4vw, 46px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
   color: var(--navy);
   margin: 0;
 }
@@ -872,13 +875,12 @@ a { color: inherit; text-decoration: none; }
 .difference-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  max-width: 1080px;
-  margin: 0 auto;
+  gap: 20px;
+  margin: 0;
 }
 .diff-col {
-  padding: 44px 40px 48px;
-  border-radius: 24px;
+  padding: 32px 28px 36px;
+  border-radius: 20px;
   border: 1px solid var(--gray-100);
   background: var(--white);
 }
@@ -920,11 +922,15 @@ a { color: inherit; text-decoration: none; }
 .diff-col.us .diff-col-list li::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none' stroke='%231FA452' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 9l3.5 3.5L14 6'/%3E%3C/svg%3E");
 }
-@media (max-width: 760px) {
-  .difference { padding: 96px 0; }
-  .difference-head { margin-bottom: 56px; }
+/* In-column compare stacks where the narrative column is tightest */
+@media (max-width: 1200px) {
   .difference-grid { grid-template-columns: 1fr; }
-  .diff-col { padding: 36px 28px 40px; }
+}
+@media (max-width: 760px) {
+  .difference { padding: 48px 0; }
+  .difference-head { margin-bottom: 28px; }
+  .difference-grid { grid-template-columns: 1fr; }
+  .diff-col { padding: 32px 26px 36px; }
 }
 
 /* ─── SCARCITY (Hormozi) ──────────────────────────────────── */
@@ -1001,18 +1007,22 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 760px) { .scarcity { padding: 96px 0; } }
 
 /* ─── VOICES — partner testimonials ──────────────────────── */
+/* ─── VOICES — the one cream moment ───────────────────────── */
 .voices {
-  padding: 140px 0;
-  background: var(--white);
+  background: var(--cream);
+  border-radius: 24px;
+  padding: 44px;
+  margin: 64px 0;
 }
-.voices-head { text-align: center; margin-bottom: 80px; }
-.voices-head .eyebrow { margin-bottom: 24px; }
+.voices .container { padding: 0; }
+.voices-head { text-align: left; margin-bottom: 32px; }
+.voices-head .eyebrow { margin-bottom: 16px; }
 .voices-h {
   font-family: var(--display);
   font-weight: 400;
-  font-size: clamp(36px, 5.2vw, 64px);
-  line-height: 1.04;
-  letter-spacing: -0.025em;
+  font-size: clamp(30px, 3.4vw, 46px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
   color: var(--navy);
   margin: 0;
 }
@@ -1020,15 +1030,14 @@ a { color: inherit; text-decoration: none; }
 .voices-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  max-width: 1080px;
-  margin: 0 auto;
+  gap: 20px;
+  margin: 0;
 }
 .voice-card {
-  padding: 44px 40px;
-  border-radius: 24px;
-  background: var(--cream);
-  border: 1px solid var(--gray-100);
+  padding: 32px 28px;
+  border-radius: 18px;
+  background: var(--white);
+  border: 1px solid rgba(15,24,48,0.06);
   display: flex;
   flex-direction: column;
 }
@@ -1068,27 +1077,34 @@ a { color: inherit; text-decoration: none; }
   color: var(--green);
   font-weight: 500;
 }
+/* In-column testimonials stack where the narrative column is tightest */
+@media (max-width: 1200px) {
+  .voices-grid { grid-template-columns: 1fr; }
+}
 @media (max-width: 760px) {
-  .voices { padding: 96px 0; }
-  .voices-head { margin-bottom: 56px; }
-  .voices-grid { grid-template-columns: 1fr; gap: 20px; }
-  .voice-card { padding: 36px 28px; }
+  .voices { padding: 32px 24px; }
+  .voices-head { margin-bottom: 28px; }
+  .voices-grid { grid-template-columns: 1fr; gap: 16px; }
+  .voice-card { padding: 28px 24px; }
 }
 
-/* ─── GUARANTEE — green-bordered card ─────────────────────── */
-.guarantee {
-  padding: 140px 0;
-  background: var(--cream);
-}
+/* ─── GUARANTEE — the one navy moment ─────────────────────── */
+.guarantee { padding: 0; background: none; }
+.guarantee .container { padding: 0; }
 .guarantee-card {
-  max-width: 880px;
-  margin: 0 auto;
-  background: linear-gradient(180deg, rgba(31,164,82,0.05), rgba(31,164,82,0.015));
-  border: 1px solid rgba(31,164,82,0.22);
-  padding: 56px 64px;
+  background: var(--navy);
+  color: var(--white);
+  border: none;
   border-radius: 24px;
-  box-shadow: 0 24px 60px rgba(15,24,48,0.06);
+  padding: 48px;
+  box-shadow: 0 24px 60px rgba(15,24,48,0.12);
+  margin: 64px 0;
 }
+.guarantee-card .guarantee-eyebrow { color: var(--green); }
+.guarantee-card .guarantee-h { color: var(--white); }
+.guarantee-card .guarantee-h .hl-green { color: var(--green); }
+.guarantee-card .guarantee-detail { color: rgba(255,255,255,0.80); }
+.guarantee-card .guarantee-detail strong { color: var(--white); }
 .guarantee-badge {
   width: 48px;
   height: 48px;
@@ -1132,8 +1148,7 @@ a { color: inherit; text-decoration: none; }
 }
 .guarantee-detail strong { color: var(--navy); font-weight: 600; }
 @media (max-width: 720px) {
-  .guarantee { padding: 96px 0; }
-  .guarantee-card { padding: 40px 32px; }
+  .guarantee-card { padding: 32px 28px; margin: 48px 0; }
 }
 
 /* ─── CLOSING CTA — final form prompt with phone fallback ─── */
@@ -1242,9 +1257,9 @@ a { color: inherit; text-decoration: none; }
   .trust-num { font-size: 14px; }
   .trust-label { font-size: 9.5px; }
 
-  /* Difference */
-  .difference { padding: 64px 0; }
-  .difference-head { margin-bottom: 36px; }
+  /* Difference — left-aligned beat */
+  .difference { padding: 48px 0; }
+  .difference-head { margin-bottom: 28px; }
   .difference-h { font-size: 28px; line-height: 1.06; }
   .diff-col { padding: 28px 24px 32px; border-radius: 18px; }
   .diff-col-label { font-size: 10.5px; margin-bottom: 20px; }
@@ -1258,11 +1273,11 @@ a { color: inherit; text-decoration: none; }
   .territory { min-width: 130px; padding: 12px 16px; font-size: 13px; }
   .territories { gap: 10px; }
 
-  /* Voices */
-  .voices { padding: 64px 0; }
-  .voices-head { margin-bottom: 36px; }
+  /* Voices — cream panel */
+  .voices { padding: 28px 20px; margin: 48px 0; }
+  .voices-head { margin-bottom: 28px; }
   .voices-h { font-size: 28px; line-height: 1.06; }
-  .voice-card { padding: 28px 22px; border-radius: 18px; }
+  .voice-card { padding: 26px 22px; border-radius: 16px; }
   .voice-quote-mark { font-size: 48px; }
   .voice-quote { font-size: 17px; line-height: 1.4; margin: 0 0 24px; }
   .voice-attr-name { font-size: 14px; }
@@ -1401,6 +1416,20 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
+<!-- ─── GUARANTEE — no-show protection (the navy moment) ─────── -->
+<section class="guarantee">
+  <div class="container">
+    <div class="guarantee-card">
+      <div class="guarantee-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.4 8.4-8 11-4.6-2.6-8-6-8-11V5l8-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4.5-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="guarantee-eyebrow">The guarantee</div>
+      <h3 class="guarantee-h">If a confirmed homeowner <span class="hl-green">doesn&rsquo;t show</span>, you don&rsquo;t pay.</h3>
+      <p class="guarantee-detail">Every appointment goes through automated reminders and same-day follow-ups before we put it on your calendar. If the homeowner still doesn&rsquo;t show, <strong>that appointment doesn&rsquo;t bill.</strong></p>
+    </div>
+  </div>
+</section>
+
 <!-- ─── DIFFERENCE ──────────────────────────────────────────── -->
 <section class="difference">
   <div class="container">
@@ -1493,20 +1522,6 @@ a { color: inherit; text-decoration: none; }
         Claim my 3 free appointments
         <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- ─── GUARANTEE — no-show protection (before book) ────────── -->
-<section class="guarantee">
-  <div class="container">
-    <div class="guarantee-card">
-      <div class="guarantee-badge" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.4 8.4-8 11-4.6-2.6-8-6-8-11V5l8-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4.5-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="guarantee-eyebrow">The guarantee</div>
-      <h3 class="guarantee-h">If a confirmed homeowner <span class="hl-green">doesn&rsquo;t show</span>, you don&rsquo;t pay.</h3>
-      <p class="guarantee-detail">Every appointment goes through automated reminders and same-day follow-ups before we put it on your calendar. If the homeowner still doesn&rsquo;t show, <strong>that appointment doesn&rsquo;t bill.</strong></p>
     </div>
   </div>
 </section>
