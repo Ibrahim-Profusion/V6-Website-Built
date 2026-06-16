@@ -65,7 +65,7 @@ Hormozi's secondary moves we use heavily:
 - **Risk reversal** — take the risk off the customer's plate. ("First 3 free. No retainers. No contracts. You walk if it doesn't earn itself.")
 - **Insinuation > Direct Claim** — hand them the inputs and let them do the math. The customer who concluded a thing themselves believes it stronger than a thing you told them.
 - **Real scarcity > Fake urgency** — actual constraints (one partner per trade per area) build credibility; fake countdowns destroy it.
-- **Specific numbers > Vague claims** — "~70% close" beats "industry-leading conversion."
+- **Specific numbers > Vague claims** — "58% close" beats "industry-leading conversion."
 - **Pre-handle objections** — the FAQ is not for SEO; it's for closing the skeptical buyer's last open loop.
 - **Sell the result, not the process** — don't pitch how the sausage is made.
 
@@ -75,10 +75,10 @@ Hormozi's secondary moves we use heavily:
 |---|---|---|
 | Offer above the fold | Hero H1: "Your first 3 appointments are free." | Dream Outcome made instantly clear — message-match with the ads |
 | Stack the offer | Hero sub: "No retainers. No setup fees. No contracts. Pay only when the homeowner shows." | Drives effort/sacrifice toward zero |
-| **Insinuation** (the purest Hormozi move on the page) | Math section: `3 × ~70% = ?` with "You do the math" | We hand the installer the multiplication; they conclude they'd close ~2 deals before paying us a dollar. Customer-concluded > vendor-claimed. |
+| **Insinuation** (the purest Hormozi move on the page) | Math section: `3 × 58% = ?` with "You do the math" | We hand the installer the multiplication; they conclude they'd close ~2 deals before paying us a dollar. Customer-concluded > vendor-claimed. |
 | Risk reversal | Hero sub + Guarantee section + FAQ #1 | Removes "what if I sign up and it sucks" objection |
 | Real scarcity | "One partner per trade, per territory" + 5 launch states | Drives perceived likelihood (this is exclusive) and urgency (your competitor could take it) |
-| Specific numbers | Trust strip (4.7, 90%+, ~70%) + Math section | Beats any "industry-leading" claim |
+| Specific numbers | Trust strip (4.7, 89%, 58%) + Math section | Beats any "industry-leading" claim |
 | Pre-handle objections | FAQ ("I've been burned by lead companies — why is this different?") | Closes the skeptical-installer loop |
 | Sell the result | Difference table US column: "You walk in. They're ready." | Outcome language, not process language |
 | Trade chips in hero | `HVAC →` `Windows →` etc. | Reduces effort/sacrifice (skip Step 1 of the form) |
@@ -144,7 +144,7 @@ Things both thinkers would reject (or that the current build was structured to a
 
 1. **"Learn more" CTAs.** Tells the user nothing about what they'll get. Replace with verb + specific outcome.
 2. **Three competing CTAs on one screen.** Decision fatigue. Pick one primary; demote the rest.
-3. **Stats without a story.** "90% show rate" alone is a brag. "90% show rate × 3 free appointments = ?" is an offer.
+3. **Stats without a story.** "89% sit rate" alone is a brag. "58% close rate × 3 free appointments = ?" is an offer.
 4. **Pain sections that just describe the customer's misery.** This is why we cut the original 30-to-1 PAIN section. Pessimistic framing without an immediate reversal feels like the page is rubbing salt in. Hormozi's pain is *loss aversion* (what you're losing by not acting), not depression.
 5. **Long preambles before the offer.** Cold traffic gives you ~3 seconds. If the offer isn't above the fold, it's invisible.
 6. **Calendly-only conversion path.** Pixel can't see inside the iframe. We learned this the hard way; it's the whole reason the on-page form exists.
