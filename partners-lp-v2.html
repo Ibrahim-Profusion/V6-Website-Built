@@ -178,8 +178,7 @@ a { color: inherit; text-decoration: none; }
 .btn-primary svg { transition: transform 0.2s; }
 .btn-primary:hover svg { transform: translateX(3px); }
 
-/* Keyboard focus — visible ring on every interactive element.
-   (.btn-secondary is defined once, lower down; this slot now carries a11y focus.) */
+/* Keyboard focus — visible ring on every interactive element. */
 :focus-visible {
   outline: 2px solid var(--green);
   outline-offset: 2px;
@@ -663,35 +662,22 @@ a { color: inherit; text-decoration: none; }
 .beat-h { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.06; letter-spacing: -0.02em; color: var(--navy); margin: 0 0 20px; }
 .beat-read { font-family: var(--serif-read); font-size: 19px; line-height: 1.6; color: var(--gray-700); max-width: 62ch; margin: 0; }
 
-/* ─── CTA ROW — centered button after difference + riskwall ── */
-.ctarow {
-  display: flex;
-  justify-content: center;
-  margin-top: 56px;
-}
-.ctarow .btn-primary { background: var(--green); color: var(--white); }
-.ctarow.dark .btn-primary {
-  background: var(--white);
-  color: var(--navy);
-}
-.ctarow.dark .btn-primary:hover { background: var(--cream); }
-
 /* ─── FAQ — bordered rows with details/summary ─────────────── */
 .faq {
   padding: 120px 0;
   background: var(--cream);
 }
 .faq-head {
-  text-align: center;
+  text-align: left;
   margin-bottom: 56px;
 }
 .faq-head .eyebrow { margin-bottom: 20px; }
 .faq-h {
   font-family: var(--display);
   font-weight: 400;
-  font-size: clamp(36px, 5vw, 56px);
-  line-height: 1.04;
-  letter-spacing: -0.025em;
+  font-size: clamp(30px, 3.4vw, 46px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
   color: var(--navy);
   margin: 0;
 }
@@ -933,78 +919,6 @@ a { color: inherit; text-decoration: none; }
   .diff-col { padding: 32px 26px 36px; }
 }
 
-/* ─── SCARCITY (Hormozi) ──────────────────────────────────── */
-.scarcity {
-  padding: 140px 0;
-  background: var(--white);
-  text-align: center;
-}
-.scarcity-head { margin-bottom: 56px; }
-.scarcity-head .eyebrow { margin-bottom: 24px; }
-.scarcity-h {
-  font-family: var(--display);
-  font-weight: 400;
-  font-size: clamp(40px, 6vw, 80px);
-  line-height: 1;
-  letter-spacing: -0.025em;
-  color: var(--navy);
-  margin: 0 0 24px;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.scarcity-h .hl-green { color: var(--green); }
-.scarcity-sub {
-  font-family: var(--sans);
-  font-size: clamp(17px, 1.4vw, 20px);
-  line-height: 1.55;
-  color: var(--gray-700);
-  max-width: 620px;
-  margin: 0 auto 56px;
-  font-weight: 400;
-}
-.territories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 14px;
-  max-width: 880px;
-  margin: 0 auto;
-}
-.territory { flex: 0 1 auto; min-width: 168px; }
-.territory {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 16px 20px;
-  background: var(--gray-50);
-  border: 1px solid var(--gray-100);
-  border-radius: 100px;
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--navy);
-}
-.territory-state {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 8px;
-}
-.territory-state strong {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  color: var(--green);
-  font-weight: 700;
-}
-.territory-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--green);
-  flex-shrink: 0;
-}
-@media (max-width: 760px) { .scarcity { padding: 96px 0; } }
 
 /* ─── VOICES — partner testimonials ──────────────────────── */
 /* ─── VOICES — the one cream moment ───────────────────────── */
@@ -1192,41 +1106,10 @@ a { color: inherit; text-decoration: none; }
   flex-wrap: wrap;
   justify-content: center;
 }
-.closing-cta-or {
-  font-family: var(--sans);
-  font-size: 14px;
-  color: var(--gray-500);
-  letter-spacing: 0.02em;
-}
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px 28px;
-  background: var(--white);
-  color: var(--navy);
-  font-family: var(--sans);
-  font-size: 15.5px;
-  font-weight: 500;
-  border: 1.5px solid var(--gray-100);
-  border-radius: 100px;
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, transform 0.2s;
-  letter-spacing: -0.005em;
-}
-.btn-secondary:hover {
-  background: var(--gray-50);
-  border-color: var(--navy);
-  transform: translateY(-1px);
-}
-.btn-secondary svg { color: var(--green); flex-shrink: 0; }
-
 @media (max-width: 760px) {
   .closing-cta { padding: 88px 0; }
   .closing-cta-h { font-size: 36px; }
   .closing-cta-buttons { gap: 14px; }
-  .closing-cta-or { width: 100%; text-align: center; padding: 0; }
-  .btn-secondary { padding: 14px 24px; font-size: 14.5px; }
 }
 
 /* ──────────────────────────────────────────────────────────
@@ -1265,14 +1148,6 @@ a { color: inherit; text-decoration: none; }
   .diff-col-label { font-size: 10.5px; margin-bottom: 20px; }
   .diff-col-list li { font-size: 15px; padding: 11px 0; gap: 12px; }
 
-  /* Scarcity — pill grid */
-  .scarcity { padding: 64px 0; }
-  .scarcity-head { margin-bottom: 36px; }
-  .scarcity-h { font-size: 32px; line-height: 1.02; margin: 0 0 18px; }
-  .scarcity-sub { font-size: 15.5px; margin: 0 auto 36px; }
-  .territory { min-width: 130px; padding: 12px 16px; font-size: 13px; }
-  .territories { gap: 10px; }
-
   /* Voices — cream panel */
   .voices { padding: 28px 20px; margin: 48px 0; }
   .voices-head { margin-bottom: 28px; }
@@ -1293,7 +1168,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 380px) {
   .container, .container-narrow { padding: 0 20px; }
   .book-h { font-size: 38px; }
-  .difference-h, .scarcity-h, .voices-h { font-size: 26px; }
+  .difference-h, .voices-h { font-size: 26px; }
 }
 
 /* ─── FOOTER ──────────────────────────────────────────────── */
@@ -1322,7 +1197,7 @@ a { color: inherit; text-decoration: none; }
 
 <nav class="nav">
   <a href="#top" class="nav-brand"><img src="logo.png" alt="ProFusion"></a>
-  <a href="#lead-form" class="nav-cta">Get 3 free appointments</a>
+  <a href="#lead-form" class="nav-cta">Claim my 3 free appointments</a>
 </nav>
 
 <!-- ─── BODY: sticky-split shell — narrative (left) + pinned form rail (right) ─── -->
@@ -1459,36 +1334,6 @@ a { color: inherit; text-decoration: none; }
         </ul>
       </div>
     </div>
-    <div class="ctarow">
-      <a href="#lead-form" class="btn-primary">
-        See open territories
-        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ─── SCARCITY (Hormozi) ──────────────────────────────────── -->
-<section class="scarcity">
-  <div class="container">
-    <div class="scarcity-head">
-      <div class="eyebrow">Availability</div>
-      <h2 class="scarcity-h">One installer per trade. <span class="hl-green">Per service area.</span></h2>
-      <p class="scarcity-sub">We're onboarding founding partners across our launch territories. Once your trade is taken in your area, it's closed for two years. That's the promise to the partners we already chose, and the constraint that decides who we say yes to.</p>
-    </div>
-    <div class="territories">
-      <div class="territory"><span class="territory-state"><strong>RI</strong> Rhode Island</span></div>
-      <div class="territory"><span class="territory-state"><strong>NH</strong> New Hampshire</span></div>
-      <div class="territory"><span class="territory-state"><strong>VT</strong> Vermont</span></div>
-      <div class="territory"><span class="territory-state"><strong>ME</strong> Maine</span></div>
-      <div class="territory"><span class="territory-state"><strong>MD</strong> Maryland</span></div>
-    </div>
-    <div class="ctarow">
-      <a href="#lead-form" class="btn-primary">
-        Lock in your area
-        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </a>
-    </div>
   </div>
 </section>
 
@@ -1517,12 +1362,6 @@ a { color: inherit; text-decoration: none; }
         </div>
       </article>
     </div>
-    <div class="ctarow">
-      <a href="#lead-form" class="btn-primary">
-        Claim my 3 free appointments
-        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </a>
-    </div>
   </div>
 </section>
 
@@ -1530,7 +1369,7 @@ a { color: inherit; text-decoration: none; }
 <section class="faq" id="faq">
   <div class="container-narrow">
     <div class="faq-head">
-      <div class="faq-eyebrow">Common questions</div>
+      <div class="eyebrow">Common questions</div>
       <h2 class="faq-h">Things every installer <span class="hl-green">asks first</span>.</h2>
     </div>
     <div class="faq-list">
@@ -1560,11 +1399,6 @@ a { color: inherit; text-decoration: none; }
       <a href="#lead-form" class="btn-primary">
         Claim my 3 free appointments
         <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </a>
-      <span class="closing-cta-or">or</span>
-      <a href="tel:+15166133990" class="btn-secondary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        Call (516) 613-3990
       </a>
     </div>
   </div>
