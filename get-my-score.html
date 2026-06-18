@@ -987,6 +987,20 @@
               <input class="gms-input" id="gms-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(508) 555-0142"></div>
           </fieldset>
 
+          <!-- SMS opt-in consent — A2P 10DLC compliance. Checkbox unchecked by default; consent stays optional. -->
+          <label class="gms-consent" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--sans); font-size:13px; line-height:1.5; margin:18px 0 22px; text-align:left; color:var(--gray-700); cursor:pointer;">
+            <input type="checkbox" name="sms_consent" value="yes" style="margin-top:3px; flex-shrink:0; accent-color: var(--green);">
+            <span>
+              By checking this box, I agree to receive recurring text messages from
+              Profusion Home Solutions about my home energy report, appointment scheduling,
+              billing, and account updates at the phone number provided. <strong>Consent is not a
+              condition of purchase.</strong> Message frequency varies. Message &amp; data rates may apply.
+              Reply STOP to opt out, HELP for help. See our
+              <a href="/privacy" target="_blank" rel="noopener" style="color:var(--green); text-decoration:underline;">Privacy Policy</a> and
+              <a href="/terms" target="_blank" rel="noopener" style="color:var(--green); text-decoration:underline;">Terms of Service</a>.
+            </span>
+          </label>
+
           <button type="submit" class="gms-cta">
             Show me my Score
             <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true">
@@ -1006,6 +1020,7 @@
 <footer class="gms-footer">
   <div>© 2026 ProFusion Home Solutions LLC · Data current April 2026</div>
   <div class="gms-footer-press">As featured in · <strong>Boston Globe</strong> · <strong>Portland Press Herald</strong></div>
+  <div class="gms-footer-legal"><a href="/privacy" style="color: var(--gray-700); text-decoration: none;">Privacy Policy</a> · <a href="/terms" style="color: var(--gray-700); text-decoration: none;">Terms of Service</a></div>
 </footer>
 
 <script>

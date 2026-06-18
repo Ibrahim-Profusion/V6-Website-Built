@@ -1145,6 +1145,12 @@ footer::before {
   color: rgba(255, 255, 255, 0.4);
   text-transform: uppercase;
 }
+.footer-bottom a {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-bottom a:hover { color: var(--green-400); }
 
 /* ─── Footer offices block — Google Maps embed(s) ─── */
 .footer-offices {

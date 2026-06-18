@@ -457,6 +457,20 @@
               <label class="contact-field-label" for="contact-message">What's on your mind?</label>
               <textarea class="contact-textarea" id="contact-message" name="message" placeholder="A quick sentence or two about what you'd like to talk about. Suggestions, questions, partnership ideas, anything." required aria-required="true"></textarea></div>
 
+            <!-- SMS opt-in consent — A2P 10DLC compliance. Checkbox unchecked by default; consent is optional. -->
+            <label class="contact-consent" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--sans); font-size:13px; line-height:1.5; margin:14px 0 22px; color:var(--gray-700); cursor:pointer;">
+              <input type="checkbox" name="sms_consent" value="yes" style="margin-top:3px; flex-shrink:0; accent-color: var(--green);">
+              <span>
+                By checking this box, I agree to receive recurring text messages from
+                Profusion Home Solutions in reply to my inquiry, including follow-up questions,
+                scheduling, and account updates at the phone number provided. <strong>Consent is not a
+                condition of purchase.</strong> Message frequency varies. Message &amp; data rates may apply.
+                Reply STOP to opt out, HELP for help. See our
+                <a href="/privacy" target="_blank" rel="noopener" style="color:var(--green); text-decoration:underline;">Privacy Policy</a> and
+                <a href="/terms" target="_blank" rel="noopener" style="color:var(--green); text-decoration:underline;">Terms of Service</a>.
+              </span>
+            </label>
+
             <button type="submit" class="contact-submit">
               Send the note
               <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true">
@@ -591,7 +605,8 @@
         </ul></div></div>
     <div class="footer-bottom">
       <div>&copy; 2026 ProFusion Home Solutions LLC</div>
-      <div>Now serving 11 states &middot; A+ BBB &middot; Fully Insured</div></div></div>
+      <div>Now serving 11 states &middot; A+ BBB &middot; Fully Insured</div>    <div><a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a></div>
+  </div></div>
 </footer>
 
 <script defer src="mobile-nav.js"></script>

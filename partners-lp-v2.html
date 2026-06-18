@@ -1628,6 +1628,19 @@ a { color: inherit; text-decoration: none; }
             <input class="form-input" type="tel" id="field-phone" name="phone" autocomplete="tel" placeholder="(555) 123&ndash;4567" required>
             <div class="form-field-error">We'll call you on this number within one business day.</div>
           </div>
+          <!-- SMS opt-in consent — A2P 10DLC compliance. Checkbox unchecked by default; consent is optional. -->
+          <label class="form-consent" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--sans); font-size:12.5px; line-height:1.5; margin:6px 0 18px; color:var(--gray-700); cursor:pointer;">
+            <input type="checkbox" name="sms_consent" id="field-sms-consent" value="yes" style="margin-top:3px; flex-shrink:0; accent-color: var(--green);">
+            <span>
+              By checking this box, I agree to receive recurring text messages from
+              Profusion Home Solutions about my partnership application, appointment scheduling,
+              billing, and account updates at the phone number provided. <strong>Consent is not a
+              condition of purchase.</strong> Message frequency varies. Message &amp; data rates may apply.
+              Reply STOP to opt out, HELP for help. See our
+              <a href="/privacy" target="_blank" rel="noopener" style="color:var(--green); text-decoration:underline;">Privacy Policy</a> and
+              <a href="/terms" target="_blank" rel="noopener" style="color:var(--green); text-decoration:underline;">Terms of Service</a>.
+            </span>
+          </label>
           <div class="form-actions">
             <button type="button" class="form-back-btn" data-action="back">
               <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M5 1L1 5l4 4M1 5h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1925,6 +1938,7 @@ a { color: inherit; text-decoration: none; }
       service_area: document.getElementById('field-area').value.trim(),
       sales_team_size: document.getElementById('field-sales-team').value,
       company: document.getElementById('field-company').value.trim(),
+      sms_consent: document.getElementById('field-sms-consent').checked ? 'yes' : 'no',
       fbclid: getFbclid(),
       fbp: getFbp(),
       event_id: eventId,

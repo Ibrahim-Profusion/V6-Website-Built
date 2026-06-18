@@ -1254,6 +1254,20 @@ a { color: inherit; text-decoration: none; }
           </div>
         </div>
 
+        <!-- SMS opt-in consent — A2P 10DLC compliance. Checkbox unchecked by default; consent is optional. -->
+        <label class="form-consent" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--sans); font-size:13px; line-height:1.5; margin:18px 0; color:var(--gray-700); cursor:pointer;">
+          <input type="checkbox" name="sms_consent" value="yes" style="margin-top:3px; flex-shrink:0; accent-color: var(--green);">
+          <span>
+            By checking this box, I agree to receive recurring text messages from
+            Profusion Home Solutions about my partnership application, appointment scheduling,
+            billing, and account updates at the phone number provided. <strong>Consent is not a
+            condition of purchase.</strong> Message frequency varies. Message &amp; data rates may apply.
+            Reply STOP to opt out, HELP for help. See our
+            <a href="/privacy" target="_blank" rel="noopener" style="color:var(--green); text-decoration:underline;">Privacy Policy</a> and
+            <a href="/terms" target="_blank" rel="noopener" style="color:var(--green); text-decoration:underline;">Terms of Service</a>.
+          </span>
+        </label>
+
         <button type="submit" class="form-submit" id="applySubmit">
           Send application
           <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
