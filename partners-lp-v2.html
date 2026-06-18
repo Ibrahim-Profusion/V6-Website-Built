@@ -130,7 +130,9 @@ a { color: inherit; text-decoration: none; }
 .lp-rail { position: sticky; top: 96px; align-self: start; }
 @media (max-width: 920px) {
   .lp-split { grid-template-columns: 1fr; gap: 0; padding: 0 24px; }
-  .lp-rail { position: static; top: auto; order: -1; margin-bottom: 32px; }
+  /* Form rail sits BELOW the hero on mobile so the user reads the offer
+     and the sign-up clarification first, then arrives at the form. */
+  .lp-rail { position: static; top: auto; margin: 32px 0; }
 }
 @media (max-width: 640px) { .lp-split { padding: 0 20px; } }
 
@@ -673,7 +675,7 @@ a { color: inherit; text-decoration: none; }
 .beat-eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-700); margin: 0 0 16px; }
 .beat-h { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.06; letter-spacing: -0.02em; color: var(--navy); margin: 0 0 20px; }
 .beat-read { font-family: var(--serif-read); font-size: 19px; line-height: 1.6; color: var(--gray-700); max-width: 62ch; margin: 0; }
-/* Offer-math: the "3 free × 57% close" highlight under the social proof */
+/* Offer-math: the "3 free × 58% close" highlight under the social proof */
 .offer-math-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; margin: 32px 0; padding: 36px 24px; background: linear-gradient(180deg, rgba(31,164,82,0.05), rgba(31,164,82,0.015)); border: 1px solid rgba(31,164,82,0.18); border-radius: 22px; }
 .offer-math-cell { text-align: center; }
 .offer-math-num { font-family: var(--display); font-weight: 400; font-size: clamp(52px, 8vw, 84px); line-height: 1; letter-spacing: -0.03em; color: var(--navy); }
@@ -681,7 +683,10 @@ a { color: inherit; text-decoration: none; }
 .offer-math-label { font-family: var(--sans); font-size: 13px; line-height: 1.4; color: var(--gray-700); font-weight: 500; max-width: 190px; margin: 14px auto 0; }
 .offer-math-op { font-family: var(--display); font-size: clamp(28px, 4vw, 40px); color: var(--green); line-height: 1; opacity: 0.5; }
 .offer-math-takeaway { font-family: var(--serif-read); font-size: 18px; line-height: 1.6; color: var(--gray-700); max-width: 60ch; margin: 0; }
-@media (max-width: 560px) { .offer-math-grid { grid-template-columns: 1fr; gap: 6px; padding: 28px 20px; } }
+@media (max-width: 560px) {
+  .offer-math-grid { grid-template-columns: 1fr; gap: 6px; padding: 28px 20px; }
+  .offer-math-op { display: none; }
+}
 
 .beat-intel .intel-figure { margin: 28px 0 0; max-width: 460px; border-radius: 20px; overflow: hidden; box-shadow: 0 30px 70px rgba(15,24,48,0.18); background: var(--gray-100); aspect-ratio: 1200 / 1460; }
 .beat-intel .intel-figure img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
@@ -1153,7 +1158,7 @@ a { color: inherit; text-decoration: none; }
   /* Nav — slimmer */
   .nav { padding: 16px 20px; }
   .nav-brand img { height: 22px; }
-  .nav-cta { padding: 9px 18px; font-size: 13px; }
+  .nav-cta { padding: 13px 20px; font-size: 14px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; }
 
   /* Buttons — mobile sizing */
   .btn-primary { padding: 15px 28px; font-size: 15px; }
@@ -1265,7 +1270,7 @@ a { color: inherit; text-decoration: none; }
 
 <nav class="nav">
   <a href="#top" class="nav-brand"><img src="logo.png" alt="ProFusion"></a>
-  <a href="#lead-form" class="nav-cta">Claim my 3 free appointments</a>
+  <a href="#lead-form" class="nav-cta">Sign me up &mdash; first 3 are free</a>
 </nav>
 
 <!-- ─── BODY: sticky-split shell — narrative (left) + pinned form rail (right) ─── -->
@@ -1275,7 +1280,7 @@ a { color: inherit; text-decoration: none; }
     <div class="lp-hero-copy">
         <div class="hero-offer-eyebrow">For installation partners &middot; RI &middot; NH &middot; VT &middot; ME &middot; MD</div>
         <h1>Your first 3 appointments <span class="hl-green">are free.</span></h1>
-        <p class="hero-offer-sub"><strong>No retainers. No setup fees. No contracts.</strong> Pay only when the homeowner shows. One partner per trade, per territory.</p>
+        <p class="hero-offer-sub"><strong>Sign up below.</strong> We confirm your trade and territory by phone, then your first 3 appointments hit your calendar. No retainers, no setup fees, no contracts. One partner per trade, per territory.</p>
         <div class="hero-trades">
           <figure>
             <picture>
@@ -1344,7 +1349,7 @@ a { color: inherit; text-decoration: none; }
       <div class="trust-item">
         <svg class="trust-logo" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
         <span class="trust-text">
-          <span class="trust-num">57<span class="trust-plus">%</span></span>
+          <span class="trust-num">58<span class="trust-plus">%</span></span>
           <span class="trust-label">Close rate</span>
         </span>
       </div>
@@ -1352,7 +1357,7 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
-<!-- ─── OFFER MATH — 3 free × 57% close, right under the social proof ── -->
+<!-- ─── OFFER MATH — 3 free × 58% close, right under the social proof ── -->
 <section class="beat offer-math">
   <p class="beat-eyebrow">Before you pay us a dollar</p>
   <h2 class="beat-h">Run the numbers yourself.</h2>
@@ -1363,7 +1368,7 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="offer-math-op" aria-hidden="true">&times;</div>
     <div class="offer-math-cell">
-      <div class="offer-math-num">57<span class="offer-math-pct">%</span></div>
+      <div class="offer-math-num">58<span class="offer-math-pct">%</span></div>
       <div class="offer-math-label">Average close on a ProFusion appointment</div>
     </div>
   </div>
@@ -1507,7 +1512,7 @@ a { color: inherit; text-decoration: none; }
     <p class="closing-cta-sub">Fill the form. We confirm your area, your trade, and what your first two weeks look like.</p>
     <div class="closing-cta-buttons">
       <a href="#lead-form" class="btn-primary">
-        Claim my 3 free appointments
+        Sign me up &mdash; first 3 are free
         <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       </a>
     </div>
@@ -1522,7 +1527,7 @@ a { color: inherit; text-decoration: none; }
         <span class="hero-form-eyebrow-label">Start here</span>
         <span class="hero-form-step-counter" id="lead-step-counter">Step 1 of 3</span>
       </div>
-      <h2 class="hero-form-h">Reserve your <span class="hl-green">3 free appointments</span>.</h2>
+      <h2 class="hero-form-h">Start your <span class="hl-green">sign-up</span>.</h2>
       <p class="hero-form-sub">Pick your trade. We'll confirm if your area is still open and call within one business day.</p>
       <div class="hero-form-progress" role="progressbar" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1" id="lead-progress">
         <div class="hero-form-progress-bar is-active" data-step="1"></div>
@@ -1647,7 +1652,7 @@ a { color: inherit; text-decoration: none; }
               Back
             </button>
             <button type="submit" class="form-submit-btn" id="lead-submit">
-              Claim my 3 free appointments
+              Sign me up &mdash; first 3 are free
               <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M9 1l4 4-4 4M1 5h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
           </div>
@@ -1699,7 +1704,7 @@ a { color: inherit; text-decoration: none; }
 </footer>
 
 <div class="mobile-cta-bar" id="mobile-cta-bar" hidden>
-  <a href="#lead-form" class="mobile-cta-bar-btn">Claim my 3 free appointments
+  <a href="#lead-form" class="mobile-cta-bar-btn">Sign me up &mdash; first 3 are free
     <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
   </a>
 </div>
@@ -1964,7 +1969,7 @@ a { color: inherit; text-decoration: none; }
       if (submitErrorEl) submitErrorEl.classList.add('is-visible');
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Claim my 3 free appointments <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M9 1l4 4-4 4M1 5h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        submitBtn.innerHTML = 'Sign me up &mdash; first 3 are free <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M9 1l4 4-4 4M1 5h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
       }
     });
   });
@@ -1987,6 +1992,39 @@ a { color: inherit; text-decoration: none; }
       try { card.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
     }
   }
+
+  // Mobile reorder: move the form rail to sit BELOW the hero copy on mobile so
+  // users read the offer + "Sign up below" framing first, then arrive at the form.
+  // On desktop, the rail stays as the sticky right column.
+  (function () {
+    var rail = document.querySelector('.lp-rail');
+    var heroCopy = document.querySelector('.lp-hero-copy');
+    var split = document.querySelector('.lp-split');
+    if (!rail || !heroCopy || !split) return;
+    var desktopParent = rail.parentNode;     // .lp-split
+    var desktopNext = rail.nextSibling;      // null (rail is last child)
+    var mq = window.matchMedia('(max-width: 920px)');
+    function place() {
+      if (mq.matches) {
+        // Mobile: insert rail right after the hero copy (inside .lp-narrative)
+        if (rail.previousElementSibling !== heroCopy) {
+          heroCopy.insertAdjacentElement('afterend', rail);
+        }
+      } else {
+        // Desktop: return rail to its sibling position in .lp-split
+        if (rail.parentNode !== desktopParent) {
+          if (desktopNext && desktopNext.parentNode === desktopParent) {
+            desktopParent.insertBefore(rail, desktopNext);
+          } else {
+            desktopParent.appendChild(rail);
+          }
+        }
+      }
+    }
+    place();
+    if (mq.addEventListener) mq.addEventListener('change', place);
+    else if (mq.addListener) mq.addListener(place);
+  })();
 
   // Mobile follow-bar: show after the form leaves view, hide near form/footer
   (function () {
