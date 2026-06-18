@@ -660,6 +660,62 @@ a { color: inherit; text-decoration: none; }
 .hero-trades figcaption { position: absolute; left: 8px; bottom: 8px; padding: 3px 9px; background: rgba(255,255,255,0.92); border-radius: 100px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); font-weight: 700; }
 @media (max-width: 640px) { .hero-trades { max-width: 100%; } }
 
+/* How It Works — 3-step expectation-setter sitting between hero copy and form */
+.how-it-works {
+  list-style: none;
+  margin: 36px 0 0;
+  padding: 24px 22px;
+  background: rgba(31,164,82,0.04);
+  border: 1px solid rgba(31,164,82,0.18);
+  border-radius: 18px;
+  display: grid;
+  gap: 18px;
+}
+.how-it-works-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.how-it-works-num {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--white);
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.how-it-works-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 3px;
+}
+.how-it-works-body strong {
+  font-family: var(--sans);
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+}
+.how-it-works-body > span {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray-700);
+  line-height: 1.45;
+}
+@media (max-width: 640px) {
+  .how-it-works { padding: 20px 18px; margin-top: 28px; gap: 16px; }
+  .how-it-works-body strong { font-size: 15px; }
+  .how-it-works-body > span { font-size: 13.5px; }
+}
+
 /* Mobile: form-first stack */
 @media (max-width: 920px) {
   .hero-form-card { padding: 32px 24px 24px; border-radius: 22px; }
@@ -1278,7 +1334,6 @@ a { color: inherit; text-decoration: none; }
   <div class="lp-narrative">
     <!-- ─── HERO copy (left) — dissolved from the old .hero / .hero-grid ─── -->
     <div class="lp-hero-copy">
-        <div class="hero-offer-eyebrow">For installation partners &middot; RI &middot; NH &middot; VT &middot; ME &middot; MD</div>
         <h1>Your first 3 appointments <span class="hl-green">are free.</span></h1>
         <p class="hero-offer-sub"><strong>Sign up below.</strong> We confirm your trade and territory by phone, then your first 3 appointments hit your calendar. No retainers, no setup fees, no contracts. One partner per trade, per territory.</p>
         <div class="hero-trades">
@@ -1311,6 +1366,31 @@ a { color: inherit; text-decoration: none; }
             <figcaption>Windows</figcaption>
           </figure>
         </div>
+
+        <!-- ── How It Works — 3-step expectation-setter, sits between hero and form ── -->
+        <ol class="how-it-works" aria-label="How it works">
+          <li class="how-it-works-step">
+            <span class="how-it-works-num" aria-hidden="true">1</span>
+            <span class="how-it-works-body">
+              <strong>Sign up.</strong>
+              <span>60 seconds. Your trade, your area, your number.</span>
+            </span>
+          </li>
+          <li class="how-it-works-step">
+            <span class="how-it-works-num" aria-hidden="true">2</span>
+            <span class="how-it-works-body">
+              <strong>We call to confirm.</strong>
+              <span>Within one business day. We verify your area is still open.</span>
+            </span>
+          </li>
+          <li class="how-it-works-step">
+            <span class="how-it-works-num" aria-hidden="true">3</span>
+            <span class="how-it-works-body">
+              <strong>Appointments hit your calendar.</strong>
+              <span>Your first 3 are free. You only pay when the homeowner shows.</span>
+            </span>
+          </li>
+        </ol>
     </div>
 
     <!-- ─── TRUST STRIP ─────────────────────────────────────────── -->
