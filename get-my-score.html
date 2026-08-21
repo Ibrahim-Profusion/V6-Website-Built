@@ -216,8 +216,12 @@
 .gms-form-card > * { position: relative; z-index: 1; }
 .gms-form-card * { box-sizing: border-box; }
 
-/* Google Places Autocomplete dropdown styling — match the form aesthetic. */
+/* Google Places Autocomplete dropdown styling — match the form aesthetic.
+   z-index MUST be high enough to render above the sticky nav, the sticky form
+   aside, and any backdrop-filter stacking contexts. Google's default (1000) is
+   too low for this page's layout, which is why the dropdown was invisible. */
 .pac-container {
+  z-index: 999999 !important;
   font-family: var(--display) !important;
   border: 1px solid var(--gray-100) !important;
   border-radius: 14px !important;
