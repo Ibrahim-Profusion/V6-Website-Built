@@ -681,6 +681,114 @@
 }
 .gms-steps-foot svg { color: var(--blue-700); flex-shrink: 0; }
 
+/* ─── Sample report preview — makes the deliverable concrete ─── */
+.gms-report-preview {
+  margin: 36px 0 48px;
+  padding: 0;
+}
+.gms-report-preview-frame {
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  box-shadow: 0 24px 60px rgba(10,16,32,0.10);
+}
+.gms-report-preview-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.gms-report-preview-cap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 20px 0;
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-600);
+  flex-wrap: wrap;
+}
+.gms-report-preview-cap a {
+  color: var(--blue-700);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.gms-report-preview-cap a:hover {
+  color: var(--ink);
+}
+
+/* ─── Example homes grid — 4 photos, visual proof of who we serve ─── */
+.gms-example-homes {
+  margin: 56px 0 0;
+  padding-top: 48px;
+  border-top: 1px solid var(--gray-100);
+}
+.gms-example-homes-head { margin-bottom: 20px; }
+.gms-example-homes-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue-700);
+  margin-bottom: 10px;
+}
+.gms-example-homes-lede {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+.gms-example-homes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.gms-example-home {
+  margin: 0;
+  position: relative;
+  aspect-ratio: 3 / 2;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--gray-100);
+}
+.gms-example-home img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.gms-example-home:hover img { transform: scale(1.04); }
+.gms-example-home figcaption {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+  .gms-example-homes-grid { grid-template-columns: repeat(2, 1fr); }
+  .gms-report-preview { margin: 28px 0 36px; }
+  .gms-example-homes { margin: 40px 0 0; padding-top: 36px; }
+}
+
 /* ─── Right column · sticky form ─── */
 .gms-form-aside { position: sticky; top: 96px; }
 
@@ -820,6 +928,17 @@
         <p class="gms-lede">Sixty seconds. We do the rest.</p>
       </div>
 
+      <!-- Sample report preview — make the deliverable concrete. -->
+      <figure class="gms-report-preview">
+        <div class="gms-report-preview-frame">
+          <img src="images/sample-report-homeowner.png" alt="A sample ProFusion Home Efficiency Score report showing letter grade, rebate stack, and ranked next-best upgrade" loading="lazy">
+        </div>
+        <figcaption class="gms-report-preview-cap">
+          <span>A real report we've delivered</span>
+          <a href="sample-report.html">See the full sample &rarr;</a>
+        </figcaption>
+      </figure>
+
       <section aria-label="What happens after you submit">
         <div class="gms-steps-intro">
           <div class="gms-steps-eyebrow">How it works</div>
@@ -894,6 +1013,32 @@
         <div class="gms-steps-foot">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           <span>Free, forever &middot; No follow-up calls unless you ask</span>
+        </div>
+      </section>
+
+      <!-- A few real homes we've scored — visual proof of the audience we serve. -->
+      <section class="gms-example-homes" aria-label="A few homes we have scored">
+        <div class="gms-example-homes-head">
+          <div class="gms-example-homes-eyebrow">A few homes we've scored</div>
+          <p class="gms-example-homes-lede">Every roof, every era, every state.</p>
+        </div>
+        <div class="gms-example-homes-grid">
+          <figure class="gms-example-home">
+            <img src="images/example-home-brooklyn-victorian.png" alt="A Brooklyn Victorian rowhouse we scored" loading="lazy">
+            <figcaption>Brooklyn Victorian</figcaption>
+          </figure>
+          <figure class="gms-example-home">
+            <img src="images/example-home-newark-newbuild.png" alt="A Newark new-build we scored" loading="lazy">
+            <figcaption>Newark new-build</figcaption>
+          </figure>
+          <figure class="gms-example-home">
+            <img src="images/example-home-tampa-ranch.png" alt="A Tampa ranch-style home we scored" loading="lazy">
+            <figcaption>Tampa ranch</figcaption>
+          </figure>
+          <figure class="gms-example-home">
+            <img src="images/example-home-worcester-cape.png" alt="A Worcester Cape Cod home we scored" loading="lazy">
+            <figcaption>Worcester Cape</figcaption>
+          </figure>
         </div>
       </section>
     </div>
@@ -983,8 +1128,8 @@
               <input class="gms-input" id="gms-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-required="true"></div>
 
             <div class="gms-field">
-              <label class="gms-field-label" for="gms-phone">Phone (optional)</label>
-              <input class="gms-input" id="gms-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(508) 555-0142"></div>
+              <label class="gms-field-label" for="gms-phone">Phone</label>
+              <input class="gms-input" id="gms-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(508) 555-0142" required aria-required="true"></div>
           </fieldset>
 
           <!-- SMS opt-in consent — A2P 10DLC compliance. Checkbox unchecked by default; consent stays optional. -->
@@ -1082,23 +1227,37 @@ window.initPfPlaces = function () {
 </script>
 
 <script>
-// Show a success banner when Web3Forms redirects back here with ?submitted=true.
+// Show a success state when Web3Forms redirects back here with ?submitted=true.
+// The form itself is hidden so the user gets an unambiguous confirmation
+// instead of landing back on what looks like the same form.
 (function () {
   if (new URLSearchParams(window.location.search).get('submitted') !== 'true') return;
   var card = document.querySelector('.gms-form-card');
   if (!card) return;
+  // Hide the entire card body (form + hidden inputs + submit button + footnotes)
+  // and replace with a full-card success state.
+  var titleEl = card.querySelector('.gms-form-title');
+  var subEl = card.querySelector('.gms-form-sub');
+  var formEl = card.querySelector('form');
+  var footnote = card.querySelector('.gms-form-footnote');
+  if (titleEl) titleEl.style.display = 'none';
+  if (subEl) subEl.style.display = 'none';
+  if (formEl) formEl.style.display = 'none';
+  if (footnote) footnote.style.display = 'none';
   var banner = document.createElement('div');
   banner.className = 'gms-success';
   banner.setAttribute('role', 'status');
+  banner.style.marginBottom = '0';
   banner.innerHTML =
     '<div class="gms-success-icon" aria-hidden="true">' +
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
     '</div>' +
     '<div>' +
-      '<div class="gms-success-title">Got it. We are on it.</div>' +
-      '<p class="gms-success-body">Your report is being assembled. You should see it in your inbox within forty-eight hours, usually faster. If you do not see it, check spam, then email <a href="mailto:info@profusion.solutions">info@profusion.solutions</a>.</p>' +
+      '<div class="gms-success-title" style="font-size: 22px; margin-bottom: 8px;">Got it. We\'re on it.</div>' +
+      '<p class="gms-success-body">Your Home Efficiency Score is being assembled. You\'ll see it in your inbox within 48 hours — usually faster. If it doesn\'t arrive, check spam first, then email <a href="mailto:info@profusion.solutions">info@profusion.solutions</a>.</p>' +
+      '<div style="margin-top: 16px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500);">Nothing else needed from you</div>' +
     '</div>';
-  card.insertBefore(banner, card.firstChild);
+  card.appendChild(banner);
   banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
 })();
 </script>
